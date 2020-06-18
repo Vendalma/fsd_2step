@@ -1,0 +1,61 @@
+@import "num-1.scss";
+@import "num-2.scss";
+@import "num-3.scss";
+@import "num-4.scss";
+@import "num-5.scss";
+@import "num-6.scss";
+@import "num-7.scss";
+
+@import "./rectangle_color/dark100.scss";
+@import "./rectangle_color/dark25.scss";
+@import "rectangle_size.scss";
+
+@import "./headers_font/headers_font-h1.scss";
+@import "./headers_font/headers_font-h2.scss";
+@import "./headers_font/headers_font-h3.scss";
+@import "./headers_font/headers_font-body.scss";
+
+@import "./name_font/name_font.scss";
+@import "./fonts/fonts.scss";
+body {
+  font: 100% Helvetica, sans-serif;
+  display: flex;
+  flex-direction: row;
+}
+.group-one-block {
+  margin-top: 145px;
+  margin-left: 71.74px * 100%/1440px;
+
+  &__color-block {
+    display: flex;
+    flex-direction: row;
+  }
+}
+.text-block {
+  margin-left: 427px * 100%/1440px;
+  margin-top: 145px;
+  width: 403px;
+  display: flex;
+  flex-direction: row;
+  &__headers-list {
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+  }
+  &__inform-list {
+    display: flex;
+    flex-direction: column;
+  }
+  &__inform {
+    margin-bottom: 50px;
+  }
+  .headers_name-h1 {
+    margin-bottom: 80px;
+  }
+  .headers_name-h2 {
+    margin-bottom: 74px;
+  }
+  .headers_name-h3 {
+    margin-bottom: 50px;
+  }
+}

@@ -1,0 +1,8 @@
+mixin colors (num,color, namecolor, info_p1, info_p2)
+    .group-one-block__color-block
+        .group-one-block__rectangle.rectangle_size(class ='rectangle_bg-color-num-' + num)(class='rectangle_' + color)
+        p.group-one-block__name.rectangle_dark100.name_font(class ='name-' + namecolor) 
+            span #{info_p1}
+            br 
+            |#{info_p2}
+        
