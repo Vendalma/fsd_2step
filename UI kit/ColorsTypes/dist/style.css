@@ -1,3 +1,24 @@
+@font-face {
+  font-family: "Quicksand";
+  src: url(a27f9195b189b5f7c38e7f4c7671fa8d.woff) format("woff"), url(6eac4fd2c22eac75be17133ef4197a67.ttf) format("truetype"), url(f67d122ca8e83671373d99d40bb1a226.svg) format("svg"); }
+
+@font-face {
+  font-family: "Quicksand";
+  src: url(92c206784d75400581492a15a5970241.woff) format("woff"), url(5185665506f2540e9555252c18de387b.ttf) format("truetype"), url(e0fdadeb9248fd2ff4c42ed6acae9727.svg) format("svg");
+  font-weight: 300; }
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(09072a4a8fa717b65fea394548b12027.woff) format("woff"), url(19063a2c2956e66775390d6fcb485343.ttf) format("truetype"), url(3fc53a59eda67d11414d817115d55b2e.svg) format("svg");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(12e59ec0c8be0b9cd681b5bcd2478370.woff) format("woff"), url(ed9184435eb94567f3ad23dbcb4da01c.ttf) format("truetype"), url(819e590cb3478ffe20b3caafdaaae7b5.svg) format("svg");
+  font-weight: 700;
+  font-style: normal; }
+
 .rectangle_bg-color-num-1 {
   background-color: #1f2041; }
 
@@ -33,38 +54,40 @@
   margin-bottom: 20px; }
 
 .headers_font-h1 {
-  font-family: "Quicksand";
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
   line-height: 30px; }
 
 .headers_font-h2 {
-  font-family: "Quicksand";
   font-style: normal;
   font-weight: bold;
   font-size: 19px;
   line-height: 24px; }
 
 .headers_font-h3 {
-  font-family: "Quicksand";
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
-  line-height: 15px; }
+  line-height: 15px;
+  text-transform: uppercase; }
 
 .headers_font-body {
-  font-family: "Monserrat";
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 24px; }
 
+.Montserrat-font {
+  font-family: "Montserrat"; }
+
+.Quicksand-font {
+  font-family: "Quicksand"; }
+
 .name_font {
   margin: 0;
-  font-family: "Quicksand";
   font-style: normal;
-  font-weight: normal;
+  font-weight: 300;
   font-size: 19px;
   line-height: 29px; }
   .name_font span {
@@ -76,7 +99,8 @@ body {
   flex-direction: row; }
 
 .group-one-block {
-  margin-top: 145px;
+  margin-top: 0 auto;
+  margin-bottom: 0 auto;
   margin-left: 4.98194%; }
   .group-one-block__color-block {
     display: flex;
@@ -84,7 +108,8 @@ body {
 
 .text-block {
   margin-left: 29.65278%;
-  margin-top: 145px;
+  margin-top: 0 auto;
+  margin-bottom: 0 auto;
   width: 403px;
   display: flex;
   flex-direction: row; }

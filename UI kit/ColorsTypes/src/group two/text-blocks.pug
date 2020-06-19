@@ -1,6 +1,6 @@
-mixin header-blocks (name,NM, info)
-    .text-block__headers.rectangle_dark25(class='headers_name-' + name)(class='headers_font-' + NM) #{info}
+mixin header-blocks (name,NM, font_fam, info)
+    .text-block__headers.rectangle_dark25(class='headers_name-' + name)(class='headers_font-' + NM)(class=''+font_fam) #{info}
 
 
-mixin info-header-blocks(num,name,inform)
-    .text-block__inform.rectangle_dark100(class='inform_style-' + num)(class='headers_font-' + name) #{inform}
+mixin info-header-blocks(num,name,font_fam,inform)
+    .text-block__inform.rectangle_dark100(class='inform_style-' + num)(class='headers_font-' + name)(class=''+font_fam) #{inform}

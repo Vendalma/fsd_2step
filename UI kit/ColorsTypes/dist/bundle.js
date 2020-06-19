@@ -86,14 +86,14 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/group one/style/style.scss":
-/*!***************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/group one/style/style.scss ***!
-  \***************************************************************************************************************************************************************************/
+/***/ "./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/style/style.scss":
+/*!*****************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/style/style.scss ***!
+  \*****************************************************************************************************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("throw new Error(\"Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\\nModuleNotFoundError: Module not found: Error: Can't resolve './Montserrat/Montserrat Bold.svg' in 'C:\\\\Users\\\\User\\\\Desktop\\\\work\\\\UI kit\\\\ColorsTypes\\\\src\\\\group one\\\\style'\\n    at C:\\\\Users\\\\User\\\\Desktop\\\\work\\\\UI kit\\\\ColorsTypes\\\\node_modules\\\\webpack\\\\lib\\\\Compilation.js:925:10\\n    at C:\\\\Users\\\\User\\\\Desktop\\\\work\\\\UI kit\\\\ColorsTypes\\\\node_modules\\\\webpack\\\\lib\\\\NormalModuleFactory.js:401:22\\n    at C:\\\\Users\\\\User\\\\Desktop\\\\work\\\\UI kit\\\\ColorsTypes\\\\node_modules\\\\webpack\\\\lib\\\\NormalModuleFactory.js:130:21\\n    at C:\\\\Users\\\\User\\\\Desktop\\\\work\\\\UI kit\\\\ColorsTypes\\\\node_modules\\\\webpack\\\\lib\\\\NormalModuleFactory.js:224:22\\n    at C:\\\\Users\\\\User\\\\Desktop\\\\work\\\\UI kit\\\\ColorsTypes\\\\node_modules\\\\neo-async\\\\async.js:2830:7\\n    at C:\\\\Users\\\\User\\\\Desktop\\\\work\\\\UI kit\\\\ColorsTypes\\\\node_modules\\\\neo-async\\\\async.js:6877:13\\n    at C:\\\\Users\\\\User\\\\Desktop\\\\work\\\\UI kit\\\\ColorsTypes\\\\node_modules\\\\webpack\\\\lib\\\\NormalModuleFactory.js:214:25\\n    at C:\\\\Users\\\\User\\\\Desktop\\\\work\\\\UI kit\\\\ColorsTypes\\\\node_modules\\\\enhanced-resolve\\\\lib\\\\Resolver.js:213:14\\n    at C:\\\\Users\\\\User\\\\Desktop\\\\work\\\\UI kit\\\\ColorsTypes\\\\node_modules\\\\enhanced-resolve\\\\lib\\\\Resolver.js:285:5\\n    at eval (eval at create (C:\\\\Users\\\\User\\\\Desktop\\\\work\\\\UI kit\\\\ColorsTypes\\\\node_modules\\\\tapable\\\\lib\\\\HookCodeFactory.js:33:10), <anonymous>:15:1)\\n    at C:\\\\Users\\\\User\\\\Desktop\\\\work\\\\UI kit\\\\ColorsTypes\\\\node_modules\\\\enhanced-resolve\\\\lib\\\\UnsafeCachePlugin.js:44:7\\n    at C:\\\\Users\\\\User\\\\Desktop\\\\work\\\\UI kit\\\\ColorsTypes\\\\node_modules\\\\enhanced-resolve\\\\lib\\\\Resolver.js:285:5\\n    at eval (eval at create (C:\\\\Users\\\\User\\\\Desktop\\\\work\\\\UI kit\\\\ColorsTypes\\\\node_modules\\\\tapable\\\\lib\\\\HookCodeFactory.js:33:10), <anonymous>:15:1)\\n    at C:\\\\Users\\\\User\\\\Desktop\\\\work\\\\UI kit\\\\ColorsTypes\\\\node_modules\\\\enhanced-resolve\\\\lib\\\\Resolver.js:285:5\\n    at eval (eval at create (C:\\\\Users\\\\User\\\\Desktop\\\\work\\\\UI kit\\\\ColorsTypes\\\\node_modules\\\\tapable\\\\lib\\\\HookCodeFactory.js:33:10), <anonymous>:27:1)\\n    at C:\\\\Users\\\\User\\\\Desktop\\\\work\\\\UI kit\\\\ColorsTypes\\\\node_modules\\\\enhanced-resolve\\\\lib\\\\DescriptionFilePlugin.js:67:43\\n    at C:\\\\Users\\\\User\\\\Desktop\\\\work\\\\UI kit\\\\ColorsTypes\\\\node_modules\\\\enhanced-resolve\\\\lib\\\\Resolver.js:285:5\\n    at eval (eval at create (C:\\\\Users\\\\User\\\\Desktop\\\\work\\\\UI kit\\\\ColorsTypes\\\\node_modules\\\\tapable\\\\lib\\\\HookCodeFactory.js:33:10), <anonymous>:16:1)\\n    at C:\\\\Users\\\\User\\\\Desktop\\\\work\\\\UI kit\\\\ColorsTypes\\\\node_modules\\\\enhanced-resolve\\\\lib\\\\Resolver.js:285:5\\n    at eval (eval at create (C:\\\\Users\\\\User\\\\Desktop\\\\work\\\\UI kit\\\\ColorsTypes\\\\node_modules\\\\tapable\\\\lib\\\\HookCodeFactory.js:33:10), <anonymous>:27:1)\\n    at C:\\\\Users\\\\User\\\\Desktop\\\\work\\\\UI kit\\\\ColorsTypes\\\\node_modules\\\\enhanced-resolve\\\\lib\\\\DescriptionFilePlugin.js:67:43\\n    at C:\\\\Users\\\\User\\\\Desktop\\\\work\\\\UI kit\\\\ColorsTypes\\\\node_modules\\\\enhanced-resolve\\\\lib\\\\Resolver.js:285:5\\n    at eval (eval at create (C:\\\\Users\\\\User\\\\Desktop\\\\work\\\\UI kit\\\\ColorsTypes\\\\node_modules\\\\tapable\\\\lib\\\\HookCodeFactory.js:33:10), <anonymous>:16:1)\\n    at C:\\\\Users\\\\User\\\\Desktop\\\\work\\\\UI kit\\\\ColorsTypes\\\\node_modules\\\\enhanced-resolve\\\\lib\\\\Resolver.js:285:5\\n    at eval (eval at create (C:\\\\Users\\\\User\\\\Desktop\\\\work\\\\UI kit\\\\ColorsTypes\\\\node_modules\\\\tapable\\\\lib\\\\HookCodeFactory.js:33:10), <anonymous>:15:1)\\n    at C:\\\\Users\\\\User\\\\Desktop\\\\work\\\\UI kit\\\\ColorsTypes\\\\node_modules\\\\enhanced-resolve\\\\lib\\\\DirectoryExistsPlugin.js:27:15\\n    at C:\\\\Users\\\\User\\\\Desktop\\\\work\\\\UI kit\\\\ColorsTypes\\\\node_modules\\\\enhanced-resolve\\\\lib\\\\CachedInputFileSystem.js:85:15\\n    at processTicksAndRejections (internal/process/task_queues.js:79:11)\");\n\n//# sourceURL=webpack:///./src/group_one/style/style.scss?./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js");
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/style/style.scss?./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -109,17 +109,6 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
 
 /***/ }),
 
-/***/ "./src/group one/style/style.scss":
-/*!****************************************!*\
-  !*** ./src/group one/style/style.scss ***!
-  \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n            var content = __webpack_require__(/*! !../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./style.scss */ \"./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/group one/style/style.scss\");\n\n            content = content.__esModule ? content.default : content;\n\n            if (typeof content === 'string') {\n              content = [[module.i, content, '']];\n            }\n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = api(content, options);\n\n\n\nmodule.exports = content.locals || {};\n\n//# sourceURL=webpack:///./src/group_one/style/style.scss?");
-
-/***/ }),
-
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -128,7 +117,18 @@ eval("var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _group_one_style_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./group one/style/style.scss */ \"./src/group one/style/style.scss\");\n/* harmony import */ var _group_one_style_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_group_one_style_style_scss__WEBPACK_IMPORTED_MODULE_0__);\n\r\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style/style.scss */ \"./src/style/style.scss\");\n/* harmony import */ var _style_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_style_scss__WEBPACK_IMPORTED_MODULE_0__);\n\r\n\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/style/style.scss":
+/*!******************************!*\
+  !*** ./src/style/style.scss ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var api = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n            var content = __webpack_require__(/*! !../../node_modules/mini-css-extract-plugin/dist/loader.js!../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!./style.scss */ \"./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/style/style.scss\");\n\n            content = content.__esModule ? content.default : content;\n\n            if (typeof content === 'string') {\n              content = [[module.i, content, '']];\n            }\n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = api(content, options);\n\n\n\nmodule.exports = content.locals || {};\n\n//# sourceURL=webpack:///./src/style/style.scss?");
 
 /***/ })
 

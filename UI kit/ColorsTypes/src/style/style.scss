@@ -1,3 +1,5 @@
+@import "./font/fonts.scss";
+
 @import "num-1.scss";
 @import "num-2.scss";
 @import "num-3.scss";
@@ -14,16 +16,18 @@
 @import "./headers_font/headers_font-h2.scss";
 @import "./headers_font/headers_font-h3.scss";
 @import "./headers_font/headers_font-body.scss";
-
+@import "Monserrat-font.scss";
+@import "Quicksand-font.scss";
 @import "./name_font/name_font.scss";
-@import "./fonts/fonts.scss";
+
 body {
   font: 100% Helvetica, sans-serif;
   display: flex;
   flex-direction: row;
 }
 .group-one-block {
-  margin-top: 145px;
+  margin-top: 0 auto;
+  margin-bottom: 0 auto;
   margin-left: 71.74px * 100%/1440px;
 
   &__color-block {
@@ -33,7 +37,8 @@ body {
 }
 .text-block {
   margin-left: 427px * 100%/1440px;
-  margin-top: 145px;
+  margin-top: 0 auto;
+  margin-bottom: 0 auto;
   width: 403px;
   display: flex;
   flex-direction: row;
