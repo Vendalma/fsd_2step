@@ -1,0 +1,16 @@
+include StandartNavBarone/link/link.pug
+doctype html
+html
+    head
+        link(rel='stylesheet' href='style.css')
+    body
+        .nav-bar-one 
+            include StandartNavBarone/logo/logo.pug
+            ul.link-list
+                +list('О нас','dark_theme') 
+                +list('Услуги','light_theme')
+                +list('Вакансии','light_theme')
+                +list('Новости','light_theme')
+                +list('Соглашения','light_theme')
+            include StandartNavBarone/buttons/buttons.pug
+

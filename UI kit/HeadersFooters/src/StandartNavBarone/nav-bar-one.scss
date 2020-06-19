@@ -1,0 +1,13 @@
+@import "./buttons/buttons.scss";
+@import "./link/link.scss";
+@import "./logo/logo.scss";
+
+.nav-bar-one {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  padding-left: 140px * 100%/1440px;
+  padding-right: 140px * 100%/1440px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}

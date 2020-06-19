@@ -1,0 +1,18 @@
+@import "./sign-in/sign-in.scss";
+@import "./sign-up/sign-up.scss";
+
+.buttons-block {
+  display: flex;
+  flex-direction: row;
+  &__button {
+    border-radius: 22px;
+    padding: 9px 20px;
+
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+  }
+}
