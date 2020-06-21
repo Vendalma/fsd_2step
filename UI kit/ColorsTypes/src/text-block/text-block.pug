@@ -1,0 +1,6 @@
+mixin header-blocks (name,NM, info)
+    .text-block__headers.headers(class='headers_name-' + name)(class='headers-inform_font-' + NM) #{info}
+
+
+mixin info-header-blocks(num,name,inform)
+    .text-block__inform(class='inform_style-' + num)(class='headers-inform_font-' + name) #{inform}
