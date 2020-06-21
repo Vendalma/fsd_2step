@@ -14,8 +14,19 @@
 
     margin-right: 20px;
   }
+  &__material-icon {
+    font-family: "Material Icons";
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 20px;
+
+    color: rgba(31, 32, 65, 0.5);
+  }
 }
 .item {
+  display: inline-flex;
   &_dark_theme {
     font-weight: bold;
     color: rgba(31, 32, 65, 0.75);

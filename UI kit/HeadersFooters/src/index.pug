@@ -2,15 +2,19 @@ include StandartNavBarone/link/link.pug
 doctype html
 html
     head
+        meta(charset="UTF-8")
+        title Headers&Footers
         link(rel='stylesheet' href='style.css')
-    body
+    body.page
+        include main-logo/main_logo.pug
         .nav-bar-one 
             include StandartNavBarone/logo/logo.pug
             ul.link-list
-                +list('О нас','dark_theme') 
-                +list('Услуги','light_theme')
-                +list('Вакансии','light_theme')
-                +list('Новости','light_theme')
-                +list('Соглашения','light_theme')
+                +list('О нас','dark_theme','') 
+                +list('Услуги','light_theme','expand_more')
+                +list('Вакансии','light_theme','')
+                +list('Новости','light_theme','')
+                +list('Соглашения','light_theme', 'expand_more')
+                
             include StandartNavBarone/buttons/buttons.pug
 

@@ -2,6 +2,8 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const loader = require("sass-loader");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -33,11 +35,7 @@ module.exports = {
       },
       {
         test: /\.(woff|ttf|svg)$/,
-        use: [
-          {
-            loader: "file-loader",
-          },
-        ],
+        use: ["file-loader"],
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
