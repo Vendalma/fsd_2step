@@ -1,0 +1,29 @@
+include list-headers.pug
+include footer-info-list.pug
+.footer-widgets
+    .footer-widgets__logo-info
+        include logo/logo.pug
+        p.footer-widgets__info Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+    ul.footer-widgets__nav
+        +list-headers('Навигация')
+        +footer-info-list('О нас')
+        +footer-info-list('Новости')
+        +footer-info-list('Служба поддержки')
+        +footer-info-list('Услуги')
+    ul.footer-widgets__about-us
+        +list-headers('О нас')
+        +footer-info-list('О сервисе')
+        +footer-info-list('Наша команда')
+        +footer-info-list('Вакансии')
+        +footer-info-list('Инвесторы')    
+    ul.footer-widgets__support-service
+        +list-headers('Служба поддержки')
+        +footer-info-list('Соглашения')
+        +footer-info-list('Сообщества')
+        +footer-info-list('Связь с нами')
+    ul.footer-widgets__subscription
+        +list-headers('Подписка')
+        +footer-info-list('Получайте специальные предложения и новости сервиса')
+        .footer-widgets__field
+            p.footer-widgets__sub-info Email
+            i.footer-widgets__material-icons arrow_forward

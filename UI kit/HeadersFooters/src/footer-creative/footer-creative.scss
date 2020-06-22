@@ -1,0 +1,15 @@
+@import "./copyright-bar/copyright-bar.scss";
+@import "./logo/logo.scss";
+
+.footer-creative {
+  background-color: #ffffff;
+  margin: auto;
+  margin-top: 40px;
+  width: 768px;
+  padding-top: 120px;
+  padding-bottom: 100px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

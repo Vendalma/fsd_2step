@@ -1,0 +1,106 @@
+@import "./logo/logo.scss";
+
+.footer-widgets {
+  height: 269px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #ffffff;
+  padding-left: 140px;
+  padding-right: 140px;
+  padding-top: 104px;
+
+  &__about-us {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    margin-right: 92px;
+    flex-shrink: 0;
+  }
+  &__field {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    border-radius: 4px;
+
+    padding: 12px 15px 8px;
+  }
+  &__footer-info-list {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 20px;
+    margin-top: 4px;
+    flex-shrink: 0;
+
+    color: rgba(31, 32, 65, 0.5);
+  }
+  &__info {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+
+    color: rgba(31, 32, 65, 0.75);
+  }
+  &__list-headers {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: #1f2041;
+    margin-bottom: 21px;
+  }
+  &__logo-info {
+    width: 260px;
+    margin-right: 40px;
+  }
+  &__material-icons {
+    font-family: "Material Icons";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 24px;
+
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  &__nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-right: 57px;
+    flex-shrink: 0;
+  }
+  &__sub-info {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    margin: 0;
+    color: rgba(31, 32, 65, 0.25);
+  }
+  &__subscription {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 260px;
+  }
+  &__support-service {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-right: 51px;
+    flex-shrink: 0;
+  }
+}

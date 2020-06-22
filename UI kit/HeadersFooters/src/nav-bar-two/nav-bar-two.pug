@@ -1,0 +1,11 @@
+include link/link.pug
+.nav-bar-two 
+            include logo/logo.pug
+            ul.nav-bar-two__link-list.link-list
+                +list('О нас','dark_theme','') 
+                +list('Услуги','light_theme','expand_more')
+                +list('Вакансии','light_theme','')
+                +list('Новости','light_theme','')
+                +list('Соглашения','light_theme', 'expand_more')
+            include user-info/user-info.pug
+                

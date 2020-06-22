@@ -1,0 +1,20 @@
+.user-info {
+  display: inline-flex;
+  align-items: center;
+
+  &__vertical-block {
+    height: 30px;
+    width: 1px;
+    background-color: rgba(31, 32, 65, 0.1);
+
+    margin-right: 20px;
+  }
+  &__user-name {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: rgba(31, 32, 65, 0.5);
+  }
+}
