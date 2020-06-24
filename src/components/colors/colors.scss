@@ -1,0 +1,46 @@
+.color-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-width: 270px;
+  margin-bottom: 20px;
+  font-family: "Quicksand";
+  &__rectangle {
+    min-width: 70px;
+    height: 70px;
+    border-radius: 6px;
+    margin-right: 40px * 100%/ 270px;
+  }
+  &__info {
+    font-style: normal;
+    font-size: 19px;
+    line-height: 29px;
+  }
+  &__name {
+    font-weight: bold;
+  }
+  &__code {
+    font-weight: 100;
+  }
+  &__dark-100 {
+    background-color: $dark-100;
+  }
+  &__dark-75 {
+    background-color: $dark-75;
+  }
+  &__dark-50 {
+    background-color: $dark-50;
+  }
+  &__dark-25 {
+    background-color: $dark-25;
+  }
+  &__dark-05 {
+    background-color: $dark-05;
+  }
+  &__color-one {
+    background-color: $color-one;
+  }
+  &__color-two {
+    background-color: $color-two;
+  }
+}

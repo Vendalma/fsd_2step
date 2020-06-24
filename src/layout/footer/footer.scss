@@ -1,0 +1,48 @@
+.footer {
+  background-color: #ffffff;
+  width: 100%;
+  padding: 100px;
+  padding-left: 140px * 100%/ 1440px;
+  padding-right: 140px * 100%/ 1440px;
+
+  display: flex;
+  flex-direction: row;
+  &__logo-info {
+    max-width: 260px;
+    flex-shrink: 0;
+    margin-right: 40px;
+  }
+  &__logo-colored {
+    margin-bottom: 20px;
+  }
+  &__info {
+    @extend %body-font;
+  }
+  &_list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4px;
+  }
+  &__nav {
+    margin-right: 57px * 100%/ 1440px;
+  }
+  &__about-us {
+    margin-right: 92px * 100%/ 1440px;
+  }
+  &__support-service {
+    margin-right: 51px * 100%/ 1440px;
+  }
+  &__subscription {
+    max-width: 260px;
+    flex-shrink: 0;
+  }
+  &__item_active {
+    @extend %h3-font;
+    margin-bottom: 21px;
+  }
+  &__item_disable {
+    @extend %body-font;
+    color: $dark-50;
+    margin-bottom: 20px;
+  }
+}

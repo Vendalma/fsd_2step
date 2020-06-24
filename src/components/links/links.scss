@@ -1,0 +1,5 @@
+.material-icons {
+  @extend %mat-icons;
+  color: $dark-50;
+  line-height: 20px;
+}

@@ -1,0 +1,15 @@
+extends /layout/uikit/uikit
+include /layout/header/header
+include /layout/footer/footer
+
+block head 
+    title Headers&Footers
+block body
+    .container
+        .container__content
+            +header
+        .container__content
+            +header(true,true)
+        .container_content
+            +footer
+

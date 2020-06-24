@@ -1,0 +1,59 @@
+.header {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 70px;
+  padding: 15px;
+  padding-left: 140px * 100%/ 1440px;
+  padding-right: 120px * 100%/ 1440px;
+  &__logo-colored_s-margin {
+    margin-right: 284.31px * 100%/1170px;
+  }
+  &__logo-colored_lg-margin {
+    margin-right: 466px * 100%/1170px;
+  }
+  &__link-list {
+    display: flex;
+    flex-direction: row;
+  }
+  &__link-item {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 20px;
+    @extend %body-font;
+    &_active {
+      font-weight: bold;
+      color: $dark-75;
+    }
+    &_disable {
+      color: $dark-50;
+    }
+  }
+  &__buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  &__button-block {
+    margin-right: 20px;
+  }
+  &__user-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  &__vert-block {
+    height: 30px;
+    width: 1px;
+    background-color: rgba(31, 32, 65, 0.1);
+    margin-right: 20px;
+  }
+  &__user-name {
+    @extend %body-font;
+    color: $dark-50;
+  }
+}

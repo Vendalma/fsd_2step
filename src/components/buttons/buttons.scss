@@ -1,0 +1,17 @@
+.buttons {
+  padding: 9px 20px 10px;
+  box-sizing: border-box;
+  border-radius: 22px;
+  @extend %h3-font;
+  &_theme-bg-w {
+    border: 2px solid $color-one;
+    background-color: #ffffff;
+    padding: 7px 18px 8px;
+    color: $color-one;
+  }
+  &_theme-bg-lin-gr {
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    color: #ffffff;
+    border: none;
+  }
+}

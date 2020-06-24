@@ -1,0 +1,17 @@
+.uikit {
+  background-color: #ffffff;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-content: space-around;
+
+  padding-top: 67px * 100%/ 1440px;
+  padding-left: 150px * 100%/ 1440px;
+  padding-right: 191px * 100%/ 1440px;
+  padding-bottom: 125px * 100%/ 1440px;
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+}

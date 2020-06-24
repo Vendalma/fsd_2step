@@ -1,0 +1,7 @@
+//-theme:
+    bg-w,
+    bg-lin-gr
+
+mixin button(className,themeName,text)
+    .button-block(class=className + '__button-block')
+        button.buttons(class = 'buttons_theme-' + themeName) #{text}
