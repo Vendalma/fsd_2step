@@ -1,0 +1,27 @@
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+  margin-top: 62px;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.fe {
+  &__block {
+    margin-bottom: 20px;
+  }
+  &__description {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  &__block-name {
+    @extend %h3-font;
+  }
+  &__block-status {
+    @extend %h3-font;
+    color: $dark-50;
+    font-weight: normal;
+  }
+}

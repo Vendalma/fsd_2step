@@ -1,0 +1,21 @@
+extends /layout/head/head
+include  /layout/uikit/uikit
+include /components/field/field
+
+block head 
+    title Form Elements
+    +uikit-color(false)
+    .container
+            .container_content
+                .fe__block
+                    .fe__description
+                        .fe__block-name text field
+                        .fe__block-status default
+                    +field('text','Email').fe__field
+                .fe__block
+                    .fe__description
+                        .fe__block-name text field
+                        .fe__block-status hover / focus
+                    +field('text','This is pretty awesome').fe__field
+            .container_content
+

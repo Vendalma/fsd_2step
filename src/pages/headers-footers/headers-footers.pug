@@ -1,15 +1,18 @@
-extends /layout/uikit/uikit
+extends /layout/head/head
+include /layout/uikit/uikit
 include /layout/header/header
 include /layout/footer/footer
+include /layout/footer-small/footer-small
 
 block head 
     title Headers&Footers
-block body
+    +uikit-color('false')
     .container
         .container__content
             +header
         .container__content
             +header(true,true)
-        .container_content
+        .container__content
             +footer
-
+        .container__content
+            +footer-small

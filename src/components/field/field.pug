@@ -1,0 +1,23 @@
+//- theme for Material Icon: lin-grad
+
+//- type text field: 
+    text = text field
+    sub = subscription
+
+//- material icons theme: 
+    lin-grad-theme
+    
+mixin field(type,placeholder,matIconsTheme, matIconsName) 
+    if type == 'text'
+        form.text-field&attributes(attributes)
+            .text-field__block
+                lable.text-field__lable
+                    input(type="text" placeholder=placeholder).text-field__input
+    else if type == 'sub'
+        form.sub-field&attributes(attributes)
+            .sub-field__block
+                label.sub-field__lable
+                    input(type="email" placeholder=placeholder).sub-field__input
+                    i.sub-field__material-icons(class = 'sub-field__material-icons_' +  matIconsTheme) #{matIconsName}
+
+        

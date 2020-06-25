@@ -9,8 +9,8 @@
     padding: 7px 18px 8px;
     color: $color-one;
   }
-  &_theme-bg-lin-gr {
-    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  &_theme-bg-primary-grad {
+    @extend %primary-grad;
     color: #ffffff;
     border: none;
   }

@@ -1,0 +1,7 @@
+include /components/logo/logo-colored/logo-colored 
+include /components/copyright-bar/copyright-bar 
+
+mixin footer-small
+    footer.footer-s&attributes(attributes)
+        +logo-colored.footer-s__logo-colored
+        +copyright-bar('footer-s__copyright-bar',true)

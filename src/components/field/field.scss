@@ -1,0 +1,65 @@
+.text-field {
+  width: 320px;
+  &__block {
+    border: 1px solid $dark-25;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 15px;
+  }
+
+  &__lable {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 11px;
+    margin-bottom: 11px;
+  }
+  &__input {
+    width: 100%;
+    border: none;
+    @extend %body-font;
+    line-height: 129%;
+    color: $dark-25;
+  }
+}
+.sub-field {
+  width: 260px;
+  &__block {
+    border: 1px solid $dark-25;
+    width: 100%;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    padding: 0px 14px;
+  }
+  &__lable {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 6.6px;
+    margin-bottom: 6.6px;
+  }
+  &__input {
+    border: none;
+    min-width: 181px;
+    @extend %body-font;
+    color: $dark-25;
+  }
+  &__material-icons {
+    @extend %mat-icons;
+    &_lin-grad-theme {
+      @extend %primary-grad;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+  }
+}
