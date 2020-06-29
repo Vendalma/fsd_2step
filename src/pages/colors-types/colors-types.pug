@@ -1,11 +1,11 @@
-extends /layout/head/head
-include  /layout/uikit/uikit
+extends  /layout/uikit/uikit
 include /components/colors/colors
 include /components/sample-text/sample-text
 
-block head 
-    title Colors&Types
-    +uikit-color(false)
+block head
+  title Colors&Types
+
+block body
     .container
         .container__content
             +colors('dark-100','Dark Shade 100%','#1F2041')

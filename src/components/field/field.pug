@@ -6,13 +6,20 @@
 
 //- material icons theme: 
     lin-grad-theme
+
+//- theme type for text-field__block :
+    hover-theme
+    default-theme
     
-mixin field(type,placeholder,matIconsTheme, matIconsName) 
-    if type == 'text'
-        form.text-field&attributes(attributes)
-            .text-field__block
-                lable.text-field__lable
-                    input(type="text" placeholder=placeholder).text-field__input
+mixin field(type,placeholder,themeType,matIconsTheme, matIconsName) 
+    if type == 'text' && themeType== 'default-theme'
+        form.text-field.text-field_default-theme&attributes(attributes)
+            lable.text-field__lable
+                input(type="text" placeholder=placeholder).text-field__input.text-field_default-theme__input
+    if type == 'text' && themeType== 'hover-theme'
+        form.text-field.text-field_hover-theme&attributes(attributes)
+            lable.text-field__lable
+                input(type="text" placeholder=placeholder).text-field__input.text-field_hover-theme__input
     else if type == 'sub'
         form.sub-field&attributes(attributes)
             .sub-field__block

@@ -1,35 +1,74 @@
+// text field
+
 .text-field {
   width: 320px;
-  &__block {
-    border: 1px solid $dark-25;
+  &__input {
     border-radius: 4px;
     background-color: #ffffff;
     box-sizing: border-box;
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    @extend %body-font;
+    height: 44px;
     padding: 0px 15px;
   }
-
   &__lable {
     width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    margin-top: 11px;
-    margin-bottom: 11px;
-  }
-  &__input {
-    width: 100%;
-    border: none;
-    @extend %body-font;
-    line-height: 129%;
-    color: $dark-25;
+    justify-content: center;
   }
 }
+
+//text-field-default-theme
+.text-field_default-theme {
+  &__input {
+    border: 1px solid $dark-25;
+    line-height: 129%;
+    color: $dark-25;
+    flex-shrink: 0;
+  }
+}
+
+//text-field-hover-theme
+.text-field_hover-theme {
+  &__input {
+    border: 1px solid $dark-50;
+    flex-shrink: 0;
+    color: rgba(31, 32, 65, 0.75);
+  }
+}
+input.text-field_hover-theme__input::placeholder {
+  color: $dark-75;
+}
+input.text-field_hover-theme__input::-moz-placeholder {
+  color: $dark-75;
+  opacity: 1;
+}
+.text-field__input:focus {
+  border: 1px solid $dark-50;
+  color: $dark-75;
+
+  &::placeholder {
+    color: $dark-75;
+  }
+  &::-moz-placeholder {
+    color: $dark-75;
+  }
+}
+.text-field__input:hover {
+  border: 1px solid $dark-50;
+  color: $dark-75;
+  &::placeholder {
+    color: $dark-75;
+  }
+  &::-moz-placeholder {
+    color: $dark-75;
+  }
+}
+
+// subscription field
+
 .sub-field {
   width: 260px;
   &__block {
@@ -48,12 +87,7 @@
     margin-top: 6.6px;
     margin-bottom: 6.6px;
   }
-  &__input {
-    border: none;
-    min-width: 181px;
-    @extend %body-font;
-    color: $dark-25;
-  }
+
   &__material-icons {
     @extend %mat-icons;
     &_lin-grad-theme {

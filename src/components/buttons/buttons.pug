@@ -1,7 +1,10 @@
 //-theme:
+    default-border,
+    color-no-border,
+    no-border,
     bg-w,
     bg-primary-grad
 
-mixin button(className,themeName,text)
-    .button-block(class=className + '__button-block')
-        button.buttons(class = 'buttons_theme-' + themeName) #{text}
+mixin button(className,themeName,text, modificate)
+    .button-block(class=className + '__button-block ' + className + '__button-block_' +  modificate)
+        button.buttons(type='button' class = 'buttons_theme-' + themeName) #{text}

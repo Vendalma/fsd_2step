@@ -1,0 +1,27 @@
+extends  /layout/uikit/uikit
+include /components/field/field
+include /components/dropdown/dropdown
+
+
+block head
+  title Form elements
+
+block body
+    .container
+        .container_content
+            .fe__block
+                .fe__description
+                    .fe__block-name text field
+                    .fe__block-status default
+                +field('text','Email','default-theme').fe__field
+            .fe__block
+                .fe__description
+                    .fe__block-name text field
+                    .fe__block-status hover / focus
+                +field('text','This is pretty awesome','hover-theme').fe__field
+            .fe__block
+                .fe__description
+                    .fe__block-name dropdown
+                    .fe__block-status default
+                +dropdown('Сколько гостей', 'Взрослые','Дети','Младенцы')
+        .container_content

@@ -106,6 +106,12 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name].css",
     }),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery'",
+      "window.$": "jquery",
+    }),
     ...createHtmlWebpackPlugins(pages_folder),
   ],
 };
