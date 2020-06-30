@@ -10,6 +10,12 @@
     @extend %body-font;
     height: 44px;
     padding: 0px 15px;
+    &_mask {
+      border: 1px solid $dark-25;
+      line-height: 129%;
+      color: $dark-25;
+      flex-shrink: 0;
+    }
   }
   &__lable {
     width: 100%;

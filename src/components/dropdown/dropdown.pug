@@ -3,38 +3,36 @@ include ../buttons/buttons
 mixin dropdown(inform,item1, item2, item3)
     form&attributes(attributes)
         .dropdown   
-            .dropdown__select-container.dropdown__select-container-default
+            .dropdown__select-container.dropdown__select-container_default
                 span.dropdown__placeholder.dropdown__placeholder_default #{inform}
-                i.dropdown__material_icons.dropdown__material_icons-default expand_more
+                i.dropdown__material-icons.dropdown__material-icons_default expand_more
             .dropdown__select-list.dropdown__select-list_default
                 .dropdown__item.dropdown__item_one
                     .dropdown__item-name #{item1}
                     .dropdown__item-count
-                        .item-count__min(class='data-item=1')
+                        .item-count__min.item-count__min_hidden
                             +button('dropdown','default-border', '-')
-                        .item-count__score(class='data-item=1') 0
-                        .item-count__plus(class='data-item=1')
+                        .item-count__score 0
+                        .item-count__plus
                             +button('dropdown','default-border', '+')
                 .dropdown__item.dropdown__item_two
                     .dropdown__item-name #{item2}
                     .dropdown__item-count
-                        .item-count__min(class='data-item=2')
+                        .item-count__min.item-count__min_hidden
                             +button('dropdown','default-border', '-')
-                        .item-count__score(class='data-item=2') 0
-                        .item-count__plus(class='data-item=2')
+                        .item-count__score 0
+                        .item-count__plus
                             +button('dropdown','default-border', '+')
                 .dropdown__item.dropdown__item_three
                     .dropdown__item-name #{item3}
                     .dropdown__item-count
-                        .item-count__min(class='data-item=3')
+                        .item-count__min.item-count__min_hidden
                             +button('dropdown','default-border', '-')
-                        .item-count__score(class='data-item=3') 0
-                        .item-count__plus(class='data-item=3')
+                        .item-count__score 0
+                        .item-count__plus
                             +button('dropdown','default-border', '+')
                 .dropdown__buttons
                     +button('dropdown-clear','no-border','Очистить','hidden')
                     +button('dropdown-apply','color-no-border','Применить')
-
-
 
                     

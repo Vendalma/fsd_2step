@@ -26,5 +26,8 @@ mixin field(type,placeholder,themeType,matIconsTheme, matIconsName)
                 label.sub-field__lable
                     input(type="email" placeholder=placeholder).sub-field__input
                     i.sub-field__material-icons(class = 'sub-field__material-icons_' +  matIconsTheme) #{matIconsName}
-
-        
+    else if type == 'mask'
+        form.text-field&attributes(attributes)
+            .text-field__block
+                label.text-field__lable
+                    input(type="text" placeholder=placeholder).text-field__input.text-field__input_mask
