@@ -2,6 +2,8 @@ extends  /layout/uikit/uikit
 include /components/field/field
 include /components/dropdown/dropdown
 include /components/dropdown-date/dropdown-date
+include /components/checkbox/checkbox
+include /components/radio/radio
 
 
 block head
@@ -48,3 +50,14 @@ block body
                     .fe__block-name subscription text field
                 +field('sub','Email').fe__field
         .container_content
+            .fe__block.fe__block_margin-m
+                .fe__description
+                    .fe__block-name checkbox buttons
+                +checkbox('smoking', 'Можно курить').fe__checkbox
+                +checkbox('pets', 'Можно с питомцами','true').fe__checkbox
+                +checkbox('guests', 'Можно пригласить гостей (до 10 человек)','true').fe__checkbox
+            .fe__block
+                .fe__description
+                    .fe__block-name radio buttons
+                +radio('gender1','gender', 'male', 'Мужчина').fe__radio
+                +radio('gender2','gender', 'male', 'Женщина').fe__radio

@@ -1,0 +1,6 @@
+mixin radio(radioID,name,value,text)
+    .radio&attributes(attributes)
+        label(for=radioID class='radio__label')
+            input(type="radio" name=name value=value id=radioID class='radio__input')
+            span.radio__fake
+            span.radio__text #{text}
