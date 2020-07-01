@@ -1,10 +1,10 @@
 .datepicker--cell-day.-other-month-,
 .datepicker--cell-year.-other-decade- {
-  color: #dedede;
+  color: #fff;
 }
 .datepicker--cell-day.-other-month-:hover,
 .datepicker--cell-year.-other-decade-:hover {
-  color: #fff;
+  color: #dedede;
   border: none;
   @extend %primary-grad;
   font-weight: bold;
@@ -28,7 +28,7 @@
 }
 .-selected-.-focus-.datepicker--cell-day.-other-month-,
 .-selected-.-focus-.datepicker--cell-year.-other-decade- {
-  color: #fff;
+  color: #aeaeae;
   border: none;
   @extend %primary-grad;
   font-weight: bold;
@@ -136,7 +136,7 @@
   border-radius: 4px;
 }
 .datepicker--cell.-selected- {
-  color: #aeaeae;
+  color: #fff;
   border: none;
   @extend %primary-grad;
   font-weight: bold;
@@ -147,6 +147,7 @@
   @extend %primary-grad;
 }
 .datepicker--cell.-selected-.-focus- {
+  color: #aeaeae;
   @extend %primary-grad;
 }
 .datepicker--cell:empty {
@@ -250,13 +251,13 @@
       Datepicker
      ------------------------------------------------- */
 .datepickers-container {
-  /*position: absolute;*/
+  position: absolute;
   left: 0;
   top: 0;
 }
 @media print {
   .datepickers-container {
-    /* display: none;*/
+    display: none;
   }
 }
 
@@ -270,9 +271,9 @@
   width: 320px;
   height: 369px;
   padding: 16px;
-  /*position: absolute;
+  position: absolute;
   left: -100000px;
-  opacity: 0;*/
+  opacity: 0;
   transition: opacity 0.3s ease, left 0s 0.3s, -webkit-transform 0.3s ease;
   transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s;
   transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s,
@@ -465,11 +466,17 @@
 
 .datepicker--nav-action {
   width: 32px;
-  border-radius: 4px;
+  border-radius: 22px;
+
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+.material--icon {
+  @extend %mat-icons;
+  flex-shrink: 0;
+  color: $color-one;
 }
 .datepicker--nav-action:hover {
   background: #f0f0f0;
@@ -509,26 +516,30 @@
   display: -ms-flexbox;
   display: flex;
   padding: 4px;
-  border-top: 1px solid #efefef;
 }
 
 .datepicker--button {
-  color: #4eb5e6;
+  color: $dark-50;
+  @extend %h3-font;
   cursor: pointer;
   border-radius: 4px;
   -webkit-flex: 1;
   -ms-flex: 1;
-  flex: 1;
+  flex: 0;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: flex;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
-  justify-content: center;
+  justify-content: space-between;
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
   height: 32px;
+  &-color_one {
+    color: $color-one;
+    margin-left: 124px;
+  }
 }
 .datepicker--button:hover {
   color: #4a4a4a;

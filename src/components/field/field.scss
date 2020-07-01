@@ -1,5 +1,4 @@
 // text field
-
 .text-field {
   width: 320px;
   &__input {
@@ -10,11 +9,30 @@
     @extend %body-font;
     height: 44px;
     padding: 0px 15px;
+
+    border: 1px solid $dark-25;
+    line-height: 129%;
+    color: $dark-25;
+    flex-shrink: 0;
+    &::-webkit-input-placeholder {
+      color: $dark-25;
+    }
     &_mask {
       border: 1px solid $dark-25;
       line-height: 129%;
       color: $dark-25;
       flex-shrink: 0;
+    }
+    &_sub {
+      width: 260px;
+    }
+  }
+  &__material-icons {
+    @extend %mat-icons;
+    &_lin-grad-theme {
+      @extend %primary-grad;
+      -webkit-background-clip: text;
+      color: transparent;
     }
   }
   &__lable {
@@ -22,17 +40,6 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-  }
-}
-
-//text-field-default-theme
-.text-field_default-theme {
-  &__input {
-    border: 1px solid $dark-25;
-    line-height: 129%;
-    color: $dark-25;
-    flex-shrink: 0;
   }
 }
 
@@ -41,65 +48,43 @@
   &__input {
     border: 1px solid $dark-50;
     flex-shrink: 0;
-    color: rgba(31, 32, 65, 0.75);
+
+    &::placeholder {
+      color: $dark-75;
+    }
+    &::-moz-placeholder {
+      color: $dark-75;
+      opacity: 1;
+    }
   }
 }
-input.text-field_hover-theme__input::placeholder {
-  color: $dark-75;
-}
-input.text-field_hover-theme__input::-moz-placeholder {
-  color: $dark-75;
-  opacity: 1;
-}
+
 .text-field__input:focus {
   border: 1px solid $dark-50;
   color: $dark-75;
+  outline: none;
 
   &::placeholder {
     color: $dark-75;
   }
+  &::-webkit-input-placeholder {
+    color: $dark-75;
+  }
   &::-moz-placeholder {
     color: $dark-75;
+    opacity: 1;
   }
 }
 .text-field__input:hover {
   border: 1px solid $dark-50;
-  color: $dark-75;
   &::placeholder {
+    color: $dark-75;
+  }
+  &::-webkit-input-placeholder {
     color: $dark-75;
   }
   &::-moz-placeholder {
     color: $dark-75;
-  }
-}
-
-// subscription field
-
-.sub-field {
-  width: 260px;
-  &__block {
-    border: 1px solid $dark-25;
-    width: 100%;
-    border-radius: 4px;
-    background-color: #ffffff;
-    box-sizing: border-box;
-    padding: 0px 14px;
-  }
-  &__lable {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 6.6px;
-    margin-bottom: 6.6px;
-  }
-
-  &__material-icons {
-    @extend %mat-icons;
-    &_lin-grad-theme {
-      @extend %primary-grad;
-      -webkit-background-clip: text;
-      color: transparent;
-    }
+    opacity: 1;
   }
 }

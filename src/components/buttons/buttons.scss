@@ -2,6 +2,7 @@
   padding: 9px 20px 10px;
   box-sizing: border-box;
   border-radius: 22px;
+  outline: none;
   @extend %h3-font;
   &_theme-default-border {
     width: 30px;

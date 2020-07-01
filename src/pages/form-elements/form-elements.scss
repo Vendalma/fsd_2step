@@ -10,7 +10,13 @@
 .fe {
   &__block {
     width: 320px;
-    margin-bottom: 20px;
+
+    &_margin-s {
+      margin-bottom: 20px;
+    }
+    &_margin-m {
+      margin-bottom: 40px;
+    }
     &_row {
       display: flex;
       flex-direction: row;
