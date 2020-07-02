@@ -1,0 +1,7 @@
+mixin like_button(count, active=false)
+    if active
+        button.like-button.like-button_active&attributes(attributes)
+            span.like-button__count #{count}
+    else 
+        button.like-button&attributes(attributes)
+            span.like-button__count #{count}

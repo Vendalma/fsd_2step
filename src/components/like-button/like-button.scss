@@ -1,0 +1,41 @@
+.like-button {
+  width: 40px;
+  height: 20px;
+  background-color: #fff;
+  border: 1px solid $dark-25;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 3px 5px;
+  cursor: pointer;
+  outline: none;
+
+  position: relative;
+  @extend %body-font;
+  color: $dark-25;
+  font-size: 10px;
+  line-height: 12px;
+
+  &::before {
+    content: "favorite_border";
+    @extend %mat-icons;
+    font-size: 10px;
+    line-height: 9px;
+    color: $dark-25;
+
+    margin-right: 7px;
+    padding-top: 0.5px;
+  }
+
+  &_active {
+    border: 1px solid $color-one;
+    @extend %primary-grad;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    &::before {
+      content: "favorite";
+    }
+  }
+}

@@ -33,7 +33,12 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 8px;
+    &_margin-s {
+      margin-bottom: 5px;
+    }
+    &_margin-m {
+      margin-bottom: 16px;
+    }
   }
   &__block-name {
     @extend %h3-font;
@@ -42,5 +47,8 @@
     @extend %h3-font;
     color: $dark-50;
     font-weight: normal;
+  }
+  &__like-button {
+    margin-right: 10px;
   }
 }

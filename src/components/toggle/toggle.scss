@@ -1,0 +1,47 @@
+.toggle {
+  position: relative;
+  margin-bottom: 6px;
+  &__label {
+    cursor: pointer;
+    height: 24px;
+  }
+  &__input {
+    display: none;
+  }
+  &__control {
+    width: 40px;
+    height: 20px;
+    display: inline-block;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+
+    background: #fff;
+    border: 1px solid $dark-25;
+    transition: 0.4s;
+    border-radius: 10px;
+    &::before {
+      position: absolute;
+      left: 4px;
+      top: 4px;
+      bottom: 4px;
+      content: "";
+      width: 12px;
+      height: 12px;
+      background: $dark-25;
+      border-radius: 50%;
+      transition: 0.4s;
+    }
+  }
+  &__text {
+    @extend %body-font;
+    margin-left: 50px;
+  }
+}
+.toggle__input:checked + .toggle__control {
+  border: 1px solid $color-one;
+}
+.toggle__input:checked + .toggle__control::before {
+  @extend %primary-grad;
+  transform: translateX(20px);
+}

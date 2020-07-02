@@ -1,0 +1,11 @@
+mixin toggle(text,checked=false)
+    form.toggle&attributes(attributes)
+        label( class='toggle__label')
+            if checked
+                input(type="checkbox" class='toggle__input' checked)
+                span.toggle__control
+                span.toggle__text #{text}
+            else 
+                input(type="checkbox" class='toggle__input')
+                span.toggle__control
+                span.toggle__text #{text}
