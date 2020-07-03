@@ -3,6 +3,8 @@
 .dropdown-date {
   width: 150px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
 
   &__input {
     width: 100%;
@@ -14,8 +16,13 @@
     background: #ffffff;
     border: 1px solid $dark-25;
     border-radius: 4px;
+    flex-shrink: 0;
+
+    margin-right: 20px;
+
     &_filter {
       width: 266px;
+      flex-shrink: 0;
     }
   }
 }

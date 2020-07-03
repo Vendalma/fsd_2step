@@ -1,10 +1,13 @@
 //-theme:
-    default-border,
-    color-no-border,
-    no-border,
-    bg-w,
     bg-primary-grad
+    bg-primary-grad_hover
+    border-primary-grad
+    border-primary-grad_hover
+    only-text-colored
+    only-text-default
+    long
 
-mixin button(className,themeName,text, modificate)
-    .button-block(class=className + '__button-block ' + className + '__button-block_' +  modificate)
-        button.buttons(type='button' class = 'buttons_theme-' + themeName) #{text}
+
+mixin button(themeName,text)
+    form.form&attributes(attributes)
+        button.button(type='button' class = 'button_theme-' + themeName) #{text}

@@ -6,6 +6,8 @@ include /components/checkbox/checkbox
 include /components/radio/radio
 include /components/toggle/toggle
 include /components/like-button/like-button
+include /components/rate button/rate button
+include /components/range slider/range slider
 
 block head
   title Form elements
@@ -27,7 +29,7 @@ block body
                 .fe__description.fe__description_margin-s
                     .fe__block-name dropdown
                     .fe__block-status default
-                +dropdown('Сколько гостей', 'Взрослые','Дети','Младенцы').fe__dropdown
+                //-+dropdown('Сколько гостей', 'Взрослые','Дети','Младенцы').fe__dropdown
             .fe__block.fe__block_margin-m
                 .fe__description.fe__description_margin-s
                     .fe__block-name masked text field
@@ -37,15 +39,15 @@ block body
                 .fe__block-wrapper
                     .fe__description.fe__description_margin-s
                         .fe__block-name date dropdown
-                    +dropdown_date('ДД.ММ.ГГГГ').fe__dropdown
-                .fe__block-wrapper   
+                    +dropdown_date('ДД.ММ.ГГГГ',false,'19.08.2019').fe__dropdown
+                //-.fe__block-wrapper   
                     .fe__description.fe__description_margin-s
                         .fe__block-name date dropdown
                     +dropdown_date('19.08.2019').fe__dropdown
             .fe__block.fe__block_margin-m
                 .fe__description.fe__description_margin-s
                     .fe__block-name filter date dropdown
-                +dropdown_date('19 авг - 23 авг','true').fe__dropdown
+                +dropdown_date('19 авг - 23 авг',true).fe__dropdown
             .fe__block
                 .fe__description.fe__description_margin-s
                     .fe__block-name subscription text field
@@ -68,9 +70,32 @@ block body
                     .fe__block-name toggle
                 +toggle('Получать спецпредложения', true).fe__toggle
                 +toggle('Получать спецпредложения').fe__toggle
-            .fe__block
+            .fe__block.fe__block_margin-m
                 .fe__description.fe__description_margin-m
                     .fe__block-name like button
                 .fe__block_row
                     +like_button('2').fe__like-button
                     +like_button('12',true).fe__like-button
+            .fe__block
+                .fe__description.fe__description_margin-m
+                    .fe__block-name rate button
+                .fe__block_row
+                    +rateButton(4).fe__rate-button
+                    +rateButton(5).fe__rate-button
+        .container_content
+            .fe__block.fe__block_margin-m
+                +range_slider('range slider')
+            .fe__block
+                .fe__description.fe__description_margin-m
+                    .fe__block-name buttons
+                .fe__block_row
+                    +button('bg-primary-grad', 'click me').fe__button
+                    +button('bg-primary-grad_hover', 'click me').fe__button
+                .fe__block_row
+                    +button('border-primary-grad', 'click me').fe__button
+                    +button('border-primary-grad_hover', 'click me').fe__button
+                .fe__block_row
+                    +button('only-text-colored', 'click me').fe__button
+                    +button('only-text-default', 'click me').fe__button
+                .fe__block_row
+                    +button('long', 'перейти к оплате').fe__button

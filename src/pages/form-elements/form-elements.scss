@@ -1,13 +1,14 @@
 .container {
   width: 1160px;
-  margin: auto;
   margin-top: 62px;
-  padding-left: 150px * 100%/ 1440px;
-  padding-right: 191px * 100%/ 1440px;
-  box-sizing: border-box;
+  padding-left: 150px;
+  padding-right: 191px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  &_content {
+    flex-shrink: 0;
+  }
 }
 
 .fe {
@@ -50,5 +51,13 @@
   }
   &__like-button {
     margin-right: 10px;
+  }
+  &__rate-button {
+    margin-right: 20px;
+  }
+  &__button {
+    margin-right: 20px;
+    margin-bottom: 30px;
+    flex-shrink: 0;
   }
 }

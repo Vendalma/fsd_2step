@@ -1,8 +1,8 @@
 import "air-datepicker/dist/js/datepicker";
-//import "../../library/air-datapicker/air-datapicker";
 import "./dropdown-date.scss";
 
 import "air-datepicker";
+
 $(".dropdown-date__input").datepicker({
   navTitles: {
     days: "MM yyyy",
@@ -11,8 +11,40 @@ $(".dropdown-date__input").datepicker({
   nextHtml: '<i class="material--icon">arrow_forward</i>',
   clearButton: true,
 });
+$(function () {
+  let $start = $("#start"),
+    $end = $("#end");
+
+  let picker = $("#start")
+    .datepicker({
+      range: true,
+      multipleDatesSeparator: "-",
+      language: "en",
+      navTitles: {
+        days: "MM yyyy",
+      },
+      keyboardNav: false,
+      clearButton: true,
+      prevHtml: '<i class="material--icon">arrow_back</i>',
+      nextHtml: '<i class="material--icon">arrow_forward</i>',
+      classes: "abs",
+
+      onSelect: function (fd, d, picker) {
+        $("#start").val(fd.split("-")[0]);
+        $("#end").val(fd.split("-")[1]);
+      },
+      onHide: function () {
+        /* console.log(this);*/
+      },
+    })
+    .data("datepicker");
+
+  $("#end").on("click", () => {
+    picker.show();
+  });
+});
 let input_filter = document.querySelector(".dropdown-date__input_filter");
-input_filter.setAttribute("data-multiple-dates-separator", " - ");
+
 $(".dropdown-date__input_filter").datepicker({
   navTitles: {
     days: "MM yyyy",
@@ -21,6 +53,23 @@ $(".dropdown-date__input_filter").datepicker({
   nextHtml: '<i class="material--icon">arrow_forward</i>',
   clearButton: true,
   range: true,
+  multipleDatesSeparator: "-",
+  monthsShort: [
+    "янв",
+    "фев",
+    "мар",
+    "апр",
+    "май",
+    "июн",
+    "июл",
+    "авг",
+    "сен",
+    "окт",
+    "ноя",
+    "дек",
+  ],
+  dateFormat: "dd M",
+  keyboardNav: false,
 });
 
 let dataPicker = document.querySelectorAll(".datepicker--buttons");

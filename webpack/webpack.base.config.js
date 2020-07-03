@@ -70,6 +70,10 @@ module.exports = {
         },
       },
       {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+      {
         test: /\.(woff|ttf|svg)$/,
         exclude: [images_folder],
         loader: "file-loader",
