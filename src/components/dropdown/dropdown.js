@@ -1,7 +1,7 @@
 import "./dropdown.scss";
 import "../buttons/buttons";
 
-let select_container = document.querySelector(".dropdown__select-container");
+/*let select_container = document.querySelector(".dropdown__select-container");
 let placeholder = document.querySelector(".dropdown__placeholder");
 let material_icon = document.querySelector(".dropdown__material-icons");
 let select_list = document.querySelector(".dropdown__select-list");
@@ -80,7 +80,7 @@ apply_button.addEventListener("click", function () {
   }
 
   return false;
-}*/
+}
 
 function checkCountScore(arr) {
   for (let elem of arr) {
@@ -105,4 +105,4 @@ function letCorrectGuests(array) {
   } else if (sum >= 5 && sum <= 20) {
     placeholder.innerHTML = sum + " гостей";
   }
-}
+}*/

@@ -40,6 +40,10 @@
     &_margin-m {
       margin-bottom: 16px;
     }
+    &_size-s {
+      margin-left: 33px;
+      width: 200px;
+    }
   }
   &__block-name {
     @extend %h3-font;

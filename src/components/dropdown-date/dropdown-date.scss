@@ -6,6 +6,10 @@
   display: flex;
   flex-direction: row;
 
+  &__label {
+    position: relative;
+  }
+
   &__input {
     width: 100%;
     height: 44px;
@@ -24,5 +28,57 @@
       width: 266px;
       flex-shrink: 0;
     }
+  }
+  &__material-icon {
+    &_margin-m {
+      top: 14.5px;
+      left: 225px;
+    }
+    &_margin-s {
+      top: 14.5px;
+      left: 109px;
+    }
+  }
+  &_row {
+    display: flex;
+    flex-direction: row;
+  }
+  &_margin-s {
+    margin-right: 20px;
+  }
+}
+.dropdown-date__label > .dropdown-date__material-icon {
+  @extend %mat-icons;
+  position: absolute;
+}
+
+.dropdown-date__input:focus {
+  border: 1px solid $dark-50;
+  color: $dark-75;
+  outline: none;
+
+  &::placeholder {
+    color: $dark-75;
+  }
+  &::-webkit-input-placeholder {
+    color: $dark-75;
+  }
+  &::-moz-placeholder {
+    color: $dark-75;
+    opacity: 1;
+  }
+}
+
+.dropdown-date__input:hover {
+  border: 1px solid $dark-50;
+  &::placeholder {
+    color: $dark-75;
+  }
+  &::-webkit-input-placeholder {
+    color: $dark-75;
+  }
+  &::-moz-placeholder {
+    color: $dark-75;
+    opacity: 1;
   }
 }

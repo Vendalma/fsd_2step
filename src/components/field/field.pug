@@ -9,7 +9,9 @@
 
 //- theme type for text-field__block :
     hover-theme
- 
+
+include /components/buttons/buttons
+
     
 mixin field(type,placeholder,matIconsTheme, matIconsName) 
     if type == 'text'
@@ -22,9 +24,9 @@ mixin field(type,placeholder,matIconsTheme, matIconsName)
                 input(type="text" placeholder=placeholder).text-field__input.text-field_hover-theme__input
     else if type == 'sub'
         form.text-field&attributes(attributes)
-            label.text-field__lable
+            label.text-field__lable.text-field__lable_sub
                 input(type="email" placeholder=placeholder).text-field__input.text-field__input_sub
-                i.text-field__material-icons(class = 'text-field__material-icons_' +  matIconsTheme) #{matIconsName}
+                +button('only-text-colored','arrow_forward','text-field__material-icon')
     else if type == 'mask'
         form.text-field&attributes(attributes)
             .text-field__block

@@ -9,8 +9,8 @@
     box-sizing: border-box;
     padding: 12px 14px 12px;
     display: inline-flex;
-    justify-content: space-between;
     align-items: center;
+    position: relative;
 
     &_default {
       border: 1px solid $dark-25;
@@ -98,6 +98,11 @@
   }
 }
 
+.dropdown__item-count .form .item-count__button {
+  border: 1px solid $dark-25;
+  border-radius: 22px;
+  @extend %body-font;
+}
 .item-count__score {
   margin-left: 12px;
   margin-right: 12px;
@@ -106,4 +111,11 @@
   &_hidden {
     opacity: 0.38;
   }
+}
+
+.dropdown__select-container > .dropdown__material-icons {
+  @extend %mat-icons;
+  position: absolute;
+  top: 14.5px;
+  left: 279px;
 }

@@ -27,20 +27,23 @@
       width: 260px;
     }
   }
-  &__material-icons {
-    @extend %mat-icons;
-    &_lin-grad-theme {
-      @extend %primary-grad;
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-  }
   &__lable {
     width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
+    &_sub {
+      position: relative;
+    }
   }
+}
+.text-field__lable > .text-field__material-icon {
+  flex-shrink: 0;
+  @extend %mat-icons;
+
+  position: absolute;
+  top: 14.5px;
+  left: 218px;
 }
 
 //text-field-hover-theme
