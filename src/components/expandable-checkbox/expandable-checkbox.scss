@@ -1,0 +1,31 @@
+.expandable-checkbox {
+  width: 266px;
+  box-sizing: border-box;
+  position: relative;
+  cursor: pointer;
+  &__name {
+    height: 44px;
+    @extend %h3-font;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  &__material-icon_font_open {
+    transform: rotate(180deg);
+  }
+  &__items {
+    height: 173px;
+  }
+  &__items_hidden {
+    display: none;
+  }
+}
+
+.expandable-checkbox__material-icon > .expandable-checkbox__material-icon_font {
+  @extend %mat-icons;
+  color: $dark-50;
+  position: absolute;
+  top: 14.5px;
+  left: 226px;
+}

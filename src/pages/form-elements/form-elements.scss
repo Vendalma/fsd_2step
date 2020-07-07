@@ -22,7 +22,10 @@
     &_margin-m {
       margin-bottom: 40px;
     }
-    &_margin-top {
+    &_margin-top-s {
+      margin-top: 20px;
+    }
+    &_margin-top-lg {
       margin-top: 100px;
     }
     &_row {
@@ -69,6 +72,9 @@
     flex-shrink: 0;
   }
   &__dropdown-room {
+    margin-bottom: 20px;
+  }
+  &__expandable-checkbox {
     margin-bottom: 20px;
   }
 }

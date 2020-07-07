@@ -10,6 +10,7 @@ include /components/rate button/rate button
 include /components/range slider/range slider
 include /components/buttons/buttons
 include /components/pagination/pagination
+include /components/expandable-checkbox/expandable-checkbox
 
 block head
   title Form elements
@@ -102,12 +103,16 @@ block body
                     .fe__block-name pagination
                 +pagination.fe__pagination
         .container_content
-            .fe__block.fe__block_margin-top
+            .fe__block.fe__block_margin-top-lg
                 +dropdown(false).fe__dropdown-room
                 +dropdown(false).fe__dropdown-room
         .container_content
-            .fe__block.fe__block_margin-top
+            .fe__block.fe__block_margin-top-lg
                 +dropdown.fe__dropdown
         .container_content
-            .fe__block.fe__block_margin-top
+            .fe__block.fe__block_margin-top-lg
                 +dropdown.fe__dropdown
+        .container_content
+            .fe__block.fe__block_margin-top-s
+                +expandable-checkbox('expandable checkbox list').fe__expandable-checkbox
+                +expandable-checkbox('expandable checkbox list', true).fe__expandable-checkbox

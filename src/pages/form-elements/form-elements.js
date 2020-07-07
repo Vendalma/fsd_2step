@@ -11,5 +11,6 @@ import "@components/rate button/rate button";
 import "@components/range slider/range slider";
 import "@components/buttons/buttons";
 import "@components/pagination/pagination";
+import "@components/expandable-checkbox/expandable-checkbox";
 
 import "@/main.scss";

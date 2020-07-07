@@ -1,0 +1,26 @@
+include /components/checkbox/checkbox
+include /components/buttons/buttons
+
+mixin expandable-checkbox(text, open= false)
+    if open
+        .expandable-checkbox&attributes(attributes)
+            .expandable-checkbox__name #{text} 
+                +button('only-text-default','expand_more','expandable-checkbox__material-icon_font expandable-checkbox__material-icon_font_open').expandable-checkbox__material-icon
+            .expandable-checkbox__items
+                +checkbox('breakfast', 'Завтрак').expandable-checkbox__item
+                +checkbox('desk', 'Письменный стол', true).expandable-checkbox__item
+                +checkbox('feeding chair', 'Стул для кормления', true).expandable-checkbox__item
+                +checkbox('crib', 'Кроватка', true).expandable-checkbox__item
+                +checkbox('tv', 'Телевизор').expandable-checkbox__item
+                +checkbox('shampoo', 'Шампунь').expandable-checkbox__item
+    else 
+        .expandable-checkbox&attributes(attributes)
+            .expandable-checkbox__name #{text} 
+                +button('only-text-default','expand_more','expandable-checkbox__material-icon_font').expandable-checkbox__material-icon
+            .expandable-checkbox__items.expandable-checkbox__items_hidden
+                +checkbox('breakfast', 'Завтрак').expandable-checkbox__item
+                +checkbox('desk', 'Письменный стол', true).expandable-checkbox__item
+                +checkbox('feeding chair', 'Стул для кормления', true).expandable-checkbox__item
+                +checkbox('crib', 'Кроватка', true).expandable-checkbox__item
+                +checkbox('tv', 'Телевизор').expandable-checkbox__item
+                +checkbox('shampoo', 'Шампунь').expandable-checkbox__item
