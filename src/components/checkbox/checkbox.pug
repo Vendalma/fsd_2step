@@ -1,9 +1,18 @@
-mixin checkbox(inputID, text, checked=false)
-    if checked
-        form.checkbox&attributes(attributes)
-            input(type="checkbox", id=inputID class='checkbox__input' checked)
-            label(for=inputID class='checkbox__label') #{text}
-    else
-        form.checkbox&attributes(attributes)
-            input(type="checkbox", id=inputID class='checkbox__input')
-            label(for=inputID class='checkbox__label') #{text}
+//- type: default, rich
+
+mixin checkbox(type,inputID, text, head, checked=false)
+    if type == 'rich'
+        form.checkbox.checkbox_rich&attributes(attributes)
+                input(type="checkbox", id=inputID class='checkbox__input')
+                label(for=inputID class='checkbox__label checkbox__label_rich') 
+                    span.checkbox__head #{head}
+                    span.checkbox__text #{text}
+    else if type == 'default'
+        if checked
+            form.checkbox&attributes(attributes)
+                input(type="checkbox", id=inputID class='checkbox__input' checked)
+                label(for=inputID class='checkbox__label') #{text}
+        else
+            form.checkbox&attributes(attributes)
+                input(type="checkbox", id=inputID class='checkbox__input')
+                label(for=inputID class='checkbox__label') #{text}

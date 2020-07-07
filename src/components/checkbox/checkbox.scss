@@ -1,9 +1,10 @@
 .checkbox {
-  max-width: 222px;
+  width: 192px;
   display: flex;
   align-items: flex-start;
   margin-bottom: 10px;
   position: relative;
+  box-sizing: border-box;
 
   &__input {
     -webkit-appearance: none;
@@ -11,11 +12,13 @@
     position: absolute;
   }
   &__label {
+    width: 100%;
     cursor: pointer;
     @extend %body-font;
     line-height: 129%;
     color: $dark-50;
     padding-left: 30px;
+    flex-shrink: 0;
     &::before {
       content: "";
       display: block;
@@ -40,6 +43,28 @@
       left: 5px;
       z-index: 2;
     }
+
+    &_rich {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__head {
+    @extend %h3-font;
+    font-size: 14px;
+    line-height: 18px;
+    color: $dark-75;
+    margin-bottom: 5px;
+    text-transform: none;
+  }
+  &__text {
+    font-size: 12px;
+    line-height: 14px;
+    color: $dark-50;
+    white-space: pre-wrap;
+  }
+  &_rich {
+    width: 234px;
   }
 }
 

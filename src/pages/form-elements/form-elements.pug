@@ -55,9 +55,9 @@ block body
             .fe__block.fe__block_margin-m
                 .fe__description.fe__description_margin-m
                     .fe__block-name checkbox buttons
-                +checkbox('smoking', 'Можно курить').fe__checkbox
-                +checkbox('pets', 'Можно с питомцами','true').fe__checkbox
-                +checkbox('guests', 'Можно пригласить гостей (до 10 человек)','true').fe__checkbox
+                +checkbox('default','smoking', 'Можно курить').fe__checkbox
+                +checkbox('default','pets', 'Можно с питомцами','','true').fe__checkbox
+                +checkbox('default','guests', 'Можно пригласить гостей (до 10 человек)','','true').fe__checkbox
             .fe__block.fe__block_margin-m
                 .fe__description.fe__description_margin-m
                     .fe__block-name radio buttons
@@ -116,3 +116,8 @@ block body
             .fe__block.fe__block_margin-top-s
                 +expandable-checkbox('expandable checkbox list').fe__expandable-checkbox
                 +expandable-checkbox('expandable checkbox list', true).fe__expandable-checkbox
+        .container_content
+            .fe__block.fe__block_margin-top-lg
+                +checkbox('rich','corridor-size','Ширина коридоров в номере          не менее 91 см.','Широкий коридор')
+                +checkbox('rich','disabled-assistant','На 1 этаже вас встретит специалист и проводит до номера.','Помощник для инвалидов')
+        .container_content
