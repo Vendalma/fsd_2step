@@ -3,38 +3,56 @@ include ../buttons/buttons
 mixin dropdown(guests = true)
     if guests
         form&attributes(attributes)
-            .dropdown   
+            .dropdown.dropdown_size-m
                 .dropdown__select-container.dropdown__select-container_default
                     span.dropdown__placeholder.dropdown__placeholder_default Сколько гостей
-                    +button('only-text-default','expand_more','dropdown__material-icons dropdown__material-icons_default') 
-                .dropdown__select-list.dropdown__select-list_open
+                    +button('only-text-default','expand_more','dropdown__material-icons dropdown__material-icons_default dropdown__material-icons_margin-m')
+                .dropdown__select-list.dropdown__select-list_default
                     .dropdown__item.dropdown__item_one
                         .dropdown__item-name Взрослые
                         .dropdown__item-count
-                            .item-count__min.item-count__min_hidden
-                                +button('only-text-default','-', 'item-count__button')
+                            +button('only-text-default','-', 'item-count__button_font').item-count__min.item-count__min_hidden.item-count__button
                             .item-count__score 0
-                            .item-count__plus
-                                +button('only-text-default','+', 'item-count__button')
+                            +button('only-text-default','+', 'item-count__button_font').item-count__plus.item-count__button
                     .dropdown__item.dropdown__item_two
                         .dropdown__item-name Дети
                         .dropdown__item-count
-                            .item-count__min.item-count__min_hidden
-                                +button('only-text-default','-', 'item-count__button')
+                            +button('only-text-default','-', 'item-count__button_font').item-count__min.item-count__min_hidden.item-count__button
                             .item-count__score 0
-                            .item-count__plus
-                               +button('only-text-default','+', 'item-count__button')
+                            +button('only-text-default','+', 'item-count__button_font').item-count__plus.item-count__button
                     .dropdown__item.dropdown__item_three
-                        .dropdown__item-name Младенцы
+                        .dropdown__item-name.dropdown__item-name_child Младенцы
                         .dropdown__item-count
-                            .item-count__min.item-count__min_hidden
-                                +button('only-text-default','-', 'item-count__button')
+                            +button('only-text-default','-', 'item-count__button_font').item-count__min.item-count__min_hidden.item-count__button
                             .item-count__score 0
-                            .item-count__plus
-                                +button('only-text-default','+', 'item-count__button')
+                            +button('only-text-default','+', 'item-count__button_font').item-count__plus.item-count__button
                     .dropdown__buttons
-                        +button('only-text-default','Очистить', 'dropdown-clear dropdown_hidden')
-                        +button('only-text-colored','Применить', 'dropdown-apply')
-                        
+                        +button('only-text-default','Очистить', '').dropdown__clear-button.dropdown__clear-button_hidden
+                        +button('only-text-colored','Применить', '').dropdown__apply-button
+    else 
+        form&attributes(attributes)
+            .dropdown.dropdown_size-s  
+                    .dropdown__select-container.dropdown__select-container_default
+                        span.dropdown__placeholder.dropdown__placeholder_default 2 спальни, 2 кровати
+                        +button('only-text-default','expand_more','dropdown__material-icons dropdown__material-icons_default dropdown__material-icons_margin-s') 
+                    .dropdown__select-list.dropdown__select-list_default
+                        .dropdown__item.dropdown__item_one
+                            .dropdown__item-name Спальни
+                            .dropdown__item-count
+                                +button('only-text-default','-', 'item-count__button_font').item-count__min.item-count__min_hidden.item-count__button
+                                .item-count__score 0
+                                +button('only-text-default','+', 'item-count__button_font').item-count__plus.item-count__button
+                        .dropdown__item.dropdown__item_two
+                            .dropdown__item-name Кровати
+                            .dropdown__item-count
+                                +button('only-text-default','-', 'item-count__button_font').item-count__min.item-count__min_hidden.item-count__button
+                                .item-count__score 0
+                                +button('only-text-default','+', 'item-count__button_font').item-count__plus.item-count__button
+                        .dropdown__item.dropdown__item_three
+                            .dropdown__item-name.dropdown__item-name_child Ванные комнаты
+                            .dropdown__item-count
+                                +button('only-text-default','-', 'item-count__button_font').item-count__min.item-count__min_hidden.item-count__button
+                                .item-count__score 0
+                                +button('only-text-default','+', 'item-count__button_font').item-count__plus.item-count__button                       
 
-                    
+                        
