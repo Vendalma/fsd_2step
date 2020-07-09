@@ -1,13 +1,13 @@
 include ../buttons/buttons
 
-mixin dropdown(guests = true)
+mixin dropdown(guests = true, active= false)
     if guests
         form&attributes(attributes)
             .dropdown.dropdown_size-m
-                .dropdown__select-container.dropdown__select-container_default
-                    span.dropdown__placeholder.dropdown__placeholder_default Сколько гостей
+                .dropdown__select-container(class = active? 'dropdown__select-container_open' : 'dropdown__select-container_default')
+                    span.dropdown__placeholder(class = active? 'dropdown__placeholder_open' : 'dropdown__placeholder_default') Сколько гостей
                     +button('only-text-default','expand_more','dropdown__material-icons dropdown__material-icons_default dropdown__material-icons_margin-m')
-                .dropdown__select-list.dropdown__select-list_default
+                .dropdown__select-list(class = active?  'dropdown__select-list_open' : 'dropdown__select-list_default')
                     .dropdown__item.dropdown__item_one
                         .dropdown__item-name Взрослые
                         .dropdown__item-count
@@ -24,7 +24,7 @@ mixin dropdown(guests = true)
                         .dropdown__item-name.dropdown__item-name_child Младенцы
                         .dropdown__item-count
                             +button('only-text-default','-', 'item-count__button_font').item-count__min.item-count__min_hidden.item-count__button
-                            .item-count__score 0
+                            .item-count__score.item-count__child 0
                             +button('only-text-default','+', 'item-count__button_font').item-count__plus.item-count__button
                     .dropdown__buttons
                         +button('only-text-default','Очистить', '').dropdown__clear-button.dropdown__clear-button_hidden

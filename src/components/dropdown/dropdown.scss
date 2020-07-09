@@ -119,9 +119,7 @@
     justify-content: center;
   }
   &__score {
-    margin-left: 11px;
-    margin-right: 11px;
-    flex-shrink: 0;
+    box-sizing: border-box;
   }
   &__min {
     &_hidden {
@@ -139,12 +137,10 @@
 .dropdown__select-container > .dropdown__material-icons {
   @extend %mat-icons;
   position: absolute;
-  top: 14.5px;
-  left: 279px;
 }
 .dropdown__select-container > .dropdown__material-icons_margin-m {
   top: 14.5px;
-  left: 279px;
+  left: 278px;
 }
 .dropdown__select-container > .dropdown__material-icons_margin-s {
   top: 14.5px;

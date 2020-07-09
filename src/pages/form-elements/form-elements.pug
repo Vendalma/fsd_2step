@@ -109,20 +109,20 @@ block body
                 +pagination.fe__pagination
         .container_content
             .fe__block.fe__block_margin-top-lg
-                +dropdown(false).fe__dropdown-room
-                +dropdown(false).fe__dropdown-room
-        .container_content
+               -// +dropdown(false).fe__dropdown-room
+               -// +dropdown(false).fe__dropdown-room
+        .container_content.container_content-height-m
             .fe__block.fe__block_margin-top-lg
-                +dropdown.fe__dropdown
-        .container_content
+                +dropdown(true,true).fe__dropdown
+        .container_content.container_content-height-m
             .fe__block.fe__block_margin-top-lg
-                +dropdown.fe__dropdown
+                +dropdown(true,true).fe__dropdown
         .container_content
             .fe__block.fe__block_margin-top-s
                 +expandable-checkbox('expandable checkbox list').fe__expandable-checkbox
                 +expandable-checkbox('expandable checkbox list', true).fe__expandable-checkbox
         .container_content
-            .fe__block.fe__block_margin-top-m
+            .fe__block.fe__block_margin-top-lg
                 .fe__description.fe__description_margin-m
                     +description('Rich Checkbox Buttons')
                 +checkbox('rich','corridor-size','Ширина коридоров в номере          не менее 91 см.','Широкий коридор')

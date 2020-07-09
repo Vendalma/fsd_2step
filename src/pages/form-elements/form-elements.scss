@@ -9,6 +9,9 @@
   flex-wrap: wrap;
   &_content {
     flex-shrink: 0;
+    &-height-m {
+      height: 304px;
+    }
   }
 }
 
