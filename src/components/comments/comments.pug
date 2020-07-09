@@ -1,0 +1,14 @@
+include /components/like-button/like-button
+
+mixin commenst(userPhoto,userName,date,count,text)
+    .comments&attributes(attributes)
+        .comments__block-user
+            .comments__user-photo
+                img(src=require('@images/' + userPhoto).default, alt=userName, class='comments__photo')
+            .comments__user-info
+                span.comments__user-name #{userName}
+                span.comments__date #{date}
+        .comments__block
+            .comments__like-button
+                +like_button(count,true)
+            .comments__text #{text}

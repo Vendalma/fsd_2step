@@ -1,0 +1,8 @@
+.description {
+  width: 100%;
+  @extend %h3-font;
+
+  &__type {
+    color: $dark-50;
+  }
+}

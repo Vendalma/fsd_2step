@@ -1,4 +1,5 @@
 extends  /layout/uikit/uikit
+include /components/description/description
 include /components/field/field
 include /components/dropdown/dropdown
 include /components/dropdown-date/dropdown-date
@@ -11,6 +12,10 @@ include /components/range slider/range slider
 include /components/buttons/buttons
 include /components/pagination/pagination
 include /components/expandable-checkbox/expandable-checkbox
+include /components/bullet-list/bullet-list
+include /components/icon-list/icon-list
+include /components/comments/comments
+
 
 block head
   title Form elements
@@ -117,7 +122,18 @@ block body
                 +expandable-checkbox('expandable checkbox list').fe__expandable-checkbox
                 +expandable-checkbox('expandable checkbox list', true).fe__expandable-checkbox
         .container_content
-            .fe__block.fe__block_margin-top-lg
+            .fe__block.fe__block_margin-top-m
+                .fe__description.fe__description_margin-m
+                    +description('Rich Checkbox Buttons')
                 +checkbox('rich','corridor-size','Ширина коридоров в номере          не менее 91 см.','Широкий коридор')
                 +checkbox('rich','disabled-assistant','На 1 этаже вас встретит специалист и проводит до номера.','Помощник для инвалидов')
         .container_content
+            .fe__block.fe__block_margin-top-lg
+                +bulletList('bullet list')
+        .container_content
+            .fe__block.fe__block_margin-top-m
+                +iconList('insert_emoticon','Комфорт','Шумопоглощающие стены')
+                +iconList('location_city','Удобство','Окно в каждой из спален')
+        .container_content
+            .fe__block.fe__block_large
+                +commenst('user1.png','Мурад Сарафанов', '5 дней назад','12','Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.')

@@ -1,0 +1,35 @@
+.bullet-list {
+  width: 292px;
+  height: 147px;
+  &__block {
+    margin: 0;
+    margin-top: 16px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    width: 90%;
+    @extend %body-font;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-shrink: 0;
+    margin-bottom: 10px;
+
+    &:before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      display: inline-block;
+      border-radius: 50%;
+      background-color: $dark-25;
+      margin-top: 7px;
+      margin-right: 10px;
+      // margin-bottom: 24px;
+      flex-shrink: 0;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+mixin description(text, type=false, typeInfo)
+    if type
+        .description&attributes(attributes)
+            span.description__item #{text}
+            span.description__type #{typeInfo}
+    else 
+        .description&attributes(attributes)
+            span.description__item #{text}

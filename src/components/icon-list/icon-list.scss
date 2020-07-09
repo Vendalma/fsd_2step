@@ -1,0 +1,38 @@
+.icon-list {
+  width: 291px;
+  margin-top: 20px;
+  &__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 17px;
+  }
+  &__material-icons {
+    width: 48px;
+    height: 48px;
+    @extend %mat-icons;
+    font-size: 48px;
+    line-height: 41px;
+    @extend %primary-grad;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  &__block {
+    margin-right: 10px;
+  }
+
+  &__text {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    @extend %body-font;
+    &_bold {
+      font-weight: bold;
+    }
+  }
+  &__block-line {
+    width: 280px;
+    height: 1px;
+    background: $dark-10;
+  }
+}

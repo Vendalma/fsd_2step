@@ -1,5 +1,6 @@
 import "./form-elements.scss";
 import "@layout/uikit/uikit.js";
+import "@components/description/description";
 import "@components/field/field";
 import "@components/dropdown/dropdown";
 import "@components/dropdown-date/dropdown-date";
@@ -12,5 +13,8 @@ import "@components/range slider/range slider";
 import "@components/buttons/buttons";
 import "@components/pagination/pagination";
 import "@components/expandable-checkbox/expandable-checkbox";
+import "@components/bullet-list/bullet-list";
+import "@components/icon-list/icon-list";
+import "@components/comments/comments";
 
 import "@/main.scss";

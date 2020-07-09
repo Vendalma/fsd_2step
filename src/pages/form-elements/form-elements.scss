@@ -25,6 +25,9 @@
     &_margin-top-s {
       margin-top: 20px;
     }
+    &_margin-top-m {
+      margin-top: 80px;
+    }
     &_margin-top-lg {
       margin-top: 100px;
     }
@@ -35,6 +38,9 @@
     &-wrapper {
       flex-shrink: 0;
       margin-right: 20px;
+    }
+    &_large {
+      width: 711px;
     }
   }
   &__description {
