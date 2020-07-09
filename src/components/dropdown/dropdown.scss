@@ -21,6 +21,9 @@
     &_default {
       border: 1px solid $dark-25;
       border-radius: 4px;
+      &:hover {
+        border: 1px solid $dark-50;
+      }
     }
 
     &_open {

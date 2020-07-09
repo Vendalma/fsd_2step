@@ -1,6 +1,6 @@
 include ../buttons/buttons
 
-mixin dropdown(guests = true, active= false)
+mixin dropdown(guests = true, active= false, score1, score2, score3)
     if guests
         form&attributes(attributes)
             .dropdown.dropdown_size-m
@@ -12,19 +12,19 @@ mixin dropdown(guests = true, active= false)
                         .dropdown__item-name Взрослые
                         .dropdown__item-count
                             +button('only-text-default','-', 'item-count__button_font').item-count__min.item-count__min_hidden.item-count__button
-                            .item-count__score 0
+                            .item-count__score=active? score1 : 0
                             +button('only-text-default','+', 'item-count__button_font').item-count__plus.item-count__button
                     .dropdown__item.dropdown__item_two
                         .dropdown__item-name Дети
                         .dropdown__item-count
                             +button('only-text-default','-', 'item-count__button_font').item-count__min.item-count__min_hidden.item-count__button
-                            .item-count__score 0
+                            .item-count__score=active? score2 : 0
                             +button('only-text-default','+', 'item-count__button_font').item-count__plus.item-count__button
                     .dropdown__item.dropdown__item_three
                         .dropdown__item-name.dropdown__item-name_child Младенцы
                         .dropdown__item-count
                             +button('only-text-default','-', 'item-count__button_font').item-count__min.item-count__min_hidden.item-count__button
-                            .item-count__score.item-count__child 0
+                            .item-count__score.item-count__child=active? score3 : 0
                             +button('only-text-default','+', 'item-count__button_font').item-count__plus.item-count__button
                     .dropdown__buttons
                         +button('only-text-default','Очистить', '').dropdown__clear-button.dropdown__clear-button_hidden

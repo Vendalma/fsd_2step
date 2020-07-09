@@ -15,6 +15,17 @@ dropdow.forEach((drop) => {
   let apply_button = drop.querySelector(".dropdown__apply-button");
   //let child = drop.querySelector('.dropdown__item-name_child')
 
+  if (!checkCountScore(item_score)) {
+    letCorrectGuests(item_score);
+    clear_button.classList.remove("dropdown__clear-button_hidden");
+    for (let minus of minuses) {
+      let score = minus.nextElementSibling;
+      if (Number(score.innerHTML) !== 0) {
+        minus.classList.remove("item-count__min_hidden");
+      }
+    }
+  }
+
   //открытие дропдауна
   select_container.addEventListener("click", function () {
     select_list.classList.toggle("dropdown__select-list_default");
