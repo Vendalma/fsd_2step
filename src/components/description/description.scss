@@ -1,8 +1,12 @@
 .description {
   width: 100%;
   @extend %h3-font;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 
   &__type {
     color: $dark-50;
+    font-weight: normal;
   }
 }

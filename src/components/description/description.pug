@@ -1,5 +1,5 @@
-mixin description(text, type=false, typeInfo)
-    if type
+mixin description(text, typeVisible=false, typeInfo)
+    if typeVisible
         .description&attributes(attributes)
             span.description__item #{text}
             span.description__type #{typeInfo}

@@ -1,19 +1,22 @@
 include /components/buttons/buttons
+include /components/description/description
 
-
-mixin dropdown_date(placeholder1,filter = false,placeholder2)
+mixin dropdown_date(placeholder1,description1,filter = false,placeholder2,description2)
     if filter
-        form.dropdown-date&attributes(attributes)
+        form.dropdown-date.dropdown-date_filter&attributes(attributes)
+            +description(description1).dropdown-date__description
             label.dropdown-date__label
                 input(type='text' placeholder=placeholder1 class='dropdown-date__input dropdown-date__input_filter datepicker-here')
                 +button('only-text-default','expand_more','dropdown-date__material-icon dropdown-date__material-icon_margin-m')
     else
         .dropdown-date_row
             form.dropdown-date.dropdown-date_margin-s&attributes(attributes)
+                +description(description1).dropdown-date__description
                 label.dropdown-date__label
                     input(type='text' placeholder=placeholder1 id='start' class='dropdown-date__input')
                     +button('only-text-default','expand_more','dropdown-date__material-icon dropdown-date__material-icon_margin-s')
             form.dropdown-date.dropdown-date_margin-s&attributes(attributes)
+                +description(description2).dropdown-date__description
                 label.dropdown-date__label
                     input(type='text' placeholder=placeholder2 id='end' class='dropdown-date__input')
                     +button('only-text-default','expand_more','dropdown-date__material-icon dropdown-date__material-icon_margin-s')

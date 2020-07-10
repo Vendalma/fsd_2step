@@ -1,6 +1,6 @@
 import "air-datepicker/dist/js/datepicker";
 import "./dropdown-date.scss";
-
+import "../description/description";
 import "air-datepicker";
 
 $(".dropdown-date__input").datepicker({
@@ -32,9 +32,6 @@ $(function () {
       onSelect: function (fd, d, picker) {
         $("#start").val(fd.split("-")[0]);
         $("#end").val(fd.split("-")[1]);
-      },
-      onHide: function () {
-        /* console.log(this);*/
       },
     })
     .data("datepicker");

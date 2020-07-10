@@ -4,11 +4,17 @@
   width: 150px;
   box-sizing: border-box;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   cursor: pointer;
-
+  &__description {
+    margin-bottom: 5px;
+  }
   &__label {
     position: relative;
+  }
+  &_filter {
+    width: 266px;
+    flex-shrink: 0;
   }
 
   &__input {
@@ -21,13 +27,10 @@
     background: #ffffff;
     border: 1px solid $dark-25;
     border-radius: 4px;
-    flex-shrink: 0;
 
     margin-right: 20px;
     cursor: pointer;
     &_filter {
-      width: 266px;
-      flex-shrink: 0;
     }
   }
   &__material-icon {
@@ -37,7 +40,7 @@
     }
     &_margin-s {
       top: 14.5px;
-      left: 109px;
+      left: 99px;
     }
   }
   &_row {
@@ -53,33 +56,37 @@
   position: absolute;
 }
 
-.dropdown-date__input:focus {
-  border: 1px solid $dark-50;
-  color: $dark-75;
-  outline: none;
+.dropdown-date {
+  &__input:focus {
+    border: 1px solid $dark-50;
+    color: $dark-75;
+    outline: none;
 
-  &::placeholder {
-    color: $dark-75;
-  }
-  &::-webkit-input-placeholder {
-    color: $dark-75;
-  }
-  &::-moz-placeholder {
-    color: $dark-75;
-    opacity: 1;
+    &::placeholder {
+      color: $dark-75;
+    }
+    &::-webkit-input-placeholder {
+      color: $dark-75;
+    }
+    &::-moz-placeholder {
+      color: $dark-75;
+      opacity: 1;
+    }
   }
 }
 
-.dropdown-date__input:hover {
-  border: 1px solid $dark-50;
-  &::placeholder {
-    color: $dark-75;
-  }
-  &::-webkit-input-placeholder {
-    color: $dark-75;
-  }
-  &::-moz-placeholder {
-    color: $dark-75;
-    opacity: 1;
+.dropdown-date {
+  &__input:hover {
+    border: 1px solid $dark-50;
+    &::placeholder {
+      color: $dark-75;
+    }
+    &::-webkit-input-placeholder {
+      color: $dark-75;
+    }
+    &::-moz-placeholder {
+      color: $dark-75;
+      opacity: 1;
+    }
   }
 }
