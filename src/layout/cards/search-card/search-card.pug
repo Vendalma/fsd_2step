@@ -1,0 +1,15 @@
+include ../../../components/dropdown-date/dropdown-date
+include ../../../components/dropdown/dropdown
+include ../../../components/description/description
+include ../../../components/buttons/buttons
+
+mixin search-card
+    .search-card&attributes(attributes)
+        p.search-card__title Найдём номера под ваши пожелания
+        .search-card__block
+            +dropdown_date('ДД.ММ.ГГГГ', 'прибытие',false, 'ДД.ММ.ГГГГ', 'выезд').search-card__dropdown-date
+        .search-card__block
+            +description('гости').search-card__decription
+            +dropdown(true).search-card__dropdown
+        .search-card__block
+            +button('long','подобрать номер','').search-card__button

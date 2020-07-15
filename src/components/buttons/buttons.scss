@@ -1,5 +1,5 @@
 .button {
-  box-sizing: border-box;
+  //box-sizing: border-box;
   border-radius: 22px;
   outline: none;
   @extend %h3-font;
@@ -9,7 +9,7 @@
     @extend %primary-grad;
     color: #ffffff;
     border: none;
-    width: 99px;
+    // width: 99px;
     height: 44px;
     padding: 0 19px;
     &:hover {
@@ -18,7 +18,7 @@
   }
   &_theme-border-primary-grad {
     border: 2px solid $color-one;
-    width: 99px;
+    // width: 99px;
     height: 44px;
     color: $color-one;
     padding: 0px 17px;
@@ -55,7 +55,7 @@
     line-height: 24px;
     position: absolute;
     top: 10px;
-    right: 16px;
+    right: 8px;
   }
 
   //styles for example

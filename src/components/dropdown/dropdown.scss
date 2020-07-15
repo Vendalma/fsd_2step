@@ -2,6 +2,7 @@
 .dropdown {
   height: 44px;
   cursor: pointer;
+
   &-guests {
     width: 320px;
   }
@@ -32,6 +33,10 @@
     }
   }
   &__placeholder {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
     &_default {
       @extend %body-font;
     }

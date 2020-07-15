@@ -33,14 +33,6 @@
     flex-direction: row;
     align-items: center;
     margin-right: 20px;
-    @extend %body-font;
-    &_active {
-      font-weight: bold;
-      color: $dark-75;
-    }
-    &_disable {
-      color: $dark-50;
-    }
   }
   &__buttons {
     display: flex;
@@ -66,5 +58,11 @@
     @extend %body-font;
     color: $dark-50;
     flex-shrink: 0;
+    cursor: default;
   }
+}
+
+.header__button > .header__item-btn {
+  height: 34px;
+  margin-right: 20px;
 }

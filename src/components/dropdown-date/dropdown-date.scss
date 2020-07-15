@@ -5,6 +5,7 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
   cursor: pointer;
   &__description {
     margin-bottom: 5px;
@@ -40,7 +41,7 @@
     }
     &_margin-s {
       top: 14.5px;
-      left: 99px;
+      left: 109px;
     }
   }
   &_row {

@@ -4,7 +4,7 @@ import "../buttons/buttons";
 let dropdow = document.querySelectorAll(".dropdown");
 
 dropdow.forEach((drop) => {
-  let select_container = drop.querySelector(".dropdown__select-container"); //drop.firstElementCh
+  let select_container = drop.querySelector(".dropdown__select-container");
   let select_list = drop.querySelector(".dropdown__select-list");
   let placeholder = drop.querySelector(".dropdown__placeholder");
   let material_icon = drop.querySelector(".dropdown__material-icons");
@@ -229,17 +229,21 @@ dropdow.forEach((drop) => {
       }
 
       if (sumChild == 1) {
-        strChild = " , " + sumChild + " младенец";
+        strChild = sumChild + " младенец";
       } else if (sumChild > 1 && sumChild <= 4) {
-        strChild = " , " + sumChild + " младенца";
+        strChild = sumChild + " младенца";
       } else if (sumChild >= 5 && sumChild <= 20) {
-        strChild = " , " + sumChild + " младенцев";
+        strChild = sumChild + " младенцев";
       }
 
-      if (sum == 0) {
+      if (sum == 0 && sumChild == 0) {
         placeholder.innerHTML = "Сколько гостей";
+      } else if (sum == 0 && sumChild > 0) {
+        placeholder.innerHTML = strChild;
+      } else if (sum > 0 && sumChild == 0) {
+        placeholder.innerHTML = str;
       } else {
-        placeholder.innerHTML = str + strChild;
+        placeholder.innerHTML = str + ", " + strChild;
       }
     } else {
       let bedrooms = 0;
@@ -269,23 +273,38 @@ dropdow.forEach((drop) => {
       }
 
       if (beds == 1) {
-        str2 = ", " + beds + " кровать";
+        str2 = beds + " кровать";
       } else if (beds > 1 && beds <= 4) {
-        str2 = ", " + beds + " кровати";
+        str2 = beds + " кровати";
       } else if (beds >= 5 && beds <= 20) {
-        str2 = ", " + beds + " кроватей";
+        str2 = beds + " кроватей";
       }
 
       if (bathrooms == 1) {
-        str3 = " ," + bathrooms + " ванна";
+        str3 = bathrooms + " ванная комната";
       } else if (bathrooms > 1 && bathrooms <= 4) {
-        str3 = " ," + bathrooms + " ванны";
+        str3 = bathrooms + " ванные комнаты";
       } else if (bathrooms >= 5 && bathrooms <= 20) {
-        str3 = " ," + bathrooms + " ванн";
+        str3 = bathrooms + " ванных комнат";
       }
 
-      placeholder.setAttribute("title", str1 + str2 + str3);
-      placeholder.innerHTML = str1 + str2 + "...";
+      if (bedrooms == 0 && beds == 0 && bathrooms > 0) {
+        placeholder.innerHTML = str3;
+      } else if (bedrooms == 0 && beds > 0 && bathrooms > 0) {
+        placeholder.innerHTML = str2 + ", " + str3;
+      } else if (bedrooms > 0 && beds == 0 && bathrooms > 0) {
+        placeholder.innerHTML = str1 + ", " + str3;
+      } else if (bedrooms > 0 && beds > 0 && bathrooms > 0) {
+        placeholder.innerHTML = str1 + ", " + str2 + ", " + str3;
+      } else if (bedrooms > 0 && beds > 0 && bathrooms == 0) {
+        placeholder.innerHTML = str1 + ", " + str2 + "...";
+      } else if (bedrooms == 0 && beds > 0 && bathrooms == 0) {
+        placeholder.innerHTML = str2;
+      } else if (bedrooms == 0 && beds == 0 && bathrooms == 0) {
+        placeholder.innerHTML = "Какие удобства";
+      } else if (bedrooms > 0 && beds == 0 && bathrooms == 0) {
+        placeholder.innerHTML = str1;
+      }
     }
   }
 });

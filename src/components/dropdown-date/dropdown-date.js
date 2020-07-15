@@ -3,14 +3,6 @@ import "./dropdown-date.scss";
 import "../description/description";
 import "air-datepicker";
 
-$(".dropdown-date__input").datepicker({
-  navTitles: {
-    days: "MM yyyy",
-  },
-  prevHtml: '<i class="material--icon">arrow_back</i>',
-  nextHtml: '<i class="material--icon">arrow_forward</i>',
-  clearButton: true,
-});
 $(function () {
   let $start = $("#start"),
     $end = $("#end");
@@ -27,7 +19,6 @@ $(function () {
       clearButton: true,
       prevHtml: '<i class="material--icon">arrow_back</i>',
       nextHtml: '<i class="material--icon">arrow_forward</i>',
-      classes: "abs",
 
       onSelect: function (fd, d, picker) {
         $("#start").val(fd.split("-")[0]);
@@ -40,7 +31,6 @@ $(function () {
     picker.show();
   });
 });
-let input_filter = document.querySelector(".dropdown-date__input_filter");
 
 $(".dropdown-date__input_filter").datepicker({
   navTitles: {
@@ -69,13 +59,15 @@ $(".dropdown-date__input_filter").datepicker({
   keyboardNav: false,
 });
 
-let dataPicker = document.querySelectorAll(".datepicker--buttons");
+let datePicker = document.querySelectorAll(".datepicker");
 
-for (let elem of dataPicker) {
+datePicker.forEach((elem) => {
+  console.log(1);
+  let buttons = elem.querySelector(".datepicker--buttons");
   let btn = document.createElement("span");
   btn.classList.add("datepicker--button");
   btn.classList.add("datepicker--button-color_one");
   btn.setAttribute("data-action", "button");
   btn.innerHTML = "Применить";
-  elem.appendChild(btn);
-}
+  buttons.appendChild(btn);
+});

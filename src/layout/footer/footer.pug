@@ -10,25 +10,25 @@ mixin footer
                 +logo-colored.footer__logo-colored
                 .footer__info Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
             .footer__nav.footer_list
-                +link('Навигация').footer__item.footer__item_active
-                +link('О нас').footer__item.footer__item_disable
-                +link('Новости').footer__item.footer__item_disable
-                +link('Служба поддержки').footer__item.footer__item_disable
-                +link('Услуги').footer__item.footer__item_disable
+                p.footer__item.footer__item_header Навигация
+                +link('О нас').footer__item
+                +link('Новости').footer__item
+                +link('Служба поддержки').footer__item
+                +link('Услуги').footer__item
             .footer__about-us.footer_list
-                +link('О нас').footer__item.footer__item_active
-                +link('О сервисе').footer__item.footer__item_disable
-                +link('Наша команда').footer__item.footer__item_disable
-                +link('Вакансии').footer__item.footer__item_disable
-                +link('Инвесторы').footer__item.footer__item_disable
+                p.footer__item.footer__item_header О нас
+                +link('О сервисе').footer__item
+                +link('Наша команда').footer__item
+                +link('Вакансии').footer__item
+                +link('Инвесторы').footer__item
             .footer__support-service.footer_list
-                +link('Служба поддержки').footer__item.footer__item_active
-                +link('Соглашения').footer__item.footer__item_disable
-                +link('Сообщества').footer__item.footer__item_disable
-                +link('Связь с нами').footer__item.footer__item_disable
+                p.footer__item.footer__item_header Служба поддержки
+                +link('Соглашения').footer__item
+                +link('Сообщества').footer__item
+                +link('Связь с нами').footer__item
             .footer__subscription.footer_list
-                +link('Подписка').footer__item.footer__item_active
-                +link('Получайте специальные предложения и новости сервиса').footer__item.footer__info
+                p.footer__item.footer__item_header Подписка
+                p.footer__item.footer__info Получайте специальные предложения и новости сервиса
                 +field('sub','Email', 'lin-grad-theme', 'arrow_forward').footer__field
         .footer__container-border
         .footer__container-copy

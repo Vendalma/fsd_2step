@@ -39,16 +39,16 @@
     max-width: 260px;
     flex-shrink: 0;
   }
-  &__item_active {
+
+  &__item {
+    line-height: 17px;
+    margin-bottom: 20px;
+  }
+  &__item_header {
     @extend %h3-font;
     height: 18px;
     margin-bottom: 21px;
-  }
-  &__item_disable {
-    @extend %body-font;
-    color: $dark-50;
-    line-height: 17px;
-    margin-bottom: 20px;
+    cursor: default;
   }
   &__field {
     margin-top: 20px;

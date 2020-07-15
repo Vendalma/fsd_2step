@@ -1,5 +1,17 @@
-mixin link(name,materialIcons = false)
-  a&attributes(attributes) #{name}
-    if materialIcons
-      i.material-icons expand_more
+mixin link(name,materialIcons = false, active=false)
+  if materialIcons
+    .link__wrapper
+      a(href='/mock-address/change-me' class='link link__close')&attributes(attributes) #{name}
+        i.link__material-icons.link__material-icons_close expand_more
+      ul.link__block.link__block_close
+          li.link__item
+            a(href="/mock-address/change-me" class='link') item 1
+          li.link__item
+            a(href="/mock-address/change-me" class='link') item 2
+      
+  else if active 
+    a(href='/mock-address/change-me' class='link link_active')&attributes(attributes) #{name}
+
+  else
+    a(href='/mock-address/change-me' class='link')&attributes(attributes) #{name} 
     

@@ -9,17 +9,17 @@ mixin header(userName=false, bigMargin=false)
             else 
                 +logo-colored.header__logo-colored(class = 'header__logo-colored_s-margin')
             .header__link-list
-                +link('О нас').header__link-item.header__link-item_active
-                +link('Услуги',true).header__link-item.header__link-item_disable
-                +link('Вакансии').header__link-item.header__link-item_disable
-                +link('Новости').header__link-item.header__link-item_disable
-                +link('Соглашения',true).header__link-item.header__link-item_disable
+                +link('О нас',false,true).header__link-item
+                +link('Услуги',true).header__link-item
+                +link('Вакансии').header__link-item
+                +link('Новости').header__link-item
+                +link('Соглашения',true).header__link-item
             if userName 
                 .header__user-info
                     .header__vert-block
                     .header__user-name  Юлий Цезарь
             else 
                 .header__buttons
-                    +button('header','bg-w','Войти')
-                    +button('header','bg-primary-grad', 'Зарегестрироваться')
+                    +button('border-primary-grad','Войти','header__item-btn').header__button
+                    +button('bg-primary-grad','Зарегестрироваться','header__item-btn').header__button
 
