@@ -1,7 +1,6 @@
 @import "../../library/air-datapicker/air-datapicker.scss";
 
 .dropdown-date {
-  width: 150px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -11,13 +10,16 @@
     margin-bottom: 5px;
   }
   &__label {
-    position: relative;
+    display: flex;
+    flex-direction: row;
   }
   &_filter {
     width: 266px;
     flex-shrink: 0;
   }
-
+  &__block {
+    position: relative;
+  }
   &__input {
     width: 100%;
     height: 44px;
@@ -29,32 +31,28 @@
     border: 1px solid $dark-25;
     border-radius: 4px;
 
-    margin-right: 20px;
     cursor: pointer;
-    &_filter {
+
+    &_double {
+      width: 150px;
+    }
+    &-start {
+      margin-right: 20px;
     }
   }
   &__material-icon {
+    @extend %mat-icons;
+    position: absolute;
+    color: $dark-50;
     &_margin-m {
       top: 14.5px;
       left: 225px;
     }
     &_margin-s {
-      top: 14.5px;
-      left: 109px;
+      top: 26px;
+      left: 118px;
     }
   }
-  &_row {
-    display: flex;
-    flex-direction: row;
-  }
-  &_margin-s {
-    margin-right: 20px;
-  }
-}
-.dropdown-date__label > .dropdown-date__material-icon {
-  @extend %mat-icons;
-  position: absolute;
 }
 
 .dropdown-date {

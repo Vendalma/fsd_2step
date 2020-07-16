@@ -6,4 +6,12 @@
   padding-left: 140px;
   padding-right: 140px;
   margin-top: 72px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  &__content {
+    width: 380px;
+  }
 }

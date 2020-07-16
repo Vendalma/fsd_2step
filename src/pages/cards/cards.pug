@@ -1,5 +1,7 @@
 extends  /layout/uikit/uikit
 include /layout/cards/search-card/search-card
+include /layout/cards/registration-card/registration-card
+include /components/dropdown-date/dropdown-date
 
 
 
@@ -9,4 +11,9 @@ block head
 block body
     .container
         .containner__content
-            +search-card.cards
+          +search-card.cards
+        .containner__content
+        .containner__content
+          +dropdown_date('inline')
+        .containner__content
+          +registration-card
