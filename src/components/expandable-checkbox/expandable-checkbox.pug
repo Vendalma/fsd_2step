@@ -5,7 +5,7 @@ mixin expandable-checkbox(text, open= false)
     if open
         .expandable-checkbox&attributes(attributes)
             .expandable-checkbox__name #{text} 
-                +button('only-text-default','expand_more','expandable-checkbox__material-icon_font expandable-checkbox__material-icon_font_open').expandable-checkbox__material-icon
+                +button('only-text-default','expand_more').expandable-checkbox__material-icon.expandable-checkbox__material-icon_open
             .expandable-checkbox__items
                 +checkbox('default','breakfast', 'Завтрак').expandable-checkbox__item
                 +checkbox('default','desk', 'Письменный стол','', true).expandable-checkbox__item

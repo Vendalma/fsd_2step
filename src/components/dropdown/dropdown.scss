@@ -14,7 +14,7 @@
     height: 100%;
     background: #ffffff;
     box-sizing: border-box;
-    padding: 12px 14px 12px;
+    padding: 12px 44px 12px 14px;
     display: inline-flex;
     align-items: center;
     position: relative;
@@ -43,6 +43,21 @@
     &_open {
       @extend %body-font;
       line-height: 129%;
+    }
+  }
+
+  &__material-icons {
+    @extend %mat-icons;
+    position: absolute;
+    &_margin {
+      top: 6.8px;
+      right: 7.6px;
+    }
+    &_default {
+      color: $dark-50;
+    }
+    &_open {
+      color: $dark-75;
     }
   }
 
@@ -82,7 +97,6 @@
       flex-shrink: 0;
       align-items: center;
       @extend %h3-font;
-      color: $dark-100;
     }
     &_two {
       margin-top: 6px;
@@ -91,8 +105,6 @@
     &-name {
       @extend %h3-font;
       flex-shrink: 0;
-      //width: 83px;
-      //margin-right: 123px;
     }
   }
   &__buttons {
@@ -118,9 +130,6 @@
     width: 30px;
     height: 30px;
     flex-shrink: 0;
-    border: 1px solid $dark-25;
-    border-radius: 22px;
-    box-sizing: border-box;
 
     display: flex;
     flex-direction: row;
@@ -135,28 +144,12 @@
     box-sizing: border-box;
   }
 }
-
-.item-count__button > .item-count__button_font {
+.dropdown__item-count > .item-count__button {
   @extend %body-font;
   font-size: 18px;
   line-height: 22px;
   color: $dark-50;
-}
-.dropdown__select-container > .dropdown__material-icons {
-  @extend %mat-icons;
-  position: absolute;
-}
-.dropdown__select-container > .dropdown__material-icons_margin-m {
-  top: 14.5px;
-  left: 278px;
-}
-.dropdown__select-container > .dropdown__material-icons_margin-s {
-  top: 14.5px;
-  left: 224px;
-}
-.dropdown__select-container > .dropdown__material-icons_default {
-  color: $dark-50;
-}
-.dropdown__select-container > .dropdown__material-icons_open {
-  color: $dark-75;
+  border: 1px solid $dark-25;
+  border-radius: 22px;
+  box-sizing: border-box;
 }

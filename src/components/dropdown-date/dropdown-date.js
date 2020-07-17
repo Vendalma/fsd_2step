@@ -3,40 +3,13 @@ import "./dropdown-date.scss";
 import "../description/description";
 import "air-datepicker";
 
-$(".dropdown-date__input_filter").datepicker({
-  navTitles: {
-    days: "MM yyyy",
-  },
-  prevHtml: '<i class="material--icon">arrow_back</i>',
-  nextHtml: '<i class="material--icon">arrow_forward</i>',
-  clearButton: true,
-  range: true,
-  multipleDatesSeparator: "-",
-  monthsShort: [
-    "янв",
-    "фев",
-    "мар",
-    "апр",
-    "май",
-    "июн",
-    "июл",
-    "авг",
-    "сен",
-    "окт",
-    "ноя",
-    "дек",
-  ],
-  dateFormat: "dd M",
-  keyboardNav: false,
-});
-
 let datePicker = document.querySelectorAll(".datepicker-here");
 
 datePicker.forEach((elem) => {
   $(elem).datepicker({
     range: true,
     multipleDates: 2,
-    multipleDatesSeparator: "-",
+    multipleDatesSeparator: " - ",
     language: "ru",
     navTitles: {
       days: "MM yyyy",
@@ -51,26 +24,57 @@ datePicker.forEach((elem) => {
     inline(elem);
   } else if (elem.classList.contains("dropdown-date__input_double")) {
     double(elem);
+  } else if (elem.classList.contains("dropdown-date__input_filter")) {
+    filter(elem);
   }
 
   function inline(elem) {
-    addButtons($(elem));
+    let inlineInput = elem;
+    addButtons(inlineInput);
+    setRange(inlineInput);
+    $(inlineInput).datepicker({
+      onRenderCell: function (date, cellType) {
+        if (
+          date.getDate() == "8" &&
+          date.getMonth() == "7" &&
+          date.getFullYear() == "2019" &&
+          cellType == "day"
+        ) {
+          return {
+            classes: "datepicker--cell -current-",
+          };
+        }
+      },
+    });
   }
 
   function double(elem) {
-    let start = elem;
-    let end = document.querySelector(".dropdown-date__input-end");
+    let startInput = elem;
+    let endInput = document.querySelector(".dropdown-date__input-end");
 
-    $(start).datepicker({
+    $(startInput).datepicker({
+      minDate: new Date(),
       onSelect: function (fd, d, picker) {
-        $(start).val(fd.split("-")[0]);
-        $(end).val(fd.split("-")[1]);
+        $(startInput).val(fd.split("-")[0]);
+        $(endInput).val(fd.split("-")[1]);
       },
     });
-    $(end).on("click", () => {
-      $(start).data("datepicker").show();
+    $(endInput).on("click", () => {
+      $(startInput).data("datepicker").show();
     });
-    addButtons($(start));
+    addButtons(startInput);
+  }
+
+  function filter(elem) {
+    let filterInput = elem;
+    $(filterInput).datepicker({
+      minDate: new Date(),
+      dateFormat: "dd M",
+      onSelect: function (fd, d) {
+        $(filterInput).val(fd.toLowerCase());
+      },
+    });
+    addButtons(filterInput);
   }
 
   function addButtons(elem) {
@@ -80,10 +84,22 @@ datePicker.forEach((elem) => {
     applyButton.classList.add("datepicker--button-colored");
     applyButton.innerHTML = "Применить";
 
-    let buttons = elem
+    applyButton.addEventListener("click", function () {
+      $(elem).data("datepicker").hide();
+    });
+
+    let buttons = $(elem)
       .data("datepicker")
       .$datepicker.find(".datepicker--buttons");
 
     buttons.append(applyButton);
+  }
+
+  function setRange(elem) {
+    let rangeDates = ["2019-08-19", "2019-08-23"];
+
+    $(elem)
+      .data("datepicker")
+      .selectDate(rangeDates.map((date) => new Date(date)));
   }
 });

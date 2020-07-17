@@ -6,7 +6,7 @@ mixin dropdown(guests = true, active= false, score1, score2, score3)
             .dropdown.dropdown-guests
                 .dropdown__select-container(class = active? 'dropdown__select-container_open' : 'dropdown__select-container_default')
                     span.dropdown__placeholder(class = active? 'dropdown__placeholder_open' : 'dropdown__placeholder_default') Сколько гостей
-                    +button('only-text-default','expand_more').dropdown__material-icons.dropdown__material-icons_default.dropdown__material-icons_margin-m
+                    i.dropdown__material-icons.dropdown__material-icons_default.dropdown__material-icons_margin expand_more
                 .dropdown__select-list(class = active?  'dropdown__select-list_open' : 'dropdown__select-list_default')
                     .dropdown__item.dropdown__item_one
                         .dropdown__item-name Взрослые
@@ -34,7 +34,7 @@ mixin dropdown(guests = true, active= false, score1, score2, score3)
             .dropdown.dropdown_size-s  
                     .dropdown__select-container(class = active? 'dropdown__select-container_open' : 'dropdown__select-container_default')
                         span.dropdown__placeholder(class = active? 'dropdown__placeholder_open' : 'dropdown__placeholder_default') 
-                        +button('only-text-default','expand_more').dropdown__material-icons.dropdown__material-icons_default.dropdown__material-icons_margin-s 
+                        i.dropdown__material-icons.dropdown__material-icons_default.dropdown__material-icons_margin expand_more
                     .dropdown__select-list(class = active?  'dropdown__select-list_open' : 'dropdown__select-list_default')
                         .dropdown__item.dropdown__item_one
                             .dropdown__item-name Спальни
