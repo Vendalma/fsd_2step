@@ -11,20 +11,21 @@ mixin registration-card
             .registration-card__block
                 +field('text','Имя').registration-card__user-name
                 +field('text', 'Фамилия').registration-card__user-surname
-            .registration-card__block.registration-card__block_row
-                +radio('gender1','gender', 'male', 'Мужчина',true).registration-card__radio-one
-                +radio('gender2','gender', 'female', 'Женщина').registration-card__radio-two
             .registration-card__block
-                +description('дата рождения')
+                .registration-card__wrapper
+                    +radio('gender1','gender', 'male', 'Мужчина',true).registration-card__radio-one
+                    +radio('gender2','gender', 'female', 'Женщина').registration-card__radio-two
+            .registration-card__block
+                +description('дата рождения').registration-card__description
                 +field('mask', 'ДД.ММ.ГГГГ').registration-card__mask-field
             .registration-card__block
-                +description('данные для входа в сервис')
+                +description('данные для входа в сервис').registration-card__description
                 +field('text','Email').registration-card__email
                 +field('text', 'Пароль').registration-card__password
             .registration-card__block
                 +toggle('Получать спецпредложения').registration-card__toggle
-                +button('long','перейти к оплате','registration-card__button-pay')
+                +button('long','перейти к оплате').registration-card__button-pay
             .registration-card__block.registration-card__block_row
                 p.registration-card__text Уже есть аккаунт на Toxin
-                +button('border-primary-grad','войти','registration-card__button-sing-in')
+                +button('border-primary-grad','войти').registration-card__button-sing-in
             

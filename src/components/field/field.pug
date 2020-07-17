@@ -15,20 +15,20 @@ include /components/buttons/buttons
     
 mixin field(type,placeholder,matIconsTheme, matIconsName) 
     if type == 'text'
-        form.text-field&attributes(attributes)
+        .text-field&attributes(attributes)
             lable.text-field__lable
                 input(type="text" placeholder=placeholder).text-field__input
     else if type == 'hoverText'
-        form.text-field.text-field_hover-theme&attributes(attributes)
+        .text-field.text-field_hover-theme&attributes(attributes)
             lable.text-field__lable
                 input(type="text" placeholder=placeholder).text-field__input.text-field_hover-theme__input
     else if type == 'sub'
-        form.text-field&attributes(attributes)
+        .text-field&attributes(attributes)
             label.text-field__lable.text-field__lable_sub
                 input(type="email" placeholder=placeholder).text-field__input.text-field__input_sub
                 +button('only-text-colored','arrow_forward','text-field__material-icon')
     else if type == 'mask'
-        form.text-field&attributes(attributes)
+        .text-field&attributes(attributes)
             .text-field__block
                 label.text-field__lable
                     input(type="text" placeholder=placeholder).text-field__input.text-field__input_mask
