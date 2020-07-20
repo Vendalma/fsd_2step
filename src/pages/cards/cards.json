@@ -1,0 +1,8 @@
+{
+  "room1": {
+    "imgs": ["room1.png", "room1.png", "room1.png", "room1.png"]
+  },
+  "room2": {
+    "imgs": ["room2.png", "room2.png", "room2.png", "room2.png"]
+  }
+}

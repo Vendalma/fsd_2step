@@ -2,7 +2,7 @@
   background: #f4f4f6;
 }
 
-.container {
+.cards {
   padding-left: 140px;
   padding-right: 140px;
   margin-top: 72px;
@@ -11,7 +11,10 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  &__content {
+  &__container {
     width: 380px;
+  }
+  &__room {
+    margin-bottom: 40px;
   }
 }
