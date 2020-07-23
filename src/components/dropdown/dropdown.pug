@@ -1,9 +1,8 @@
 include ../buttons/buttons
 
-mixin dropdown(guests = true, active= false, score1, score2, score3)
-    if guests
-        form&attributes(attributes)
-            .dropdown.dropdown-guests
+mixin dropdown(type, active= false, score1, score2, score3)
+    if type == 'guests'
+            .dropdown.dropdown-guests&attributes(attributes)
                 .dropdown__select-container(class = active? 'dropdown__select-container_open' : 'dropdown__select-container_default')
                     span.dropdown__placeholder(class = active? 'dropdown__placeholder_open' : 'dropdown__placeholder_default') Сколько гостей
                     i.dropdown__material-icons.dropdown__material-icons_default.dropdown__material-icons_margin expand_more
@@ -12,26 +11,25 @@ mixin dropdown(guests = true, active= false, score1, score2, score3)
                         .dropdown__item-name Взрослые
                         .dropdown__item-count
                             +button('only-text-default','-').item-count__button.item-count__button_min.item-count__button_hidden
-                            .item-count__score=active? score1 : 0
+                            .item-count__score #{score1} 
                             +button('only-text-default','+').item-count__button.item-count__button_plus
                     .dropdown__item.dropdown__item_two
                         .dropdown__item-name Дети
                         .dropdown__item-count
                             +button('only-text-default','-').item-count__button.item-count__button_min.item-count__button_hidden
-                            .item-count__score=active? score2 : 0
+                            .item-count__score #{score2} 
                             +button('only-text-default','+').item-count__button.item-count__button_plus
                     .dropdown__item.dropdown__item_three
                         .dropdown__item-name Младенцы
                         .dropdown__item-count
                             +button('only-text-default','-').item-count__button.item-count__button_min.item-count__button_hidden
-                            .item-count__score.item-count__child=active? score3 : 0
+                            .item-count__score.item-count__child #{score3} 
                             +button('only-text-default','+').item-count__button.item-count__button_plus
                     .dropdown__buttons
                         +button('only-text-default','Очистить').dropdown__clear-button.dropdown__clear-button_hidden
                         +button('only-text-colored','Применить').dropdown__apply-button
-    else 
-        form&attributes(attributes)
-            .dropdown.dropdown_size-s  
+    else if type == 'room' 
+            .dropdown.dropdown_size-s&attributes(attributes)  
                     .dropdown__select-container(class = active? 'dropdown__select-container_open' : 'dropdown__select-container_default')
                         span.dropdown__placeholder(class = active? 'dropdown__placeholder_open' : 'dropdown__placeholder_default') 
                         i.dropdown__material-icons.dropdown__material-icons_default.dropdown__material-icons_margin expand_more
@@ -40,19 +38,19 @@ mixin dropdown(guests = true, active= false, score1, score2, score3)
                             .dropdown__item-name Спальни
                             .dropdown__item-count
                                 +button('only-text-default','-').item-count__button.item-count__button_min.item-count__button_hidden
-                                .item-count__score.item-count__bedrooms=active? score1 : 2
+                                .item-count__score.item-count__bedrooms #{score1} 
                                 +button('only-text-default','+').item-count__button.item-count__button_plus
                         .dropdown__item.dropdown__item_two
                             .dropdown__item-name Кровати
                             .dropdown__item-count
                                 +button('only-text-default','-').item-count__button.item-count__button_min.item-count__button_hidden
-                                .item-count__score.item-count__beds=active? score2 : 2
+                                .item-count__score.item-count__beds #{score2} 
                                 +button('only-text-default','+').item-count__button.item-count__button_plus
                         .dropdown__item.dropdown__item_three
                             .dropdown__item-name Ванные комнаты
                             .dropdown__item-count
                                 +button('only-text-default','-', 'item-count__button_font').item-count__button.item-count__button_min.item-count__button_hidden
-                                .item-count__score.item-count__bathrooms=active? score3 : 0
+                                .item-count__score.item-count__bathrooms #{score3}
                                 +button('only-text-default','+', 'item-count__button_font').item-count__button.item-count__button_plus                      
 
                         

@@ -9,8 +9,8 @@
     @extend %primary-grad;
     color: #ffffff;
     border: none;
-    // width: 99px;
-    height: 44px;
+    //width: 99px;
+    //height: 44px;
     padding: 0 19px;
     &:hover {
       opacity: 0.5;
@@ -19,7 +19,7 @@
   &_theme-border-primary-grad {
     border: 2px solid $color-one;
     // width: 99px;
-    height: 44px;
+    //height: 44px;
     color: $color-one;
     padding: 0px 17px;
     background-color: #ffffff;

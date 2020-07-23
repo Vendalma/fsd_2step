@@ -1,14 +1,18 @@
 .footer {
   @extend %shadow-bg;
   width: 100%;
+  box-sizing: border-box;
+  padding-left: 140px * 100%/1440px;
+  padding-right: 140px * 100%/1440px;
 
   &__container-widgets {
-    max-width: 1160px;
+    width: 100%;
     padding-top: 100px;
     padding-bottom: 80px;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
   }
   &__logo-info {
     width: 260px;
@@ -41,12 +45,12 @@
   }
 
   &__item {
-    line-height: 17px;
+    line-height: 1.063rem;
     margin-bottom: 20px;
   }
   &__item_header {
     @extend %h3-font;
-    height: 18px;
+    height: 1.125rem;
     margin-bottom: 21px;
     cursor: default;
   }
@@ -71,5 +75,82 @@
     justify-content: space-between;
     padding-top: 24px;
     padding-bottom: 23px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .footer {
+    padding: 0px 20px;
+    box-sizing: border-box;
+    &__container-widgets {
+      justify-content: space-between;
+    }
+    &__about-us {
+      margin-right: 50px;
+    }
+    &__item_margin {
+      margin-top: 5px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media (min-width: 961px) and (max-width: 1024px) {
+  .footer {
+    padding: 0px 20px;
+    box-sizing: border-box;
+    &__container-widgets {
+      justify-content: space-between;
+    }
+    &__nav {
+      margin-right: 30px * 100%/ 1024px;
+    }
+    &__about-us {
+      margin-right: 30px * 100%/ 1024px;
+    }
+    &__support-service {
+      margin-right: 30px * 100%/ 1024px;
+    }
+    &__logo-info {
+      margin-right: 40px * 100%/ 1024px;
+    }
+    &__item_margin {
+      margin-top: 5px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 960px) {
+  .footer {
+    padding: 0px 20px;
+    box-sizing: border-box;
+    &__container-widgets {
+      justify-content: space-between;
+    }
+    &__nav {
+      margin-right: 30px * 100%/ 1024px;
+    }
+    &__about-us {
+      margin-right: 30px * 100%/ 1024px;
+    }
+    &__support-service {
+      margin-right: 30px * 100%/ 1024px;
+    }
+    &__logo-info {
+      margin-right: 40px * 100%/ 1024px;
+    }
+    &__item_margin {
+      margin-top: 5px;
+      margin-bottom: 30px;
+    }
+    &__subscription {
+      display: none;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .footer {
+    display: none;
   }
 }

@@ -4,6 +4,7 @@ include /layout/cards/registration-card/registration-card
 include /components/dropdown-date/dropdown-date
 include /layout/cards/sign-in-card/sign-in-card
 include /layout/cards/room-card/room-card
+include /layout/cards/calc-card/calc-card
 
 
 block head
@@ -13,9 +14,9 @@ block body
   - const {room1,room2} = require('./cards.json')
     .cards
         .cards__container
-          +search-card
+         +search-card
         .cards__container
-  
+          +calc-card('888','9 990',true)
         .cards__container
           +dropdown_date('inline')
         .cards__container

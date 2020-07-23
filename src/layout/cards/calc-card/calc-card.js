@@ -1,0 +1,1 @@
+import "./calc-card.scss";

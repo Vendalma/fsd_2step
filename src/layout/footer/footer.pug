@@ -11,21 +11,21 @@ mixin footer
                 .footer__info Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
             .footer__nav.footer_list
                 p.footer__item.footer__item_header Навигация
-                +link('О нас').footer__item
-                +link('Новости').footer__item
-                +link('Служба поддержки').footer__item
-                +link('Услуги').footer__item
+                +link('default','О нас').footer__item
+                +link('default','Новости').footer__item
+                +link('default','Служба поддержки').footer__item
+                +link('default','Услуги').footer__item
             .footer__about-us.footer_list
                 p.footer__item.footer__item_header О нас
-                +link('О сервисе').footer__item
-                +link('Наша команда').footer__item
-                +link('Вакансии').footer__item
-                +link('Инвесторы').footer__item
+                +link('default','О сервисе').footer__item
+                +link('default','Наша команда').footer__item
+                +link('default','Вакансии').footer__item
+                +link('default','Инвесторы').footer__item
             .footer__support-service.footer_list
-                p.footer__item.footer__item_header Служба поддержки
-                +link('Соглашения').footer__item
-                +link('Сообщества').footer__item
-                +link('Связь с нами').footer__item
+                p.footer__item.footer__item_header.footer__item_margin Служба поддержки
+                +link('default','Соглашения').footer__item
+                +link('default','Сообщества').footer__item
+                +link('default','Связь с нами').footer__item
             .footer__subscription.footer_list
                 p.footer__item.footer__item_header Подписка
                 p.footer__item.footer__info Получайте специальные предложения и новости сервиса

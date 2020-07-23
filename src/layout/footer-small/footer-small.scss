@@ -2,6 +2,7 @@
   @extend %shadow-bg;
   max-width: 768px;
   margin: 0 auto;
+  box-sizing: border-box;
 
   display: flex;
   flex-direction: column;
@@ -16,5 +17,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-s {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }

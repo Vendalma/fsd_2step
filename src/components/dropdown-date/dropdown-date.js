@@ -8,7 +8,7 @@ let datePicker = document.querySelectorAll(".datepicker-here");
 datePicker.forEach((elem) => {
   $(elem).datepicker({
     range: true,
-    multipleDates: 2,
+    multipleDates: true,
     multipleDatesSeparator: " - ",
     language: "ru",
     navTitles: {
@@ -31,7 +31,7 @@ datePicker.forEach((elem) => {
   function inline(elem) {
     let inlineInput = elem;
     addButtons(inlineInput);
-    setRange(inlineInput);
+    // setRange(inlineInput);
     $(inlineInput).datepicker({
       onRenderCell: function (date, cellType) {
         if (
@@ -52,13 +52,16 @@ datePicker.forEach((elem) => {
     let startInput = elem;
     let endInput = document.querySelector(".dropdown-date__input-end");
 
+    setRange(startInput);
+    $(endInput).datepicker(startInput.split("-")[1]);
     $(startInput).datepicker({
-      minDate: new Date(),
-      onSelect: function (fd, d, picker) {
+      onSelect: function (fd, d) {
+        console.log(fd);
         $(startInput).val(fd.split("-")[0]);
         $(endInput).val(fd.split("-")[1]);
       },
     });
+
     $(endInput).on("click", () => {
       $(startInput).data("datepicker").show();
     });
@@ -68,7 +71,6 @@ datePicker.forEach((elem) => {
   function filter(elem) {
     let filterInput = elem;
     $(filterInput).datepicker({
-      minDate: new Date(),
       dateFormat: "dd M",
       onSelect: function (fd, d) {
         $(filterInput).val(fd.toLowerCase());
@@ -94,12 +96,10 @@ datePicker.forEach((elem) => {
 
     buttons.append(applyButton);
   }
-
-  function setRange(elem) {
-    let rangeDates = ["2019-08-19", "2019-08-23"];
-
-    $(elem)
-      .data("datepicker")
-      .selectDate(rangeDates.map((date) => new Date(date)));
-  }
 });
+
+function setRange(elem) {
+  $(elem)
+    .data("datepicker")
+    .selectDate([new Date("2019-08-19"), new Date("2019-08-23")]);
+}
