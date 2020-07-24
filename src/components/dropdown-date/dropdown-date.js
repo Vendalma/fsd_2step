@@ -3,7 +3,7 @@ import "./dropdown-date.scss";
 import "../description/description";
 import "air-datepicker";
 
-let datePicker = document.querySelectorAll(".datepicker-here");
+/*let datePicker = document.querySelectorAll(".datepicker-here");
 
 datePicker.forEach((elem) => {
   $(elem).datepicker({
@@ -49,24 +49,32 @@ datePicker.forEach((elem) => {
   }
 
   function double(elem) {
-    let startInput = elem;
-    let endInput = document.querySelector(".dropdown-date__input-end");
+    let $start = $("#start");
+    let $end = $("#end");
+    let datepickers = elem;
 
-    setRange(startInput);
-    $(endInput).datepicker(startInput.split("-")[1]);
-    $(startInput).datepicker({
-      onSelect: function (fd, d) {
-        console.log(fd);
-        $(startInput).val(fd.split("-")[0]);
-        $(endInput).val(fd.split("-")[1]);
+    $(datepickers).datepicker({
+      onSelect: function (fd, date) {
+        $end
+          .data("datepicker")
+          .update("selectedDates", $start.data("datepicker").selectedDates);
+        var start = fd.split("-")[0];
+        var end = fd.split("-")[1];
+        if (end) {
+          $start.val(start);
+          $end.val(end);
+        } else {
+          $end.val("");
+        }
       },
     });
 
-    $(endInput).on("click", () => {
+    /* $(endInput).on("click", () => {
       $(startInput).data("datepicker").show();
-    });
-    addButtons(startInput);
-  }
+    });*/
+//addButtons(elem);
+//setRange(elem);
+/*}
 
   function filter(elem) {
     let filterInput = elem;
@@ -103,3 +111,39 @@ function setRange(elem) {
     .data("datepicker")
     .selectDate([new Date("2019-08-19"), new Date("2019-08-23")]);
 }
+*/
+
+var $start = $("#start"),
+  $end = $("#end");
+var $datepickers = $(".dropdown-date__input_double");
+
+$datepickers.datepicker({
+  //language: "ja",
+  // offset: ,
+  navTitles: {
+    days: "<i>yyyy</i> MM",
+    months: "yyyy",
+    years: "yyyy1 - yyyy2",
+  },
+  //minDate: now,
+  //maxDate: endDate,
+  multipleDatesSeparator: "-",
+  range: true,
+  onSelect: function (fd, date) {
+    $end
+      .data("datepicker")
+      .update("selectedDates", $start.data("datepicker").selectedDates);
+    var start = fd.split("-")[0];
+    var end = fd.split("-")[1];
+    if (end) {
+      $start.val(start);
+      $end.val(end);
+    } else {
+      $end.val("");
+    }
+    console.log($end.data("datepicker"));
+  },
+});
+$datepickers
+  .data("datepicker")
+  .selectDate([new Date("2019-08-19"), new Date("2019-08-23")]);

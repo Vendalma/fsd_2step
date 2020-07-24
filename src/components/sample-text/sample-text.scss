@@ -1,53 +1,79 @@
 .sample-text {
-  width: 403px;
+  max-width: 403px;
   display: flex;
   flex-direction: row;
 
   &__headers {
     margin-right: 30px;
     text-align: right;
-  }
-  &_headers-h1 {
-    @extend %h1-font;
-    font-family: "Montserrat";
     font-weight: normal;
-    color: $dark-25;
-    margin-bottom: 80px;
+    &_h1 {
+      @extend %h1-font;
+      font-family: "Montserrat";
+      font-weight: normal;
+      color: $dark-25;
+      margin-bottom: 80px;
+    }
+
+    &_h2 {
+      @extend %h2-font;
+      font-family: "Montserrat";
+      font-weight: normal;
+      color: $dark-25;
+      margin-bottom: 74px;
+    }
+    &_h3 {
+      @extend %h3-font;
+      font-weight: normal;
+      color: $dark-25;
+      margin-bottom: 50px;
+    }
+    &_body {
+      @extend %body-font;
+      color: $dark-25;
+    }
   }
-  &_headers-h2 {
-    @extend %h2-font;
-    font-family: "Montserrat";
-    font-weight: normal;
-    color: $dark-25;
-    margin-bottom: 74px;
-  }
-  &_headers-h3 {
-    @extend %h3-font;
-    font-weight: normal;
-    color: $dark-25;
-    margin-bottom: 50px;
-  }
-  &_headers-body {
-    @extend %body-font;
-    color: $dark-25;
-  }
+
   &__content {
     max-width: 336px;
+    text-align: left;
+
+    &_h1 {
+      @extend %h1-font;
+      margin-bottom: 50px;
+    }
+    &_h2 {
+      @extend %h2-font;
+      margin-bottom: 50px;
+    }
+    &_h3 {
+      @extend %h3-font;
+      margin-bottom: 50px;
+    }
+    &_body {
+      @extend %body-font;
+      max-width: 301px * 100%/ 336px;
+    }
   }
-  &_content-h1 {
-    @extend %h1-font;
-    margin-bottom: 50px;
+}
+
+@media (min-width: 376px) and (max-width: 425px) {
+  .sample-text {
+    &__headers_h1 {
+      margin-bottom: 100px;
+    }
   }
-  &_content-h2 {
-    @extend %h2-font;
-    margin-bottom: 50px;
-  }
-  &_content-h3 {
-    @extend %h3-font;
-    margin-bottom: 50px;
-  }
-  &_content-body {
-    @extend %body-font;
-    max-width: 301px * 100%/ 336px;
+}
+
+@media (max-width: 375px) {
+  .sample-text {
+    &__headers {
+      &_h1 {
+        margin-bottom: 120px;
+      }
+      &_h2 {
+        margin-bottom: 75px;
+      }
+    }
   }
 }

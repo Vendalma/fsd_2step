@@ -14,7 +14,7 @@ mixin calc-card(number,price,luxury = false)
                 span.calc-card__price_num #{price}₽
                 span.calc-card__price_text  в сутки
         .calc-card__date-block
-            -// +dropdown_date('double','','прибытие','','выезд', true)
+             +dropdown_date('double','','прибытие','','выезд', true)
         .calc-card__dropdown-block
             +description('гости').calc-card__description
             +dropdown('guests',false,2,1,0)

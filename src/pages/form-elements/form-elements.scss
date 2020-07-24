@@ -1,70 +1,87 @@
-.container {
-  width: 1160px;
-  margin-top: 62px;
-  padding-left: 150px;
-  padding-right: 191px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  &_content {
-    flex-shrink: 0;
-    &-height-m {
-      height: 304px;
+.form-elements {
+  width: 100%;
+  padding-left: 140px * 100%/ 1440px;
+  padding-right: 140px * 100%/ 1440px;
+  &__container {
+    max-width: 1160px;
+    margin: 0 auto;
+    margin-top: 62px;
+  }
+  &__content {
+    &_row {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      margin-bottom: 100px;
+    }
+    &_column {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      flex-shrink: 0;
+    }
+    &_margin-r-126 {
+      margin-right: 126px * 100%/ 1160px;
+    }
+    &_margin-r-72 {
+      margin-right: 72px;
+    }
+    &_margin-top-160 {
+      margin-top: 160px;
+    }
+    &_width-320 {
+      max-width: 320px;
     }
   }
-}
-
-.form-elements {
   &__block {
-    width: 320px;
-
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+    flex-grow: 1;
+    &_size-m {
+      width: 266px;
+    }
+    &_size-lg {
+      max-width: 711px;
+      margin-top: 10px;
+    }
     &_margin-s {
       margin-bottom: 20px;
     }
     &_margin-m {
       margin-bottom: 40px;
     }
-    &_margin-top-s {
-      margin-top: 20px;
+    &_margin-top-10 {
+      margin-top: 10px;
     }
-    &_margin-top-m {
-      margin-top: 80px;
+    &_margin-top-160 {
+      margin-top: 160px;
     }
-    &_margin-top-lg {
-      margin-top: 100px;
+    &_margin-r-72 {
+      margin-right: 72px;
     }
     &_row {
       display: flex;
       flex-direction: row;
     }
-    &-wrapper {
-      flex-shrink: 0;
-      margin-right: 20px;
-    }
-    &_large {
-      width: 711px;
-    }
-    &-size-m {
-      width: 266px;
-    }
   }
   &__description {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     &_margin-s {
       margin-bottom: 5px;
     }
     &_margin-m {
       margin-bottom: 16px;
     }
-    &_size-s {
-      margin-left: 33px;
-      width: 200px;
+  }
+  &__toggle {
+    &_margin {
+      margin-bottom: 10px;
     }
   }
-
   &__like-button {
     margin-right: 10px;
   }
@@ -74,12 +91,11 @@
   &__button {
     margin-right: 20px;
     margin-bottom: 30px;
-    flex-shrink: 0;
+    &_margin-0 {
+      margin: 0;
+    }
   }
   &__dropdown-room {
-    margin-bottom: 20px;
-  }
-  &__expandable-checkbox {
     margin-bottom: 20px;
   }
 }

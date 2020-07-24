@@ -1,5 +1,5 @@
 .button {
-  //box-sizing: border-box;
+  box-sizing: border-box;
   border-radius: 22px;
   outline: none;
   @extend %h3-font;
@@ -43,10 +43,12 @@
     @extend %primary-grad;
     border: none;
     color: #ffffff;
-    width: 320px;
+    min-width: 266px;
     height: 44px;
     padding: 10px 10px;
     position: relative;
+    box-sizing: border-box;
+    flex-grow: 1;
   }
   &_theme-long::before {
     content: "arrow_forward";

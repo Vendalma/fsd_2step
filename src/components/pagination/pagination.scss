@@ -1,3 +1,14 @@
+.pagination {
+  width: 241px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &__text {
+    @extend %body-font;
+    margin-top: 10px;
+  }
+}
+
 //old default styles
 ul.simple-pagination {
   list-style: none;
@@ -6,7 +17,6 @@ ul.simple-pagination {
 .simple-pagination {
   display: block;
   overflow: hidden;
-  padding: 0 5px 5px 0;
   margin: 0;
 }
 
@@ -34,7 +44,7 @@ span.ellipse.clickable {
 .simple-pagination {
   width: 241px;
 }
-.prev {
+.disabled-prev {
   display: none;
 }
 .activePagination > .current {
@@ -46,6 +56,7 @@ span.ellipse.clickable {
 .simple-pagination ul {
   display: flex;
   flex-direction: row;
+  width: 100%;
 }
 
 .simple-pagination li {
@@ -56,6 +67,7 @@ span.ellipse.clickable {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 .activePagination {
   @extend %primary-grad;

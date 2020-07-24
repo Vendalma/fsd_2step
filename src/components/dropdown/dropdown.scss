@@ -2,13 +2,9 @@
 .dropdown {
   height: 44px;
   cursor: pointer;
-
-  &-guests {
-    width: 320px;
-  }
-  &_size-s {
-    width: 266px;
-  }
+  min-width: 266px;
+  flex-grow: 1;
+  flex-shrink: 0;
   &__select-container {
     width: 100%;
     height: 100%;

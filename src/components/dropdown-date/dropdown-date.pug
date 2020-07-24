@@ -19,19 +19,18 @@ mixin dropdown_date(type,placeholder1,description1,placeholder2,description2,ran
             label.dropdown-date__label
                 .dropdown-date__block
                     +description(description1).dropdown-date__description
-                    input(type='text' placeholder=placeholder1  
+                    input(type='text' placeholder=placeholder1 
                             class='dropdown-date__input' 
-                            class='dropdown-date__input_double' 
-                            class = 'datepicker-here' 
-                            class='dropdown-date__input-start'
+                            class='dropdown-date__input_double'
+                            id='start'
                             class = range? 'dropdown-date__input_double-range' : '')
                     i.dropdown-date__material-icon.dropdown-date__material-icon_margin-s expand_more
                 .dropdown-date__block
                     +description(description2).dropdown-date__description
                     input(type='text' placeholder=placeholder2 
                             class='dropdown-date__input' 
-                            class='dropdown-date__input_double' 
-                            class='dropdown-date__input-end'
+                            class='dropdown-date__input_double'
+                            id='end'
                             class = range? 'dropdown-date__input_double-range' : '')
                     i.dropdown-date__material-icon.dropdown-date__material-icon_margin-s expand_more
                     

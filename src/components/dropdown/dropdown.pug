@@ -1,6 +1,6 @@
 include ../buttons/buttons
 
-mixin dropdown(type, active= false, score1, score2, score3)
+mixin dropdown(type, score1, score2, score3,active= false)
     if type == 'guests'
             .dropdown.dropdown-guests&attributes(attributes)
                 .dropdown__select-container(class = active? 'dropdown__select-container_open' : 'dropdown__select-container_default')
