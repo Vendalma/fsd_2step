@@ -22,9 +22,6 @@
     &_margin {
       margin-right: 20px;
     }
-    &_hidden {
-      display: none;
-    }
   }
   &__input {
     width: 100%;
@@ -47,13 +44,15 @@
     @extend %mat-icons;
     position: absolute;
     color: $dark-50;
+    background: #ffffff;
+
     &_margin-m {
       top: 28px;
       right: 8px;
     }
     &_margin-s {
       top: 28px;
-      left: 118px;
+      right: 9px;
     }
   }
 }

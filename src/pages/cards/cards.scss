@@ -3,18 +3,45 @@
 }
 
 .cards {
-  padding-left: 140px;
-  padding-right: 140px;
+  padding-left: 140px * 100%/ 1440px;
+  padding-right: 140px * 100%/ 1440px;
   margin-top: 72px;
 
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+
   &__container {
-    width: 380px;
+    &_column {
+      display: flex;
+      flex-direction: column;
+      max-width: 380px;
+    }
+    &_margin {
+      margin-right: 40px * 100%/1160px;
+    }
   }
-  &__room {
+  &__item {
     margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cards {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+    &__container {
+      &_margin {
+        margin-right: 0px;
+      }
+    }
   }
 }

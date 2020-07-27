@@ -13,16 +13,13 @@ block head
 block body
   - const {room1,room2} = require('./cards.json')
     .cards
-        .cards__container
-         +search-card
-        .cards__container
-          +calc-card('888','9 990',true)
-        .cards__container
-          +dropdown_date('inline')
-        .cards__container
-          +registration-card
-        .cards__container
-          +sign-in-card
-        .cards__container
-          +room-card('luxury','888', '9 990₽',5 ,'145', room1).cards__room
-          +room-card('standart','840', '9 900₽',4 ,'65', room2).cards__room
+        .cards__container_column.cards__container_margin
+          +search-card.cards__item
+          +registration-card.cards__item
+        .cards__container_column.cards__container_margin
+          +calc-card('888','9 990',true).cards__item
+          +sign-in-card.cards__item
+        .cards__container_column
+          +dropdown_date('inline').cards__item
+          +room-card('luxury','888', '9 990₽',5 ,'145', room1).cards__item
+          +room-card('standart','840', '9 900₽',4 ,'65', room2).cards__item
