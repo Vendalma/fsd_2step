@@ -11,10 +11,9 @@ mixin registration-card
             .registration-card__block
                 +field('text','Имя').registration-card__user-name
                 +field('text', 'Фамилия').registration-card__user-surname
-            .registration-card__block
-                .registration-card__wrapper
-                    +radio('gender1','gender', 'male', 'Мужчина',true).registration-card__radio-one
-                    +radio('gender2','gender', 'female', 'Женщина').registration-card__radio-two
+            .registration-card__block.registration-card__block_row
+                +radio('gender1','gender', 'male', 'Мужчина',true).registration-card__radio-one
+                +radio('gender2','gender', 'female', 'Женщина').registration-card__radio-two
             .registration-card__block
                 +description('дата рождения').registration-card__description
                 +field('mask', 'ДД.ММ.ГГГГ').registration-card__mask-field

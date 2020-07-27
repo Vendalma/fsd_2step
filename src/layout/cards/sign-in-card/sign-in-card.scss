@@ -14,11 +14,16 @@
     padding: 0;
     margin-bottom: 20px;
   }
-  &__block_row {
+  &__block {
     display: flex;
+    flex-direction: column;
+    &_row {
+  
     flex-direction: row;
-    justify-content: space-between;
+      justify-content: space-between;
+    }
   }
+
   &__user-name {
     margin-bottom: 10px;
   }

@@ -34,7 +34,95 @@
       font-weight: normal;
     }
   }
+  &__date-block {
+    margin-bottom: 20px;
+  }
   &__description {
     margin-bottom: 5px;
+  }
+  &__calculation-block {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  &__days-sum {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    @extend %body-font;
+    margin-bottom: 10px;
+  }
+  &__sale {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    @extend %body-font;
+    margin-bottom: 10px;
+    &-price {
+      width: 214px;
+    }
+  }
+  &__services {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    @extend %body-font;
+    margin-bottom: 30px;
+    &-price {
+      width: 214px;
+    }
+  }
+  &__total {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    @extend %h2-font;
+    &-text {
+      position: relative;
+      z-index: 1;
+      background: #fff;
+      padding-right: 5px;
+    }
+    &-sum {
+      position: relative;
+      z-index: 1;
+      background: #fff;
+      padding-left: 5px;
+    }
+    &-line {
+      width: 320px;
+      height: 1px;
+      border-top: 1px dashed $dark-25;
+      box-sizing: border-box;
+      position: absolute;
+      left: 0;
+      bottom: 5px;
+    }
+  }
+  &__item-block {
+    display: inline-flex;
+    justify-content: center;
+  }
+  &__circle-item {
+    width: 20px;
+    height: 20px;
+    @extend %h3-font;
+    line-height: 117%;
+    color: $dark-25;
+    text-transform: none;
+
+    border: 1px solid $dark-25;
+    box-sizing: border-box;
+    border-radius: 50%;
+    margin-left: 5px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  &__button-block {
+    width: 320px;
+    display: flex;
   }
 }

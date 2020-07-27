@@ -19,6 +19,12 @@
   }
   &__block {
     position: relative;
+    &_margin {
+      margin-right: 20px;
+    }
+    &_hidden {
+      display: none;
+    }
   }
   &__input {
     width: 100%;
@@ -34,10 +40,7 @@
     cursor: pointer;
 
     &_double {
-      width: 150px;
-    }
-    &-start {
-      margin-right: 20px;
+      max-width: 150px;
     }
   }
   &__material-icon {
@@ -61,6 +64,21 @@
     color: $dark-75;
     outline: none;
 
+    &::placeholder {
+      color: $dark-75;
+    }
+    &::-webkit-input-placeholder {
+      color: $dark-75;
+    }
+    &::-moz-placeholder {
+      color: $dark-75;
+      opacity: 1;
+    }
+  }
+}
+
+.dropdown-date {
+  &__input {
     &::placeholder {
       color: $dark-75;
     }

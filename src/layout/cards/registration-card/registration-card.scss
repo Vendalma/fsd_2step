@@ -15,17 +15,15 @@
     margin-bottom: 20px;
   }
   &__block {
+    display: flex;
+    flex-direction: column;
     &_row {
-      display: flex;
       flex-direction: row;
       justify-content: space-between;
+      margin-bottom: 20px;
     }
   }
-  &__wrapper {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 20px;
-  }
+
   &__description {
     margin-bottom: 5px;
   }
@@ -34,9 +32,6 @@
   }
   &__user-surname {
     margin-bottom: 10px;
-  }
-  &__radio-two {
-    margin-bottom: 20px;
   }
   &__mask-field {
     margin-bottom: 20px;

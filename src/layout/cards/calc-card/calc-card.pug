@@ -1,6 +1,7 @@
 include ../../../components/dropdown-date/dropdown-date
 include ../../../components/dropdown/dropdown
 include ../../../components/description/description
+include ../../../components/buttons/buttons
 
 mixin calc-card(number,price,luxury = false)
     form.calc-card&attributes(attributes)
@@ -14,8 +15,30 @@ mixin calc-card(number,price,luxury = false)
                 span.calc-card__price_num #{price}₽
                 span.calc-card__price_text  в сутки
         .calc-card__date-block
-             +dropdown_date('double','','прибытие','','выезд', true)
+            +dropdown_date('double',true,'ДД.ММ.ГГГГ','прибытие','ДД.ММ.ГГГГ','выезд', true)
         .calc-card__dropdown-block
             +description('гости').calc-card__description
-            +dropdown('guests',false,2,1,0)
+            +dropdown('guests',2,1,0)
+        .calc-card__calculation-block
+            .calc-card__days-sum
+                span.calc-card__days-price
+                span.calc-card__sum-one
+            .calc-card__sale
+                .calc-card__item-block
+                    span.calc-card__sale-price Сбор за услуги: скидка 2 179₽
+                    span.calc-card__circle-item i
+                span.calc-card__sum-two 0₽
+            .calc-card__services
+                .calc-card__item-block
+                    span.calc-card__services-price Сбор за дополнительные услуги
+                    span.calc-card__circle-item i
+                span.calc-card__sum-three 300₽
+            .calc-card__total
+                span.calc-card__total-text Итого
+                span.calc-card__total-line
+                span.calc-card__total-sum
+        .calc-card__button-block
+            +button('long','Забронировать')
+
+
         
