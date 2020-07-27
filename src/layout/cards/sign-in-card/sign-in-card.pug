@@ -7,7 +7,7 @@ mixin sign-in-card
         form.sign-in-card__form
             .sign-in-card__block
                 +field('text','Email').sign-in-card__user-name
-                +field('text', 'Пароль').sign-in-card__user-surname
+                +field('password', 'Пароль').sign-in-card__user-surname
                 +button('long','войти').sign-in-card__button-sign-in
             .sign-in-card__block.sign-in-card__block_row
                 p.sign-in-card__text Нет аккаунта на Toxin?

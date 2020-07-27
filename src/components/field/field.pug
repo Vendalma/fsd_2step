@@ -1,19 +1,12 @@
 //- theme for Material Icon: lin-grad
 
-//- type text field: 
-    text = text field
-    sub = subscription
-
-//- material icons theme: 
-    lin-grad-theme
-
 //- theme type for text-field__block :
     hover-theme
 
 include /components/buttons/buttons
 
     
-mixin field(type,placeholder,matIconsTheme, matIconsName) 
+mixin field(type,placeholder) 
     if type == 'text'
         .text-field&attributes(attributes)
             lable.text-field__lable
@@ -32,3 +25,7 @@ mixin field(type,placeholder,matIconsTheme, matIconsName)
             .text-field__block
                 label.text-field__lable
                     input(type="text" placeholder=placeholder).text-field__input.text-field__input_mask
+    else if type == 'password'
+        .text-field&attributes(attributes)
+            lable.text-field__lable
+                input(type="password" placeholder=placeholder).text-field__input

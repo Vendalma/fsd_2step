@@ -20,7 +20,7 @@ mixin registration-card
             .registration-card__block
                 +description('данные для входа в сервис').registration-card__description
                 +field('text','Email').registration-card__email
-                +field('text', 'Пароль').registration-card__password
+                +field('password', 'Пароль').registration-card__password
             .registration-card__block
                 +toggle('Получать спецпредложения').registration-card__toggle
                 +button('long','перейти к оплате').registration-card__button-pay

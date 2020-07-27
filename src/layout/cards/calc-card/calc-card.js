@@ -45,12 +45,11 @@ function letTotalSum(totalSum, sumOne, days) {
   let sumTwo = 2179;
   let sumThree = 300;
 
-  totalSum.innerHTML = (
-    letReplaceNum(sumOne, days) -
-    sumTwo +
-    sumThree +
-    ""
-  ).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, "$1 ");
+  totalSum.innerHTML =
+    (letReplaceNum(sumOne, days) - sumTwo + sumThree + "").replace(
+      /(\d)(?=(\d\d\d)+([^\d]|$))/g,
+      "$1 "
+    ) + "₽";
 }
 
 function letCorrectDayName(days) {
