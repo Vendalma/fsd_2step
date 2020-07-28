@@ -1,0 +1,15 @@
+extends  /layout/website-base/website-base
+include /layout/header/header
+include /layout/footer/footer
+include /layout/footer-small/footer-small
+
+block head
+  title Landing page
+
+block body
+    .landing-page
+        +header.landing-page__header
+        main.landing-page__container
+        +footer.landing-page__footer
+        -//+footer-small.landing-page__footer-small
+        

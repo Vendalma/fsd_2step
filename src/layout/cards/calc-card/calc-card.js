@@ -3,7 +3,7 @@ import "./calc-card.scss";
 import "@components/dropdown-date/dropdown-date";
 
 let page = document.querySelector("html");
-let endBlock = document.querySelector(".dropdown-date__input_double-end");
+let endBlock = document.querySelector(".dropdown-date__double-end");
 let totalSum = document.querySelector(".calc-card__total-sum");
 let sumOne = document.querySelector(".calc-card__sum-one");
 let priceNum = document.querySelector(".calc-card__price_num");

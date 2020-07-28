@@ -11,155 +11,163 @@ import "air-datepicker";
 <----------------------------------------------------->
 */
 
-let $start = $(".dropdown-date__input_double-start");
-let $end = $(".dropdown-date__input_double-end");
-let start = document.querySelector(".dropdown-date__input_double-start");
+var $this = $("body").find(".dropdown-date_active");
 
-let picker = $(".dropdown-date__input_double-start").datepicker({
-  range: true,
-  multipleDates: true,
-  multipleDatesSeparator: " - ",
-  language: "ru",
-  navTitles: {
-    days: "MM yyyy",
-  },
-  keyboardNav: false,
-  clearButton: true,
-  prevHtml: '<i class="material--icon">arrow_back</i>',
-  nextHtml: '<i class="material--icon">arrow_forward</i>',
+$this.each(function () {
+  let $this = $(this);
 
-  onSelect: function (fd, d, picker) {
-    $(".dropdown-date__input_double-start").val(fd.split("-")[0]);
-    $(".dropdown-date__input_double-end").val(fd.split("-")[1]);
-  },
-});
+  if ($this.hasClass("dropdown-date_active_double")) {
+    let $start = $(".dropdown-date__double-start");
+    let $end = $(".dropdown-date__double-end");
+    let start = document.querySelector(".dropdown-date__double-start");
 
-$(".dropdown-date__input_double-end").on("click", () => {
-  picker.data("datepicker").show();
-});
+    let picker = $(".dropdown-date__double-start").datepicker({
+      range: true,
+      multipleDates: true,
+      multipleDatesSeparator: " - ",
+      language: "ru",
+      navTitles: {
+        days: "MM yyyy",
+      },
+      keyboardNav: false,
+      clearButton: true,
+      prevHtml: '<i class="material--icon">arrow_back</i>',
+      nextHtml: '<i class="material--icon">arrow_forward</i>',
 
-addButtons(picker);
-if (start.classList.contains("dropdown-date__input_range")) {
-  setRange(picker);
-}
-selectedDatesArray(picker);
-
-/*
-<----------------------------------------------------->
-
-          Инициализация постоянно активного календаря
-
-<----------------------------------------------------->
-*/
-
-let inline = $(".dropdown-date.dropdown-date__inline");
-inline.datepicker({
-  range: true,
-  multipleDates: true,
-  multipleDatesSeparator: " - ",
-  language: "ru",
-  navTitles: {
-    days: "MM yyyy",
-  },
-  keyboardNav: false,
-  clearButton: true,
-  prevHtml: '<i class="material--icon">arrow_back</i>',
-  nextHtml: '<i class="material--icon">arrow_forward</i>',
-  onRenderCell: function (date, cellType) {
-    if (
-      date.getDate() == "8" &&
-      date.getMonth() == "7" &&
-      date.getFullYear() == "2019" &&
-      cellType == "day"
-    ) {
-      return {
-        classes: "datepicker--cell -current-",
-      };
-    }
-  },
-});
-addButtons(inline);
-setRange(inline);
-
-/*
-<----------------------------------------------------->
-
-          Инициализация календаря на один инпут
- 
-<----------------------------------------------------->
-*/
-
-/* }
-
-  function filter(elem) {
-    let filterInput = elem;
-    $(filterInput).datepicker({
-      dateFormat: "dd M",
-      onSelect: function (fd, d) {
-        $(filterInput).val(fd.toLowerCase());
+      onSelect: function (fd, d, picker) {
+        $(".dropdown-date__double-start").val(fd.split("-")[0]);
+        $(".dropdown-date__double-end").val(fd.split("-")[1]);
       },
     });
-    addButtons(filterInput);
+
+    $(".dropdown-date__double-end").on("click", () => {
+      picker.data("datepicker").show();
+    });
+
+    let applyButton = document.createElement("span");
+    applyButton.setAttribute("data-action", "apply");
+    applyButton.classList.add("datepicker--button");
+    applyButton.classList.add("datepicker--button-colored");
+    applyButton.innerHTML = "Применить";
+
+    applyButton.addEventListener("click", function () {
+      $start.data("datepicker").hide();
+      selectedDatesArray(picker);
+    });
+
+    let buttons = picker
+      .data("datepicker")
+      .$datepicker.find(".datepicker--buttons");
+
+    buttons.append(applyButton);
+    console.log($this.children());
+    if ($this.children().hasClass("dropdown-date__range")) {
+      setRange(picker);
+    }
+
+    selectedDatesArray(picker);
   }
 
+  /*
+  <----------------------------------------------------->
   
+            Инициализация постоянно активного календаря
+  
+  <----------------------------------------------------->
+  */
+  if ($this.hasClass("dropdown-date__inline")) {
+    $(".dropdown-date__inline").datepicker({
+      range: true,
+      multipleDates: true,
+      multipleDatesSeparator: " - ",
+      language: "ru",
+      navTitles: {
+        days: "MM yyyy",
+      },
+      keyboardNav: false,
+      clearButton: true,
+      prevHtml: '<i class="material--icon">arrow_back</i>',
+      nextHtml: '<i class="material--icon">arrow_forward</i>',
+      onRenderCell: function (date, cellType) {
+        if (
+          date.getDate() == "8" &&
+          date.getMonth() == "7" &&
+          date.getFullYear() == "2019" &&
+          cellType == "day"
+        ) {
+          return {
+            classes: "datepicker--cell -current-",
+          };
+        }
+      },
+    });
+    addButtons($(".dropdown-date__inline"));
+    setRange($(".dropdown-date__inline"));
+  }
 
+  /*
+  <----------------------------------------------------->
+  
+            Инициализация календаря на один инпут
+   
+  <----------------------------------------------------->
+  */
 
-}
+  if ($this.hasClass("dropdown-date_active_filter")) {
+    $(".dropdown-date__filter").datepicker({
+      language: "ru",
+      range: true,
+      multipleDates: true,
+      multipleDatesSeparator: " - ",
+      dateFormat: "dd M",
+      navTitles: {
+        days: "MM yyyy",
+      },
+      keyboardNav: false,
+      clearButton: true,
+      prevHtml: '<i class="material--icon">arrow_back</i>',
+      nextHtml: '<i class="material--icon">arrow_forward</i>',
+      onSelect: function (fd, d) {
+        $(".dropdown-date__filter").val(fd.toLowerCase());
+      },
+    });
+    addButtons($(".dropdown-date__filter"));
+  }
 
-var $start = $("#start"),
-  $end = $("#end");
-//var $datepickers = $(".dropdown-date__input_double");
+  //фун-ция добавления кнопки 'Применить'
+  function addButtons(elem) {
+    let applyButton = document.createElement("span");
+    applyButton.setAttribute("data-action", "apply");
+    applyButton.classList.add("datepicker--button");
+    applyButton.classList.add("datepicker--button-colored");
+    applyButton.innerHTML = "Применить";
 
-/* //language: "ja",
-  // offset: ,
-  navTitles: {
-    days: "<i>yyyy</i> MM",
-    months: "yyyy",
-    years: "yyyy1 - yyyy2",
-  },
-  //minDate: now,
-  //maxDate: endDate,
-  multipleDatesSeparator: "-",
-  //range: true,
-*/
-/*$datepickers
-  .data("datepicker")
-  .selectDate([new Date("2019-08-19"), new Date("2019-08-23")]);
-*/
+    applyButton.addEventListener("click", function () {
+      elem.data("datepicker").hide();
+      selectedDatesArray(picker);
+    });
 
-//фун-ция добавления кнопки 'Применить'
-function addButtons(elem) {
-  let applyButton = document.createElement("span");
-  applyButton.setAttribute("data-action", "apply");
-  applyButton.classList.add("datepicker--button");
-  applyButton.classList.add("datepicker--button-colored");
-  applyButton.innerHTML = "Применить";
+    let buttons = elem
+      .data("datepicker")
+      .$datepicker.find(".datepicker--buttons");
 
-  applyButton.addEventListener("click", function () {
-    elem.data("datepicker").hide();
-    selectedDatesArray(picker);
-  });
+    buttons.append(applyButton);
+  }
 
-  let buttons = $(elem)
-    .data("datepicker")
-    .$datepicker.find(".datepicker--buttons");
+  //ф-ция устанавливает интервал дат
+  function setRange(elem) {
+    elem
+      .data("datepicker")
+      .selectDate([new Date("2019-08-19"), new Date("2019-08-23")]);
+  }
 
-  buttons.append(applyButton);
-}
+  //ф-ция получения кол-ва дней в интервале дат
 
-//ф-ция устанавливает интервал дат
-function setRange(elem) {
-  elem
-    .data("datepicker")
-    .selectDate([new Date("2019-08-19"), new Date("2019-08-23")]);
-}
-
-//ф-ция получения кол-ва дней в интервале дат
-function selectedDatesArray(elem) {
-  let dayOne = elem.data("datepicker").selectedDates[0];
-  let dayTwo = elem.data("datepicker").selectedDates[1];
-  let days = (dayTwo - dayOne) / (24 * 60 * 60 * 1000);
-  let end = document.querySelector(".dropdown-date__input_double-end");
-  return end.setAttribute("data-days", days);
-}
+  function selectedDatesArray(elem) {
+    let dayOne = elem.data("datepicker").selectedDates[0];
+    let dayTwo = elem.data("datepicker").selectedDates[1];
+    let days = (dayTwo - dayOne) / (24 * 60 * 60 * 1000);
+    let end = document.querySelector(".dropdown-date__double-end");
+    return end.setAttribute("data-days", days);
+  }
+});

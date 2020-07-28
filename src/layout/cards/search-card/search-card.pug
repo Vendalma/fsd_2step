@@ -8,7 +8,7 @@ mixin search-card
         p.search-card__title Найдём номера под ваши пожелания
         form.search-card__content
             .search-card__block-date
-                +dropdown_date('double',false,'ДД.ММ.ГГГГ', 'прибытие', 'ДД.ММ.ГГГГ', 'выезд',false).search-card__dropdown-date
+                +dropdown_date('double',true,'ДД.ММ.ГГГГ', 'прибытие', 'ДД.ММ.ГГГГ', 'выезд',false).search-card__dropdown-date
             .search-card__block-dropdown
                 +description('гости').search-card__decription
                 +dropdown('guests',0,0,0).search-card__dropdown
