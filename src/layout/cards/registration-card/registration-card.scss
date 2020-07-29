@@ -20,8 +20,10 @@
     &_row {
       flex-direction: row;
       justify-content: space-between;
-      margin-bottom: 20px;
       align-items: center;
+    }
+    &_margin {
+      margin-bottom: 20px;
     }
   }
 
