@@ -5,6 +5,7 @@ import "./pages/cards/cards";
 import "./pages/landing/landing";
 import "./pages/registration/registration";
 import "./pages/sign-in/sign-in";
+import "./pages/search-room/search-room";
 
 import $ from "jquery";
 

@@ -1,0 +1,38 @@
+{
+  "room1": {
+    "imgs": ["room1.png", "room1.png", "room1.png", "room1.png"]
+  },
+  "room2": {
+    "imgs": ["room2.png", "room2.png", "room2.png", "room2.png"]
+  },
+  "room3": {
+    "imgs": ["room3.png", "room3.png", "room3.png", "room3.png"]
+  },
+  "room4": {
+    "imgs": ["room4.png", "room4.png", "room4.png", "room4.png"]
+  },
+  "room5": {
+    "imgs": ["room5.png", "room5.png", "room5.png", "room5.png"]
+  },
+  "room6": {
+    "imgs": ["room6.png", "room6.png", "room6.png", "room6.png"]
+  },
+  "room7": {
+    "imgs": ["room7.png", "room7.png", "room7.png", "room7.png"]
+  },
+  "room8": {
+    "imgs": ["room8.png", "room8.png", "room8.png", "room8.png"]
+  },
+  "room9": {
+    "imgs": ["room9.png", "room9.png", "room9.png", "room9.png"]
+  },
+  "room10": {
+    "imgs": ["room10.png", "room10.png", "room10.png", "room10.png"]
+  },
+  "room11": {
+    "imgs": ["room11.png", "room11.png", "room11.png", "room11.png"]
+  },
+  "room12": {
+    "imgs": ["room12.png", "room12.png", "room12.png", "room12.png"]
+  }
+}

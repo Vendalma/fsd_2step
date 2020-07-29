@@ -1,0 +1,64 @@
+.search-room {
+  background-color: #ffffff;
+  width: 100%;
+  margin: 0 auto;
+  &__content {
+    max-width: 1440px;
+
+    padding-left: 140px * 100%/ 1440px;
+    padding-right: 140px * 100%/ 1440px;
+    padding-top: 30px;
+    padding-bottom: 70px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+  }
+  &__filter {
+    max-width: 266px;
+  }
+}
+
+.filter {
+  margin-right: 60px * 100%/ 1440px;
+  &__item {
+    &_margin-20 {
+      margin-bottom: 20px;
+    }
+    &_margin-30 {
+      margin-bottom: 20px;
+    }
+  }
+  &__text {
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+    @extend %h3-font;
+    line-height: 117%;
+    color: $dark-50;
+    text-transform: none;
+    font-weight: normal;
+  }
+}
+
+.rooms {
+  &__text {
+    @extend %h1-font;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  &__cards-block {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    &_item {
+      margin-bottom: 20px;
+    }
+  }
+  &__pagination {
+    margin: 0 auto;
+  }
+}

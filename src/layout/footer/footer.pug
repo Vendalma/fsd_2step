@@ -5,6 +5,7 @@ include /components/copyright-bar/copyright-bar
 
 mixin footer
     footer.footer&attributes(attributes)
+        .footer__line
         .footer__container-widgets
             .footer__logo-info
                 +logo-colored.footer__logo-colored
@@ -30,6 +31,6 @@ mixin footer
                 p.footer__item.footer__item_header Подписка
                 p.footer__item.footer__info Получайте специальные предложения и новости сервиса
                 +field('sub','Email').footer__field
-        .footer__container-border
+        .footer__line.footer__line_bottom
         .footer__container-copy
             +copyright-bar('footer__copyright-bar')
