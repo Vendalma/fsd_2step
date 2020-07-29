@@ -2,14 +2,20 @@ extends  /layout/website-base/website-base
 include /layout/header/header
 include /layout/footer/footer
 include /layout/footer-small/footer-small
+include /layout/cards/search-card/search-card
 
 block head
-  title Landing page
 
 block body
     .landing-page
         +header.landing-page__header
         main.landing-page__container
+          .landing-page__slider-wrapper
+            .landing-page__slider_item.landing-page__slider_item-one
+            .landing-page__slider_item.landing-page__slider_item-two
+            .landing-page__slider_item.landing-page__slider_item-three.landing-page__slider_active
+            +search-card.landing-page__card 
+            .landing-page__text Лучшие номера для вашей работы, отдыха и просто вдохновения
         +footer.landing-page__footer
         -//+footer-small.landing-page__footer-small
         
