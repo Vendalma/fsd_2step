@@ -21,22 +21,22 @@ block body
                 .filter__item.filter__item_margin-20
                     +dropdown_date('filter',true,'19 авг - 23 авг','даты пребывания в отеле')
                 .filter__item.filter__item_margin-30
-                    +description('гости').filter__description
+                    +description('small margin','гости').filter__description
                     +dropdown('guests',2,1,1)
                 .filter__item.filter__item_margin-30
                     +range_slider('диапазон цены')
                     p.filter__text Стоимость за сутки пребывания в номере
                 .filter__item.filter__item.filter__item_margin-30
-                    +description('checkbox buttons').filter__description
+                    +description('big margin','checkbox buttons').filter__description
                     +checkbox('default','smoking', 'Можно курить').filter__checkbox
                     +checkbox('default','pets', 'Можно с питомцами','','true').filter__checkbox
                     +checkbox('default','guests', 'Можно пригласить гостей (до 10 человек)','','true').filter__checkbox
                 .filter__item.filter__item.filter__item_margin-30
-                    +description('Rich Checkbox Buttons').filter__description
+                    +description('big margin','доступность').filter__description
                     +checkbox('rich','corridor-size','Ширина коридоров в номере          не менее 91 см.','Широкий коридор').filter__checkbox
                     +checkbox('rich','disabled-assistant','На 1 этаже вас встретит специалист и проводит до номера.','Помощник для инвалидов').filter__checkbox
                 .filter__item.filter__item.filter__item_margin-30
-                    +description('удобства номера').filter__description
+                    +description('small margin','удобства номера').filter__description
                     +dropdown('room',2,2,0)
                 .filter__item
                     +expandable-checkbox('дополнительные удобства')

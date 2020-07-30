@@ -38,6 +38,7 @@
   }
   &__info {
     @extend %body-font;
+    cursor: default;
   }
   &_list {
     display: flex;

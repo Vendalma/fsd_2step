@@ -1,8 +1,11 @@
-mixin description(text, typeVisible=false, typeInfo)
-    if typeVisible
+mixin description(type,text, typeInfo)
+    if type == 'info text'
         .description&attributes(attributes)
             span.description__item #{text}
             span.description__type #{typeInfo}
-    else 
+    else if type == 'big margin'
         .description&attributes(attributes)
-            span.description__item #{text}
+            span.description__item.description__item_margin-m #{text}
+    else if type == 'small margin'
+        .description&attributes(attributes)
+            span.description__item.description__item_margin-s #{text}

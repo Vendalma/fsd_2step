@@ -33,6 +33,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     display: block;
+
     &_default {
       @extend %body-font;
     }

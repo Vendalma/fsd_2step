@@ -4,9 +4,18 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  cursor: default;
 
   &__type {
     color: $dark-50;
     font-weight: normal;
+  }
+  &__item {
+    &_margin-s {
+      margin-bottom: 5px;
+    }
+    &_margin-m {
+      margin-bottom: 15px;
+    }
   }
 }
