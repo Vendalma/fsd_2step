@@ -1,6 +1,6 @@
 include /components/like-button/like-button
 
-mixin commenst(userPhoto,userName,date,count,text)
+mixin comments(userPhoto,userName,date,count,countActive,text)
     .comments&attributes(attributes)
         .comments__block-user
             .comments__user-photo
@@ -10,5 +10,5 @@ mixin commenst(userPhoto,userName,date,count,text)
                 span.comments__date #{date}
         .comments__block
             .comments__like-button
-                +like_button(count,true)
+                +like_button(count,countActive)
             .comments__text #{text}

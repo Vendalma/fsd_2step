@@ -18,7 +18,7 @@ mixin calc-card(number,price,luxury = false)
             .calc-card__date-block
                 +dropdown_date('double',true,'ДД.ММ.ГГГГ','прибытие','ДД.ММ.ГГГГ','выезд', true)
             .calc-card__dropdown-block
-                +description('гости').calc-card__description
+                +description('small margin','гости').calc-card__description
                 +dropdown('guests',2,1,0)
             .calc-card__calculation-block
                 .calc-card__days-sum

@@ -1,0 +1,94 @@
+.room-details {
+  width: 100%;
+  &__wrapper {
+    margin-bottom: 40px;
+  }
+}
+.gallery {
+  width: 100%;
+  height: 485px;
+
+  display: flex;
+  flex-direction: row;
+  &__column {
+    flex-direction: column;
+    height: inherit;
+    width: 459px * 100%/ 1440px;
+  }
+  &__item-one {
+    @include bgimage("bg-image-7");
+    width: 981px * 100% / 1440px;
+    height: 100%;
+  }
+  &__item-two {
+    @include bgimage("bg-image-5");
+
+    height: 50%;
+  }
+  &__item-three {
+    @include bgimage("bg-image-6");
+
+    height: 50%;
+  }
+}
+
+.container {
+  max-width: 1440px;
+  padding-left: 140px * 100% / 1440px;
+  padding-right: 140px * 100% / 1440px;
+  padding-top: 70px;
+  background: #ffffff;
+  box-sizing: border-box;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: row;
+  &__wrapper {
+    width: 100%;
+    &_s-380 {
+      max-width: 380px;
+      margin-left: 70px;
+      box-sizing: border-box;
+    }
+  }
+  &__block {
+    margin-bottom: 30px;
+    &_text {
+      width: 100%;
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+      //margin-bottom: 20px;
+    }
+    &_row {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  &__title {
+    @extend %h2-font;
+    margin-bottom: 20px;
+  }
+  &__text {
+    @extend %body-font;
+
+    &_item {
+      line-height: 100%;
+      color: $dark-50;
+    }
+  }
+  &__number-info {
+    margin-right: 70px * 100%/ 710px;
+  }
+  &__comments {
+    &_margin {
+      margin-bottom: 22px;
+    }
+  }
+
+  &__cancel {
+    margin-left: 70px * 100% /710px;
+    max-width: 341px;
+    box-sizing: border-box;
+  }
+}

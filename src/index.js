@@ -6,6 +6,7 @@ import "./pages/landing/landing";
 import "./pages/registration/registration";
 import "./pages/sign-in/sign-in";
 import "./pages/search-room/search-room";
+import "./pages/room-details/room-details";
 
 import $ from "jquery";
 
