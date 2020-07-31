@@ -5,6 +5,7 @@ include /layout/cards/calc-card/calc-card
 include /components/icon-list/icon-list
 include /components/comments/comments
 include /components/bullet-list/bullet-list
+include /components/donut-chart/donut-chart
 
 block head
     title Room details
@@ -26,6 +27,7 @@ block body
                         +iconList('whatshot','Уют','Номер оснащён камином',false)
                     .container__impressions
                         h2.container__title  Впечатления от номера
+                        +chart
                 .container__block.container__block_column
                     .container__block_text
                         h2.container__title  Отзывы посетителей номера

@@ -1,0 +1,79 @@
+.chart {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  &__svg {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    margin-right: 30px;
+    box-sizing: border-box;
+  }
+  &__info {
+    position: absolute;
+    text-align: center;
+    top: 32px;
+    left: 28px;
+  }
+  &__count {
+    @extend %h1-font;
+    color: $color-one;
+  }
+  &__text {
+    @extend %h3-font;
+    color: $color-one;
+  }
+  &__list {
+    margin: 0;
+    padding: 0;
+  }
+  &__item {
+    @extend %body-font;
+    list-style-type: none;
+    &_excellent {
+      &::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        border-radius: 50%;
+        @extend %third-grad;
+        margin-right: 5px;
+      }
+    }
+    &_good {
+      &::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        border-radius: 50%;
+        @extend %secondary-grad;
+        margin-right: 5px;
+      }
+    }
+    &_satisfactory {
+      &::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        border-radius: 50%;
+        @extend %primary-grad;
+        margin-right: 5px;
+      }
+    }
+    &_disappointed {
+      &::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        border-radius: 50%;
+        @extend %fourth-grad;
+        margin-right: 5px;
+      }
+    }
+  }
+}
