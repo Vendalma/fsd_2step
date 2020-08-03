@@ -26,7 +26,7 @@
       @extend %h3-font;
       font-weight: normal;
       color: $dark-25;
-      margin-bottom: 50px;
+      margin-bottom: 48px;
     }
     &_body {
       @extend %body-font;
@@ -35,7 +35,7 @@
   }
 
   &__content {
-    max-width: 336px;
+    min-width: 336px;
     text-align: left;
 
     &_h1 {
@@ -44,11 +44,11 @@
     }
     &_h2 {
       @extend %h2-font;
-      margin-bottom: 50px;
+      margin-bottom: 52px;
     }
     &_h3 {
       @extend %h3-font;
-      margin-bottom: 50px;
+      margin-bottom: 47px;
     }
     &_body {
       @extend %body-font;
