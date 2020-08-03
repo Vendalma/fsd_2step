@@ -2,6 +2,8 @@
   text-decoration: none;
   @extend %body-font;
   color: $dark-50;
+  line-height: 1.0625rem;
+  padding-top: 2px;
   &_active {
     font-weight: bold;
     color: $dark-75;

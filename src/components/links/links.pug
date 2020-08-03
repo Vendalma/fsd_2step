@@ -1,7 +1,7 @@
 mixin link(type,name)
   if type == 'materialIcons'
       a(href='/mock-address/change-me' class='link link__close')&attributes(attributes) #{name}
-        i.link__material-icons.link__material-icons_close expand_more
+        i.link__material-icons expand_more
 
   else if type == 'active' 
     a(href='/mock-address/change-me' class='link link_active')&attributes(attributes) #{name}

@@ -5,14 +5,15 @@ include /components/buttons/buttons
 mixin header(userName=false, bigMargin=false)
     header.header&attributes(attributes)
         .header__container
-            .header__block
-                if bigMargin
+            if bigMargin
+                .header__logo.header__logo_margin-lg
                     +logo-colored.header__logo-colored
-                else 
+            else 
+                .header__logo.header__logo_margin-s
                     +logo-colored.header__logo-colored
             .header__burger-menu
-                .span.header__burger-span
-            .header__block.header__block_menu
+                span.header__burger-span
+            nav.header__menu
                 .header__link-list
                     +link('active','О нас').header__link-item
                     +link('materialIcons','Услуги').header__link-item
@@ -26,5 +27,5 @@ mixin header(userName=false, bigMargin=false)
                 else 
                     .header__buttons
                         +button('border-primary-grad','Войти').header__button.header__button_margin
-                        +button('bg-primary-grad','Зарегестрироваться').header__button
+                        +button('bg-primary-grad','Зарегистрироваться').header__button
 

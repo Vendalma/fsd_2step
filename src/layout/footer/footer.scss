@@ -1,10 +1,11 @@
 .footer {
-  @extend %shadow-bg;
   width: 100%;
   box-sizing: border-box;
   padding-left: 140px * 100%/1440px;
   padding-right: 140px * 100%/1440px;
   position: relative;
+  background: #ffffff;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 
   &__line {
     width: 100%;
@@ -14,7 +15,7 @@
     top: 0;
     left: 0;
     &_bottom {
-      top: 381px;
+      top: 371px;
       left: 0;
     }
   }
@@ -34,11 +35,12 @@
     margin-right: 40px;
   }
   &__logo-colored {
-    margin-bottom: 20px;
+    margin-bottom: 17px;
   }
   &__info {
     @extend %body-font;
     cursor: default;
+    line-height: 171%;
   }
   &_list {
     display: flex;
@@ -61,16 +63,17 @@
 
   &__item {
     line-height: 1.063rem;
-    margin-bottom: 20px;
+    margin-bottom: 21px;
+    padding: 0;
   }
   &__item_header {
     @extend %h3-font;
     height: 1.125rem;
-    margin-bottom: 21px;
+    margin-bottom: 18px;
     cursor: default;
   }
   &__field {
-    margin-top: 20px;
+    margin-top: 21px;
   }
 
   &__container-copy {
@@ -78,14 +81,13 @@
     margin: 0 auto;
     display: flex;
     flex-direction: row;
-    @extend %shadow-copy-bg;
   }
   &__copyright-bar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding-top: 24px;
-    padding-bottom: 23px;
+    padding-bottom: 24px;
   }
 }
 

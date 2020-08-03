@@ -1,8 +1,11 @@
 .copyright-bar {
   width: 100%;
+  box-sizing: border-box;
+
   &__information {
     @extend %body-font;
-    line-height: 17px;
+    line-height: 1.0625rem;
+    padding-top: 4px;
     cursor: default;
     &-margin {
       margin-bottom: 25px;
@@ -14,6 +17,8 @@
     align-items: center;
   }
   &__font-awersome {
+    width: 24px;
+    height: 24px;
     @extend %primary-grad;
     -webkit-background-clip: text;
     color: transparent;

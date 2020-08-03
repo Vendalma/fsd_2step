@@ -9,9 +9,7 @@
     @extend %primary-grad;
     color: #ffffff;
     border: none;
-    //width: 99px;
-    //height: 44px;
-    padding: 0 19px;
+    padding: 0.8em 1.7em;
     &:hover {
       opacity: 0.5;
     }
@@ -21,7 +19,7 @@
     // width: 99px;
     //height: 44px;
     color: $color-one;
-    padding: 0px 17px;
+    padding: 0.6em 1.5em;
     background-color: #ffffff;
     &:hover {
       opacity: 0.5;
