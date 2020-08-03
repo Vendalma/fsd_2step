@@ -1,7 +1,7 @@
 mixin description(type,text, typeInfo)
     if type == 'info text'
         .description&attributes(attributes)
-            span.description__item #{text}
+            span.description__item.description__item_margin-s #{text}
             span.description__type #{typeInfo}
     else if type == 'big margin'
         .description&attributes(attributes)

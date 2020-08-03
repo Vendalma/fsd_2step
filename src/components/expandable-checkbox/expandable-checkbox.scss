@@ -15,14 +15,14 @@
     @extend %mat-icons;
     color: $dark-50;
     position: absolute;
-    top: 14.5px;
-    left: 226px;
+    top: 16px;
+    right: 9px;
     &_open {
       transform: rotate(180deg);
     }
   }
-  &__items {
-    height: 173px;
+  &__item {
+    margin-bottom: 13px;
   }
   &__items_hidden {
     display: none;

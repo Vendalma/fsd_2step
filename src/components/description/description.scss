@@ -9,13 +9,15 @@
   &__type {
     color: $dark-50;
     font-weight: normal;
+    margin-bottom: 5.5px;
   }
   &__item {
+    padding-top: 2px;
     &_margin-s {
       margin-bottom: 5px;
     }
     &_margin-m {
-      margin-bottom: 15px;
+      margin-bottom: 14px;
     }
   }
 }

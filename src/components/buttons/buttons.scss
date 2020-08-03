@@ -16,8 +16,6 @@
   }
   &_theme-border-primary-grad {
     border: 2px solid $color-one;
-    // width: 99px;
-    //height: 44px;
     color: $color-one;
     padding: 0.6em 1.5em;
     background-color: #ffffff;
@@ -30,20 +28,21 @@
     border: none;
     background-color: #ffffff;
     color: $color-one;
+    padding: 0;
   }
 
   &_theme-only-text-default {
     border: none;
     background-color: #ffffff;
     color: $dark-50;
+    padding: 0;
   }
   &_theme-long {
     @extend %primary-grad;
     border: none;
     color: #ffffff;
     min-width: 266px;
-    height: 44px;
-    padding: 10px 10px;
+    padding: 1.2em 1.5em;
     position: relative;
     box-sizing: border-box;
     flex-grow: 1;

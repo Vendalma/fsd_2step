@@ -2,7 +2,7 @@ include /components/description/description
 
 mixin bulletList(text)
     .bullet-list&attributes(attributes)
-        +description(text).bullet-list__description
+        +description('big margin',text).bullet-list__description
         ul.bullet-list__block
             li.bullet-list__item Нельзя с питомцами
             li.bullet-list__item Без вечеринок и мероприятий
