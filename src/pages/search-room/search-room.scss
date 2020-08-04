@@ -8,7 +8,7 @@
     padding-left: 140px * 100%/ 1440px;
     padding-right: 140px * 100%/ 1440px;
     padding-top: 30px;
-    padding-bottom: 70px;
+    padding-bottom: 76px;
     box-sizing: border-box;
 
     display: flex;
@@ -20,8 +20,11 @@
 }
 
 .filter {
-  margin-right: 60px * 100%/ 1440px;
+  margin-right: 60px * 100%/ 1160px;
   &__item {
+    &_margin-15 {
+      margin-bottom: 15px;
+    }
     &_margin-20 {
       margin-bottom: 20px;
     }
@@ -29,10 +32,19 @@
       margin-bottom: 30px;
     }
   }
+  &__checkbox {
+    &_margin {
+      margin: 16px 0px;
+    }
+  }
+  &__checkbox-rich {
+    &_margin {
+      margin-bottom: 10px;
+    }
+  }
   &__text {
     margin: 0;
     padding: 0;
-    margin-top: 10px;
     @extend %h3-font;
     line-height: 117%;
     color: $dark-50;

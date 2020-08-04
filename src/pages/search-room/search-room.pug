@@ -29,13 +29,13 @@ block body
                 .filter__item.filter__item.filter__item_margin-30
                     +description('big margin','checkbox buttons').filter__description
                     +checkbox('default','smoking', 'Можно курить').filter__checkbox
-                    +checkbox('default','pets', 'Можно с питомцами','','true').filter__checkbox
+                    +checkbox('default','pets', 'Можно с питомцами','','true').filter__checkbox.filter__checkbox_margin
                     +checkbox('default','guests', 'Можно пригласить гостей (до 10 человек)','','true').filter__checkbox
                 .filter__item.filter__item.filter__item_margin-30
                     +description('big margin','доступность').filter__description
-                    +checkbox('rich','corridor-size','Ширина коридоров в номере          не менее 91 см.','Широкий коридор').filter__checkbox
-                    +checkbox('rich','disabled-assistant','На 1 этаже вас встретит специалист и проводит до номера.','Помощник для инвалидов').filter__checkbox
-                .filter__item.filter__item.filter__item_margin-30
+                    +checkbox('rich','corridor-size','Ширина коридоров в номере          не менее 91 см.','Широкий коридор').filter__checkbox-rich.filter__checkbox-rich_margin
+                    +checkbox('rich','disabled-assistant','На 1 этаже вас встретит специалист и проводит до номера.','Помощник для инвалидов').filter__checkbox-rich
+                .filter__item.filter__item.filter__item_margin-15
                     +description('small margin','удобства номера').filter__description
                     +dropdown('room',2,2,0)
                 .filter__item
