@@ -60,7 +60,7 @@ $this.each(function () {
       .$datepicker.find(".datepicker--buttons");
 
     buttons.append(applyButton);
-    console.log($this.children());
+
     if ($this.children().hasClass("dropdown-date__range")) {
       setRange(picker);
     }

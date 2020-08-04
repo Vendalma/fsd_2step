@@ -5,10 +5,13 @@ mixin sign-in-card
     .sign-in-card&attributes(attributes)
         p.sign-in-card__title Войти
         form.sign-in-card__form
-            .sign-in-card__block
-                +field('text','Email').sign-in-card__user-name
-                +field('password', 'Пароль').sign-in-card__user-surname
-                +button('long','войти').sign-in-card__button-sign-in
+            .sign-in-card__block.sign-in-card__block_column
+                .sign-in-card__block_margin-b-10
+                    +field('text','Email')
+                .sign-in-card__block_margin-b-20
+                    +field('password', 'Пароль')
+                .sign-in-card__block.sign-in-card__block_margin-b-30
+                    +button('long','войти')
             .sign-in-card__block.sign-in-card__block_row
                 p.sign-in-card__text Нет аккаунта на Toxin?
-                +button('border-primary-grad','создать').sign-in-card__button-create
+                +button('border-primary-grad','создать')

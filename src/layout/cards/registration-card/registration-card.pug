@@ -8,23 +8,31 @@ mixin registration-card
     .registration-card&attributes(attributes)
         p.registration-card__title Регистрация аккаунта
         form.registration-card__form
-            .registration-card__block
-                +field('text','Имя').registration-card__user-name
-                +field('text', 'Фамилия').registration-card__user-surname
-            .registration-card__block.registration-card__block_row.registration-card__block_margin
-                +radio('gender1','gender', 'male', 'Мужчина',true).registration-card__radio-one
-                +radio('gender2','gender', 'female', 'Женщина').registration-card__radio-two
-            .registration-card__block
-                +description('дата рождения').registration-card__description
-                +field('mask', 'ДД.ММ.ГГГГ').registration-card__mask-field
-            .registration-card__block
-                +description('данные для входа в сервис').registration-card__description
-                +field('text','Email').registration-card__email
-                +field('password', 'Пароль').registration-card__password
-            .registration-card__block
-                +toggle('Получать спецпредложения').registration-card__toggle
-                +button('long','перейти к оплате').registration-card__button-pay
+            .registration-card__block.registration-card__block_column
+                .registration-card__block_margin-b-10
+                    +field('text','Имя')
+                .registration-card__block_margin-b-10
+                    +field('text', 'Фамилия')
+            .registration-card__block.registration-card__block_row.registration-card__block_margin-b-20
+                .registration-card__block_margin-r-20
+                    +radio('gender1','gender', 'male', 'Мужчина',true)
+                .registration-card__block
+                    +radio('gender2','gender', 'female', 'Женщина')
+            .registration-card__block.registration-card__block_column.registration-card__block_margin-b-20
+                +description('small margin','дата рождения')
+                +field('mask', 'ДД.ММ.ГГГГ')
+            .registration-card__block.registration-card__block_column
+                .registration-card__block_margin-b-10
+                    +description('small margin','данные для входа в сервис')
+                    +field('text','Email')
+                .registration-card__block_margin-b-10
+                    +field('password', 'Пароль')
+            .registration-card__block.registration-card__block_column
+                .registration-card__block_margin-b-20
+                    +toggle('Получать спецпредложения')
+                .registration-card__block.registration-card__block_margin-b-30
+                    +button('long','перейти к оплате')
             .registration-card__block.registration-card__block_row
                 p.registration-card__text Уже есть аккаунт на Toxin
-                +button('border-primary-grad','войти').registration-card__button-sing-in
+                +button('border-primary-grad','войти')
             

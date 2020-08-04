@@ -15,9 +15,14 @@
     }
   }
   &_theme-border-primary-grad {
+    min-width: 99px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     border: 2px solid $color-one;
     color: $color-one;
-    padding: 0.6em 1.5em;
+    padding: 1em 2px;
     background-color: #ffffff;
     &:hover {
       opacity: 0.5;

@@ -16,28 +16,29 @@
   }
   &__block {
     display: flex;
-    flex-direction: column;
+    width: 100%;
+    &_column {
+      flex-direction: column;
+    }
     &_row {
       flex-direction: row;
       justify-content: space-between;
+      align-items: center;
+    }
+    &_margin-b-10 {
+      margin-bottom: 10px;
+    }
+    &_margin-b-20 {
+      margin-bottom: 20px;
+    }
+    &_margin-b-30 {
+      margin-bottom: 30px;
     }
   }
 
-  &__user-name {
-    margin-bottom: 10px;
-  }
-  &__user-surname {
-    margin-bottom: 20px;
-  }
-  &__button-sign-in {
-    margin-bottom: 30px;
-  }
   &__text {
     @extend %body-font;
     line-height: 18px;
     color: #000000;
-  }
-  &__button-create {
-    width: 99px;
   }
 }

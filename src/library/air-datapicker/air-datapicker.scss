@@ -128,7 +128,6 @@
 .datepicker--days-names {
   display: flex;
   flex-wrap: wrap;
-  margin: 8px 0 3px;
 }
 
 .datepicker--day-name {
@@ -187,11 +186,10 @@
   border: 1px solid $dark-25;
   box-shadow: 0 10px 20px $dark-05;
   border-radius: 4px;
-  box-sizing: content-box;
+  box-sizing: border-box;
 
   width: 320px;
-  padding: 20px;
-  box-sizing: border-box;
+  padding: 16px 19px 19px;
   position: absolute;
   left: -100000px;
   opacity: 0;
@@ -243,8 +241,8 @@
 }
 
 .datepicker--content {
-  box-sizing: content-box;
-  padding: 30px 0 20px;
+  box-sizing: border-box;
+  padding: 26px 0 20px;
 }
 .-only-timepicker- .datepicker--content {
   display: none;
@@ -322,7 +320,6 @@
      ------------------------------------------------- */
 .datepicker--buttons {
   display: flex;
-  padding: 4px;
   justify-content: space-between;
   align-items: center;
 }
