@@ -19,16 +19,19 @@ block body
                 .gallery__item-three
         .room-details__container.container
             .container__wrapper
-                .container__block.container__block_row
+                .container__block.container__block_margin-b-18.container__block_row
                     .container__number-info
                         h2.container__title  Сведения о номере
-                        +iconList('insert_emoticon','Комфорт','Шумопоглощающие стены')
-                        +iconList('location_city','Удобство','Окно в каждой из спален')
-                        +iconList('whatshot','Уют','Номер оснащён камином',false)
+                        .container__block_margin-b-22
+                            +iconList('insert_emoticon','Комфорт','Шумопоглощающие стены')
+                        .container__block_margin-b-22
+                            +iconList('location_city','Удобство','Окно в каждой из спален')
+                        .container__block
+                            +iconList('whatshot','Уют','Номер оснащён камином',false)
                     .container__impressions
                         h2.container__title  Впечатления от номера
                         +chart
-                .container__block.container__block_column
+                .container__block.container__block_margin-b-30.container__block_column
                     .container__block_text
                         h2.container__title  Отзывы посетителей номера
                         span.container__text.container__text_item 2 отзыва
@@ -37,7 +40,7 @@ block body
                         +comments('user2.png','Патрисия Стёклышкова','Неделю назад','2',false,'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент.').container__comments
                 .container__block.container__block_row
                     .container__rules
-                        h2.container__title Правила
+                        h2.container__title.container__title_margin-b-4 Правила
                         +bulletList
                     .container__cancel
                         h2.container__title Отмена

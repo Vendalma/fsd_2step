@@ -1,7 +1,7 @@
 .room-details {
   width: 100%;
   &__wrapper {
-    margin-bottom: 40px;
+    margin-bottom: 55px;
   }
 }
 .gallery {
@@ -52,7 +52,15 @@
     }
   }
   &__block {
-    margin-bottom: 30px;
+    &_margin-b-30 {
+      margin-bottom: 30px;
+    }
+    &_margin-b-22 {
+      margin-bottom: 22px;
+    }
+    &_margin-b-18 {
+      margin-bottom: 18px;
+    }
     &_text {
       width: 100%;
       display: inline-flex;
@@ -68,6 +76,10 @@
   &__title {
     @extend %h2-font;
     margin-bottom: 20px;
+    &_margin-b-4 {
+      margin-bottom: 4px;
+      margin-left: 20px;
+    }
   }
   &__text {
     @extend %body-font;
@@ -75,6 +87,7 @@
     &_item {
       line-height: 100%;
       color: $dark-50;
+      padding-bottom: 15px;
     }
   }
   &__number-info {
@@ -88,7 +101,11 @@
 
   &__cancel {
     margin-left: 70px * 100% /710px;
+    padding-top: 4px;
     max-width: 341px;
     box-sizing: border-box;
+  }
+  &__rules {
+    padding-top: 4px;
   }
 }

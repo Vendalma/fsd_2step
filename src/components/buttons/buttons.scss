@@ -23,9 +23,12 @@
     border: 2px solid $color-one;
     color: $color-one;
     &_padding-lg {
-      padding: 1em 2em;
+      padding: 1em 1.46em;
     }
     &_padding-m {
+      padding: 1em 2em;
+    }
+    &_padding-s {
       padding: 0.6em 1.6em;
     }
     background-color: #ffffff;
