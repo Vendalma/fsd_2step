@@ -7,25 +7,34 @@
     max-width: 1160px;
     margin: 0 auto;
     margin-top: 62px;
+    box-sizing: border-box;
   }
   &__content {
+    box-sizing: border-box;
     &_row {
       width: 100%;
       display: flex;
       flex-direction: row;
-      //justify-content: space-between;
+      justify-content: space-between;
       flex-wrap: wrap;
-
-      margin-bottom: 100px;
     }
     &_column {
       display: flex;
       flex-direction: column;
       flex-grow: 1;
-      flex-shrink: 0;
+      //flex-shrink: 0;
+    }
+    &_margin-b-100 {
+      margin-bottom: 100px;
+    }
+    &_margin-b-95 {
+      margin-bottom: 95px;
     }
     &_margin-r-126 {
       margin-right: 126px * 100%/ 1160px;
+    }
+    &_margin-r-60 {
+      margin-right: 60px;
     }
     &_margin-r-72 {
       margin-right: 72px;
@@ -37,20 +46,21 @@
     &_width-320 {
       max-width: 320px;
     }
+    &_width-711 {
+      max-width: 711px;
+    }
   }
   &__block {
-    max-width: 320px;
     display: flex;
     flex-direction: column;
-    flex-shrink: 1;
+    flex-shrink: 0;
+    box-sizing: border-box;
 
-    //flex-grow: 1;
     &_size-266 {
-      width: 266px;
+      max-width: 266px;
     }
-    &_size-711 {
-      max-width: 711px;
-      margin-top: 10px;
+    &_margin-t-5 {
+      margin-top: 5px;
     }
     &_margin-b-35 {
       margin-bottom: 35px;
@@ -64,11 +74,11 @@
     &_margin-top-10 {
       margin-top: 10px;
     }
-    &_margin-top-140 {
-      margin-top: 140px;
+    &_margin-top-144 {
+      margin-top: 144px;
     }
-    &_margin-r-72 {
-      margin-right: 170px;
+    &_margin-r-126 {
+      margin-right: 126px;
     }
 
     &_row {
@@ -109,6 +119,11 @@
     }
   }
   &__dropdown-room {
-    margin-bottom: 14px;
+    margin-bottom: 12px;
+  }
+  &__icon-list {
+    &_margin {
+      margin-top: 18px;
+    }
   }
 }
