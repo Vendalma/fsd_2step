@@ -15,14 +15,19 @@
     }
   }
   &_theme-border-primary-grad {
-    min-width: 99px;
+    max-width: 99px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     border: 2px solid $color-one;
     color: $color-one;
-    padding: 1em 2px;
+    &_padding-lg {
+      padding: 1em 2em;
+    }
+    &_padding-m {
+      padding: 0.6em 1.6em;
+    }
     background-color: #ffffff;
     &:hover {
       opacity: 0.5;
@@ -51,15 +56,15 @@
     position: relative;
     box-sizing: border-box;
     flex-grow: 1;
-  }
-  &_theme-long::before {
-    content: "arrow_forward";
-    @extend %mat-icons;
-    color: #ffffff;
-    line-height: 24px;
-    position: absolute;
-    top: 10px;
-    right: 8px;
+    &::before {
+      content: "arrow_forward";
+      @extend %mat-icons;
+      color: #ffffff;
+      line-height: 24px;
+      position: absolute;
+      top: 10px;
+      right: 8px;
+    }
   }
 
   //styles for example
