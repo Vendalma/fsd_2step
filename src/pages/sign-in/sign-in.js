@@ -3,14 +3,15 @@ import "./sign-in.scss";
 import "@layout/website-base/website-base";
 import "@layout/header/header";
 import "@layout/footer/footer";
+import "@layout/footer-small/footer-small";
 import "@layout/cards/sign-in-card/sign-in-card";
 
 import "@/main.scss";
 
-//идея реализации слайдера позаимствоана здесь --> http://gnatkovsky.com.ua/plavnaya-smena-fona-s-ispolzovaniem-jquery.html
+//идея реализации слайдера позаимствована здесь --> http://gnatkovsky.com.ua/plavnaya-smena-fona-s-ispolzovaniem-jquery.html
 
 $(function () {
-  var transTime = 5000;
+  var transTime = 40000;
   var numBgColors = $(".sign-in__slider_item").length;
   var bgtrans = setInterval(function () {
     if (

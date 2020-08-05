@@ -3,18 +3,20 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-end;
+
   &__svg {
     width: 120px;
     height: 120px;
     position: relative;
     margin-right: 30px;
+    margin-bottom: 15px;
     box-sizing: border-box;
   }
   &__info {
     position: absolute;
     text-align: center;
-    top: 32px;
-    left: 28px;
+    top: 31%;
+    left: 24%;
   }
   &__count {
     @extend %h1-font;
@@ -27,6 +29,7 @@
   &__list {
     margin: 0;
     padding: 0;
+    padding-bottom: 12px;
   }
   &__item {
     @extend %body-font;

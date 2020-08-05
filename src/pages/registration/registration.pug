@@ -1,6 +1,7 @@
 extends  /layout/website-base/website-base
 include /layout/header/header
 include /layout/footer/footer
+include /layout/footer-small/footer-small
 include /layout/cards/registration-card/registration-card
 
 block head
@@ -14,3 +15,4 @@ block body
                 .registration-page__slider_item.registration-page__slider_item-two.registration-page__slider_active
                 +registration-card.registration-page__card
         +footer.registration-page__footer
+        +footer-small.registration-page__footer-small

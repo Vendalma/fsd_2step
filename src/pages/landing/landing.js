@@ -8,7 +8,7 @@ import "@layout/cards/search-card/search-card";
 
 import "@/main.scss";
 
-//идея реализации слайдера позаимствоана здесь --> http://gnatkovsky.com.ua/plavnaya-smena-fona-s-ispolzovaniem-jquery.html
+//идея реализации слайдера позаимствована здесь --> http://gnatkovsky.com.ua/plavnaya-smena-fona-s-ispolzovaniem-jquery.html
 
 $(function () {
   var transTime = 40000;

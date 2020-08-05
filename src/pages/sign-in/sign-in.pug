@@ -1,6 +1,7 @@
 extends  /layout/website-base/website-base
 include /layout/header/header
 include /layout/footer/footer
+include /layout/footer-small/footer-small
 include /layout/cards/sign-in-card/sign-in-card
 
 block head
@@ -13,4 +14,5 @@ block body
                 .sign-in__slider_item.sign-in__slider_item-one
                 .sign-in__slider_item.sign-in__slider_item-two.sign-in__slider_active
                 +sign-in-card.sign-in__card
-        +footer.sign-in-footer
+        +footer.sign-in__footer
+        +footer-small.sign-in__footer-small

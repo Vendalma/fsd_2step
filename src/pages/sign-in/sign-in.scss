@@ -16,7 +16,7 @@
     opacity: 0;
   }
   &__slider_active {
-    opacity: 1;
+    @include image-animation;
   }
   &__slider_item-one {
     @include bgimage("bg-image-3");
@@ -29,5 +29,31 @@
   &__card {
     max-width: 380px;
     margin: 0 auto;
+  }
+}
+
+/*
+
+<------------ @media 769px ---------->
+
+*/
+@media (min-width: 769px) {
+  .sign-in {
+    &__footer-small {
+      display: none;
+    }
+  }
+}
+
+/*
+
+<------------ @media 768px ---------->
+
+*/
+@media (max-width: 768px) {
+  .sign-in {
+    &__footer-small {
+      display: block;
+    }
   }
 }
