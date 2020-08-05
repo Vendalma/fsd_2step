@@ -9,6 +9,6 @@ buttonBurger.forEach((elem) => {
   let blockMenu = elem.nextElementSibling;
 
   elem.addEventListener("click", function () {
-    blockMenu.classList.toggle("header__block_menu_open");
+    blockMenu.classList.toggle("header__menu_open");
   });
 });

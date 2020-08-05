@@ -13,26 +13,21 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    //justify-content: space-between;
+    justify-content: space-between;
     align-items: center;
-    margin: 0 auto;
+    box-sizing: border-box;
   }
   &__logo {
-    &_margin-lg {
-      margin-right: 466.31px * 100% / 1160px;
-    }
-    &_margin-s {
-      margin-right: 284.31px * 100% / 1160px;
-    }
+    display: flex;
   }
-  &__logo-colored {
-  }
+
   &__burger-menu {
     display: none;
   }
   &__menu {
     display: flex;
     flex-direction: row;
+    align-items: center;
   }
 
   &__link-list {
@@ -44,13 +39,13 @@
     display: inline-flex;
     flex-direction: row;
     align-items: center;
-    margin-right: 21px;
+    margin-right: 20px;
   }
   &__buttons {
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    flex-shrink: 0;
   }
 
   &__button {
@@ -78,21 +73,26 @@
   }
 }
 
-@media (min-width: 1025px) and (max-width: 1200px) {
+/*
+
+<------------ @media 1200px  ---------->
+
+*/
+
+@media (max-width: 1200px) {
   .header {
     padding: 15px 20px;
   }
 }
 
-@media (min-width: 961px) and (max-width: 1024px) {
-  .header {
-    padding: 15px 20px;
-  }
-}
+/*
+
+<------------ @media 481px -- 960px  ---------->
+
+*/
 
 @media (min-width: 481px) and (max-width: 960px) {
   .header {
-    padding: 15px 20px;
     position: relative;
 
     &__container {
@@ -107,6 +107,11 @@
       width: 30px;
       height: 20px;
       cursor: pointer;
+      &:hover * {
+        background-color: $color-one;
+        @include bg-color-animation;
+      }
+
       &::before {
         content: "";
         background-color: $dark-75;
@@ -117,6 +122,7 @@
         height: 3px;
         border-radius: 10px;
       }
+
       &::after {
         content: "";
         background-color: $dark-75;
@@ -126,6 +132,14 @@
         width: 100%;
         height: 3px;
         border-radius: 10px;
+      }
+      &:hover::before {
+        background-color: $color-one;
+        @include bg-color-animation;
+      }
+      &:hover::after {
+        background-color: $color-one;
+        @include bg-color-animation;
       }
     }
     &__burger-span {
@@ -137,12 +151,13 @@
       height: 3px;
       border-radius: 10px;
     }
-    &__block_menu {
+    &__menu {
       display: none;
       &_open {
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         position: absolute;
         top: 70px;
         right: 0;
@@ -162,9 +177,15 @@
     &__link-item {
       margin-bottom: 10px;
     }
-
+    &__buttons {
+      max-width: 44px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
     &__button {
-      height: 44px;
+      min-height: 44px;
       &_margin {
         margin-right: 40px;
       }
@@ -175,12 +196,34 @@
       font-size: 1.188rem;
       line-height: 1.5rem;
     }
+    &__user-info {
+      width: 200px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    &__user-name {
+      font-size: 18px;
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+    &__vert-block {
+      width: 200px;
+      height: 1px;
+      order: -1;
+      margin: 0;
+    }
   }
 }
 
+/*
+
+<------------ @media 480px ---------->
+
+*/
+
 @media (max-width: 480px) {
   .header {
-    padding: 15px 20px;
     position: relative;
 
     &__container {
@@ -195,6 +238,10 @@
       width: 30px;
       height: 20px;
       cursor: pointer;
+      &:hover * {
+        background-color: $color-one;
+        @include bg-color-animation;
+      }
       &::before {
         content: "";
         background-color: $dark-75;
@@ -215,6 +262,14 @@
         height: 3px;
         border-radius: 10px;
       }
+      &:hover::before {
+        background-color: $color-one;
+        @include bg-color-animation;
+      }
+      &:hover::after {
+        background-color: $color-one;
+        @include bg-color-animation;
+      }
     }
     &__burger-span {
       background-color: $dark-75;
@@ -225,7 +280,7 @@
       height: 3px;
       border-radius: 10px;
     }
-    &__block_menu {
+    &__menu {
       display: none;
       &_open {
         display: flex;
@@ -252,7 +307,7 @@
     }
 
     &__button {
-      height: 44px;
+      min-height: 44px;
       width: 100%;
       &_margin {
         margin-right: 0px;
@@ -267,6 +322,23 @@
       font-weight: bold;
       font-size: 1.188rem;
       line-height: 1.5rem;
+    }
+    &__user-info {
+      width: 200px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    &__user-name {
+      font-size: 18px;
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+    &__vert-block {
+      width: 200px;
+      height: 1px;
+      order: -1;
+      margin: 0;
     }
   }
 }

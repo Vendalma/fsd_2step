@@ -1,8 +1,4 @@
 .landing-page {
-  &__header {
-  }
-  &__container {
-  }
   &__slider-wrapper {
     width: 100%;
     position: relative;
@@ -20,7 +16,7 @@
     opacity: 0;
   }
   &__slider_active {
-    opacity: 1;
+    @include image-animation;
   }
   &__slider_item-one {
     @include bgimage("bg-image-1");
@@ -43,6 +39,47 @@
     width: 280px;
     position: absolute;
     right: 134px * 100%/1440px;
-    bottom: 18px * 100%/830px;
+    bottom: 21px * 100%/830px;
+  }
+}
+
+/*
+
+<------------ @media 769px ---------->
+
+*/
+@media (min-width: 769px) {
+  .landing-page {
+    &__footer-small {
+      display: none;
+    }
+  }
+}
+
+/*
+
+<------------ @media 768px ---------->
+
+*/
+@media (max-width: 768px) {
+  .landing-page {
+    &__footer-small {
+      display: block;
+    }
+  }
+}
+
+/*
+<------------ @media 475px ---------->
+
+*/
+@media (max-width: 476px) {
+  .landing-page {
+    &__slider-wrapper {
+      padding-left: 0;
+    }
+    &__card {
+      margin: 0 auto;
+    }
   }
 }

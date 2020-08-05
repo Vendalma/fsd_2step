@@ -2,15 +2,11 @@ include /components/links/links
 include /components/logo/logo-colored/logo-colored
 include /components/buttons/buttons
 
-mixin header(userName=false, bigMargin=false)
+mixin header(userName=false)
     header.header&attributes(attributes)
         .header__container
-            if bigMargin
-                .header__logo.header__logo_margin-lg
-                    +logo-colored.header__logo-colored
-            else 
-                .header__logo.header__logo_margin-s
-                    +logo-colored.header__logo-colored
+            .header__logo
+                +logo-colored.header__logo-colored
             .header__burger-menu
                 span.header__burger-span
             nav.header__menu

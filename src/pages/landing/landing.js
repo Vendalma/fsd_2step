@@ -11,7 +11,7 @@ import "@/main.scss";
 //идея реализации слайдера позаимствоана здесь --> http://gnatkovsky.com.ua/plavnaya-smena-fona-s-ispolzovaniem-jquery.html
 
 $(function () {
-  var transTime = 5000;
+  var transTime = 40000;
   var numBgColors = $(".landing-page__slider_item").length;
   var bgtrans = setInterval(function () {
     if (
