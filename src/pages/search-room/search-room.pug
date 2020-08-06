@@ -9,6 +9,7 @@ include /components/expandable-checkbox/expandable-checkbox
 include /layout/cards/room-card/room-card
 include /components/pagination/pagination
 include /layout/footer/footer
+include /layout/footer-small/footer-small
 
 block head
     title Search room
@@ -17,9 +18,14 @@ block body
     .search-room
         +header.search-room__header
         main.search-room__content
+            .options.search-room__options
+                .options__block.options__block_menu.options__block_active
+                    i.options__material-icons tune
+                .options__block.options__block_close
+                    i.options__material-icons close
             .filter.search-room__filter
                 .filter__item.filter__item_margin-20
-                    +dropdown_date('filter',true,'19 авг - 23 авг','даты пребывания в отеле')
+                    +dropdown_date('filter',false,'19 авг - 23 авг','даты пребывания в отеле')
                 .filter__item.filter__item_margin-30
                     +description('small margin','гости').filter__description
                     +dropdown('guests',2,1,1)
@@ -31,10 +37,11 @@ block body
                     +checkbox('default','smoking', 'Можно курить').filter__checkbox
                     +checkbox('default','pets', 'Можно с питомцами','','true').filter__checkbox.filter__checkbox_margin
                     +checkbox('default','guests', 'Можно пригласить гостей (до 10 человек)','','true').filter__checkbox
-                .filter__item.filter__item.filter__item_margin-30
+                .filter__item.filter__item.filter__item_margin-30.filter__item_margin-t-4
                     +description('big margin','доступность').filter__description
-                    +checkbox('rich','corridor-size','Ширина коридоров в номере          не менее 91 см.','Широкий коридор').filter__checkbox-rich.filter__checkbox-rich_margin
-                    +checkbox('rich','disabled-assistant','На 1 этаже вас встретит специалист и проводит до номера.','Помощник для инвалидов').filter__checkbox-rich
+                    .filter__item_block
+                        +checkbox('rich','corridor-size','Ширина коридоров в номере         не менее 91 см.','Широкий коридор').filter__checkbox-rich.filter__checkbox-rich_margin
+                        +checkbox('rich','disabled-assistant','На 1 этаже вас встретит специалист и проводит до номера.','Помощник для инвалидов').filter__checkbox-rich
                 .filter__item.filter__item.filter__item_margin-15
                     +description('small margin','удобства номера').filter__description
                     +dropdown('room',2,2,0)
@@ -57,3 +64,4 @@ block body
                     +room-card('standart','352', '5 000₽',3 ,'55', room12).rooms__cards-block_item
                 +pagination.rooms__pagination
         +footer.search-room__footer
+        +footer-small.search-room__footer-small

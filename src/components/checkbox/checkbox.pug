@@ -12,8 +12,10 @@ mixin checkbox(type,inputID, text, head, checked=false)
         if checked
             form.checkbox&attributes(attributes)
                 input(type="checkbox", id=inputID class='checkbox__input' checked)
-                label(for=inputID class='checkbox__label') #{text}
+                label(for=inputID class='checkbox__label') 
+                    span.checkbox__information #{text}
         else
             form.checkbox&attributes(attributes)
                 input(type="checkbox", id=inputID class='checkbox__input')
-                label(for=inputID class='checkbox__label') #{text}
+                label(for=inputID class='checkbox__label') 
+                    span.checkbox__information #{text}

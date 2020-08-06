@@ -1,4 +1,5 @@
 import "./room-card.scss";
+import "../../../library/light slider/light-slider.scss";
 
 import "@components/rate button/rate button";
 import "lightslider/dist/js/lightslider";

@@ -4,9 +4,10 @@ mixin room-card(type, number, price, rate, reviews,{imgs})
     if type == 'luxury'
         .room-card&attributes(attributes)
             .room-card__container
-                .room-card__slider
-                    each image in imgs
-                        img.room-card__image(src=require(`@images/${image}`).default, alt=altText )
+                .room-card__slider-block
+                    .room-card__slider
+                        each image in imgs
+                            img.room-card__image(src=require(`@images/${image}`).default, alt=altText )
             .room-card__container
                 .room-card__block
                     .room-card__number-text
