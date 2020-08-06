@@ -21,6 +21,21 @@
   }
   &__burger-menu {
     display: none;
+    width: 40px;
+    height: 40px;
+  }
+  &__block {
+    display: none;
+    &_active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  &__material-icons {
+    @extend %mat-icons;
+    color: $dark-50;
+    font-size: 46px;
   }
   &__menu {
     display: flex;
@@ -89,54 +104,9 @@
     }
     &__burger-menu {
       display: block;
-      position: relative;
-      width: 30px;
-      height: 20px;
       cursor: pointer;
-      &:hover * {
-        background-color: $color-one;
-        @include bg-color-animation;
-      }
-
-      &::before {
-        content: "";
-        background-color: $dark-75;
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 3px;
-        border-radius: 10px;
-      }
-
-      &::after {
-        content: "";
-        background-color: $dark-75;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 3px;
-        border-radius: 10px;
-      }
-      &:hover::before {
-        background-color: $color-one;
-        @include bg-color-animation;
-      }
-      &:hover::after {
-        background-color: $color-one;
-        @include bg-color-animation;
-      }
     }
-    &__burger-span {
-      background-color: $dark-75;
-      position: absolute;
-      left: 0;
-      top: 9px;
-      width: 100%;
-      height: 3px;
-      border-radius: 10px;
-    }
+
     &__menu {
       display: none;
       &_open {
@@ -220,51 +190,7 @@
     }
     &__burger-menu {
       display: block;
-      position: relative;
-      width: 30px;
-      height: 20px;
       cursor: pointer;
-      &:hover * {
-        background-color: $color-one;
-        @include bg-color-animation;
-      }
-      &::before {
-        content: "";
-        background-color: $dark-75;
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 3px;
-        border-radius: 10px;
-      }
-      &::after {
-        content: "";
-        background-color: $dark-75;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 3px;
-        border-radius: 10px;
-      }
-      &:hover::before {
-        background-color: $color-one;
-        @include bg-color-animation;
-      }
-      &:hover::after {
-        background-color: $color-one;
-        @include bg-color-animation;
-      }
-    }
-    &__burger-span {
-      background-color: $dark-75;
-      position: absolute;
-      left: 0;
-      top: 9px;
-      width: 100%;
-      height: 3px;
-      border-radius: 10px;
     }
     &__menu {
       display: none;

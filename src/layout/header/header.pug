@@ -8,7 +8,10 @@ mixin header(userName=false)
             .header__logo
                 +logo-colored.header__logo-colored
             .header__burger-menu
-                span.header__burger-span
+                .header__block.header__block_menu.header__block_active
+                    i.header__material-icons menu
+                .header__block.header__block_close
+                    i.header__material-icons close
             nav.header__menu
                 .header__link-list
                     +link('active','О нас').header__link-item
