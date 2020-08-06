@@ -25,6 +25,7 @@
   &__slider_item-two {
     @include bgimage("bg-image-4");
     width: 100%;
+    background-position: bottom;
   }
   &__card {
     max-width: 380px;

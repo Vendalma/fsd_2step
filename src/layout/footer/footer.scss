@@ -1,12 +1,16 @@
 .footer {
   width: 100%;
   box-sizing: border-box;
-  padding-left: 140px * 100%/1440px;
-  padding-right: 140px * 100%/1440px;
   position: relative;
-  background: #ffffff;
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-
+  &__block {
+    width: 100%;
+    &_primary-shadow {
+      @extend %shadow-bg-primary;
+    }
+    &_secondary-shadow {
+      @extend %shadow-bg-secondary;
+    }
+  }
   &__line {
     width: 100%;
     height: 1px;
@@ -19,15 +23,15 @@
       left: 0;
     }
   }
-
   &__container-widgets {
-    width: 100%;
-    padding-top: 100px;
-    padding-bottom: 80px;
+    max-width: 1200px;
+    padding: 100px 20px 80px;
     margin: 0 auto;
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-grow: 1;
   }
   &__logo-info {
     width: 260px;
@@ -77,8 +81,10 @@
   }
 
   &__container-copy {
-    width: 100%;
+    max-width: 1200px;
+    padding: 0px 20px;
     margin: 0 auto;
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
   }
@@ -99,8 +105,6 @@
 
 @media (min-width: 1025px) and (max-width: 1200px) {
   .footer {
-    padding: 0px 20px;
-    box-sizing: border-box;
     &__container-widgets {
       justify-content: space-between;
     }
@@ -122,8 +126,6 @@
 
 @media (min-width: 961px) and (max-width: 1024px) {
   .footer {
-    padding: 0px 20px;
-    box-sizing: border-box;
     &__container-widgets {
       justify-content: space-between;
     }
@@ -154,8 +156,6 @@
 
 @media (min-width: 769px) and (max-width: 960px) {
   .footer {
-    padding: 0px 20px;
-    box-sizing: border-box;
     &__container-widgets {
       justify-content: space-between;
     }
