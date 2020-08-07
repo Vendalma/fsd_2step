@@ -9,11 +9,16 @@
     @extend %primary-grad;
     color: #ffffff;
     border: none;
-    padding: 0.8em 1.7em;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    &_padding-lg {
+      padding: 1.2em 1.7em;
+    }
+    &_padding-m {
+      padding: 0.75em 1.7em;
+    }
     &:hover {
       opacity: 0.5;
     }
@@ -32,7 +37,7 @@
       padding: 1em 2em;
     }
     &_padding-s {
-      padding: 0.6em 1.6em;
+      padding: 0.617em 1.6em;
     }
     background-color: #ffffff;
     &:hover {
@@ -57,7 +62,6 @@
     @extend %primary-grad;
     border: none;
     color: #ffffff;
-    min-width: 266px;
     padding: 1.2em 1.5em;
     position: relative;
     box-sizing: border-box;
@@ -79,8 +83,7 @@
     color: #ffffff;
     border: none;
     width: 99px;
-    height: 44px;
-    padding: 0px 19px;
+    padding: 1.2em 1.6em;
 
     opacity: 0.5;
   }
@@ -88,9 +91,8 @@
   &_theme-border-primary-grad_hover {
     border: 2px solid $color-one;
     width: 99px;
-    height: 44px;
     color: $color-one;
-    padding: 0px 17px;
+    padding: 1em 1.43em;
     background-color: #ffffff;
 
     opacity: 0.5;

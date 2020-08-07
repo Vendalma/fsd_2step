@@ -35,8 +35,9 @@
 
     cursor: pointer;
 
-    &_double {
+    &_s-150 {
       max-width: 150px;
+      display: flex;
     }
   }
   &__material-icon {
@@ -44,14 +45,19 @@
     position: absolute;
     color: $dark-50;
     background: #ffffff;
+    width: 43px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 
     &_margin-m {
-      top: 33px;
-      right: 8px;
+      top: 21.5px;
+      right: 2px;
     }
     &_margin-s {
-      top: 33px;
-      right: 9px;
+      top: 21.5px;
+      right: 2px;
     }
   }
 }

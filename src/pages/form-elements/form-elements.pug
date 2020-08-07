@@ -23,105 +23,116 @@ block head
 block body
     .form-elements
         .form-elements__container
-            .form-elements__content_row.form-elements__content_margin-b-100
-                .form-elements__content_column.form-elements__content_margin-r-60.form-elements__content_width-320
-                    .form-elements__block.form-elements__block_margin-b-20
-                        +description('info text','text field','default').form-elements__description
-                        +field('text','Email').form-elements__field
-                    .form-elements__block.form-elements__block_margin-b-20
-                        +description('info text','text field','hover / focus').form-elements__description
-                        +field('hoverText','This is pretty awesome').form-elements__field
-                    .form-elements__block.form-elements__block_margin-b-20
-                        +description('info text','dropdown','default').form-elements__description
-                        +dropdown('guests',0,0,0).form-elements__dropdown
-                    .form-elements__block.form-elements__block_margin-b-41
-                        +description('info text','masked text field','default').form-elements__description
-                        +field('mask','ДД.ММ.ГГГГ').form-elements__field
-                    .form-elements__block.form-elements__block_margin-b-41
-                        +dropdown_date('double',true,'ДД.ММ.ГГГГ','date dropdown','19.08.2019','date dropdown', false).form-elements__dropdown
-                    .form-elements__block.form-elements__block_margin-b-41.form-elements__block_size-266
+            .form-elements__content.form-elements__content_row.form-elements__content_margin-b-100
+                .form-elements__content.form-elements__content_column.form-elements__content_margin-r-50.form-elements__content_width-320
+                    .form-elements__block.form-elements__block_column.form-elements__block_margin-b-20
+                        +description('info text','text field','default')
+                        +field('text','Email')
+                    .form-elements__block.form-elements__block_column.form-elements__block_margin-b-20
+                        +description('info text','text field','hover / focus')
+                        +field('hoverText','This is pretty awesome')
+                    .form-elements__block.form-elements__block_column.form-elements__block_margin-b-20
+                        +description('info text','dropdown','default')
+                        +dropdown('guests',0,0,0)
+                    .form-elements__block.form-elements__block_column.form-elements__block_margin-b-41
+                        +description('info text','masked text field','default')
+                        +field('mask','ДД.ММ.ГГГГ')
+                    .form-elements__block.form-elements__block_column.form-elements__block_margin-b-41
+                        +dropdown_date('double',true,'ДД.ММ.ГГГГ','date dropdown','19.08.2019','date dropdown', false)
+                    .form-elements__block.form-elements__block_column.form-elements__block_margin-b-41.form-elements__block_size-266
                         +dropdown_date('filter',true,'19 авг - 23 авг','filter date dropdown').form-elements__dropdown
-                    .form-elements__block_size-266
-                        +description('small margin','subscription text field').form-elements__description
-                        +field('sub','Email').form-elements__field
-                .form-elements__content_column.form-elements__content_width-320
-                    .form-elements__block.form-elements__block_margin-b-41
-                        +description('big margin','checkbox buttons').form-elements__description
-                        +checkbox('default','smoking', 'Можно курить').form-elements__checkbox
-                        +checkbox('default','pets', 'Можно с питомцами','','true').form-elements__checkbox.form-elements__checkbox_margin
-                        +checkbox('default','guests', 'Можно пригласить гостей (до 10 человек)','','true').form-elements__checkbox
-                    .form-elements__block.form-elements__block_margin-b-35
-                        +description('big margin','radio buttons').form-elements__description
+                    .form-elements__block.form-elements__block_column.form-elements__block_size-266
+                        +description('small margin','subscription text field')
+                        +field('sub','Email')
+                .form-elements__content.form-elements__content_column.form-elements__content_width-320
+                    .form-elements__block.form-elements__block_column.form-elements__block_margin-b-41.form-elements__block_size-266
+                        +description('big margin','checkbox buttons')
+                        +checkbox('default','smoking', 'Можно курить')
+                        .form-elements__block.form-elements__block_margin-t-b-16
+                            +checkbox('default','pets', 'Можно с питомцами','','true')
+                        +checkbox('default','guests', 'Можно пригласить гостей (до 10 человек)','','true')
+                    .form-elements__block.form-elements__block_column.form-elements__block_margin-b-35
+                        +description('big margin','radio buttons')
                         .form-elements__block_row
-                            +radio('gender1','gender', 'male', 'Мужчина',true).form-elements__radio
-                            +radio('gender2','gender', 'female', 'Женщина').form-elements__radio
-                    .form-elements__block.form-elements__block_margin-b-41
-                        +description('big margin','toggle').form-elements__description
-                        +toggle('Получать спецпредложения', true).form-elements__toggle.form-elements__toggle_margin
-                        +toggle('Получать спецпредложения').form-elements__toggle
-                    .form-elements__block.form-elements__block_margin-b-41
-                        +description('big margin','like button').form-elements__description
+                            +radio('gender1','gender', 'male', 'Мужчина',true,true)
+                            +radio('gender2','gender', 'female', 'Женщина')
+                    .form-elements__block.form-elements__block_column.form-elements__block_margin-b-41.form-elements__block_margin-t-5
+                        +description('big margin','toggle')
+                        +toggle('Получать спецпредложения', true)
+                        .form-elements__block.form-elements__block_margin-t-10
+                            +toggle('Получать спецпредложения')
+                    .form-elements__block.form-elements__block_column.form-elements__block_margin-b-41
+                        +description('big margin','like button')
                         .form-elements__block_row
-                            +like_button('2').form-elements__like-button
-                            +like_button('12',true).form-elements__like-button
-                    .form-elements__block
-                        +description('big margin','rate button').form-elements__description.form-elements__description_margin-m
+                            +like_button('2')
+                            +like_button('12',true)
+                    .form-elements__block.form-elements__block_column
+                        +description('big margin','rate button')
                         .form-elements__block_row
-                            +rateButton(4).form-elements__rate-button
+                            .form-elements__block.form-elements__block_margin-r-20
+                                +rateButton(4).form-elements__rate-button
                             +rateButton(5).form-element__rate-button
-                .form-elements__content_column.form-elements__content_width-320
-                    .form-elements__block.form-elements__block_margin-b-20
+                .form-elements__content.form-elements__content_column.form-elements__content_width-320
+                    .form-elements__block.form-elements__block_margin-b-20.form-elements__block_size-266
                         +range_slider('range slider')
-                    .form-elements__block.form-elements__block_margin-top-10.form-elements__block_margin-b-41
-                        +description('big margin','buttons').form-elements__description
-                        .form-elements__block_row
-                            +button('bg-primary-grad', 'click me').form-elements__button
-                            +button('bg-primary-grad_hover', 'click me').form-elements__button
-                        .form-elements__block_row
-                            +button('border-primary-grad button_theme-border-primary-grad_padding-lg', 'click me').form-elements__button
-                            +button('border-primary-grad_hover', 'click me').form-elements__button
-                        .form-elements__block_row
-                            +button('only-text-colored', 'click me').form-elements__button
-                            +button('only-text-default', 'click me').form-elements__button
-                        .form-elements__block_row
-                            +button('long', 'перейти к оплате').form-elements__button.form-elements__button_margin-0
-                    .form-elements__block
-                        +description('big margin','pagination').form-elements__description
-                        +pagination.form-elements__pagination
-            .form-elements__content_row.form-elements__content_margin-b-95
-                .form-elements__content_column.form-elements__content_margin-r-126.form-elements__content_width-320
-                    .form-elements__block
-                        .form-elements__block_size-266
-                            +description('info text','dropdown', 'default').form-elements__description
-                            +dropdown('room',2,2,0).form-elements__dropdown-room
-                        .form-elements__block_size-266
-                            +description('info text','dropdown', 'expanded').form-elements__description.
-                            +dropdown('room',2,2,0,true).form-elements__dropdown-room
-                        .form-elements__block_size-266.form-elements__block_margin-top-144 
-                            +expandable-checkbox('expandable checkbox list').form-elements__expandable-checkbox.form-elements__expandable-checkbox_margin
-                            +expandable-checkbox('expandable checkbox list', true).form-elements__expandable-checkbox
-                .form-elements__content_column
-                    .form-elements__content_row.form-elements__content_margin-b-100
-                        .form-elements__content_column.form-elements__content_width-320.form-elements__content_margin-r-72
-                                +description('small margin','dropdown').form-elements__description
-                                +dropdown('guests',0,0,0,true).form-elements__dropdown
-                        .form-elements__content_column.form-elements__content_width-320
-                                +description('small margin','dropdown').form-elements__description
-                                +dropdown('guests',2,1,0,true).form-elements__dropdown 
+                    .form-elements__block.form-elements__block_column.form-elements__block_margin-t-10.form-elements__block_margin-b-41
+                        +description('big margin','buttons')
+                        .form-elements__block.form-elements__block_row.form-elements__block_margin-b-32
+                            .form-elements__block_margin-r-20
+                                +button('bg-primary-grad button_theme-bg-primary-grad_padding-lg', 'click me')
+                            +button('bg-primary-grad_hover', 'click me')
+                        .form-elements__block.form-elements__block_row.form-elements__block_margin-b-32
+                            .form-elements__block_margin-r-20
+                                +button('border-primary-grad button_theme-border-primary-grad_padding-lg', 'click me')
+                            +button('border-primary-grad_hover', 'click me')
+                        .form-elements__block.form-elements__block_row.form-elements__block_margin-b-32
+                            .form-elements__block_margin-r-20
+                                +button('only-text-colored', 'click me')
+                            +button('only-text-default', 'click me')
+                        .form-elements__block
+                            +button('long', 'перейти к оплате')
+                    .form-elements__block.form-elements__block_column
+                        +description('big margin','pagination')
+                        +pagination
+            .form-elements__content.form-elements__content_row.form-elements__content_margin-b-95
+                .form-elements__content.form-elements__content_column.form-elements__content_margin-r-126.form-elements__content_width-320
+                    .form-elements__block.form-elements__block_column
+                        .form-elements__block.form-elements__block_column.form-elements__block_size-266
+                            +description('info text','dropdown', 'default')
+                            .form-elements__block.form-elements__block_margin-b-20
+                                +dropdown('room',2,2,0)
+                        .form-elements__block.form-elements__block_column.form-elements__block_size-266
+                            +description('info text','dropdown', 'expanded')
+                            .form-elements__block.form-elements__block_margin-b-20
+                                +dropdown('room',2,2,0,true)
+                        .form-elements__block.form-elements__block_column.form-elements__block_size-266.form-elements__block_margin-t-144 
+                            .form-elements__block.form-elements__block_margin-b-20
+                                +expandable-checkbox('expandable checkbox list')
+                            +expandable-checkbox('expandable checkbox list', true)
+                .form-elements__content.form-elements__content_column
+                    .form-elements__content.form-elements__content_row.form-elements__content_margin-b-100
+                        .form-elements__content.form-elements__content_column.form-elements__content_width-320.form-elements__content_margin-r-72
+                                +description('small margin','dropdown')
+                                +dropdown('guests',0,0,0,true)
+                        .form-elements__content.form-elements__content_column.form-elements__content_width-320
+                                +description('small margin','dropdown')
+                                +dropdown('guests',2,1,0,true)
                     .form-elements__content_row.form-elements__content_margin-top-150
                         .form-elements__content_column.form-elements__content_width-320
-                            .form-elements__block.form-elements__block_size-266
-                                +description('big margin','Rich Checkbox Buttons').form-elements__description
-                                +checkbox('rich','corridor-size','Ширина коридоров в номере          не менее 91 см.','Широкий коридор').form-elements__checkbox-rich.form-elements__checkbox-rich_margin
-                                +checkbox('rich','disabled-assistant','На 1 этаже вас встретит специалист и проводит до номера.','Помощник для инвалидов').form-elements__checkbox-rich
-                        .form-elements__content_column.form-elements__content_width-320
-                            .form-elements__block.form-elements__block_size-266
+                            .form-elements__block.form-elements__block_column.form-elements__block_margin-t-10.form-elements__block_size-266
+                                +description('big margin','Rich Checkbox Buttons')
+                                +checkbox('rich','corridor-size','Ширина коридоров в номере          не менее 91 см.','Широкий коридор')
+                                .form-elements__block.form-elements__block_margin-t-10
+                                    +checkbox('rich','disabled-assistant','На 1 этаже вас встретит специалист и проводит до номера.','Помощник для инвалидов')
+                        .form-elements__content.form-elements__content_column.form-elements__content_width-320
+                            .form-elements__block.form-elements__block_margin-t-10
                                 +bulletList('bullet list')
-            .form-elements__content_row
-                .form-elements__content_column.form-elements__content_width-320
-                    .form-elements__block.form-elements__block_size-266
-                        +iconList('insert_emoticon','Комфорт','Шумопоглощающие стены').form-elements__icon-list
-                        +iconList('location_city','Удобство','Окно в каждой из спален').form-elements__icon-list.form-elements__icon-list_margin
-                .form-elements__content_column.form-elements__content_width-711
+            .form-elements__content.form-elements__content_row
+                .form-elements__content.form-elements__content_column.form-elements__content_width-320
+                    .form-elements__block.form-elements__block_column.form-elements__block_size-266
+                        .form-elements__block.form-elements__block_margin-b-20
+                            +iconList('insert_emoticon','Комфорт','Шумопоглощающие стены')
+                        +iconList('location_city','Удобство','Окно в каждой из спален')
+                .form-elements__content.form-elements__content_column.form-elements__content_width-711
                     .form-elements__block.form-elements__block_margin-t-5
                         +comments('user1.png','Мурад Сарафанов', '5 дней назад','12',true,'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.')

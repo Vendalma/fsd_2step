@@ -20,13 +20,15 @@ mixin dropdown_date(type,active=false,placeholder1,description1,placeholder2,des
                     +description('small margin',description1).dropdown-date__description
                     input(type='text' placeholder=placeholder1 
                             class = 'dropdown-date__input'
+                            class = 'dropdown-date__input_s-150'
                             class=active? 'dropdown-date__double-start' : ''
                             class = range? 'dropdown-date__input_range' : '')
                     i.dropdown-date__material-icon.dropdown-date__material-icon_margin-s expand_more
                 .dropdown-date__block
                     +description('small margin',description2).dropdown-date__description
                     input(type='text' placeholder=placeholder2 
-                            class='dropdown-date__input' 
+                            class='dropdown-date__input'
+                            class = 'dropdown-date__input_s-150'
                             class=active? 'dropdown-date__double-end' : ''
                             class = range? 'dropdown-date__input_range' : '')
                     i.dropdown-date__material-icon.dropdown-date__material-icon_margin-s expand_more

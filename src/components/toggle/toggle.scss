@@ -10,7 +10,7 @@
   }
   &__control {
     width: 40px;
-    height: 20px;
+    height: 18px;
     display: inline-block;
     position: absolute;
     top: 2px;
@@ -23,8 +23,8 @@
       content: "";
       position: absolute;
       left: 4px;
-      top: 4px;
-      bottom: 4px;
+      top: 3px;
+      bottom: 2px;
 
       background: $dark-25;
       width: 12px;

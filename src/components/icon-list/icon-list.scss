@@ -21,13 +21,16 @@
   }
   &__block {
     margin-right: 10px;
+    box-sizing: border-box;
   }
 
   &__text {
     margin: 0;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     @extend %body-font;
+    box-sizing: border-box;
     &_bold {
       font-weight: bold;
     }

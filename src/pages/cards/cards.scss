@@ -3,9 +3,12 @@
 }
 
 .cards {
-  padding-left: 140px * 100%/ 1440px;
-  padding-right: 140px * 100%/ 1440px;
+  max-width: 1200px;
+  padding: 0px 20px;
+  margin: 0 auto;
   margin-top: 72px;
+  margin-bottom: 100px;
+  box-sizing: border-box;
 
   display: flex;
   flex-direction: row;
@@ -18,30 +21,8 @@
       flex-direction: column;
       max-width: 380px;
     }
-    &_margin {
-      margin-right: 40px * 100%/1160px;
-    }
   }
   &__item {
     margin-bottom: 40px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .cards {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .cards {
-    justify-content: center;
-    padding-left: 0;
-    padding-right: 0;
-    &__container {
-      &_margin {
-        margin-right: 0px;
-      }
-    }
   }
 }

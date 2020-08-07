@@ -14,10 +14,9 @@ mixin registration-card
                 .registration-card__block_margin-b-10
                     +field('text', 'Фамилия')
             .registration-card__block.registration-card__block_row.registration-card__block_margin-b-20
-                .registration-card__block_margin-r-20
-                    +radio('gender1','gender', 'male', 'Мужчина',true)
                 .registration-card__block
-                    +radio('gender2','gender', 'female', 'Женщина')
+                    +radio('gender1','gender', 'male', 'Мужчина',true,true)
+                    +radio('gender2','gender', 'female', 'Женщина',false)
             .registration-card__block.registration-card__block_column.registration-card__block_margin-b-20
                 +description('small margin','дата рождения')
                 +field('mask', 'ДД.ММ.ГГГГ')
