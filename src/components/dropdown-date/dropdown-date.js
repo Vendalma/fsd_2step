@@ -3,18 +3,18 @@ import "./dropdown-date.scss";
 import "../description/description";
 import "air-datepicker";
 
-/*
+var $this = $("body").find(".dropdown-date_active");
+
+$this.each(function () {
+  let $this = $(this);
+
+  /*
 <----------------------------------------------------->
 
           Инициализация календаря на два инпута
 
 <----------------------------------------------------->
 */
-
-var $this = $("body").find(".dropdown-date_active");
-
-$this.each(function () {
-  let $this = $(this);
 
   if ($this.hasClass("dropdown-date_active_double")) {
     let $start = $(".dropdown-date__double-start");
@@ -52,7 +52,6 @@ $this.each(function () {
 
     applyButton.addEventListener("click", function () {
       $start.data("datepicker").hide();
-      selectedDatesArray(picker);
     });
 
     let buttons = picker
@@ -64,8 +63,6 @@ $this.each(function () {
     if ($this.children().hasClass("dropdown-date__range")) {
       setRange(picker);
     }
-
-    selectedDatesArray(picker);
   }
 
   /*
@@ -144,7 +141,6 @@ $this.each(function () {
 
     applyButton.addEventListener("click", function () {
       elem.data("datepicker").hide();
-      selectedDatesArray(picker);
     });
 
     let buttons = elem
@@ -159,15 +155,5 @@ $this.each(function () {
     elem
       .data("datepicker")
       .selectDate([new Date("2019-08-19"), new Date("2019-08-23")]);
-  }
-
-  //ф-ция получения кол-ва дней в интервале дат
-
-  function selectedDatesArray(elem) {
-    let dayOne = elem.data("datepicker").selectedDates[0];
-    let dayTwo = elem.data("datepicker").selectedDates[1];
-    let days = (dayTwo - dayOne) / (24 * 60 * 60 * 1000);
-    let end = document.querySelector(".dropdown-date__double-end");
-    return end.setAttribute("data-days", days);
   }
 });

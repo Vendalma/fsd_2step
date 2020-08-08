@@ -3,17 +3,17 @@ include ../../../components/dropdown/dropdown
 include ../../../components/description/description
 include ../../../components/buttons/buttons
 
-mixin calc-card(number,price,luxury = false)
+mixin calc-card(luxury = false)
     .calc-card&attributes(attributes)
         form.calc-card__form
             .calc-card__number-block
                 .calc-card__number
                     span.calc-card__number_no № 
-                    span.calc-card__number_num #{number}
+                    span.calc-card__number_num 888
                     if luxury
                         span.calc-card__number_luxury  люкс
                 .calc-card__price 
-                    span.calc-card__price_num #{price}₽
+                    span.calc-card__price_num 9 900₽
                     span.calc-card__price_text  в сутки
             .calc-card__date-block
                 +dropdown_date('double',true,'ДД.ММ.ГГГГ','прибытие','ДД.ММ.ГГГГ','выезд', true)
@@ -22,8 +22,8 @@ mixin calc-card(number,price,luxury = false)
                 +dropdown('guests',2,1,0)
             .calc-card__calculation-block
                 .calc-card__days-sum
-                    span.calc-card__days-price
-                    span.calc-card__sum-one
+                    span.calc-card__days-price 9 990₽ х 4 суток 
+                    span.calc-card__sum-one 39 960₽
                 .calc-card__sale
                     .calc-card__item-block
                         span.calc-card__sale-price Сбор за услуги: скидка 2 179₽
@@ -37,7 +37,7 @@ mixin calc-card(number,price,luxury = false)
                 .calc-card__total
                     span.calc-card__total-text Итого
                     span.calc-card__total-line
-                    span.calc-card__total-sum
+                    span.calc-card__total-sum 38 081₽
             .calc-card__button-block
                 +button('long','Забронировать')
 
