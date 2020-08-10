@@ -9,6 +9,7 @@
     }
     &_secondary-shadow {
       @extend %shadow-bg-secondary;
+      margin-top: 1px;
     }
   }
   &__line {
