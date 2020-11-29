@@ -6,7 +6,8 @@
   "scripts": {
     "build-prod": "webpack --config ./webpack/webpack.prod.config.js",
     "build-dev": "webpack-dev-server --config ./webpack/webpack.dev.config.js ",
-    "start": "webpack-dev-server --open  --watch --config ./webpack/webpack.dev.config.js"
+    "start": "webpack-dev-server --open  --watch --config ./webpack/webpack.dev.config.js",
+    "lint": "node_modules/.bin/eslint . --fix --ext .js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,8 @@
     "babel-loader": "^8.2.2",
     "css-loader": "^3.6.0",
     "cssnano": "^4.1.10",
+    "eslint": "^7.14.0",
+    "eslint-plugin-fsd": "^1.0.1",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.3.0",
     "mini-css-extract-plugin": "^0.9.0",
