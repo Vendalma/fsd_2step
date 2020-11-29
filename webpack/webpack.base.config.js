@@ -1,23 +1,23 @@
-const webpack = require("webpack");
-const { resolve, join } = require("path");
-const { readdirSync, readdir } = require("fs");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const webpack = require('webpack');
+const path = require('path');
+const fs = require('fs');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const PATHS = {
-  src: join(__dirname, "../src"),
-  dist: join(__dirname, "../dist"),
+  src: path.join(__dirname, '../src'),
+  dist: path.join(__dirname, '../dist'),
 };
 
-const pages_folder = join(PATHS.src, "/pages");
-const images_folder = join(PATHS.src, "/images");
-const fonts_folder = join(PATHS.src, "/fonts");
+const pagesDir = path.join(PATHS.src, '/pages');
+const imagesDir = path.join(PATHS.src, '/images');
+const fontsDir = path.join(PATHS.src, '/fonts');
 
 const createHtmlWebpackPlugins = (pagesFolderPath) =>
-  readdirSync(pagesFolderPath).map(
+  fs.readdirSync(pagesFolderPath).map(
     (pageFolder) =>
       new HtmlWebpackPlugin({
-        template: join(pagesFolderPath, pageFolder, `${pageFolder}.pug`),
+        template: path.join(pagesFolderPath, pageFolder, `${pageFolder}.pug`),
         filename: `${pageFolder}.html`,
         chunks: [pageFolder],
       })
@@ -25,16 +25,13 @@ const createHtmlWebpackPlugins = (pagesFolderPath) =>
 
 const createEntryPoints = () => {
   const entryPoints = {};
-  const pageNames = readdirSync(pages_folder);
-
+  const pageNames = fs.readdirSync(pagesDir);
   pageNames.forEach(
-    (page) => (entryPoints[page] = join(pages_folder, page, `${page}.js`))
+    (page) => (entryPoints[page] = path.join(pagesDir, page, `${page}.js`))
   );
 
   return entryPoints;
 };
-
-const CSS_loaders = ["style-loader", MiniCssExtractPlugin.loader, "css-loader"];
 
 module.exports = {
   externals: {
@@ -42,64 +39,67 @@ module.exports = {
   },
   resolve: {
     alias: {
-      "@": PATHS.src,
-      "@components": resolve(PATHS.src, "components"),
-      "@layout": resolve(PATHS.src, "layout"),
-      "@fonts": resolve(PATHS.src, "fonts"),
-      "@images": resolve(PATHS.src, "images"),
+      '@': PATHS.src,
+      '@components': path.resolve(PATHS.src, 'components'),
+      '@layout': path.resolve(PATHS.src, 'layout'),
+      '@fonts': path.resolve(PATHS.src, 'fonts'),
+      '@images': path.resolve(PATHS.src, 'images'),
     },
   },
   context: PATHS.src,
   entry: createEntryPoints(),
 
   output: {
-    filename: "[name].js",
     path: PATHS.dist,
-    // publicPath: "/",
+    filename: '[name].js',
   },
 
   module: {
     rules: [
       {
+        test: /\.js$/,
+        use: 'babel-loader',
+        exclude: /node_modules/,
+      },
+      {
         test: /\.pug$/,
         use: {
-          loader: "pug-loader",
+          loader: 'pug-loader',
           options: {
             root: PATHS.src,
           },
         },
       },
       {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"],
-      },
-      {
         test: /\.(woff|ttf|svg)$/,
-        exclude: [images_folder],
-        loader: "file-loader",
+        exclude: [imagesDir],
+        loader: 'file-loader',
         options: {
-          name: "[name].[ext]",
-          outputPath: "fonts",
+          name: '[name].[ext]',
+          outputPath: 'fonts',
         },
       },
       {
         test: /.(png|jpg|gif|svg)$/,
-        exclude: fonts_folder,
-        loader: "file-loader",
+        exclude: fontsDir,
+        loader: 'file-loader',
         options: {
-          name: "[name].[ext]",
-          outputPath: "images",
+          name: '[name].[ext]',
+          outputPath: 'images',
         },
       },
       {
         test: /\.scss$/,
         use: [
-          ...CSS_loaders,
-          "sass-loader",
+          'style-loader',
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
           {
-            loader: "sass-resources-loader",
+            loader: 'sass-resources-loader',
             options: {
-              resources: PATHS.src + "/resources_sass/*.scss",
+              resources: PATHS.src + '/sass-patterns/*.scss',
             },
           },
         ],
@@ -108,14 +108,14 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "[name].css",
+      filename: '[name].css',
     }),
     new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery",
-      "window.jQuery": "jquery'",
-      "window.$": "jquery",
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': "jquery'",
+      'window.$': 'jquery',
     }),
-    ...createHtmlWebpackPlugins(pages_folder),
+    ...createHtmlWebpackPlugins(pagesDir),
   ],
 };

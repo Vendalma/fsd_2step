@@ -1,15 +1,15 @@
-const merge = require("webpack-merge");
-const baseWebpackConfig = require("./webpack.base.config");
-
-//const pages_for_public_path = "/fsd_2step/dist";
-
+const merge = require('webpack-merge');
+const baseWebpackConfig = require('./webpack.base.config');
 const buildWebpackConfig = merge(baseWebpackConfig, {
-  mode: "production",
-
+  mode: 'production',
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000,
+  },
   output: {
-    filename: "[name].js",
+    filename: '[name].js',
     path: baseWebpackConfig.externals.paths.dist,
-    // publicPath: pages_for_public_path,
   },
 });
 
