@@ -1,0 +1,39 @@
+{
+  "colors": [
+    {
+      "color": "dark-100",
+      "name": "Dark Shade 100%",
+      "code": "#1F2041"
+    },
+    {
+      "color": "dark-75",
+      "name": "Dark Shade 75%",
+      "code": "#1F2041"
+    },
+    {
+      "color": "dark-50",
+      "name": "Dark Shade 50%",
+      "code": "#1F2041"
+    },
+    {
+      "color": "dark-25",
+      "name": "Dark Shade 25%",
+      "code": "#1F2041"
+    },
+    {
+      "color": "dark-05",
+      "name": "Dark Shade 5%",
+      "code": "#1F2041"
+    },
+    {
+      "color": "color-one",
+      "name": "Purple",
+      "code": "#BC9CFF"
+    },
+    {
+      "color": "color-two",
+      "name": "Green",
+      "code": "#6FCF97"
+    }
+  ]
+}

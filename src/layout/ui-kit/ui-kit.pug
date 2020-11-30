@@ -9,7 +9,8 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         block head
-        body.uikit&attributes(attributes)
-            .uikit__logo-gray
-                +logo-gray
-            block body
+        body.ui-kit&attributes(attributes)
+            header.ui-kit__header.header
+              +logo-gray.header__logo-gray
+            main.ui-kit__ui-kit__content.ui-kit__content
+              block body

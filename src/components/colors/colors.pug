@@ -1,7 +1,8 @@
-mixin colors (color,name, code)
-    .color-block
-        .color-block__rectangle(class='color-block__' + color)
+mixin colors (arr)
+  for color in arr
+    .color-block&attributes(attributes)
+        .color-block__rectangle(class=`color-block__${color.color}`)
         .color-block__info
-            .color-block__name #{name}
-            .color-block__code #{code}
+            .color-block__name #{color.name}
+            .color-block__code #{color.code}
         

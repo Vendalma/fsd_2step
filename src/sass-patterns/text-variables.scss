@@ -1,33 +1,33 @@
 %h1-font {
-  font-family: "Quicksand", "Open Sans";
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: bold;
   font-size: 1.5rem;
-  line-height: 1.875rem;
+  line-height: 1.829rem;
   color: $dark-100;
 }
 
 %h2-font {
-  font-family: "Quicksand", "Open Sans";
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: bold;
-  font-size: 1.1875rem;
-  line-height: 1.5rem;
+  font-size: 1.188rem;
+  line-height: 1.448rem;
   color: $dark-100;
 }
 
 %h3-font {
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: bold;
   font-size: 0.75rem;
-  line-height: 0.938rem;
+  line-height: 0.914rem;
   text-transform: uppercase;
   color: $dark-100;
 }
 
 %body-font {
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: normal;
   font-size: 0.875rem;
@@ -36,7 +36,7 @@
 }
 
 %mat-icons {
-  font-family: "Material Icons";
+  font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
   font-size: 1.5rem; /* Preferred icon size */
@@ -49,7 +49,7 @@
 }
 
 %awr-font {
-  font-family: "FontAwesome";
+  font-family: 'FontAwesome';
   font-style: normal;
   font-weight: normal;
   font-size: 1.5rem;

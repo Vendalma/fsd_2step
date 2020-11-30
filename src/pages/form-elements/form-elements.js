@@ -1,20 +1,21 @@
-import "./form-elements.scss";
-import "@layout/uikit/uikit.js";
-import "@components/description/description";
-import "@components/field/field";
-import "@components/dropdown/dropdown";
-import "@components/dropdown-date/dropdown-date";
-import "@components/checkbox/checkbox";
-import "@components/radio/radio";
-import "@components/toggle/toggle";
-import "@components/like-button/like-button";
-import "@components/rate button/rate button";
-import "@components/range slider/range slider";
-import "@components/buttons/buttons";
-import "@components/pagination/pagination";
-import "@components/expandable-checkbox/expandable-checkbox";
-import "@components/bullet-list/bullet-list";
-import "@components/icon-list/icon-list";
-import "@components/comments/comments";
-
 import "@/main.scss";
+import "@components/bullet-list/bullet-list";
+import "@components/buttons/buttons";
+import "@components/checkbox/checkbox";
+import "@components/comments/comments";
+import "@components/description/description";
+import "@components/dropdown-date/dropdown-date";
+import "@components/dropdown/dropdown";
+import "@components/expandable-checkbox/expandable-checkbox";
+import "@components/field/field";
+import "@components/icon-list/icon-list";
+import "@components/like-button/like-button";
+import "@components/pagination/pagination";
+import "@components/radio/radio";
+import "@components/range slider/range slider";
+import "@components/rate button/rate button";
+import "@components/toggle/toggle";
+import "@layout/ui-kit/ui-kit.js";
+import "./form-elements.scss";
+
+

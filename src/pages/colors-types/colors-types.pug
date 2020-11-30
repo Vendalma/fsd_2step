@@ -1,4 +1,4 @@
-extends  /layout/uikit/uikit
+extends  /layout/ui-kit/ui-kit
 include /components/colors/colors
 include /components/sample-text/sample-text
 
@@ -6,14 +6,9 @@ block head
   title Colors&Types
 
 block body
-    .colors-types__container
-        .colors-types__content.colors-types__content_margin
-            +colors('dark-100','Dark Shade 100%','#1F2041')
-            +colors('dark-75','Dark Shade 75%','#1F2041')
-            +colors('dark-50','Dark Shade 50%','#1F2041')
-            +colors('dark-25','Dark Shade 25%','#1F2041')
-            +colors('dark-05', 'Dark Shade 5%','#1F2041')
-            +colors('color-one', 'Purple','#BC9CFF')
-            +colors('color-two', 'Green','#6FCF97')
-        .colors-types__content
-            +sample-text
+    .colors-types.ui-kit__colors-types
+      - const {colors} = require('./colors-types.json')
+      .color-block.colors-types__color-block
+        +colors(colors)  
+      +sample-text.colors-types__sample-text
+            
