@@ -1,8 +1,7 @@
-include ../../../components/field/field
 include ../../../components/radio/radio
 include ../../../components/description/description
 include ../../../components/toggle/toggle
-include ../../../components/buttons/buttons
+include ../../../components/buttons/buttons 
 
 mixin registration-card
     .registration-card&attributes(attributes)
@@ -10,22 +9,22 @@ mixin registration-card
         form.registration-card__form
             .registration-card__block.registration-card__block_column
                 .registration-card__block_margin-b-10
-                    +field('text','Имя')
+                   - //+field('text','Имя')
                 .registration-card__block_margin-b-10
-                    +field('text', 'Фамилия')
+                   -//+field('text', 'Фамилия')
             .registration-card__block.registration-card__block_row.registration-card__block_margin-b-20
                 .registration-card__block
                     +radio('gender1','gender', 'male', 'Мужчина',true,true)
                     +radio('gender2','gender', 'female', 'Женщина',false)
             .registration-card__block.registration-card__block_column.registration-card__block_margin-b-20
                 +description('small margin','дата рождения')
-                +field('mask', 'ДД.ММ.ГГГГ')
+                -//+field('mask', 'ДД.ММ.ГГГГ')
             .registration-card__block.registration-card__block_column
                 .registration-card__block_margin-b-10
                     +description('small margin','данные для входа в сервис')
-                    +field('text','Email')
+                  
                 .registration-card__block_margin-b-10
-                    +field('password', 'Пароль')
+                  -//+field('password', 'Пароль')
             .registration-card__block.registration-card__block_column
                 .registration-card__block_margin-b-20
                     +toggle('Получать спецпредложения')

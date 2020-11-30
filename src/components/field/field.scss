@@ -29,7 +29,7 @@
       padding-right: 44px;
     }
   }
-  &__lable {
+  &__label {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -39,7 +39,7 @@
     }
   }
 }
-.text-field__lable > .text-field__material-icon {
+.text-field__label > .text-field__material-icon {
   flex-shrink: 0;
   @extend %mat-icons;
 

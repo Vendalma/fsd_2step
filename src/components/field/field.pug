@@ -1,30 +1,25 @@
-
-//- theme type for text-field__block :
-    hover-theme
-
 include /components/buttons/buttons
 
-    
-mixin field(type,placeholder) 
-    if type == 'text'
+mixin field(settings) 
+    if settings.type == 'text'
         .text-field&attributes(attributes)
-            lable.text-field__lable
-                input(type="text" placeholder=placeholder).text-field__input
-    else if type == 'hoverText'
+            label.text-field__label
+                input(type="text" placeholder=settings.placeholder).text-field__input
+    else if settings.type == 'hoverText'
         .text-field.text-field_hover-theme&attributes(attributes)
-            lable.text-field__lable
-                input(type="text" placeholder=placeholder).text-field__input.text-field_hover-theme__input
-    else if type == 'sub'
+            label.text-field__label
+                input(type="text" placeholder=settings.placeholder).text-field__input.text-field_hover-theme__input
+    else if settings.type == 'subscribe'
         .text-field&attributes(attributes)
-            label.text-field__lable.text-field__lable_sub
-                input(type="email" placeholder=placeholder).text-field__input.text-field__input_sub
+            label.text-field__label.text-field__label_sub
+                input(type="email" placeholder=settings.placeholder).text-field__input.text-field__input_sub
                 +button('only-text-colored','arrow_forward').text-field__material-icon
-    else if type == 'mask'
+    else if settings.type == 'mask'
         .text-field&attributes(attributes)
             .text-field__block
-                label.text-field__lable
-                    input(type="text" placeholder=placeholder).text-field__input.text-field__input_mask
-    else if type == 'password'
+                label.text-field__label
+                    input(type="text" placeholder=settings.placeholder).text-field__input.text-field__input_mask
+    else if settings.type == 'password'
         .text-field&attributes(attributes)
-            lable.text-field__lable
-                input(type="password" placeholder=placeholder).text-field__input
+            label.text-field__label
+                input(type="password" placeholder=settings.placeholder).text-field__input

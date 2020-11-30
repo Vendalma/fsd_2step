@@ -1,0 +1,20 @@
+{
+  "settings_text_field": {
+    "text": {
+      "type": "text",
+      "placeholder": "Email"
+    },
+    "hover": {
+      "type": "hoverText",
+      "placeholder": "This is pretty awesome"
+    },
+    "mask": {
+      "type": "mask",
+      "placeholder": "ДД.ММ.ГГГГ"
+    },
+    "subscribe": {
+      "type": "subscribe",
+      "placeholder": "Email"
+    }
+  }
+}

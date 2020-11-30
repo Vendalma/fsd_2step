@@ -1,6 +1,5 @@
 include /components/logo/logo-colored/logo-colored
 include /components/links/links
-include /components/field/field
 include /components/copyright-bar/copyright-bar
 
 mixin footer
@@ -33,7 +32,7 @@ mixin footer
                         .footer__subscription.footer_list
                             .footer__item.footer__item_header Подписка
                             .footer__info Получайте специальные предложения и новости сервиса
-                            +field('sub','Email').footer__field
+                            -//+field('sub','Email').footer__field
             .footer__block.footer__block_secondary-shadow
                 .footer__container-copy
                     +copyright-bar('footer__copyright-bar')

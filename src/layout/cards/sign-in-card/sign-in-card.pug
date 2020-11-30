@@ -1,4 +1,3 @@
-include ../../../components/field/field
 include ../../../components/buttons/buttons
 
 mixin sign-in-card
@@ -7,9 +6,9 @@ mixin sign-in-card
         form.sign-in-card__form
             .sign-in-card__block.sign-in-card__block_column
                 .sign-in-card__block_margin-b-10
-                    +field('text','Email')
+                    -//+field('text','Email')
                 .sign-in-card__block_margin-b-20
-                    +field('password', 'Пароль')
+                    -//+field('password', 'Пароль')
                 .sign-in-card__block.sign-in-card__block_margin-b-30
                     +button('long','войти')
             .sign-in-card__block.sign-in-card__block_row
