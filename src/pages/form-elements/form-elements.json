@@ -16,5 +16,73 @@
       "type": "subscribe",
       "placeholder": "Email"
     }
+  },
+  "descriptions": {
+    "one": {
+      "type": "text with state",
+      "text": "text field",
+      "state": "default"
+    },
+    "two": {
+      "type": "text with state",
+      "text": "text field",
+      "state": "hover / focus"
+    },
+    "three": {
+      "type": "text with state",
+      "text": "dropdown",
+      "state": "default"
+    },
+    "four": {
+      "type": "text with state",
+      "text": "masked text field",
+      "state": "default"
+    },
+    "five": {
+      "type": "small margin",
+      "text": "subscription text field"
+    },
+    "six": {
+      "type": "big margin",
+      "text": "checkbox buttons"
+    },
+    "seven": {
+      "type": "big margin",
+      "text": "radio buttons"
+    },
+    "eight": {
+      "type": "big margin",
+      "text": "toggle"
+    },
+    "nine": {
+      "type": "big margin",
+      "text": "rate button"
+    },
+    "ten": {
+      "type": "big margin",
+      "text": "buttons"
+    },
+    "eleven": {
+      "type": "big margin",
+      "text": "pagination"
+    },
+    "twelve": {
+      "type": "text with state",
+      "text": "dropdown",
+      "state": "default"
+    },
+    "thirteen": {
+      "type": "text with state",
+      "text": "dropdown",
+      "state": "expanded"
+    },
+    "fourteen": {
+      "type": "small margin",
+      "text": "dropdown"
+    },
+    "fifteen": {
+      "type": "big margin",
+      "text": "Rich Checkbox Buttons"
+    }
   }
 }

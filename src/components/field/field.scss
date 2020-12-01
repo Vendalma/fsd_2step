@@ -1,4 +1,3 @@
-// text field
 .text-field {
   width: 100%;
   flex-grow: 1;
@@ -8,8 +7,7 @@
     box-sizing: border-box;
     width: inherit;
     @extend %body-font;
-    height: 44px;
-    padding: 0px 15px;
+    padding: 12.2px 15px;
 
     border: 1px solid $dark-25;
     line-height: 129%;
@@ -24,9 +22,50 @@
       color: $dark-25;
       flex-shrink: 0;
     }
-    &_sub {
+    &_subscribe {
       width: 100%;
       padding-right: 44px;
+    }
+    &_hover {
+      border: 1px solid $dark-50;
+      flex-shrink: 0;
+
+      &::placeholder {
+        color: $dark-75;
+      }
+      &::-moz-placeholder {
+        color: $dark-75;
+        opacity: 1;
+      }
+    }
+    &:hover {
+      border: 1px solid $dark-50;
+      &::placeholder {
+        color: $dark-75;
+      }
+      &::-webkit-input-placeholder {
+        color: $dark-75;
+      }
+      &::-moz-placeholder {
+        color: $dark-75;
+        opacity: 1;
+      }
+    }
+    &:focus {
+      border: 1px solid $dark-50;
+      color: $dark-75;
+      outline: none;
+
+      &::placeholder {
+        color: $dark-75;
+      }
+      &::-webkit-input-placeholder {
+        color: $dark-75;
+      }
+      &::-moz-placeholder {
+        color: $dark-75;
+        opacity: 1;
+      }
     }
   }
   &__label {
@@ -34,7 +73,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    &_sub {
+    &_subscribe {
       position: relative;
     }
   }
@@ -46,50 +85,4 @@
   position: absolute;
   top: 13.8px;
   right: 10px;
-}
-
-//text-field-hover-theme
-.text-field_hover-theme {
-  &__input {
-    border: 1px solid $dark-50;
-    flex-shrink: 0;
-
-    &::placeholder {
-      color: $dark-75;
-    }
-    &::-moz-placeholder {
-      color: $dark-75;
-      opacity: 1;
-    }
-  }
-}
-
-.text-field__input:focus {
-  border: 1px solid $dark-50;
-  color: $dark-75;
-  outline: none;
-
-  &::placeholder {
-    color: $dark-75;
-  }
-  &::-webkit-input-placeholder {
-    color: $dark-75;
-  }
-  &::-moz-placeholder {
-    color: $dark-75;
-    opacity: 1;
-  }
-}
-.text-field__input:hover {
-  border: 1px solid $dark-50;
-  &::placeholder {
-    color: $dark-75;
-  }
-  &::-webkit-input-placeholder {
-    color: $dark-75;
-  }
-  &::-moz-placeholder {
-    color: $dark-75;
-    opacity: 1;
-  }
 }

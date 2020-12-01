@@ -21,45 +21,45 @@ block head
   title Form elements
 
 block body
-
-    .form-elements
-    - const {settings_text_field} = require('./form-elements.json')
+   - const {settings_text_field, descriptions} = require('./form-elements.json')
+    .form-elements.content-block__form-elements
+   
         .form-elements__container
             .form-elements__content.form-elements__content_row.form-elements__content_margin-b-100
                 .form-elements__content.form-elements__content_column.form-elements__content_margin-r-50.form-elements__content_width-320
                     .form-elements__block.form-elements__block_column.form-elements__block_margin-b-20
-                        +description('info text','text field','default')
-                        +field(settings_text_field.text)
+                        +description(descriptions.one)
+                        +text-field(settings_text_field.text)
                     .form-elements__block.form-elements__block_column.form-elements__block_margin-b-20
-                        +description('info text','text field','hover / focus')
-                        +field(settings_text_field.hover)
+                        +description(descriptions.two)
+                        +text-field(settings_text_field.hover)
                     .form-elements__block.form-elements__block_column.form-elements__block_margin-b-20
-                        +description('info text','dropdown','default')
+                        +description(descriptions.three)
                         +dropdown('guests',0,0,0)
                     .form-elements__block.form-elements__block_column.form-elements__block_margin-b-41
-                        +description('info text','masked text field','default')
-                        +field(settings_text_field.mask)
+                        +description(descriptions.four)
+                        +text-field(settings_text_field.mask)
                     .form-elements__block.form-elements__block_column.form-elements__block_margin-b-41
                         +dropdown_date('double',true,'ДД.ММ.ГГГГ','date dropdown','19.08.2019','date dropdown', false)
                     .form-elements__block.form-elements__block_column.form-elements__block_margin-b-41.form-elements__block_size-266
                         +dropdown_date('filter',true,'19 авг - 23 авг','filter date dropdown').form-elements__dropdown
                     .form-elements__block.form-elements__block_column.form-elements__block_size-266
-                        +description('small margin','subscription text field')
-                        +field(settings_text_field.subscribe)
+                        +description(descriptions.five)
+                        +text-field(settings_text_field.subscribe)
                 .form-elements__content.form-elements__content_column.form-elements__content_width-320
                     .form-elements__block.form-elements__block_column.form-elements__block_margin-b-41.form-elements__block_size-266
-                        +description('big margin','checkbox buttons')
+                        +description(descriptions.six)
                         +checkbox('default','smoking', 'Можно курить')
                         .form-elements__block.form-elements__block_margin-t-b-16
                             +checkbox('default','pets', 'Можно с питомцами','','true')
                         +checkbox('default','guests', 'Можно пригласить гостей (до 10 человек)','','true')
                     .form-elements__block.form-elements__block_column.form-elements__block_margin-b-35
-                        +description('big margin','radio buttons')
+                        +description(descriptions.seven)
                         .form-elements__block_row
                             +radio('gender1','gender', 'male', 'Мужчина',true,true)
                             +radio('gender2','gender', 'female', 'Женщина')
                     .form-elements__block.form-elements__block_column.form-elements__block_margin-b-41.form-elements__block_margin-t-5
-                        +description('big margin','toggle')
+                        +description(descriptions.eight)
                         +toggle('Получать спецпредложения', true)
                         .form-elements__block.form-elements__block_margin-t-10
                             +toggle('Получать спецпредложения')
@@ -69,7 +69,7 @@ block body
                             +like_button('2')
                             +like_button('12',true)
                     .form-elements__block.form-elements__block_column
-                        +description('big margin','rate button')
+                        +description(descriptions.nine)
                         .form-elements__block_row
                             .form-elements__block.form-elements__block_margin-r-20
                                 +rateButton(4).form-elements__rate-button
@@ -78,7 +78,7 @@ block body
                     .form-elements__block.form-elements__block_margin-b-20.form-elements__block_size-266
                         +range_slider('range slider')
                     .form-elements__block.form-elements__block_column.form-elements__block_margin-t-10.form-elements__block_margin-b-41
-                        +description('big margin','buttons')
+                        +description(descriptions.ten)
                         .form-elements__block.form-elements__block_row.form-elements__block_margin-b-32
                             .form-elements__block_margin-r-20
                                 +button('bg-primary-grad button_theme-bg-primary-grad_padding-lg', 'click me')
@@ -94,17 +94,17 @@ block body
                         .form-elements__block
                             +button('long', 'перейти к оплате')
                     .form-elements__block.form-elements__block_column
-                        +description('big margin','pagination')
+                        +description(descriptions.eleven)
                         +pagination
             .form-elements__content.form-elements__content_row.form-elements__content_margin-b-95
                 .form-elements__content.form-elements__content_column.form-elements__content_margin-r-126.form-elements__content_width-320
                     .form-elements__block.form-elements__block_column
                         .form-elements__block.form-elements__block_column.form-elements__block_size-266
-                            +description('info text','dropdown', 'default')
+                            +description(descriptions.twelve)
                             .form-elements__block.form-elements__block_margin-b-20
                                 +dropdown('room',2,2,0)
                         .form-elements__block.form-elements__block_column.form-elements__block_size-266
-                            +description('info text','dropdown', 'expanded')
+                            +description(descriptions.thirteen)
                             .form-elements__block.form-elements__block_margin-b-20
                                 +dropdown('room',2,2,0,true)
                         .form-elements__block.form-elements__block_column.form-elements__block_size-266.form-elements__block_margin-t-144 
@@ -114,15 +114,15 @@ block body
                 .form-elements__content.form-elements__content_column
                     .form-elements__content.form-elements__content_row.form-elements__content_margin-b-100
                         .form-elements__content.form-elements__content_column.form-elements__content_width-320.form-elements__content_margin-r-72
-                                +description('small margin','dropdown')
+                                +description(descriptions.fourteen)
                                 +dropdown('guests',0,0,0,true)
                         .form-elements__content.form-elements__content_column.form-elements__content_width-320
-                                +description('small margin','dropdown')
+                                +description(descriptions.fourteen)
                                 +dropdown('guests',2,1,0,true)
                     .form-elements__content_row.form-elements__content_margin-top-150
                         .form-elements__content_column.form-elements__content_width-320
                             .form-elements__block.form-elements__block_column.form-elements__block_margin-t-10.form-elements__block_size-266
-                                +description('big margin','Rich Checkbox Buttons')
+                                +description(descriptions.fifteen)
                                 +checkbox('rich','corridor-size','Ширина коридоров в номере          не менее 91 см.','Широкий коридор')
                                 .form-elements__block.form-elements__block_margin-t-10
                                     +checkbox('rich','disabled-assistant','На 1 этаже вас встретит специалист и проводит до номера.','Помощник для инвалидов')
