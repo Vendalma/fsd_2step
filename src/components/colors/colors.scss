@@ -3,44 +3,45 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  @extend %h1-font;
   min-width: 280px;
   margin-bottom: 20px;
   box-sizing: border-box;
-  &__rectangle {
-    min-width: 70px;
-    min-height: 70px;
-    border-radius: 6px;
-  }
-  &__info {
-    min-width: 170px;
-    font-size: 1.188rem;
-    line-height: 1.781rem;
-    padding-top: 3px;
-  }
-
-  &__code {
-    font-weight: normal;
-  }
-  &__dark-100 {
+}
+.rectangle {
+  min-width: 70px;
+  min-height: 70px;
+  border-radius: 6px;
+  &_dark-100 {
     background-color: $dark-100;
   }
-  &__dark-75 {
+  &_dark-75 {
     background-color: $dark-75;
   }
-  &__dark-50 {
+  &_dark-50 {
     background-color: $dark-50;
   }
-  &__dark-25 {
+  &_dark-25 {
     background-color: $dark-25;
   }
-  &__dark-05 {
+  &_dark-05 {
     background-color: $dark-05;
   }
-  &__color-one {
+  &_color-one {
     background-color: $color-one;
   }
-  &__color-two {
+  &_color-two {
     background-color: $color-two;
+  }
+}
+.info {
+  min-width: 170px;
+  @extend %h1-font;
+  font-size: 1.188rem;
+  line-height: 1.781rem;
+  padding-top: 3px;
+  display: flex;
+  flex-direction: column;
+  &__code {
+    font-weight: normal;
   }
 }

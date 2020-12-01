@@ -1,14 +1,14 @@
 extends  /layout/ui-kit/ui-kit
 include /components/colors/colors
-include /components/sample-text/sample-text
+include /components/text-types/text-types
 
 block head
   title Colors&Types
 
 block body
-    .colors-types.ui-kit__colors-types
+    .colors-types.content-block__colors-types
       - const {colors} = require('./colors-types.json')
       .color-block.colors-types__color-block
         +colors(colors)  
-      +sample-text.colors-types__sample-text
+      +text-types.colors-types__text-types
             
