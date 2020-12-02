@@ -159,5 +159,35 @@
   },
   "rangeSlider": {
     "text": "range slider"
+  },
+  "buttonSettings": {
+    "one": {
+      "theme": "bg-primary-grad button_theme-bg-primary-grad_padding-lg",
+      "text": "click me"
+    },
+    "two": {
+      "theme": "bg-primary-grad_hover",
+      "text": "click me"
+    },
+    "three": {
+      "theme": "border-primary-grad button_theme-border-primary-grad_padding-lg",
+      "text": "click me"
+    },
+    "four": {
+      "theme": "border-primary-grad_hover",
+      "text": "click me"
+    },
+    "five": {
+      "theme": "text-colored",
+      "text": "click me"
+    },
+    "six": {
+      "theme": "text-default",
+      "text": "click me"
+    },
+    "seven": {
+      "theme": "long",
+      "text": "перейти к оплате"
+    }
   }
 }

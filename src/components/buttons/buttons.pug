@@ -1,12 +1,2 @@
-//-theme:
-    bg-primary-grad ---> button_theme-bg-primary-grad_padding-lg, button_theme-bg-primary-grad_padding-m
-    bg-primary-grad_hover
-    border-primary-grad   ---> button_theme-border-primary-grad_padding-s , button_theme-border-primary-grad_padding-m , button_theme-border-primary-grad_padding-lg
-    border-primary-grad_hover
-    only-text-colored
-    only-text-default
-    long
-
-
-mixin button(themeName,text)
-    button(type='button' class ='button button_theme-' + themeName)&attributes(attributes) #{text}
+mixin button({theme,text})
+    button(type='button' class =`button button_theme-${theme}`)&attributes(attributes) #{text}

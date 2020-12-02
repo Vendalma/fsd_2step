@@ -1,9 +1,14 @@
 .button {
   box-sizing: border-box;
-  border-radius: 22px;
   outline: none;
   @extend %h3-font;
   cursor: pointer;
+  display: inline-block;
+  border: solid 2px transparent;
+  border-radius: 22px;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  -webkit-background-clip: padding-box, border-box;
 
   &_theme-bg-primary-grad {
     @extend %primary-grad;
@@ -25,10 +30,11 @@
   }
   &_theme-border-primary-grad {
     display: flex;
+    background-image: linear-gradient(white, white),
+      linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border: 2px solid $color-one;
     color: $color-one;
     &_padding-lg {
       padding: 1em 1.43em;
@@ -45,14 +51,14 @@
     }
   }
 
-  &_theme-only-text-colored {
+  &_theme-text-colored {
     border: none;
     background-color: #ffffff;
     color: $color-one;
     padding: 0;
   }
 
-  &_theme-only-text-default {
+  &_theme-text-default {
     border: none;
     background-color: #ffffff;
     color: $dark-50;
@@ -67,7 +73,7 @@
     box-sizing: border-box;
     flex-grow: 1;
     &::before {
-      content: "arrow_forward";
+      content: 'arrow_forward';
       @extend %mat-icons;
       color: #ffffff;
       line-height: 24px;
@@ -76,21 +82,24 @@
       right: 8px;
     }
   }
-
-  //styles for example
   &_theme-bg-primary-grad_hover {
     @extend %primary-grad;
     color: #ffffff;
     border: none;
-    width: 99px;
-    padding: 1.2em 1.6em;
-
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2em 1.7em;
     opacity: 0.5;
   }
 
   &_theme-border-primary-grad_hover {
     border: 2px solid $color-one;
-    width: 99px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     color: $color-one;
     padding: 1em 1.43em;
     background-color: #ffffff;

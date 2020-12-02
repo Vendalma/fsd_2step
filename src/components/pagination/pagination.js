@@ -1,8 +1,8 @@
-import "./pagination.scss";
 import "../../library/simple pagination/jquery.simplePagination";
+import "./pagination.scss";
 
 $(function () {
-  $(".pagination__block").pagination({
+  $(".js-pagination__block").pagination({
     itemsOnPage: 12,
     pages: 15,
     displayedPages: 3,

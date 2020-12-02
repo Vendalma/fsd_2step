@@ -22,7 +22,7 @@ block head
 
 block body
    - const {settingsTextField, descriptions, settingsDropdown,checkboxSettings,} = require('./form-elements.json')
-   - const {radioSettings,toggleSettings, likeButtonSettings, rangeSlider} = require('./form-elements.json')
+   - const {radioSettings,toggleSettings, likeButtonSettings, rangeSlider, buttonSettings} = require('./form-elements.json')
     .form-elements.content-block__form-elements
    
         .form-elements__container
@@ -82,18 +82,18 @@ block body
                         +description(descriptions.eleven)
                         .form-elements__block.form-elements__block_row.form-elements__block_margin-b-32
                             .form-elements__block_margin-r-20
-                                +button('bg-primary-grad button_theme-bg-primary-grad_padding-lg', 'click me')
-                            +button('bg-primary-grad_hover', 'click me')
+                                +button(buttonSettings.one)
+                            +button(buttonSettings.two)
                         .form-elements__block.form-elements__block_row.form-elements__block_margin-b-32
                             .form-elements__block_margin-r-20
-                                +button('border-primary-grad button_theme-border-primary-grad_padding-lg', 'click me')
-                            +button('border-primary-grad_hover', 'click me')
+                                +button(buttonSettings.three)
+                            +button(buttonSettings.four)
                         .form-elements__block.form-elements__block_row.form-elements__block_margin-b-32
                             .form-elements__block_margin-r-20
-                                +button('only-text-colored', 'click me')
-                            +button('only-text-default', 'click me')
+                                +button(buttonSettings.five)
+                            +button(buttonSettings.six)
                         .form-elements__block
-                            +button('long', 'перейти к оплате')
+                            +button(buttonSettings.seven)
                     .form-elements__block.form-elements__block_column
                         +description(descriptions.twelve)
                         +pagination
