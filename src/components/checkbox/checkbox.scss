@@ -6,6 +6,7 @@
 
   &__input {
     -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
     position: absolute;
   }
@@ -18,8 +19,31 @@
     color: $dark-50;
     padding-left: 30px;
     box-sizing: border-box;
+
+    &_rich {
+      display: flex;
+      flex-direction: column;
+      &-header {
+        @extend %h3-font;
+        font-size: 0.875rem;
+        line-height: 18px;
+        color: $dark-75;
+        margin-bottom: 5px;
+        margin-top: 2px;
+        text-transform: none;
+      }
+      &-text {
+        font-size: 12px;
+        line-height: 14px;
+        color: $dark-50;
+        white-space: pre-wrap;
+        max-width: 230px;
+      }
+    }
+  }
+  &__mark {
     &::before {
-      content: "";
+      content: '';
       display: block;
       width: 20px;
       height: 20px;
@@ -32,7 +56,7 @@
       left: 0;
     }
     &::after {
-      content: "";
+      content: '';
       width: 14px;
       height: 11px;
       background: url(../../images/Vector.svg) no-repeat;
@@ -43,39 +67,13 @@
       left: 3px;
       z-index: 2;
     }
-
-    &_rich {
-      display: flex;
-      flex-direction: column;
-    }
-  }
-  &__head {
-    @extend %h3-font;
-    font-size: 0.875rem;
-    line-height: 18px;
-    color: $dark-75;
-    margin-bottom: 5px;
-    margin-top: 2px;
-    text-transform: none;
-  }
-  &__text {
-    font-size: 12px;
-    line-height: 14px;
-    color: $dark-50;
-    white-space: pre-wrap;
-    max-width: 230px;
-  }
-
-  &__information {
-    box-sizing: border-box;
-    padding-right: 30px;
   }
 }
 
-.checkbox__input:checked + .checkbox__label::before {
+.checkbox__input:checked + .checkbox__mark::before {
   border: 1px solid $color-one;
 }
 
-.checkbox__input:checked + .checkbox__label::after {
+.checkbox__input:checked + .checkbox__mark::after {
   opacity: 1;
 }

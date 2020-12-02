@@ -21,7 +21,7 @@ block head
   title Form elements
 
 block body
-   - const {settings_text_field, descriptions} = require('./form-elements.json')
+   - const {settingsTextField, descriptions, settingsDropdown, checkboxSettings, radioSettings} = require('./form-elements.json')
     .form-elements.content-block__form-elements
    
         .form-elements__container
@@ -29,35 +29,35 @@ block body
                 .form-elements__content.form-elements__content_column.form-elements__content_margin-r-50.form-elements__content_width-320
                     .form-elements__block.form-elements__block_column.form-elements__block_margin-b-20
                         +description(descriptions.one)
-                        +text-field(settings_text_field.text)
+                        +text-field(settingsTextField.text)
                     .form-elements__block.form-elements__block_column.form-elements__block_margin-b-20
                         +description(descriptions.two)
-                        +text-field(settings_text_field.hover)
+                        +text-field(settingsTextField.hover)
                     .form-elements__block.form-elements__block_column.form-elements__block_margin-b-20
                         +description(descriptions.three)
-                        +dropdown('guests',0,0,0)
+                        +dropdown(settingsDropdown.guestsOne)
                     .form-elements__block.form-elements__block_column.form-elements__block_margin-b-41
                         +description(descriptions.four)
-                        +text-field(settings_text_field.mask)
+                        +text-field(settingsTextField.mask)
                     .form-elements__block.form-elements__block_column.form-elements__block_margin-b-41
                         +dropdown_date('double',true,'ДД.ММ.ГГГГ','date dropdown','19.08.2019','date dropdown', false)
                     .form-elements__block.form-elements__block_column.form-elements__block_margin-b-41.form-elements__block_size-266
                         +dropdown_date('filter',true,'19 авг - 23 авг','filter date dropdown').form-elements__dropdown
                     .form-elements__block.form-elements__block_column.form-elements__block_size-266
                         +description(descriptions.five)
-                        +text-field(settings_text_field.subscribe)
+                        +text-field(settingsTextField.subscribe)
                 .form-elements__content.form-elements__content_column.form-elements__content_width-320
                     .form-elements__block.form-elements__block_column.form-elements__block_margin-b-41.form-elements__block_size-266
                         +description(descriptions.six)
-                        +checkbox('default','smoking', 'Можно курить')
+                        +checkbox(checkboxSettings.smoking)
                         .form-elements__block.form-elements__block_margin-t-b-16
-                            +checkbox('default','pets', 'Можно с питомцами','','true')
-                        +checkbox('default','guests', 'Можно пригласить гостей (до 10 человек)','','true')
+                            +checkbox(checkboxSettings.pets)
+                        +checkbox(checkboxSettings.guests)
                     .form-elements__block.form-elements__block_column.form-elements__block_margin-b-35
                         +description(descriptions.seven)
                         .form-elements__block_row
-                            +radio('gender1','gender', 'male', 'Мужчина',true,true)
-                            +radio('gender2','gender', 'female', 'Женщина')
+                            +radio(radioSettings.male)
+                            +radio(radioSettings.female)
                     .form-elements__block.form-elements__block_column.form-elements__block_margin-b-41.form-elements__block_margin-t-5
                         +description(descriptions.eight)
                         +toggle('Получать спецпредложения', true)
@@ -102,11 +102,11 @@ block body
                         .form-elements__block.form-elements__block_column.form-elements__block_size-266
                             +description(descriptions.twelve)
                             .form-elements__block.form-elements__block_margin-b-20
-                                +dropdown('room',2,2,0)
+                                +dropdown(settingsDropdown.room)
                         .form-elements__block.form-elements__block_column.form-elements__block_size-266
                             +description(descriptions.thirteen)
                             .form-elements__block.form-elements__block_margin-b-20
-                                +dropdown('room',2,2,0,true)
+                                +dropdown(settingsDropdown.roomActive)
                         .form-elements__block.form-elements__block_column.form-elements__block_size-266.form-elements__block_margin-t-144 
                             .form-elements__block.form-elements__block_margin-b-20
                                 +expandable-checkbox('expandable checkbox list')
@@ -115,10 +115,10 @@ block body
                     .form-elements__content.form-elements__content_row.form-elements__content_margin-b-100
                         .form-elements__content.form-elements__content_column.form-elements__content_width-320.form-elements__content_margin-r-72
                                 +description(descriptions.fourteen)
-                                +dropdown('guests',0,0,0,true)
+                                +dropdown(settingsDropdown.guestsTwo)
                         .form-elements__content.form-elements__content_column.form-elements__content_width-320
                                 +description(descriptions.fourteen)
-                                +dropdown('guests',2,1,0,true)
+                                +dropdown(settingsDropdown.guestsThree)
                     .form-elements__content_row.form-elements__content_margin-top-150
                         .form-elements__content_column.form-elements__content_width-320
                             .form-elements__block.form-elements__block_column.form-elements__block_margin-t-10.form-elements__block_size-266

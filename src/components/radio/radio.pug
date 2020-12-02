@@ -1,13 +1,6 @@
-mixin radio(radioID,name,value,text, margin=true, checked = false)
-    .radio&attributes(attributes)
-        if checked
-            label(for=radioID class='radio__label' class= margin? 'radio__label_margin' : '')
-                input(type="radio" name=name value=value id=radioID class='radio__input' checked)
-                span.radio__check
-                span.radio__text #{text}
-        else
-            label(for=radioID class='radio__label' class= margin? 'radio__label_margin' : '')
-                input(type="radio" name=name value=value id=radioID class='radio__input')
-                span.radio__check
-                span.radio__text #{text}
-                
+mixin radio({name,text, margin=true, checked = false})
+  .radio&attributes(attributes)
+    label(class='radio__label' class= margin? 'radio__label_margin' : '') #{text}
+      input(type="radio" name=name class='radio__input' checked=checked)
+      span.radio__mark
+        

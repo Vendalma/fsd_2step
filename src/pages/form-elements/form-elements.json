@@ -1,5 +1,5 @@
 {
-  "settings_text_field": {
+  "settingsTextField": {
     "text": {
       "type": "text",
       "placeholder": "Email"
@@ -83,6 +83,56 @@
     "fifteen": {
       "type": "big margin",
       "text": "Rich Checkbox Buttons"
+    }
+  },
+  "settingsDropdown": {
+    "guestsOne": {
+      "type": "guests"
+    },
+    "room": {
+      "type": "room",
+      "score1": 2,
+      "score2": 2
+    },
+    "roomActive": {
+      "type": "room",
+      "score1": 2,
+      "score2": 2,
+      "active": true
+    },
+    "guestsTwo": {
+      "type": "guests",
+      "active": true
+    },
+    "guestsThree": {
+      "type": "guests",
+      "score1": 2,
+      "score2": 1,
+      "active": true
+    }
+  },
+  "checkboxSettings": {
+    "smoking": {
+      "text": "Можно курить"
+    },
+    "pets": {
+      "text": "Можно с питомцами",
+      "checked": true
+    },
+    "guests": {
+      "text": "Можно пригласить гостей (до 10 человек)",
+      "checked": true
+    }
+  },
+  "radioSettings": {
+    "male": {
+      "text": "Мужчина",
+      "name": "gender",
+      "checked": true
+    },
+    "female": {
+      "text": "Женщина",
+      "name": "gender"
     }
   }
 }
