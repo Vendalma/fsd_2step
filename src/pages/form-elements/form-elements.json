@@ -56,31 +56,35 @@
     },
     "nine": {
       "type": "big margin",
-      "text": "rate button"
+      "text": "like button"
     },
     "ten": {
       "type": "big margin",
-      "text": "buttons"
+      "text": "rate button"
     },
     "eleven": {
       "type": "big margin",
-      "text": "pagination"
+      "text": "buttons"
     },
     "twelve": {
-      "type": "text with state",
-      "text": "dropdown",
-      "state": "default"
+      "type": "big margin",
+      "text": "pagination"
     },
     "thirteen": {
       "type": "text with state",
       "text": "dropdown",
-      "state": "expanded"
+      "state": "default"
     },
     "fourteen": {
+      "type": "text with state",
+      "text": "dropdown",
+      "state": "expanded"
+    },
+    "fifteen": {
       "type": "small margin",
       "text": "dropdown"
     },
-    "fifteen": {
+    "sixteen": {
       "type": "big margin",
       "text": "Rich Checkbox Buttons"
     }
@@ -134,5 +138,26 @@
       "text": "Женщина",
       "name": "gender"
     }
+  },
+  "toggleSettings": {
+    "first": {
+      "text": "Получать спецпредложения",
+      "checked": true
+    },
+    "second": {
+      "text": "Получать спецпредложения"
+    }
+  },
+  "likeButtonSettings": {
+    "first": {
+      "count": "2"
+    },
+    "second": {
+      "count": "12",
+      "active": true
+    }
+  },
+  "rangeSlider": {
+    "text": "range slider"
   }
 }

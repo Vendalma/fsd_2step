@@ -1,11 +1,10 @@
-import "./range slider.scss";
-import "ion-rangeslider/js/ion.rangeSlider";
-//import "ion-rangeslider/css/ion.rangeSlider.css";
 import "ion-rangeslider";
+import "ion-rangeslider/js/ion.rangeSlider";
 import "jquery";
+import "./range slider.scss";
 
 $(function () {
-  $("#range").ionRangeSlider({
+  $(".range").ionRangeSlider({
     keyboard: false,
     type: "double",
     min: 0,

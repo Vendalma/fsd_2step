@@ -1,7 +1,3 @@
-mixin like_button(count, active=false)
-    if active
-        button.like-button.like-button_active&attributes(attributes)
-            span.like-button__count #{count}
-    else 
-        button.like-button&attributes(attributes)
-            span.like-button__count #{count}
+mixin like_button({count, active=false})
+  button.like-button.js-like-button(class= active? 'like-button_active' : '')&attributes(attributes)
+    span.like-button__count #{count}

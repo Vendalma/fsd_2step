@@ -1,13 +1,10 @@
 .rate-button {
-  width: 120px;
-  height: 24px;
   &__item {
-    width: 24px;
-    height: 24px;
     display: inline-block;
     @extend %mat-icons;
     line-height: 20px;
     @extend %primary-grad;
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }

@@ -1,6 +1,6 @@
 import "./like-button.scss";
 
-const element = document.querySelectorAll(".like-button");
+const element = document.querySelectorAll(".js-like-button");
 element.forEach((el) => {
   el.onclick = () => {
     const count = el.firstChild;
