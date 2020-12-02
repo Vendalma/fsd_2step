@@ -27,12 +27,12 @@ class Dropdown {
     this.material_icon = this.container.querySelector(
       '.js-dropdown__material-icons'
     );
-    this.item_score = this.container.querySelectorAll('.js-item-count__score');
+    this.item_score = this.container.querySelectorAll('.js-dropdown__item-score');
     this.minuses = this.container.querySelectorAll(
-      '.js-item-count__button_min'
+      '.js-dropdown__item-button_min'
     );
     this.pluses = this.container.querySelectorAll(
-      '.js-item-count__button_plus'
+      '.js-dropdown__item-button_plus'
     );
     if (this.checkTypeDropdown()) {
       this.clear_button = this.container.querySelector(
@@ -102,7 +102,7 @@ class Dropdown {
     this.minuses.forEach((elem) => {
       let score = elem.nextElementSibling;
       if (Number(score.innerHTML) <= 0) {
-        elem.classList.add('item-count__button_hidden')
+        elem.classList.add('dropdown__item-button_hidden')
       }
     })
   }
@@ -110,7 +110,7 @@ class Dropdown {
     this.minuses.forEach((elem) => {
       let score = elem.nextElementSibling;
       if (Number(score.innerHTML) > 0) {
-        elem.classList.remove('item-count__button_hidden')
+        elem.classList.remove('dropdown__item-button_hidden')
       }
     })
   }
@@ -127,7 +127,7 @@ class Dropdown {
     this.checkCorrectItemName(this.item_score);
   }
   checkTypeDropdown() {
-    return this.container.classList.contains('dropdown-guests');
+    return this.container.classList.contains('dropdown_guests');
   }
   setItemNameForGuests(array) {
     let sum = 0;
@@ -136,7 +136,7 @@ class Dropdown {
     let str = '';
     let strChild = '';
     for (let elem of array) {
-      if (elem.classList.contains('item-count__child')) {
+      if (elem.classList.contains('dropdown__item-score_child')) {
         sumChild = sumChild + Number(elem.innerHTML);
       } else {
         sum = sum + Number(elem.innerHTML);
@@ -179,11 +179,11 @@ class Dropdown {
     let str3 = '';
 
     for (let elem of array) {
-      if (elem.classList.contains('item-count__bedrooms')) {
+      if (elem.classList.contains('dropdown__item-score_bedrooms')) {
         bedrooms = bedrooms + Number(elem.innerHTML);
-      } else if (elem.classList.contains('item-count__beds')) {
+      } else if (elem.classList.contains('dropdown__item-score_beds')) {
         beds = beds + Number(elem.innerHTML);
-      } else if (elem.classList.contains('item-count__bathrooms')) {
+      } else if (elem.classList.contains('dropdown__item-score_bathrooms')) {
         bathrooms = bathrooms + Number(elem.innerHTML);
       }
     }
@@ -274,6 +274,9 @@ class Dropdown {
       this.setClearButton()
       this.setMinButton()
     }
+  }
+  checkPlaceholderLength() {
+
   }
 }
 
