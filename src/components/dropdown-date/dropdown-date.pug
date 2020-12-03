@@ -1,36 +1,38 @@
 include /components/buttons/buttons
 include /components/description/description
 
-mixin dropdown_date(type,active=false,placeholder1,description1,placeholder2,description2,range= false)
+mixin dropdown_date({type,active=false,placeholder1,description1,placeholder2,description2})
     if type == 'filter'
-        .dropdown-date(class=active? 'dropdown-date_active dropdown-date_active_filter': '')&attributes(attributes)
-            .dropdown-date__block
-                +description('small margin',description1).dropdown-date__description
-                label.dropdown-date__label
+        .dropdown-date(class=active? 'js-dropdown-date_active js-dropdown-date_filter': '')&attributes(attributes)
+                +description({'type':'default','text' : description1}).dropdown-date__description
+                .dropdown-date__block
                     input(type='text' placeholder=placeholder1  
                     class='dropdown-date__input'
-                    class=active? 'dropdown-date__filter' : '' )
+                    class=active? 'js-dropdown-date__input_filter' : '' 
+                    disabled=!active)
                     i.dropdown-date__material-icon.dropdown-date__material-icon_margin-m expand_more
     else if type == 'inline'
-        .dropdown-date.dropdown-date_active.dropdown-date__inline&attributes(attributes)
-    else if type == 'double'
-        .dropdown-date.dropdown-date_margin-s(class=active? 'dropdown-date_active dropdown-date_active_double': '')&attributes(attributes)
-            label.dropdown-date__label(class = range? 'dropdown-date__range': '')
+        .dropdown-date.js-dropdown-date_active.js-dropdown-date_inline&attributes(attributes)
+    else if type == 'range'
+        .dropdown-date.dropdown-date_margin-s(class=active? 'js-dropdown-date_active js-dropdown-date_range': '')&attributes(attributes)
+            .dropdown-date__container_range.js-dropdown-date__container_range
                 .dropdown-date__block.dropdown-date__block_margin
-                    +description('small margin',description1).dropdown-date__description
+                    +description({'type':'default','text' : description1}).dropdown-date__description
                     input(type='text' placeholder=placeholder1 
                             class = 'dropdown-date__input'
                             class = 'dropdown-date__input_s-150'
-                            class=active? 'dropdown-date__double-start' : ''
-                            class = range? 'dropdown-date__input_range' : '')
+                            class=active? 'js-dropdown-date__input_range-start' : ''
+                            class ='dropdown-date__input_range'
+                            disabled=!active)
                     i.dropdown-date__material-icon.dropdown-date__material-icon_margin-s expand_more
                 .dropdown-date__block
-                    +description('small margin',description2).dropdown-date__description
+                    +description({'type':'default','text' : description2}).dropdown-date__description
                     input(type='text' placeholder=placeholder2 
                             class='dropdown-date__input'
                             class = 'dropdown-date__input_s-150'
-                            class=active? 'dropdown-date__double-end' : ''
-                            class = range? 'dropdown-date__input_range' : '')
+                            class=active? 'js-dropdown-date__input_range-end' : ''
+                            class ='dropdown-date__input_range'
+                            disabled=!active)
                     i.dropdown-date__material-icon.dropdown-date__material-icon_margin-s expand_more
 
                     

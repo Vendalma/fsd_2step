@@ -23,6 +23,7 @@ block head
 block body
    - const {settingsTextField, descriptions, settingsDropdown,checkboxSettings,} = require('./form-elements.json')
    - const {radioSettings,toggleSettings, likeButtonSettings, rangeSlider, buttonSettings} = require('./form-elements.json')
+   - const {dropdownDateSettings} = require('./form-elements.json')
     .form-elements.content-block__form-elements
    
         .form-elements__container
@@ -41,9 +42,9 @@ block body
                         +description(descriptions.four)
                         +text-field(settingsTextField.mask)
                     .form-elements__block.form-elements__block_column.form-elements__block_margin-b-41
-                        +dropdown_date('double',true,'ДД.ММ.ГГГГ','date dropdown','19.08.2019','date dropdown', false)
+                        +dropdown_date(dropdownDateSettings.range)
                     .form-elements__block.form-elements__block_column.form-elements__block_margin-b-41.form-elements__block_size-266
-                        +dropdown_date('filter',true,'19 авг - 23 авг','filter date dropdown').form-elements__dropdown
+                        +dropdown_date(dropdownDateSettings.filter).form-elements__dropdown
                     .form-elements__block.form-elements__block_column.form-elements__block_size-266
                         +description(descriptions.five)
                         +text-field(settingsTextField.subscribe)

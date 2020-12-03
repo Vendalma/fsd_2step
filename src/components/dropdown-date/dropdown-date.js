@@ -1,9 +1,9 @@
-import "air-datepicker/dist/js/datepicker";
-import "./dropdown-date.scss";
-import "../description/description";
 import "air-datepicker";
+import "air-datepicker/dist/js/datepicker";
+import "../description/description";
+import "./dropdown-date.scss";
 
-var $this = $("body").find(".dropdown-date_active");
+var $this = $("body").find(".js-dropdown-date_active");
 
 $this.each(function () {
   let $this = $(this);
@@ -16,12 +16,12 @@ $this.each(function () {
 <----------------------------------------------------->
 */
 
-  if ($this.hasClass("dropdown-date_active_double")) {
-    let $start = $(".dropdown-date__double-start");
-    let $end = $(".dropdown-date__double-end");
-    let start = document.querySelector(".dropdown-date__double-start");
+  if ($this.hasClass("js-dropdown-date_range")) {
+    let $start = $(".js-dropdown-date__input_range-start");
+    let $end = $(".js-dropdown-date__input_range-end");
+    let start = document.querySelector(".js-dropdown-date__input_range-start");
 
-    let picker = $(".dropdown-date__double-start").datepicker({
+    let picker = $(".js-dropdown-date__input_range-start").datepicker({
       range: true,
       multipleDates: true,
       multipleDatesSeparator: " - ",
@@ -35,12 +35,12 @@ $this.each(function () {
       nextHtml: '<i class="material--icon">arrow_forward</i>',
 
       onSelect: function (fd, d, picker) {
-        $(".dropdown-date__double-start").val(fd.split("-")[0]);
-        $(".dropdown-date__double-end").val(fd.split("-")[1]);
+        $(".js-dropdown-date__input_range-start").val(fd.split("-")[0]);
+        $(".js-dropdown-date__input_range-end").val(fd.split("-")[1]);
       },
     });
 
-    $(".dropdown-date__double-end").on("click", () => {
+    $(".js-dropdown-date__input_range-end").on("click", () => {
       picker.data("datepicker").show();
     });
 
@@ -60,7 +60,7 @@ $this.each(function () {
 
     buttons.append(applyButton);
 
-    if ($this.children().hasClass("dropdown-date__range")) {
+    if ($this.children().hasClass(".js-dropdown-date__container_range")) {
       setRange(picker);
     }
   }
@@ -72,8 +72,8 @@ $this.each(function () {
   
   <----------------------------------------------------->
   */
-  if ($this.hasClass("dropdown-date__inline")) {
-    $(".dropdown-date__inline").datepicker({
+  if ($this.hasClass("js-dropdown-date_inline")) {
+    $(".js-dropdown-date_inline").datepicker({
       range: true,
       multipleDates: true,
       multipleDatesSeparator: " - ",
@@ -98,8 +98,8 @@ $this.each(function () {
         }
       },
     });
-    addButtons($(".dropdown-date__inline"));
-    setRange($(".dropdown-date__inline"));
+    addButtons($(".js-dropdown-date_inline"));
+    setRange($(".js-dropdown-date_inline"));
   }
 
   /*
@@ -110,8 +110,8 @@ $this.each(function () {
   <----------------------------------------------------->
   */
 
-  if ($this.hasClass("dropdown-date_active_filter")) {
-    $(".dropdown-date__filter").datepicker({
+  if ($this.hasClass("js-dropdown-date_filter")) {
+    $(".js-dropdown-date__input_filter").datepicker({
       language: "ru",
       range: true,
       multipleDates: true,
@@ -125,10 +125,10 @@ $this.each(function () {
       prevHtml: '<i class="material--icon">arrow_back</i>',
       nextHtml: '<i class="material--icon">arrow_forward</i>',
       onSelect: function (fd, d) {
-        $(".dropdown-date__filter").val(fd.toLowerCase());
+        $(".js-dropdown-date__input_filter").val(fd.toLowerCase());
       },
     });
-    addButtons($(".dropdown-date__filter"));
+    addButtons($(".js-dropdown-date__input_filter"));
   }
 
   //фун-ция добавления кнопки 'Применить'

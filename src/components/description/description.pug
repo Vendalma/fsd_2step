@@ -1,11 +1,8 @@
-mixin description({type,text, state})
-    if type == 'text with state'
+mixin description({type,text, condition})
+  if type == 'default'
         .description&attributes(attributes)
-            span.description__item.description__item_margin-s #{text}
-            span.description__type #{state}
-    else if type == 'big margin'
+            span.description__text #{text}
+  else if type == 'text with state'
         .description&attributes(attributes)
-            span.description__item.description__item_margin-m #{text}
-    else if type == 'small margin'
-        .description&attributes(attributes)
-            span.description__item.description__item_margin-s #{text}
+            span.description__text #{text}
+            span.description__condition #{condition}
