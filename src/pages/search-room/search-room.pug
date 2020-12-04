@@ -25,7 +25,7 @@ block body
                     i.options__material-icons close
             .filter.search-room__filter
                 .filter__item.filter__item_margin-20
-                    +dropdown_date('filter',false,'19 авг - 23 авг','даты пребывания в отеле')
+                    +dropdownDate('filter',false,'19 авг - 23 авг','даты пребывания в отеле')
                 .filter__item.filter__item_margin-30
                     +description('small margin','гости').filter__description
                     +dropdown('guests',2,1,1)
@@ -46,7 +46,7 @@ block body
                     +description('small margin','удобства номера').filter__description
                     +dropdown('room',2,2,0)
                 .filter__item
-                    +expandable-checkbox('дополнительные удобства')
+                    
             .rooms.search-room__rooms
                 p.rooms__text Номера, которые мы для вас подобрали
                 .rooms__cards-block

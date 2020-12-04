@@ -1,6 +1,4 @@
-include /components/buttons/buttons
-
-mixin text-field({type, placeholder}) 
+mixin textField({type, placeholder}) 
     if type == 'text'
         .text-field&attributes(attributes)
             label.text-field__label
@@ -13,7 +11,6 @@ mixin text-field({type, placeholder})
         .text-field&attributes(attributes)
             label.text-field__label.text-field__label_subscribe
                 input(type="email" placeholder=placeholder).text-field__input.text-field__input_subscribe
-                +button('only-text-colored','arrow_forward').text-field__material-icon
     else if type == 'mask'
         .text-field.js-text-field&attributes(attributes)
             .text-field__block

@@ -2,7 +2,7 @@ import "@/main.scss";
 import "@components/bullet-list/bullet-list";
 import "@components/buttons/buttons";
 import "@components/checkbox/checkbox";
-import "@components/comments/comments";
+import "@components/comment/comment";
 import "@components/description/description";
 import "@components/dropdown-date/dropdown-date";
 import "@components/dropdown/dropdown";

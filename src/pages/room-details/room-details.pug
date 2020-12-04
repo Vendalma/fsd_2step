@@ -4,7 +4,7 @@ include /layout/footer/footer
 include /layout/footer-small/footer-small
 include /layout/cards/calc-card/calc-card
 include /components/icon-list/icon-list
-include /components/comments/comments
+include /components/comment/comment
 include /components/bullet-list/bullet-list
 include /components/donut-chart/donut-chart
 
@@ -38,13 +38,13 @@ block body
                         span.container__text.container__text_item 2 отзыва
                     .container__block.container__block_column
                         .container__block_margin-b-22    
-                            +comments('user1.png','Мурад Сарафанов', '5 дней назад','12',true,'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.')
+                          -//  +comments('user1.png','Мурад Сарафанов', '5 дней назад','12',true,'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.')
                         .container__block_margin-b-4 
-                            +comments('user2.png','Патрисия Стёклышкова','Неделю назад','2',false,'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент.')
+                          -//  +comments('user2.png','Патрисия Стёклышкова','Неделю назад','2',false,'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент.')
                 .container__block.container__block_row
                      .container__block.container__block_column.container__block_margin-r-10
                         h2.container__title.container__title_margin-b-4 Правила
-                        +bulletList
+                        -//+bulletList
                      .container__block.container__block_column
                         h2.container__title Отмена
                         .container__text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.

@@ -1,8 +1,7 @@
 .bullet-list {
-  width: 292px;
-  height: 147px;
+  max-width: 290px;
   cursor: default;
-  &__block {
+  &__items {
     margin: 0;
     padding: 0;
     display: flex;
@@ -20,7 +19,7 @@
     margin-bottom: 10px;
 
     &:before {
-      content: "";
+      content: '';
       width: 10px;
       height: 10px;
       display: inline-block;
@@ -28,7 +27,6 @@
       background-color: $dark-25;
       margin-top: 7px;
       margin-right: 10px;
-      // margin-bottom: 24px;
       flex-shrink: 0;
     }
   }

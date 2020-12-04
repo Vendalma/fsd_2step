@@ -1,9 +1,8 @@
 include /components/description/description
 
-mixin bulletList(text)
+mixin bulletList()
     .bullet-list&attributes(attributes)
-        +description('big margin',text).bullet-list__description
-        ul.bullet-list__block
+        ul.bullet-list__items
             li.bullet-list__item Нельзя с питомцами
             li.bullet-list__item Без вечеринок и мероприятий
             li.bullet-list__item Время прибытия — после 13:00, а выезд до 12:00

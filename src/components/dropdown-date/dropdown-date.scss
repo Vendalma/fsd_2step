@@ -1,18 +1,12 @@
 @import '../../library/air-datapicker/air-datapicker.scss';
 
 .dropdown-date {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-  cursor: pointer;
-
   &__container_range {
     display: flex;
     flex-direction: row;
   }
   &_filter {
-    //width: 266px;
+    max-width: 266px;
     flex-shrink: 0;
   }
   &__description {
@@ -23,14 +17,32 @@
     &_margin {
       margin-right: 20px;
     }
+    &_wrapper {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+    &::before {
+      content: 'expand_more';
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @extend %mat-icons;
+      color: $dark-50;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+    }
   }
   &__input {
     width: 100%;
     @extend %body-font;
     box-sizing: border-box;
-    padding-top: 9.2px;
-    padding-bottom: 9.2px;
-    padding-left: 15px;
+    padding: 9.2px 44px 9.2px 15px;
     outline: none;
     background: #ffffff;
     border: 1px solid $dark-25;
@@ -80,26 +92,6 @@
         color: $dark-75;
         opacity: 1;
       }
-    }
-  }
-  &__material-icon {
-    @extend %mat-icons;
-    position: absolute;
-    color: $dark-50;
-    background: #ffffff;
-    width: 43px;
-    height: 40px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-
-    &_margin-m {
-      top: 2px;
-      right: 2px;
-    }
-    &_margin-s {
-      top: 22px;
-      right: 2px;
     }
   }
 }

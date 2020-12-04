@@ -1,4 +1,4 @@
-mixin description({type,text, condition})
+mixin description({type='default',text, condition})
   if type == 'default'
         .description&attributes(attributes)
             span.description__text #{text}

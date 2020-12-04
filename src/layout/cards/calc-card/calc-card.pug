@@ -16,7 +16,7 @@ mixin calc-card(luxury = false)
                     span.calc-card__price_num 9 900₽
                     span.calc-card__price_text  в сутки
             .calc-card__date-block
-                +dropdown_date('double',true,'ДД.ММ.ГГГГ','прибытие','ДД.ММ.ГГГГ','выезд', true)
+                +dropdownDate('double',true,'ДД.ММ.ГГГГ','прибытие','ДД.ММ.ГГГГ','выезд', true)
             .calc-card__dropdown-block
                 +description('small margin','гости').calc-card__description
                 +dropdown('guests',2,1,0)

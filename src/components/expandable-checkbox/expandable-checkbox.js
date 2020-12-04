@@ -1,13 +1,13 @@
-import "./expandable-checkbox.scss";
-import "../checkbox/checkbox";
 import "../buttons/buttons";
+import "../checkbox/checkbox";
+import "./expandable-checkbox.scss";
 
-let checkboxLists = document.querySelectorAll(".expandable-checkbox");
+let checkboxLists = document.querySelectorAll(".js-expandable-checkbox");
 
 checkboxLists.forEach((checkboxList) => {
-  let items = checkboxList.querySelector(".expandable-checkbox__items");
+  let items = checkboxList.querySelector(".js-expandable-checkbox__items");
   let materialIcons = checkboxList.querySelector(
-    ".expandable-checkbox__material-icon"
+    ".js-expandable-checkbox__material-icon"
   );
 
   checkboxList.addEventListener("click", function () {

@@ -1,5 +1,5 @@
-mixin iconList(typeIcon, header, text,block_line= true)
-    if block_line
+mixin iconList({typeIcon, header, text,blockLine= true})
+    if blockLine
         .icon-list&attributes(attributes)
             .icon-list__container
                 .icon-list__block

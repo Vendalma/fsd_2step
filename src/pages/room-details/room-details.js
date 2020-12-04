@@ -1,13 +1,14 @@
+import "@/main.scss";
+import "@components/bullet-list/bullet-list";
+import "@components/comment/comment";
+import "@components/donut-chart/donut-chart";
+import "@components/icon-list/icon-list";
+import "@layout/cards/calc-card/calc-card";
+import "@layout/footer-small/footer-small";
+import "@layout/footer/footer";
+import "@layout/header/header";
+import "@layout/website-base/website-base";
 import "./room-details.scss";
 
-import "@layout/website-base/website-base";
-import "@layout/header/header";
-import "@layout/footer/footer";
-import "@layout/footer-small/footer-small";
-import "@layout/cards/calc-card/calc-card";
-import "@components/icon-list/icon-list";
-import "@components/comments/comments";
-import "@components/bullet-list/bullet-list";
-import "@components/donut-chart/donut-chart";
 
-import "@/main.scss";
+
