@@ -3,10 +3,8 @@
   box-sizing: border-box;
   &__container {
     max-width: 1200px;
-    padding: 0px 20px;
     margin: 0 auto;
-    margin-top: 62px;
-    margin-bottom: 131px;
+    margin-top: 65px;
     box-sizing: border-box;
   }
   &__content {
@@ -33,8 +31,8 @@
     &_margin-r-126 {
       margin-right: 126px * 100%/ 1160px;
     }
-    &_margin-r-50 {
-      margin-right: 50px;
+    &_margin-r-53 {
+      margin-right: 53px;
     }
     &_margin-r-72 {
       margin-right: 72px;
@@ -74,8 +72,17 @@
     &_margin-b-20 {
       margin-bottom: 20px;
     }
+    &_margin-b-22 {
+      margin-bottom: 22px;
+    }
     &_margin-b-41 {
       margin-bottom: 41px;
+    }
+    &_margin-b-42 {
+      margin-bottom: 42px;
+    }
+    &_margin-b-31 {
+      margin-bottom: 31px;
     }
     &_margin-t-10 {
       margin-top: 10px;
@@ -85,9 +92,6 @@
     }
     &_margin-r-126 {
       margin-right: 126px;
-    }
-    &_margin-t-b-16 {
-      margin: 16px 0px;
     }
     &_margin-r-20 {
       margin-right: 20px;
@@ -101,5 +105,29 @@
     &_margin {
       margin-top: 18px;
     }
+  }
+  &__description {
+    margin-bottom: 5px;
+    &_margin-b-16 {
+      margin-bottom: 16px;
+    }
+  }
+  &__checkbox {
+    margin-top: 11px;
+    & :nth-of-type(2) {
+      margin-top: 14px;
+      margin-bottom: 13px;
+    }
+  }
+  &__radio {
+    display: flex;
+    flex-direction: row;
+  }
+  &__toggle :nth-child(1) {
+    margin-bottom: 10px;
+  }
+  &__like-buttons {
+    display: flex;
+    flex-direction: row;
   }
 }

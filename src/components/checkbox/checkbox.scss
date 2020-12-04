@@ -15,10 +15,11 @@
     justify-content: center;
     cursor: pointer;
     @extend %body-font;
-    line-height: 129%;
+    line-height: 1.286rem;
     color: $dark-50;
     padding-left: 30px;
     box-sizing: border-box;
+    max-width: 230px;
 
     &_rich {
       display: flex;

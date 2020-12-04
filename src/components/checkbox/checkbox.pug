@@ -1,16 +1,15 @@
 mixin checkbox({type= 'default',checked=false, text, head})
-    if type == 'rich'
-        .checkbox.checkbox_rich&attributes(attributes)
-          label(class='checkbox__label checkbox__label_rich') 
-            input(type="checkbox" class='checkbox__input')
-            .checkbox__mark
-            span.checkbox__label_rich-header #{head}
-            span.checkbox__label_rich-text #{text}
-            
-    else
-            .checkbox&attributes(attributes)
-              label( class='checkbox__label') #{text}
-                input(type = 'checkbox' class='checkbox__input' checked=checked)
-                .checkbox__mark
-                
-                
+  if type == 'rich'
+    .checkbox.checkbox_rich&attributes(attributes)
+      label(class='checkbox__label checkbox__label_rich') 
+        input(type="checkbox" class='checkbox__input')
+        .checkbox__mark
+        span.checkbox__label_rich-header #{head}
+        span.checkbox__label_rich-text #{text}
+
+  else
+    .checkbox&attributes(attributes)
+      label( class='checkbox__label') #{text}
+        input(type = 'checkbox' class='checkbox__input' checked=checked)
+        .checkbox__mark
+

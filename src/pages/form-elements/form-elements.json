@@ -29,14 +29,10 @@
       "condition": "hover / focus"
     },
     "three": {
-      "type": "text with state",
-      "text": "dropdown",
-      "condition": "default"
+      "text": "dropdown"
     },
     "four": {
-      "type": "text with state",
-      "text": "masked text field",
-      "condition": "default"
+      "text": "masked text field"
     },
     "five": {
       "text": "subscription text field"

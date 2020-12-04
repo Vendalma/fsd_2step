@@ -5,9 +5,10 @@
   &_light {
     background-color: #ffffff;
   }
-  &__header {
-    margin-top: 30px * 100%/ 1440px;
-    margin-left: 30px * 100%/ 1440px;
+  &__logo {
+    padding-top: 30px * 100%/ 1410px;
+    padding-left: 30px * 100%/ 1410px;
+    box-sizing: border-box;
   }
   &__content-block {
     max-width: 1200px;

@@ -5,12 +5,13 @@ include /components/logo/logo-gray/logo-gray
 block settings
 doctype html
 html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        block head
-        body.ui-kit&attributes(attributes)
-            header.ui-kit__header.header
-              +logo-gray.header__logo-gray
-            main.ui-kit__content-block.content-block
-              block body
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    block head
+    body.ui-kit&attributes(attributes)
+      header.ui-kit__header
+        .ui-kit__logo
+          +logo-gray
+      main.ui-kit__content-block
+        block body

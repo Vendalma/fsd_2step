@@ -26,8 +26,8 @@
     }
     &::before {
       content: 'expand_more';
-      width: 44px;
-      height: 44px;
+      width: 42px;
+      height: 42px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -35,7 +35,7 @@
       color: $dark-50;
       position: absolute;
       right: 0px;
-      top: 0px;
+      top: 2px;
     }
   }
   &__input {

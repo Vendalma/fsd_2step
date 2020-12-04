@@ -3,17 +3,20 @@
   &__label {
     cursor: pointer;
     @extend %body-font;
-    margin-left: 50px;
+    display: flex;
+    align-items: flex-start;
+    padding-left: 50px;
   }
   &__input {
     display: none;
   }
   &__control {
-    padding: 9px 20px;
+    padding: 9px 19px;
+    box-sizing: border-box;
     display: inline-block;
     position: absolute;
-    top: 2px;
-    left: 2px;
+    top: 0px;
+    left: 0px;
 
     background: #fff;
     border: 1px solid $dark-25;

@@ -18,6 +18,7 @@
   line-height: 12px;
 
   &::before {
+    position: absolute;
     content: 'favorite_border';
     @extend %mat-icons;
     font-size: 10px;
