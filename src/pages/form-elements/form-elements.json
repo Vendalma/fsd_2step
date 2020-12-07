@@ -214,11 +214,11 @@
       "typeIcon": "insert_emoticon",
       "header": "Комфорт",
       "text": "Шумопоглощающие стены"
+    },
+    "two": {
+      "typeIcon": "location_city",
+      "header": "Удобство",
+      "text": "Окно в каждой из спален"
     }
-  },
-  "two": {
-    "typeIcon": "location_city",
-    "header": "Удобство",
-    "text": "Окно в каждой из спален"
   }
 }

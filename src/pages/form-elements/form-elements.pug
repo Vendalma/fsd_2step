@@ -39,41 +39,41 @@ block body
               .form-elements__text-field
                 +textField(settingsTextField.text)
 
-          .form-elements__block.form-elements__block_column.form-elements__block_margin-b-20
-            .form-elements__description
-              +description({
-                "type": "text with state",
-                "text": "text field",
-                "condition": "hover / focus"
+            .form-elements__block.form-elements__block_column.form-elements__block_margin-b-20
+              .form-elements__description
+                +description({
+                  "type": "text with state",
+                  "text": "text field",
+                  "condition": "hover / focus"
               })
-            .form-elements__text-field
-              +textField(settingsTextField.hover)
+              .form-elements__text-field
+                +textField(settingsTextField.hover)
 
-          .form-elements__block.form-elements__block_column.form-elements__block_margin-b-22
-            .form-elements__description
-              +description({"text": "dropdown"})
-            .form-elements__dropdown
-              +dropdown(settingsDropdown.guestsOne)
+            .form-elements__block.form-elements__block_column.form-elements__block_margin-b-22
+              .form-elements__description
+                +description({"text": "dropdown"})
+              .form-elements__dropdown
+                +dropdown(settingsDropdown.guestsOne)
 
-          .form-elements__block.form-elements__block_column.form-elements__block_margin-b-42
-            .form-elements__description
-              +description({"text": "masked text field"})
-            .form-elements__text-field
-              +textField(settingsTextField.mask)
+            .form-elements__block.form-elements__block_column.form-elements__block_margin-b-42
+              .form-elements__description
+                +description({"text": "masked text field"})
+              .form-elements__text-field
+                +textField(settingsTextField.mask)
 
-          .form-elements__block.form-elements__block_column.form-elements__block_margin-b-42
-            .form-elements__dropdown-date
-              +dropdownDate(dropdownDateSettings.range)
+            .form-elements__block.form-elements__block_column.form-elements__block_margin-b-42
+              .form-elements__dropdown-date
+                +dropdownDate(dropdownDateSettings.range)
 
-          .form-elements__block.form-elements__block_column.form-elements__block_margin-b-42.form-elements__block_size-266
-            .form-elements__dropdown-date
-              +dropdownDate(dropdownDateSettings.filter)
+            .form-elements__block.form-elements__block_column.form-elements__block_margin-b-42.form-elements__block_size-266
+              .form-elements__dropdown-date
+                +dropdownDate(dropdownDateSettings.filter)
 
-          .form-elements__block.form-elements__block_column.form-elements__block_size-266
-            .form-elements__description
-              +description({"text": "subscription text field"})
-            .form-elements__text-field
-              +textField(settingsTextField.subscribe)
+            .form-elements__block.form-elements__block_column.form-elements__block_size-266
+              .form-elements__description
+                +description({"text": "subscription text field"})
+              .form-elements__text-field
+                +textField(settingsTextField.subscribe)
 
           .form-elements__content.form-elements__content_column.form-elements__content_width-320
 

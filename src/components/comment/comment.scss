@@ -6,9 +6,9 @@
     box-sizing: border-box;
   }
   &__user-photo {
-    margin-right: 8px;
-    max-width: 48px;
-    max-height: 48px;
+    margin-right: 10px;
+    max-width: 46px;
+    max-height: 46px;
     box-sizing: border-box;
   }
   &__photo {
@@ -31,7 +31,8 @@
     flex-direction: row;
   }
   &__like-button {
-    margin-right: 5px;
+    margin-left: 1px;
+    margin-right: 4px;
   }
   &__text {
     @extend%body-font;
