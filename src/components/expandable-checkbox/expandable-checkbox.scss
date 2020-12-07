@@ -5,8 +5,8 @@
   cursor: pointer;
   &__name {
     @extend %h3-font;
-    padding: 14.8px 0px;
-
+    padding-top: 14.8px;
+    padding-bottom: 14.8px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -15,8 +15,8 @@
     @extend %mat-icons;
     color: $dark-50;
     position: absolute;
-    top: 16px;
-    right: 9px;
+    top: 13px;
+    right: 11px;
     &_open {
       transform: rotate(180deg);
     }

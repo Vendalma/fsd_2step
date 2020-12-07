@@ -1,5 +1,5 @@
 .pagination {
-  width: 241px;
+  max-width: 241px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,7 +45,7 @@ span.ellipse.clickable {
 //new styles
 
 .simple-pagination {
-  width: 241px;
+  max-width: 241px;
 }
 .disabled-prev {
   display: none;
@@ -63,14 +63,14 @@ span.ellipse.clickable {
 }
 
 .simple-pagination li {
-  width: 40px;
-  height: 40px;
-
+  max-width: 40px;
+  box-sizing: border-box;
+  padding-left: 17.65px;
+  padding-right: 17.65px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
 }
 .activePagination {
   @extend %primary-grad;
@@ -94,8 +94,9 @@ span.ellipse.clickable {
   font-weight: normal;
 }
 .next {
-  width: 40px;
-  height: 40px;
+  max-width: 40px;
+  box-sizing: border-box;
+  padding: 12.5px 9.5px;
   @extend %secondary-grad;
   color: #ffffff;
   @extend %mat-icons;

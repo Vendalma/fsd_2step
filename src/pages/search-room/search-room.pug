@@ -12,56 +12,56 @@ include /layout/footer/footer
 include /layout/footer-small/footer-small
 
 block head
-    title Search room
+  title Search room
 block body
-    - const {room1,room2,room3,room4,room5,room6,room7,room8,room9,room10,room11,room12} = require('./search-room.json')
-    .search-room
-        +header.search-room__header
-        main.search-room__content
-            .options.search-room__options
-                .options__block.options__block_menu.options__block_active
-                    i.options__material-icons tune
-                .options__block.options__block_close
-                    i.options__material-icons close
-            .filter.search-room__filter
-                .filter__item.filter__item_margin-20
-                    +dropdownDate('filter',false,'19 авг - 23 авг','даты пребывания в отеле')
-                .filter__item.filter__item_margin-30
-                    +description('small margin','гости').filter__description
-                    +dropdown('guests',2,1,1)
-                .filter__item.filter__item_margin-30
-                    +range_slider('диапазон цены')
-                    p.filter__text Стоимость за сутки пребывания в номере
-                .filter__item.filter__item.filter__item_margin-30
-                    +description('big margin','checkbox buttons').filter__description
-                    +checkbox('default','smoking', 'Можно курить').filter__checkbox
-                    +checkbox('default','pets', 'Можно с питомцами','','true').filter__checkbox.filter__checkbox_margin
-                    +checkbox('default','guests', 'Можно пригласить гостей (до 10 человек)','','true').filter__checkbox
-                .filter__item.filter__item.filter__item_margin-30.filter__item_margin-t-4
-                    +description('big margin','доступность').filter__description
-                    .filter__item_block
-                        +checkbox('rich','corridor-size','Ширина коридоров в номере         не менее 91 см.','Широкий коридор').filter__checkbox-rich.filter__checkbox-rich_margin
-                        +checkbox('rich','disabled-assistant','На 1 этаже вас встретит специалист и проводит до номера.','Помощник для инвалидов').filter__checkbox-rich
-                .filter__item.filter__item.filter__item_margin-15
-                    +description('small margin','удобства номера').filter__description
-                    +dropdown('room',2,2,0)
-                .filter__item
-                    
-            .rooms.search-room__rooms
-                p.rooms__text Номера, которые мы для вас подобрали
-                .rooms__cards-block
-                    +room-card('luxury','888', '9 990₽',5 ,'145', room1).rooms__cards-block_item
-                    +room-card('standart','840', '9 900₽',4 ,'65', room2).rooms__cards-block_item
-                    +room-card('luxury','980', '8 500₽',3 ,'35', room3).rooms__cards-block_item
-                    +room-card('standart','856', '7 300₽',5 ,'19', room4).rooms__cards-block_item
-                    +room-card('standart','740', '6 000₽',4 ,'44', room5).rooms__cards-block_item
-                    +room-card('standart','982', '5 800₽',3 ,'56', room6).rooms__cards-block_item
-                    +room-card('standart','678', '5 500₽',5 ,'45', room7).rooms__cards-block_item
-                    +room-card('standart','450', '5 300₽',4 ,'39', room8).rooms__cards-block_item
-                    +room-card('standart','350', '5 000₽',3 ,'77', room9).rooms__cards-block_item
-                    +room-card('standart','666', '5 000₽',5 ,'25', room10).rooms__cards-block_item
-                    +room-card('standart','444', '5 000₽',3 ,'15', room11).rooms__cards-block_item
-                    +room-card('standart','352', '5 000₽',3 ,'55', room12).rooms__cards-block_item
-                +pagination.rooms__pagination
-        +footer.search-room__footer
-        +footer-small.search-room__footer-small
+  - const {room1,room2,room3,room4,room5,room6,room7,room8,room9,room10,room11,room12} = require('./search-room.json')
+  .search-room
+    +header.search-room__header
+    main.search-room__content
+      .options.search-room__options
+        .options__block.options__block_menu.options__block_active
+          i.options__material-icons tune
+        .options__block.options__block_close
+          i.options__material-icons close
+      .filter.search-room__filter
+        .filter__item.filter__item_margin-20
+          +dropdownDate('filter',false,'19 авг - 23 авг','даты пребывания в отеле')
+        .filter__item.filter__item_margin-30
+          +description('small margin','гости').filter__description
+          +dropdown('guests',2,1,1)
+        .filter__item.filter__item_margin-30
+          +rangeSlider('диапазон цены')
+          p.filter__text Стоимость за сутки пребывания в номере
+        .filter__item.filter__item.filter__item_margin-30
+          +description('big margin','checkbox buttons').filter__description
+          +checkbox('default','smoking', 'Можно курить').filter__checkbox
+          +checkbox('default','pets', 'Можно с питомцами','','true').filter__checkbox.filter__checkbox_margin
+          +checkbox('default','guests', 'Можно пригласить гостей (до 10 человек)','','true').filter__checkbox
+        .filter__item.filter__item.filter__item_margin-30.filter__item_margin-t-4
+          +description('big margin','доступность').filter__description
+          .filter__item_block
+            +checkbox('rich','corridor-size','Ширина коридоров в номере         не менее 91 см.','Широкий коридор').filter__checkbox-rich.filter__checkbox-rich_margin
+            +checkbox('rich','disabled-assistant','На 1 этаже вас встретит специалист и проводит до номера.','Помощник для инвалидов').filter__checkbox-rich
+        .filter__item.filter__item.filter__item_margin-15
+          +description('small margin','удобства номера').filter__description
+          +dropdown('room',2,2,0)
+        .filter__item
+
+      .rooms.search-room__rooms
+        p.rooms__text Номера, которые мы для вас подобрали
+        .rooms__cards-block
+          +room-card('luxury','888', '9 990₽',5 ,'145', room1).rooms__cards-block_item
+          +room-card('standart','840', '9 900₽',4 ,'65', room2).rooms__cards-block_item
+          +room-card('luxury','980', '8 500₽',3 ,'35', room3).rooms__cards-block_item
+          +room-card('standart','856', '7 300₽',5 ,'19', room4).rooms__cards-block_item
+          +room-card('standart','740', '6 000₽',4 ,'44', room5).rooms__cards-block_item
+          +room-card('standart','982', '5 800₽',3 ,'56', room6).rooms__cards-block_item
+          +room-card('standart','678', '5 500₽',5 ,'45', room7).rooms__cards-block_item
+          +room-card('standart','450', '5 300₽',4 ,'39', room8).rooms__cards-block_item
+          +room-card('standart','350', '5 000₽',3 ,'77', room9).rooms__cards-block_item
+          +room-card('standart','666', '5 000₽',5 ,'25', room10).rooms__cards-block_item
+          +room-card('standart','444', '5 000₽',3 ,'15', room11).rooms__cards-block_item
+          +room-card('standart','352', '5 000₽',3 ,'55', room12).rooms__cards-block_item
+        +pagination.rooms__pagination
+    +footer.search-room__footer
+    +footer-small.search-room__footer-small

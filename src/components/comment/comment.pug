@@ -1,14 +1,14 @@
 include /components/like-button/like-button
 
 mixin comment({userPhoto,userName,date,likeCount,likeActive,text})
-    .comment&attributes(attributes)
-        .comment__block-user
-            .comment__user-photo
-                img(src=require(`@images/${userPhoto}`).default, alt='user photo', class='comment__photo')
-            .comment__user-info
-                span.comment__user-name #{userName}
-                span.comment__date #{date}
-        .comment__block
-            .comment__like-button
-                +like_button({'count':likeCount,'active':likeActive})
-            .comment__text #{text}
+  .comment&attributes(attributes)
+    .comment__block-user
+      .comment__user-photo
+        img(src=require(`@images/${userPhoto}`).default, alt='user photo' class='comment__photo')
+      .comment__user-info
+        span.comment__user-name #{userName}
+        span.comment__date #{date}
+    .comment__block
+      .comment__like-button
+        +likeButton({'count':likeCount,'active':likeActive})
+      .comment__text #{text}

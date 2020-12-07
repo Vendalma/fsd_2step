@@ -17,76 +17,6 @@
       "placeholder": "Email"
     }
   },
-  "descriptions": {
-    "one": {
-      "type": "text with state",
-      "text": "text field",
-      "condition": "default"
-    },
-    "two": {
-      "type": "text with state",
-      "text": "text field",
-      "condition": "hover / focus"
-    },
-    "three": {
-      "text": "dropdown"
-    },
-    "four": {
-      "text": "masked text field"
-    },
-    "five": {
-      "text": "subscription text field"
-    },
-    "six": {
-      "type": "default",
-      "text": "checkbox buttons"
-    },
-    "seven": {
-      "type": "default",
-      "text": "radio buttons"
-    },
-    "eight": {
-      "type": "default",
-      "text": "toggle"
-    },
-    "nine": {
-      "type": "default",
-      "text": "like button"
-    },
-    "ten": {
-      "type": "default",
-      "text": "rate button"
-    },
-    "eleven": {
-      "type": "default",
-      "text": "buttons"
-    },
-    "twelve": {
-      "type": "default",
-      "text": "pagination"
-    },
-    "thirteen": {
-      "type": "text with state",
-      "text": "dropdown",
-      "condition": "default"
-    },
-    "fourteen": {
-      "type": "text with state",
-      "text": "dropdown",
-      "condition": "expanded"
-    },
-    "fifteen": {
-      "type": "default",
-      "text": "dropdown"
-    },
-    "sixteen": {
-      "type": "default",
-      "text": "Rich Checkbox Buttons"
-    },
-    "seventeen": {
-      "text": "bullet list"
-    }
-  },
   "settingsDropdown": {
     "guestsOne": {
       "type": "guests"
@@ -137,7 +67,8 @@
     },
     "guests": {
       "text": "Можно пригласить гостей (до 10 человек)",
-      "checked": true
+      "checked": true,
+      "shortText": true
     }
   },
   "radioSettings": {
@@ -178,16 +109,18 @@
       "text": "click me"
     },
     "two": {
-      "theme": "bg-primary-grad_hover",
-      "text": "click me"
+      "theme": "bg-primary-grad button_theme-bg-primary-grad_padding-lg",
+      "text": "click me",
+      "hoverTheme": true
     },
     "three": {
       "theme": "border-primary-grad button_theme-border-primary-grad_padding-lg",
       "text": "click me"
     },
     "four": {
-      "theme": "border-primary-grad_hover",
-      "text": "click me"
+      "theme": "border-primary-grad button_theme-border-primary-grad_padding-lg",
+      "text": "click me",
+      "hoverTheme": true
     },
     "five": {
       "theme": "text-colored",
@@ -259,7 +192,8 @@
     "corridor": {
       "type": "rich",
       "head": "Широкий коридор",
-      "text": "Ширина коридоров в номере         не менее 91 см."
+      "text": "Ширина коридоров в номере не менее 91 см.",
+      "shortText": true
     },
     "assistant": {
       "type": "rich",
@@ -274,5 +208,17 @@
     "likeCount": "12",
     "likeActive": true,
     "text": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
+  },
+  "iconLists": {
+    "one": {
+      "typeIcon": "insert_emoticon",
+      "header": "Комфорт",
+      "text": "Шумопоглощающие стены"
+    }
+  },
+  "two": {
+    "typeIcon": "location_city",
+    "header": "Удобство",
+    "text": "Окно в каждой из спален"
   }
 }

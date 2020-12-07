@@ -2,7 +2,8 @@
   &__item {
     display: inline-block;
     @extend %mat-icons;
-    line-height: 20px;
+    font-size: 1.714rem;
+    line-height: 1.429rem;
     @extend %primary-grad;
     background-clip: text;
     -webkit-background-clip: text;

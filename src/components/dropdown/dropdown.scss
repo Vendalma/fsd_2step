@@ -67,7 +67,7 @@
       box-shadow: 0px 10px 20px $dark-05;
       padding: 6px;
       padding-left: 14px;
-      padding-bottom: 13px;
+      padding-bottom: 10px;
       z-index: 10;
     }
   }
@@ -92,7 +92,7 @@
 
     &_margin {
       margin-top: 6px;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
     &_name {
       @extend %h3-font;
@@ -133,10 +133,9 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding-top: 24px;
+    padding-top: 21px;
   }
   &__clear-button {
-    margin-left: 6px;
     &_hidden {
       opacity: 0;
     }

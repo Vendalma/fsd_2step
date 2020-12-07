@@ -5,12 +5,11 @@
     max-width: 1200px;
     margin: 0 auto;
     margin-top: 65px;
-    box-sizing: border-box;
+    margin-bottom: 132px;
   }
   &__content {
     box-sizing: border-box;
     &_row {
-      width: 100%;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -20,13 +19,15 @@
       display: flex;
       flex-direction: column;
       flex-grow: 1;
-      //flex-shrink: 0;
     }
     &_margin-b-100 {
       margin-bottom: 100px;
     }
-    &_margin-b-95 {
-      margin-bottom: 95px;
+    &_margin-b-258 {
+      margin-bottom: 258px;
+    }
+    &_margin-b-90 {
+      margin-bottom: 90px;
     }
     &_margin-r-126 {
       margin-right: 126px * 100%/ 1160px;
@@ -34,14 +35,8 @@
     &_margin-r-53 {
       margin-right: 53px;
     }
-    &_margin-r-72 {
-      margin-right: 72px;
-    }
-
-    &_margin-top-150 {
-      margin-top: 150px;
-    }
     &_width-320 {
+      width: 100%;
       max-width: 320px;
     }
     &_width-711 {
@@ -50,27 +45,24 @@
   }
   &__block {
     display: flex;
+    width: 100%;
     &_column {
       flex-direction: column;
-      //flex-shrink: 0;
       box-sizing: border-box;
     }
     &_row {
       display: flex;
       flex-direction: row;
     }
-
     &_size-266 {
+      width: 100%;
       max-width: 266px;
-    }
-    &_margin-t-5 {
-      margin-top: 5px;
-    }
-    &_margin-b-35 {
-      margin-bottom: 35px;
     }
     &_margin-b-20 {
       margin-bottom: 20px;
+    }
+    &_margin-b-160 {
+      margin-bottom: 160px;
     }
     &_margin-b-22 {
       margin-bottom: 22px;
@@ -81,23 +73,11 @@
     &_margin-b-42 {
       margin-bottom: 42px;
     }
-    &_margin-b-31 {
-      margin-bottom: 31px;
+    &_margin-b-45 {
+      margin-bottom: 45px;
     }
-    &_margin-t-10 {
-      margin-top: 10px;
-    }
-    &_margin-t-144 {
-      margin-top: 140px;
-    }
-    &_margin-r-126 {
-      margin-right: 126px;
-    }
-    &_margin-r-20 {
-      margin-right: 20px;
-    }
-    &_margin-b-32 {
-      margin-bottom: 32px;
+    &_margin-b-10 {
+      margin-bottom: 10px;
     }
   }
 
@@ -110,6 +90,12 @@
     margin-bottom: 5px;
     &_margin-b-16 {
       margin-bottom: 16px;
+    }
+    &_margin-b-15 {
+      margin-bottom: 15px;
+    }
+    &_margin-b-12 {
+      margin-bottom: 12px;
     }
   }
   &__checkbox {
@@ -129,5 +115,45 @@
   &__like-buttons {
     display: flex;
     flex-direction: row;
+  }
+  &__rate-button {
+    display: flex;
+    flex-direction: row;
+    &_margin {
+      margin-right: 20px;
+    }
+  }
+  &__buttons {
+    display: flex;
+    &_row {
+      flex-direction: row;
+    }
+    &_column {
+      flex-direction: column;
+    }
+    &_margin-r-20 {
+      margin-right: 20px;
+    }
+    &_margin-b-30 {
+      margin-bottom: 30px;
+    }
+  }
+  &__expandable-checkbox {
+    &_margin-b-20 {
+      margin-bottom: 20px;
+    }
+  }
+  &__rich-checkbox {
+    &_margin-b-10 {
+      margin-bottom: 10px;
+    }
+  }
+  &__icon-list {
+    &_margin-b-24 {
+      margin-bottom: 24px;
+    }
+  }
+  &__comment {
+    margin-top: 9px;
   }
 }

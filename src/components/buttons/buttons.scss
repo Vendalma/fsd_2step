@@ -10,6 +10,9 @@
   background-clip: padding-box, border-box;
   -webkit-background-clip: padding-box, border-box;
 
+  &_hover {
+    opacity: 0.5;
+  }
   &_theme-bg-primary-grad {
     @extend %primary-grad;
     color: #ffffff;
@@ -19,7 +22,7 @@
     justify-content: center;
     align-items: center;
     &_padding-lg {
-      padding: 1.2em 1.7em;
+      padding: 1.23em 1.6em;
     }
     &_padding-m {
       padding: 0.75em 1.7em;
@@ -37,7 +40,7 @@
     align-items: center;
     color: $color-one;
     &_padding-lg {
-      padding: 1em 1.43em;
+      padding: 1.07em 1.43em;
     }
     &_padding-m {
       padding: 1em 2em;
@@ -68,7 +71,7 @@
     @extend %primary-grad;
     border: none;
     color: #ffffff;
-    padding: 1.2em 1.5em;
+    padding: 1.23em 1.5em;
     position: relative;
     box-sizing: border-box;
     flex-grow: 1;
@@ -78,32 +81,8 @@
       color: #ffffff;
       line-height: 24px;
       position: absolute;
-      top: 10px;
-      right: 8px;
+      top: 9px;
+      right: 12px;
     }
-  }
-  &_theme-bg-primary-grad_hover {
-    @extend %primary-grad;
-    color: #ffffff;
-    border: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 1.2em 1.7em;
-    opacity: 0.5;
-  }
-
-  &_theme-border-primary-grad_hover {
-    border: 2px solid $color-one;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    color: $color-one;
-    padding: 1em 1.43em;
-    background-color: #ffffff;
-
-    opacity: 0.5;
   }
 }

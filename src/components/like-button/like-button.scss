@@ -3,40 +3,50 @@
   border: 1px solid $dark-25;
   border-radius: 10px;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   margin-right: 10px;
+  padding: 9px 19px;
   cursor: pointer;
   outline: none;
-  padding-top: 3.2px;
-  padding-bottom: 3.2px;
-  position: relative;
   @extend %body-font;
   color: $dark-25;
   font-size: 10px;
   line-height: 12px;
-
-  &::before {
-    position: absolute;
-    content: 'favorite_border';
-    @extend %mat-icons;
-    font-size: 10px;
-    line-height: 9px;
-    color: $dark-25;
-
-    margin-right: 7px;
-    padding-top: 0.5px;
-  }
-
+  position: relative;
   &_active {
-    border: 1px solid $color-one;
-    @extend %primary-grad;
-    background-clip: border-box;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    border: solid 1px transparent;
+    border-radius: 22px;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    -webkit-background-clip: padding-box, border-box;
+    background-image: linear-gradient(white, white),
+      linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    color: $color-one;
+  }
+  &__like {
+    position: absolute;
+    top: 4px;
+    left: 4px;
     &::before {
-      content: 'favorite';
+      content: 'favorite_border';
+      @extend %mat-icons;
+      font-size: 10px;
+      line-height: 9px;
+      color: $dark-25;
+      box-sizing: border-box;
     }
+    &_active {
+      &::before {
+        content: 'favorite';
+        @extend %primary-grad;
+        background-clip: border-box;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+  &__count {
+    position: absolute;
+    top: 2px;
+    left: 20px;
   }
 }
