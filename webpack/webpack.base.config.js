@@ -3,6 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const PATHS = {
   src: path.join(__dirname, '../src'),
@@ -12,6 +13,7 @@ const PATHS = {
 const pagesDir = path.join(PATHS.src, '/pages');
 const imagesDir = path.join(PATHS.src, '/images');
 const fontsDir = path.join(PATHS.src, '/fonts');
+const faviconDir = path.join(PATHS.src, '/favicon')
 
 const createHtmlWebpackPlugins = (pagesFolderPath) =>
   fs.readdirSync(pagesFolderPath).map(
@@ -71,8 +73,7 @@ module.exports = {
         },
       },
       {
-        test: /\.(woff|ttf|svg)$/,
-        exclude: [imagesDir],
+        test: /\.(woff|woff2)$/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
@@ -80,8 +81,7 @@ module.exports = {
         },
       },
       {
-        test: /.(png|jpg|gif|svg)$/,
-        exclude: fontsDir,
+        test: /\.(svg|png|jpe?g|gif)$/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
@@ -117,5 +117,11 @@ module.exports = {
       'window.$': 'jquery',
     }),
     ...createHtmlWebpackPlugins(pagesDir),
+    new CopyWebpackPlugin({
+      patterns: [{
+        from: `${faviconDir}`,
+        to: `${PATHS.dist}/favicon`
+      }]
+    })
   ],
 };

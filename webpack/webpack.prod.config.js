@@ -1,5 +1,6 @@
 const merge = require('webpack-merge');
 const baseWebpackConfig = require('./webpack.base.config');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const buildWebpackConfig = merge(baseWebpackConfig, {
   mode: 'production',
   performance: {
@@ -11,6 +12,9 @@ const buildWebpackConfig = merge(baseWebpackConfig, {
     filename: '[name].js',
     path: baseWebpackConfig.externals.paths.dist,
   },
+  plugins: [
+    new CleanWebpackPlugin(),
+  ]
 });
 
 module.exports = new Promise((resolve, reject) => {
