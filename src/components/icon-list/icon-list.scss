@@ -6,9 +6,10 @@
     max-width: 280px;
     display: flex;
     flex-direction: row;
-    margin-bottom: 17px;
+    margin-bottom: 19px;
   }
   &__material-icons {
+    align-self: center;
     @extend %mat-icons;
     font-size: 3.429rem;
     line-height: 2.929rem;
@@ -20,6 +21,7 @@
   &__block {
     margin-right: 10px;
     box-sizing: border-box;
+    display: flex;
   }
 
   &__text {

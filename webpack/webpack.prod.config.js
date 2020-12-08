@@ -8,10 +8,6 @@ const buildWebpackConfig = merge(baseWebpackConfig, {
     maxEntrypointSize: 512000,
     maxAssetSize: 512000,
   },
-  output: {
-    filename: '[name].js',
-    path: baseWebpackConfig.externals.paths.dist,
-  },
   plugins: [
     new CleanWebpackPlugin(),
   ]

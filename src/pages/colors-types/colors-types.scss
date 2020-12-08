@@ -12,27 +12,3 @@
     display: flex;
   }
 }
-
-@media (min-width: 481px) and (max-width: 961px) {
-  .colors-types {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    &__color-block {
-      margin-bottom: 60px;
-    }
-  }
-}
-
-@media (max-width: 480px) {
-  .colors-types {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 100px * 100%/ 1160px;
-    &__color-block {
-      margin-bottom: 60px;
-    }
-  }
-}

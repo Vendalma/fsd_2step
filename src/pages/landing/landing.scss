@@ -19,15 +19,15 @@
     @include image-animation;
   }
   &__slider_item-one {
-    @include bgimage("bg-image-1");
+    // @include bgimage("bg-image-1");
     width: 100%;
   }
   &__slider_item-two {
-    @include bgimage("bg-image-2");
+    //@include bgimage("bg-image-2");
     width: 100%;
   }
   &__slider_item-three {
-    @include bgimage("bg-image-3");
+    //@include bgimage("bg-image-3");
     width: 100%;
   }
   &__card {

@@ -16,13 +16,13 @@
     display: flex;
     align-items: center;
   }
-  &__font-awersome {
+  &__font-awesome {
     width: 24px;
     height: 24px;
     @extend %primary-grad;
     -webkit-background-clip: text;
     color: transparent;
-    @extend %awr-font;
+    @extend %aws-font;
     cursor: pointer;
     &-margin {
       margin: 0px 20px;

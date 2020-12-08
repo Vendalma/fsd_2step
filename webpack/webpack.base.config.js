@@ -8,12 +8,10 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const PATHS = {
   src: path.join(__dirname, '../src'),
   dist: path.join(__dirname, '../dist'),
+  assets: 'assets/'
 };
 
 const pagesDir = path.join(PATHS.src, '/pages');
-const imagesDir = path.join(PATHS.src, '/images');
-const fontsDir = path.join(PATHS.src, '/fonts');
-const faviconDir = path.join(PATHS.src, '/favicon')
 
 const createHtmlWebpackPlugins = (pagesFolderPath) =>
   fs.readdirSync(pagesFolderPath).map(
@@ -44,8 +42,7 @@ module.exports = {
       '@': PATHS.src,
       '@components': path.resolve(PATHS.src, 'components'),
       '@layout': path.resolve(PATHS.src, 'layout'),
-      '@fonts': path.resolve(PATHS.src, 'fonts'),
-      '@images': path.resolve(PATHS.src, 'images'),
+      '@images': path.resolve(PATHS.src, 'assets/images'),
     },
   },
   context: PATHS.src,
@@ -53,9 +50,20 @@ module.exports = {
 
   output: {
     path: PATHS.dist,
-    filename: '[name].js',
+    filename: `${PATHS.assets}js/[name].js`,
   },
-
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          name: 'vendors',
+          test: /node_modules/,
+          chunks: 'all',
+          enforce: true
+        }
+      }
+    }
+  },
   module: {
     rules: [
       {
@@ -77,7 +85,6 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
-          outputPath: 'fonts',
         },
       },
       {
@@ -85,7 +92,7 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
-          outputPath: 'images',
+          outputPath: `${PATHS.assets}images`,
         },
       },
       {
@@ -93,7 +100,16 @@ module.exports = {
         use: [
           'style-loader',
           MiniCssExtractPlugin.loader,
-          'css-loader',
+          {
+            loader: "css-loader",
+            options: {
+              sourceMap: true,
+              url: false
+            }
+          },
+          {
+            loader: 'resolve-url-loader',
+          },
           'postcss-loader',
           'sass-loader',
           {
@@ -108,7 +124,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: `${PATHS.assets}css/[name].css`,
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
@@ -119,9 +135,17 @@ module.exports = {
     ...createHtmlWebpackPlugins(pagesDir),
     new CopyWebpackPlugin({
       patterns: [{
-        from: `${faviconDir}`,
-        to: `${PATHS.dist}/favicon`
-      }]
+        from: `${PATHS.src}/${PATHS.assets}favicon`,
+        to: `${PATHS.assets}favicon`
+      },
+      /*{
+        from: `${PATHS.src}/${PATHS.assets}images`,
+        to: `${PATHS.assets}images`
+      },*/
+      {
+        from: `${PATHS.src}/${PATHS.assets}fonts`,
+        to: `${PATHS.assets}css/fonts`
+      },]
     })
   ],
 };

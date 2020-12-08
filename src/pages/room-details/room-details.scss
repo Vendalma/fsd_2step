@@ -19,16 +19,16 @@
     width: 459px * 100%/ 1440px;
   }
   &__item-one {
-    @include bgimage("bg-image-7");
+    // @include bgimage("bg-image-7");
     width: 981px * 100% / 1440px;
     height: 100%;
   }
   &__item-two {
-    @include bgimage("bg-image-5");
+    // @include bgimage("bg-image-5");
     height: 50%;
   }
   &__item-three {
-    @include bgimage("bg-image-6");
+    //@include bgimage("bg-image-6");
     height: 50%;
   }
 }

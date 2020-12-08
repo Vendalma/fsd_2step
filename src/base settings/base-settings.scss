@@ -1,5 +1,7 @@
 html {
   font-size: 14px;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  color: $dark-75;
 }
 body {
   margin: 0px;
@@ -8,10 +10,6 @@ body {
   min-width: 320px;
 }
 p {
-  margin: 0;
-  padding: 0;
-}
-h2 {
   margin: 0;
   padding: 0;
 }
