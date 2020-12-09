@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "build-prod": "webpack --config ./webpack/webpack.prod.config.js",
-    "build-dev": "webpack-dev-server --config ./webpack/webpack.dev.config.js ",
     "start": "webpack-dev-server --open  --watch --config ./webpack/webpack.dev.config.js",
     "lint": "node_modules/.bin/eslint . --fix --ext .js"
   },

@@ -85,6 +85,8 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
+          outputPath: `${PATHS.assets}fonts`,
+          publicPath: `../fonts`,
         },
       },
       {
@@ -93,29 +95,39 @@ module.exports = {
         options: {
           name: '[name].[ext]',
           outputPath: `${PATHS.assets}images`,
+          publicPath: `${PATHS.assets}images`,
         },
       },
       {
         test: /\.scss$/,
         use: [
           'style-loader',
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: ''
+            }
+          },
           {
             loader: "css-loader",
             options: {
               sourceMap: true,
-              url: false
             }
           },
           {
-            loader: 'resolve-url-loader',
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              'postcssOptions': {
+                'config': `./postcss.config.js`
+              },
+            },
           },
-          'postcss-loader',
           'sass-loader',
           {
             loader: 'sass-resources-loader',
             options: {
-              resources: PATHS.src + '/sass-patterns/*.scss',
+              resources: `${PATHS.src}/assets/scss/sass-patterns/*.scss`,
             },
           },
         ],
@@ -139,13 +151,9 @@ module.exports = {
         to: `${PATHS.assets}favicon`
       },
       /*{
-        from: `${PATHS.src}/${PATHS.assets}images`,
-        to: `${PATHS.assets}images`
-      },*/
-      {
         from: `${PATHS.src}/${PATHS.assets}fonts`,
-        to: `${PATHS.assets}css/fonts`
-      },]
+        to: `${PATHS.assets}fonts`
+      },*/]
     })
   ],
 };
