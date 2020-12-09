@@ -1,18 +1,17 @@
-extends  /layout/website-base/website-base
+extends /layout/page-head/page-head
 include /layout/header/header
 include /layout/footer/footer
 include /layout/footer-small/footer-small
 include /layout/cards/registration-card/registration-card
 
 block head
-    title Registration page
-block body
-    .registration-page
-        +header.registration-page__header
-        main.registration-page__content
-            .registration-page__slider_wrapper
-                .registration-page__slider_item.registration-page__slider_item-one
-                .registration-page__slider_item.registration-page__slider_item-two.registration-page__slider_active
-                +registration-card.registration-page__card
-        +footer.registration-page__footer
-        +footer-small.registration-page__footer-small
+  title Registration page
+  .registration-page
+    -//+header.registration-page__header
+    main.registration-page__content
+      .registration-page__slider_wrapper
+        .registration-page__slider_item.registration-page__slider_item-one
+        .registration-page__slider_item.registration-page__slider_item-two.registration-page__slider_active
+        +registration-card.registration-page__card
+    +footer.registration-page__footer
+    +footer-small.registration-page__footer-small

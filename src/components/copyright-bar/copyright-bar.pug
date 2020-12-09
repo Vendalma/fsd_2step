@@ -1,16 +1,8 @@
-//- theme: info-margin
-
-mixin copyright-bar(className,infoMargin = false)
-    .copyright-bar(class=className)
-        if infoMargin
-            .copyright-bar__information.copyright-bar__information-margin Copyright © 2018 Toxin отель. Все права защищены.
-            .copyright-bar__social
-                i.copyright-bar__font-awersome.fa.fa-twitter 
-                i.copyright-bar__font-awersome.copyright-bar__font-awersome-margin.fa.fa-facebook-square
-                i.copyright-bar__font-awersome.fa.fa-instagram 
-        else 
-            .copyright-bar__information Copyright © 2018 Toxin отель. Все права защищены.
-            .copyright-bar__social
-                i.copyright-bar__font-awersome.fa.fa-twitter 
-                i.copyright-bar__font-awersome.copyright-bar__font-awersome-margin.fa.fa-facebook-square
-                i.copyright-bar__font-awersome.fa.fa-instagram
+mixin copyright-bar({infoBlockMargin = false})
+  .copyright-bar
+    if infoBlockMargin
+      .copyright-bar__information(class= infoBlockMargin? 'copyright-bar__information-margin' : '') Copyright © 2018 Toxin отель. Все права защищены.
+    .copyright-bar__social
+      i.copyright-bar__font-awesome.fa.fa-twitter 
+      i.copyright-bar__font-awesome.copyright-bar__font-awesome-margin.fa.fa-facebook-square
+      i.copyright-bar__font-awesome.fa.fa-instagram

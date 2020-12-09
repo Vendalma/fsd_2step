@@ -2,29 +2,33 @@ include /components/links/links
 include /components/logo/logo-colored/logo-colored
 include /components/buttons/buttons
 
-mixin header(userName=false)
-    header.header&attributes(attributes)
-        .header__container
-            .header__logo
-                +logo-colored.header__logo-colored
-            .header__burger-menu
-                .header__block.header__block_menu.header__block_active
-                    i.header__material-icons menu
-                .header__block.header__block_close
-                    i.header__material-icons close
-            nav.header__menu
-                .header__link-list
-                    +link('active','О нас').header__link-item
-                    +link('materialIcons','Услуги').header__link-item
-                    +link('default','Вакансии').header__link-item
-                    +link('default','Новости').header__link-item
-                    +link('materialIcons','Соглашения').header__link-item
-                if userName 
-                    .header__user-info
-                        .header__vert-block
-                        .header__user-name  Юлий Цезарь
-                else 
-                    .header__buttons
-                        +button('border-primary-grad button_theme-border-primary-grad_padding-s','Войти').header__button.header__button_margin
-                        +button('bg-primary-grad button_theme-bg-primary-grad_padding-m','Зарегистрироваться').header__button
+mixin header({userName=false})
+  - const {linkList,buttonsSettings} = require('@layout/header/header.json')
+  header.header
+    .header__container
+      .header__content-block
+        .header__logo
+          +logo-colored
+      .header__content-block
+        .header__burger-menu.js-header__burger-menu
+          .header__burger-menu_open.js-header__burger-menu_open
+            i.header__material-icons menu
+          .header__burger-menu_close.js-header__burger-menu_close.header__burger-menu_hidden
+            i.header__material-icons close
+        .header__menu.js-header__menu
+          nav.header__nav-bar
+            ul.header__link-list
+              for link in linkList
+                li.header__link-item
+                  +link(link)
+          if userName 
+            .header__user-info
+              .header__vert-block
+              .header__user-name  Юлий Цезарь
+          else
+            .header__buttons-block
+              .header__button.header__button_margin
+                +button(buttonsSettings.one)
+              .header__button
+                +button(buttonsSettings.two)
 

@@ -1,11 +1,8 @@
-mixin link(type,name)
-  if type == 'materialIcons'
-      a(href='/mock-address/change-me' class='link link__close')&attributes(attributes) #{name}
-        i.link__material-icons expand_more
-
-  else if type == 'active' 
-    a(href='/mock-address/change-me' class='link link_active')&attributes(attributes) #{name}
+mixin link({type = 'default',text,materialIcons= false})
+  if type == 'active' 
+    a(href='/mock-address/change-me' class='link link_active') #{text}
 
   else if type == 'default'
-    a(href='/mock-address/change-me' class='link')&attributes(attributes) #{name} 
-    
+    a(href='/mock-address/change-me' class='link') #{text} 
+    if materialIcons
+      i.link__material-icons expand_more

@@ -5,7 +5,6 @@ import "@layout/cards/registration-card/registration-card";
 import "@layout/cards/room-card/room-card";
 import "@layout/cards/search-card/search-card";
 import "@layout/cards/sign-in-card/sign-in-card";
-import "@layout/ui-kit/ui-kit";
 import "./cards.scss";
 
 

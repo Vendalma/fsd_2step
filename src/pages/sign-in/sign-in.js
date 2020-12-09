@@ -1,12 +1,11 @@
+import "@/main.scss";
+import "@layout/cards/sign-in-card/sign-in-card";
+import "@layout/footer-small/footer-small";
+import "@layout/footer/footer";
+import "@layout/header/header";
 import "./sign-in.scss";
 
-import "@layout/website-base/website-base";
-import "@layout/header/header";
-import "@layout/footer/footer";
-import "@layout/footer-small/footer-small";
-import "@layout/cards/sign-in-card/sign-in-card";
 
-import "@/main.scss";
 
 //идея реализации слайдера позаимствована здесь --> http://gnatkovsky.com.ua/plavnaya-smena-fona-s-ispolzovaniem-jquery.html
 

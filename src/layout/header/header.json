@@ -1,0 +1,32 @@
+{
+  "linkList": [
+    {
+      "type": "active",
+      "text": "О нас"
+    },
+    {
+      "text": "Услуги",
+      "materialIcons": true
+    },
+    {
+      "text": "Вакансии"
+    },
+    {
+      "text": "Новости"
+    },
+    {
+      "text": "Соглашения",
+      "materialIcons": true
+    }
+  ],
+  "buttonsSettings": {
+    "one": {
+      "theme": "border-primary-grad button_theme-border-primary-grad_padding-s",
+      "text": "Войти"
+    },
+    "two": {
+      "theme": "bg-primary-grad button_theme-bg-primary-grad_padding-m",
+      "text": "Зарегистрироваться"
+    }
+  }
+}

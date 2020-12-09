@@ -1,18 +1,20 @@
-import "./header.scss";
-import "@components/logo/logo-colored/logo-colored";
 import "@components/buttons/buttons";
 import "@components/links/links";
+import "@components/logo/logo-colored/logo-colored";
+import "./header.scss";
 
-let buttonBurger = document.querySelectorAll(".header__burger-menu");
+let buttonBurger = document.querySelectorAll(".js-header__burger-menu");
 
 buttonBurger.forEach((elem) => {
-  let blockMenu = elem.nextElementSibling;
-  let iconMenu = elem.querySelector(".header__block_menu");
-  let iconClose = elem.querySelector(".header__block_close");
+  let blockMenu = elem.parentElement.querySelector('.js-header__menu');
+  let iconMenu = elem.querySelector(".js-header__burger-menu_open");
+  let iconClose = elem.querySelector(".js-header__burger-menu_close");
 
-  elem.addEventListener("click", function () {
+  elem.addEventListener("click", bindThis.bind(this));
+
+  function bindThis() {
     blockMenu.classList.toggle("header__menu_open");
-    iconMenu.classList.toggle("header__block_active");
-    iconClose.classList.toggle("header__block_active");
-  });
+    iconMenu.classList.toggle("header__burger-menu_hidden");
+    iconClose.classList.toggle("header__burger-menu_hidden");
+  }
 });

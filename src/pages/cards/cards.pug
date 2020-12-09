@@ -1,4 +1,4 @@
-extends  /layout/ui-kit/ui-kit
+extends /layout/page-head/page-head
 include /layout/cards/search-card/search-card
 include /layout/cards/registration-card/registration-card
 include /components/dropdown-date/dropdown-date
@@ -9,17 +9,15 @@ include /layout/cards/calc-card/calc-card
 
 block head
   title Cards
-
-block body
   - const {room1,room2} = require('./cards.json')
     .cards
-        .cards__container_column.cards__container_margin
-          +search-card(false).cards__item
-          +registration-card.cards__item
-        .cards__container_column.cards__container_margin
-          +calc-card(true).cards__item
-          +sign-in-card.cards__item
-        .cards__container_column
-          +dropdownDate('inline').cards__item
-          +room-card('luxury','888', '9 990₽',5 ,'145', room1).cards__item
-          +room-card('standart','840', '9 900₽',4 ,'65', room2).cards__item
+      .cards__container_column.cards__container_margin
+        +search-card(false).cards__item
+        +registration-card.cards__item
+      .cards__container_column.cards__container_margin
+        +calc-card(true).cards__item
+        +sign-in-card.cards__item
+      .cards__container_column
+        +dropdownDate('inline').cards__item
+        +room-card('luxury','888', '9 990₽',5 ,'145', room1).cards__item
+        +room-card('standart','840', '9 900₽',4 ,'65', room2).cards__item

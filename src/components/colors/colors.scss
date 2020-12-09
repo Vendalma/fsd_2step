@@ -36,9 +36,8 @@
 .info {
   min-width: 170px;
   @extend %h1-font;
-  font-size: 1.188rem;
-  line-height: 1.781rem;
-  padding-top: 3px;
+  font-size: 1.357rem;
+  line-height: 2rem;
   display: flex;
   flex-direction: column;
   &__code {

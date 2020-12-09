@@ -1,19 +1,18 @@
+import "@/main.scss";
+import "@components/checkbox/checkbox";
+import "@components/description/description";
+import "@components/dropdown-date/dropdown-date";
+import "@components/dropdown/dropdown";
+import "@components/expandable-checkbox/expandable-checkbox";
+import "@components/pagination/pagination";
+import "@components/range slider/range slider";
+import "@layout/cards/room-card/room-card";
+import "@layout/footer-small/footer-small";
+import "@layout/footer/footer";
+import "@layout/header/header";
 import "./search-room.scss";
 
-import "@layout/website-base/website-base";
-import "@layout/header/header";
-import "@layout/footer/footer";
-import "@layout/footer-small/footer-small";
-import "@components/description/description";
-import "@components/dropdown/dropdown";
-import "@components/dropdown-date/dropdown-date";
-import "@components/checkbox/checkbox";
-import "@components/range slider/range slider";
-import "@components/expandable-checkbox/expandable-checkbox";
-import "@layout/cards/room-card/room-card";
-import "@components/pagination/pagination";
 
-import "@/main.scss";
 
 let optionsBlock = document.querySelector(".options");
 let blockMenu = document.querySelector(".options__block_menu");

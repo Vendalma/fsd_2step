@@ -1,4 +1,4 @@
-extends  /layout/website-base/website-base
+extends /layout/page-head/page-head
 include /layout/header/header
 include /components/description/description
 include /components/dropdown/dropdown
@@ -13,10 +13,9 @@ include /layout/footer-small/footer-small
 
 block head
   title Search room
-block body
   - const {room1,room2,room3,room4,room5,room6,room7,room8,room9,room10,room11,room12} = require('./search-room.json')
   .search-room
-    +header.search-room__header
+    -//+header.search-room__header
     main.search-room__content
       .options.search-room__options
         .options__block.options__block_menu.options__block_active

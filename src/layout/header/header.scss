@@ -16,6 +16,11 @@
     align-items: center;
     flex-grow: 1;
   }
+  &__content-block {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 0;
+  }
   &__logo {
     display: flex;
   }
@@ -23,13 +28,8 @@
     display: none;
     width: 40px;
     height: 40px;
-  }
-  &__block {
-    display: none;
-    &_active {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    &_hidden {
+      display: none;
     }
   }
   &__material-icons {
@@ -42,7 +42,9 @@
     flex-direction: row;
     align-items: center;
   }
-
+  &__mav-bar {
+    display: flex;
+  }
   &__link-list {
     display: flex;
     flex-direction: row;
@@ -53,9 +55,9 @@
     flex-direction: row;
     align-items: center;
     margin-right: 20px;
+    box-sizing: border-box;
   }
-  &__buttons {
-    width: 100%;
+  &__buttons-block {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -132,7 +134,7 @@
     &__link-item {
       margin-bottom: 10px;
     }
-    &__buttons {
+    &__buttons-block {
       max-width: 44px;
       display: flex;
       flex-direction: row;
@@ -152,7 +154,7 @@
       line-height: 1.5rem;
     }
     &__user-info {
-      width: 200px;
+      min-width: 200px;
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
@@ -163,7 +165,7 @@
       margin-top: 10px;
     }
     &__vert-block {
-      width: 200px;
+      width: 100%;
       height: 1px;
       order: -1;
       margin: 0;
@@ -220,10 +222,6 @@
     &__button {
       min-height: 44px;
       width: 100%;
-      &_margin {
-        margin-right: 0px;
-        margin-bottom: 10px;
-      }
     }
     &__buttons {
       width: 100%;
@@ -235,7 +233,7 @@
       line-height: 1.5rem;
     }
     &__user-info {
-      width: 200px;
+      min-width: 200px;
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
@@ -246,7 +244,7 @@
       margin-top: 10px;
     }
     &__vert-block {
-      width: 200px;
+      width: 100%;
       height: 1px;
       order: -1;
       margin: 0;

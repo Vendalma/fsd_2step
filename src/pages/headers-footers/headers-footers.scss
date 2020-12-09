@@ -1,10 +1,19 @@
-.uikit {
-  background: #f4f4f6;
-}
-
-.container {
-  margin-top: 62px;
-  margin-bottom: 140px;
+.headers-footers {
+  background: #e5e5e5;
+  width: 100%;
+  &__logo {
+    padding-top: 30px * 100%/ 1410px;
+    padding-left: 30px * 100%/ 1410px;
+    box-sizing: border-box;
+  }
+  &__content-block {
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  &__container {
+    margin-top: 62px;
+    margin-bottom: 140px;
+  }
   &__content {
     margin-bottom: 40px;
   }

@@ -1,14 +1,18 @@
-extends  /layout/ui-kit/ui-kit
+extends /layout/page-head/page-head
 include /components/colors/colors
 include /components/text-types/text-types
+include /components/logo/logo-gray/logo-gray
 
 block head
   title Colors&Types
-
-block body
-    .colors-types.content-block__colors-types
-      - const {colors} = require('./colors-types.json')
-      .color-block.colors-types__color-block
-        +colors(colors)  
-      +text-types.colors-types__text-types
-            
+  body.colors-types
+    header.colors-types__header
+      .colors-types__logo
+        +logo-gray
+    main.colors-types__content-block
+      .colors-types__container
+        - const {colors} = require('./colors-types.json')
+        .colors-types__color-block
+          +colors(colors)  
+        .colors-types__text-types
+          +text-types
