@@ -1,12 +1,22 @@
 .copyright-bar {
   width: 100%;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: inherit;
+  justify-content: inherit;
+  text-align: center;
+  &_column {
+    flex-direction: column;
+    align-items: inherit;
+    justify-content: inherit;
+  }
 
   &__information {
     @extend %body-font;
     line-height: 1.0625rem;
-    padding-top: 4px;
     cursor: default;
+    padding-top: 4px;
     &-margin {
       margin-bottom: 25px;
     }
@@ -14,18 +24,23 @@
 
   &__social {
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+    min-width: 112px;
   }
   &__font-awesome {
-    width: 24px;
-    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
     @extend %primary-grad;
+    background-clip: border-box;
     -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     color: transparent;
     @extend %aws-font;
+    font-size: 1.714rem;
+    line-height: 1.643rem;
     cursor: pointer;
-    &-margin {
-      margin: 0px 20px;
-    }
+    display: flex;
+    align-items: center;
+    text-align: center;
   }
 }

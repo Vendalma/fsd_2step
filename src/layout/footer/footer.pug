@@ -1,39 +1,44 @@
 include /components/logo/logo-colored/logo-colored
 include /components/links/links
 include /components/copyright-bar/copyright-bar
+include /components/field/field
 
 mixin footer
-        footer.footer&attributes(attributes)
-            .footer__block.footer__block_primary-shadow
-                .footer__line
-                .footer__container-widgets
-                    .footer__container-widgets_wrapper
-                        .footer__logo-info
-                            +logo-colored.footer__logo-colored
-                            .footer__info.footer__info_logo Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-                    .footer__container-widgets_wrapper.footer__container-widgets_width
-                        nav.footer__nav.footer_list
-                            p.footer__item.footer__item_header Навигация
-                            +link('default','О нас').footer__item
-                            +link('default','Новости').footer__item
-                            +link('default','Служба поддержки').footer__item
-                            +link('default','Услуги').footer__item
-                        nav.footer__about-us.footer_list
-                            p.footer__item.footer__item_header О нас
-                            +link('default','О сервисе').footer__item
-                            +link('default','Наша команда').footer__item
-                            +link('default','Вакансии').footer__item
-                            +link('default','Инвесторы').footer__item
-                        nav.footer__support-service.footer_list
-                            p.footer__item.footer__item_header.footer__item_margin Служба поддержки
-                            +link('default','Соглашения').footer__item
-                            +link('default','Сообщества').footer__item
-                            +link('default','Связь с нами').footer__item
-                        .footer__subscription.footer_list
-                            .footer__item.footer__item_header Подписка
-                            .footer__info Получайте специальные предложения и новости сервиса
-                            -//+field('sub','Email').footer__field
-            .footer__block.footer__block_secondary-shadow
-                .footer__container-copy
-                    +copyright-bar('footer__copyright-bar')
-            
+  - const {navigationLinks, aboutUsLinks,supportServiceLinks} = require('@layout/footer/footer.json')
+  footer.footer
+    .footer__container
+      .footer__content-block_primary-shadow
+        .footer__content-block_wrapper
+          .footer__block_logo-info
+            .footer__logo
+              +logo-colored
+            .footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+          .footer__block_navigation
+            nav.footer__nav-bar
+              ul.footer__link_list 
+                h3.footer__header Навигация
+                for linkNav in navigationLinks
+                  li.footer__link_item
+                    +link(linkNav)
+            nav.footer__nav-bar
+              ul.footer__link_list 
+                h3.footer__header О нас
+                for link in aboutUsLinks
+                  li.footer__link_item
+                    +link(link)
+            nav.footer__nav-bar
+              ul.footer__link_list 
+                h3.footer__header Служба поддержки
+                for linkSupport in supportServiceLinks
+                  li.footer__link_item
+                    +link(linkSupport)
+          .footer__block_subscription
+            .footer__header.footer__header_margin-b-18 Подписка
+            .footer__text.footer__text_margin Получайте специальные предложения и новости сервиса
+            .footer__email-field
+              +textField({"type": 'subscribe', "placeholder":'Email'})
+      .footer__content-block_secondary-shadow
+        .footer__content-block_copyright-wrapper
+          .footer__block_copyright
+            +copyright-bar({flexColumn: false})
+

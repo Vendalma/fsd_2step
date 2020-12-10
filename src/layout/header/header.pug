@@ -17,9 +17,9 @@ mixin header({userName=false})
             i.header__material-icons close
         .header__menu.js-header__menu
           nav.header__nav-bar
-            ul.header__link-list
+            ul.header__link_list
               for link in linkList
-                li.header__link-item
+                li.header__link_item
                   +link(link)
           if userName 
             .header__user-info

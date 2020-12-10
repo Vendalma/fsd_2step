@@ -42,20 +42,22 @@
     flex-direction: row;
     align-items: center;
   }
-  &__mav-bar {
+  &__nav-bar {
     display: flex;
   }
-  &__link-list {
-    display: flex;
-    flex-direction: row;
-    flex-shrink: 0;
-  }
-  &__link-item {
-    display: inline-flex;
-    flex-direction: row;
-    align-items: center;
-    margin-right: 20px;
-    box-sizing: border-box;
+  &__link {
+    &_list {
+      display: flex;
+      flex-direction: row;
+      flex-shrink: 0;
+    }
+    &_item {
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+      margin-right: 20px;
+      box-sizing: border-box;
+    }
   }
   &__buttons-block {
     display: flex;
@@ -86,12 +88,6 @@
     cursor: default;
   }
 }
-
-/*
-
-<------------ @media 481px -- 960px  ---------->
-
-*/
 
 @media (min-width: 481px) and (max-width: 960px) {
   .header {
@@ -127,13 +123,16 @@
         padding: 15px 20px;
       }
     }
-    &__link-list {
-      flex-direction: column;
-      margin-bottom: 20px;
+    &__link {
+      &_list {
+        flex-direction: column;
+        margin-bottom: 20px;
+      }
+      &_item {
+        margin-bottom: 10px;
+      }
     }
-    &__link-item {
-      margin-bottom: 10px;
-    }
+
     &__buttons-block {
       max-width: 44px;
       display: flex;
@@ -148,7 +147,7 @@
       }
     }
 
-    .header__link-list > .header__link-item {
+    .header__link_list > .header__link_item {
       font-weight: bold;
       font-size: 1.188rem;
       line-height: 1.5rem;
@@ -172,12 +171,6 @@
     }
   }
 }
-
-/*
-
-<------------ @media 480px ---------->
-
-*/
 
 @media (max-width: 480px) {
   .header {
@@ -211,12 +204,14 @@
         padding: 15px 20px;
       }
     }
-    &__link-list {
-      flex-direction: column;
-      margin-bottom: 20px;
-    }
-    &__link-item {
-      margin-bottom: 10px;
+    &__link {
+      &_list {
+        flex-direction: column;
+        margin-bottom: 20px;
+      }
+      &_item {
+        margin-bottom: 10px;
+      }
     }
 
     &__button {
@@ -227,7 +222,7 @@
       width: 100%;
       flex-direction: column;
     }
-    .header__link-list > .header__link-item {
+    .header__link_list > .header__link_item {
       font-weight: bold;
       font-size: 1.188rem;
       line-height: 1.5rem;
