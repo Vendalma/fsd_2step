@@ -3,18 +3,22 @@ include /components/logo/logo-colored/logo-colored
 include /components/buttons/buttons
 
 mixin header({userName=false})
-  - const {linkList,buttonsSettings} = require('@layout/header/header.json')
+  - const {linkList,buttonsSettings} = require('@components/header/header.json')
   header.header
     .header__container
+
       .header__content-block
         .header__logo
           +logo-colored
+
       .header__content-block
+
         .header__burger-menu.js-header__burger-menu
           .header__burger-menu_open.js-header__burger-menu_open
             i.header__material-icons menu
           .header__burger-menu_close.js-header__burger-menu_close.header__burger-menu_hidden
             i.header__material-icons close
+
         .header__menu.js-header__menu
           nav.header__nav-bar
             ul.header__link_list

@@ -1,7 +1,7 @@
 {
   "settingsTextField": {
     "text": {
-      "type": "text",
+      "type": "email",
       "placeholder": "Email"
     },
     "hover": {
@@ -13,8 +13,9 @@
       "placeholder": "ДД.ММ.ГГГГ"
     },
     "subscribe": {
-      "type": "subscribe",
-      "placeholder": "Email"
+      "type": "email",
+      "placeholder": "Email",
+      "materialIcon": true
     }
   },
   "settingsDropdown": {

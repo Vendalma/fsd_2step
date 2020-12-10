@@ -1,7 +1,7 @@
 import "@/main.scss";
+import "@components/footer-small/footer-small";
+import "@components/footer/footer";
+import "@components/header/header";
 import "@components/logo/logo-gray/logo-gray";
-import "@layout/footer-small/footer-small";
-import "@layout/footer/footer";
-import "@layout/header/header";
 import "./headers-footers.scss";
 
