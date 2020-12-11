@@ -1,7 +1,7 @@
 include /components/buttons/buttons
 include /components/description/description
 
-mixin dropdownDate({type,active=false,placeholder1,description1,placeholder2,description2})
+mixin dropdownDate({type,active=false,placeholder1='ДД.ММ.ГГГГ',description1,placeholder2 ='ДД.ММ.ГГГГ',description2})
   if type == 'filter'
     .dropdown-date(class=active? 'js-dropdown-date_active js-dropdown-date_filter': '')&attributes(attributes)
       .dropdown-date__block_wrapper

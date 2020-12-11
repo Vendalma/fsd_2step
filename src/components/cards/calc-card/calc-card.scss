@@ -1,25 +1,41 @@
 .calc-card {
   max-width: 380px;
+  width: 100%;
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.12);
-
   border-radius: 4px;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-  padding: 40px 30px 30px;
+  padding: 2.7857rem 1.5rem 2.1429rem 2.0714rem;
   display: flex;
-  box-sizing: border-box;
-  &__number-block {
+  &__container {
+    padding-right: 9px;
     display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    &_row {
+      flex-direction: row;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+    &_column {
+      flex-direction: column;
+    }
+    &_margin-b-21 {
+      margin-bottom: 1.5rem;
+    }
+    &_margin-b-18 {
+      margin-bottom: 1.2857rem;
+    }
+    &_margin-b-30 {
+      margin-bottom: 2.1429rem;
+    }
+    &_padding-0 {
+      padding: 0px;
+    }
   }
-  &__number {
-    @extend %h2-font;
-    font-size: 1.5rem;
+  &__room-info {
+    @extend %h1-font;
     &_no {
-      font-size: 14px;
+      font-size: 1rem;
+      line-height: 1.214rem;
     }
     &_luxury {
       @extend %h3-font;
@@ -28,116 +44,90 @@
   }
   &__price {
     @extend %body-font;
-    line-height: 129%;
-    font-weight: bold;
+    line-height: 1.286rem;
+    font-weight: 700;
     color: $dark-50;
-    &_num {
-      font-size: 0.875rem;
-    }
     &_text {
-      font-size: 0.75rem;
-      font-weight: normal;
+      font-size: 0.857rem;
+      font-weight: 400;
     }
   }
-  &__date-block {
-    margin-bottom: 20px;
+  &__description {
+    margin-bottom: 0.2143rem;
+  }
+  &__group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    @extend %body-font;
+    &_block {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      max-width: 250px;
+    }
+    &_margin {
+      margin-top: 0.7143rem;
+      margin-bottom: 1.0714rem;
+    }
+  }
+  &__text {
+    @extend %body-font;
+    &_small {
+      line-height: 1.286rem;
+      max-width: 214px;
+    }
   }
 
-  &__calculation-block {
-    margin-bottom: 20px;
-    margin-top: 20px;
-  }
-  &__days-sum {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    @extend %body-font;
-    margin-bottom: 10px;
-  }
-  &__sale {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    @extend %body-font;
-    margin-bottom: 12px;
-    &-price {
-      max-width: 214px;
-    }
-  }
-  &__services {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    @extend %body-font;
-    margin-bottom: 30px;
-    &-price {
-      max-width: 214px;
-      line-height: 129%;
-    }
-  }
   &__total {
+    width: 100%;
     position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     @extend %h2-font;
-    &-text {
+    &_text {
       position: relative;
       z-index: 1;
       background: #fff;
-      padding-right: 5px;
+      padding-right: 0.3571rem;
     }
-    &-sum {
+    &_sum {
       position: relative;
       z-index: 1;
       background: #fff;
-      padding-left: 5px;
+      padding-left: 0.3571rem;
     }
-    &-line {
+    &_line {
       width: 100%;
       height: 1px;
       border-top: 1px dashed $dark-25;
-      box-sizing: border-box;
       position: absolute;
       left: 0;
       bottom: 5px;
     }
   }
-  &__item-block {
-    display: inline-flex;
-    justify-content: center;
-  }
   &__circle-item {
-    width: 20px;
-    height: 20px;
-    @extend %h3-font;
-    line-height: 117%;
+    height: min-content;
+    padding: 0.1571rem 0.5286rem;
+    @extend %body-font;
+    font-weight: 700;
     color: $dark-25;
-    text-transform: none;
-
+    line-height: 1rem;
+    font-size: 0.857rem;
     border: 1px solid $dark-25;
     box-sizing: border-box;
     border-radius: 50%;
     margin-left: 5px;
-    flex-shrink: 0;
 
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
   }
-  &__button-block {
+  &__button {
     width: 100%;
     display: flex;
-  }
-  &__sum-two {
-    width: 57px;
-    display: inline-block;
-    text-align: right;
-  }
-  &__sum-three {
-    width: 57px;
-    display: inline-block;
-    text-align: right;
   }
 }

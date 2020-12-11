@@ -1,41 +1,26 @@
 include ../../../components/rate button/rate button
 
 mixin room-card(type, number, price, rate, reviews,{imgs})
-    if type == 'luxury'
-        .room-card&attributes(attributes)
-            .room-card__container
-                .room-card__slider-block
-                    .room-card__slider
-                        each image in imgs
-                            img.room-card__image(src=require(`@images/${image}`).default, alt=altText )
-            .room-card__container
-                .room-card__block
-                    .room-card__number-text
-                        span.room-card__number_no № 
-                        span.room-card__number #{number}
-                        span.room-card__number_luxury  люкс
-                    .room-card__price #{price}
-                        span.room-card__price_info  в сутки
-                .room-card__block.room-card__block_line
-                .room-card__block
-                    +rateButton(rate).room-card__rate-button
-                    .room-card__reviews #{reviews}
-                        span.room-card__reviews_info  Отзывов
-    else if type == 'standart'
-        .room-card&attributes(attributes)
-            .room-card__container
-                .room-card__slider
-                    each image in imgs
-                        img.room-card__image(src=require(`@images/${image}`).default )
-            .room-card__container
-                .room-card__block
-                    .room-card__number-text
-                        span.room-card__number_no № 
-                        span.room-card__number #{number}
-                    .room-card__price #{price}
-                        span.room-card__price_info  в сутки
-                .room-card__block.room-card__block_line
-                .room-card__block
-                    +rateButton(rate).room-card__rate-button
-                    .room-card__reviews #{reviews}
-                        span.room-card__reviews_info  Отзывов
+  .room-card
+    .room-card__container
+      .room-card__slider-block
+        .room-card__slider
+          each image in imgs
+            img.room-card__image(src=require(`@images/${image}`).default, alt=altText )
+    .room-card__container
+      .room-card__block
+        .room-card__info-room
+          span.room-card__info-room_no № 
+          span.room-card__info-room_number #{number}
+          if type == 'luxury'
+            span.room-card__info-room_luxury  люкс
+        .room-card__price
+          span.room-card__price_text #{price}
+          span.room-card__price_info  в сутки
+      .room-card__block
+        .room-card__line   
+      .room-card__block.room-card__block_padding
+        .room-card__rate-button
+          +rateButton(rate)
+        .room-card__reviews #{reviews}
+          span.room-card__reviews_info  Отзывов

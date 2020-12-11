@@ -59,10 +59,7 @@ $this.each(function () {
       .$datepicker.find(".datepicker--buttons");
 
     buttons.append(applyButton);
-
-    if ($this.children().hasClass(".js-dropdown-date__container_range")) {
-      setRange(picker);
-    }
+    setRange(picker);
   }
 
   /*

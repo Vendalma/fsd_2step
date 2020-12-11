@@ -1,14 +1,16 @@
 .radio {
+  display: flex;
   &__label {
+    width: max-content;
     position: relative;
     display: flex;
     align-items: center;
     cursor: pointer;
     @extend %body-font;
     color: $dark-50;
-    padding-left: 30px;
+    padding-left: 2.1rem;
     &_margin {
-      margin-right: 20px;
+      padding-right: 1.429em;
     }
   }
   &__input {
@@ -22,7 +24,7 @@
     display: block;
     border-radius: 50%;
     position: absolute;
-    left: 0;
+    left: 1px;
     box-sizing: border-box;
     &::after {
       content: '';

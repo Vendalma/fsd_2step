@@ -1,16 +1,15 @@
 .registration-card {
-  width: 100%;
-  padding: 40px 30px 30px;
+  max-width: 380px;
+  padding: 2.857rem 2.143rem 2.143rem;
   box-sizing: border-box;
   background: #ffffff;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-
+  display: flex;
+  flex-direction: column;
   &__title {
-    margin: 0;
-    padding: 0;
     @extend %h1-font;
-    margin-bottom: 20px;
+    margin-bottom: 1.429rem;
   }
   &__container {
     display: flex;
@@ -22,29 +21,29 @@
       align-items: center;
     }
     &_margin-b-23 {
-      margin-bottom: 23px;
+      margin-bottom: 1.643rem;
     }
     &_margin-b-10 {
-      margin-bottom: 10px;
+      margin-bottom: 0.714rem;
     }
     &_margin-b-30 {
-      margin-bottom: 30px;
+      margin-bottom: 2.143rem;
     }
   }
   &__text-field {
-    margin-bottom: 10px;
+    margin-bottom: 0.714rem;
     &_margin-b-8 {
-      margin-bottom: 8px;
+      margin-bottom: 0.571rem;
     }
   }
   &__text {
     @extend %body-font;
     color: #000000;
     line-height: 18px;
-    margin-right: 35px;
+    margin-right: 2.5rem;
   }
   &__description {
-    margin-bottom: 5px;
+    margin-bottom: 0.357rem;
   }
   &__button {
     &_long {
@@ -53,6 +52,7 @@
     }
   }
   &__toggle {
-    margin-bottom: 23px;
+    display: flex;
+    margin-bottom: 1.643rem;
   }
 }

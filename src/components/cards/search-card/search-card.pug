@@ -11,11 +11,9 @@ mixin search-card(activeCalendar=true)
         .search-card__date
           +dropdownDate({"type": 'range',
             "active":activeCalendar,
-            "placeholder1":'ДД.ММ.ГГГГ', 
-            "description1":'прибытие', 
-            "placeholder2":'ДД.ММ.ГГГГ', 
+            "description1":'прибытие',  
             "description2": 'выезд'})
-      .search-card__container.search-card__container_margin-b-30
+      .search-card__container.search-card__container_column.search-card__container_margin-b-30
         .search-card__description
           +description({"text":'гости'})
         .search-card__dropdown
