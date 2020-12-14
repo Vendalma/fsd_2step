@@ -5,5 +5,6 @@ mixin logo({colored = false})
         img.logo-gray(src=require('@images/logo-gray.svg').default)
     if colored
       .logo-colored
-        img.logo-colored__image(src=require('@images/logo-colored.svg').default)
-        img.logo-colored__text(src=require('@images/logo-text.svg').default)
+        a.logo-colored__link(href="https://vendalma.github.io/fsd_2step/landing.html")
+          img.logo-colored__image(src=require('@images/logo-colored.svg').default)
+          img.logo-colored__text(src=require('@images/logo-text.svg').default)

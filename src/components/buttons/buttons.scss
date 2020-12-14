@@ -25,7 +25,7 @@
       padding: 14.75px 19.2px;
     }
     &_padding-m {
-      padding: 0.75em 1.7em;
+      padding: 9px 20.4px;
     }
     &:hover {
       opacity: 0.5;
@@ -46,7 +46,7 @@
       padding: 1em 2em;
     }
     &_padding-s {
-      padding: 0.617em 1.6em;
+      padding: 7.4px 19.2px;
     }
     background-color: #ffffff;
     &:hover {
@@ -84,5 +84,8 @@
       top: 9px;
       right: 12px;
     }
+  }
+  &__link {
+    text-decoration: none;
   }
 }

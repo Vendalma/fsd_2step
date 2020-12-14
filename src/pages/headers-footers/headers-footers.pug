@@ -2,14 +2,14 @@ extends /layout/page-head/page-head
 include /components/header/header
 include /components/footer/footer
 include /components/footer-small/footer-small
-include /components/logo/logo-gray/logo-gray
+include /components/logo/logo
 
 block head
   title Headers&Footers   
   body.headers-footers
     header.headers-footers__header
       .headers-footers__logo
-        +logo-gray
+        +logo({colored: false})
     main.headers-footers__content-block
       .headers-footers__container
         .headers-footers__content

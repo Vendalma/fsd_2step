@@ -22,11 +22,15 @@
   "buttonsSettings": {
     "one": {
       "theme": "border-primary-grad button_theme-border-primary-grad_padding-s",
-      "text": "Войти"
+      "text": "Войти",
+      "isLink": true,
+      "href": "https://vendalma.github.io/fsd_2step/sign-in"
     },
     "two": {
       "theme": "bg-primary-grad button_theme-bg-primary-grad_padding-m",
-      "text": "Зарегистрироваться"
+      "text": "Зарегистрироваться",
+      "isLink": true,
+      "href": "https://vendalma.github.io/fsd_2step/registration.html"
     }
   }
 }
