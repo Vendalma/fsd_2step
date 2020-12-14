@@ -1,7 +1,7 @@
 include /components/like-button/like-button
 
 mixin comment({userPhoto,userName,date,likeCount,likeActive,text})
-  .comment&attributes(attributes)
+  .comment
     .comment__block-user
       .comment__user-photo
         img(src=require(`@images/${userPhoto}`).default, alt='user photo' class='comment__photo')

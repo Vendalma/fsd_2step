@@ -1,4 +1,4 @@
 mixin likeButton({count, active=false})
-  button.like-button(class= active? 'like-button_active' : '')&attributes(attributes)
+  button.like-button(class= active? 'like-button_active' : '')
     .like-button__like(class= active? 'like-button__like_active' : '')
     .like-button__count #{count}

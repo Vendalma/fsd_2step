@@ -1,5 +1,5 @@
 include /components/links/links
-include /components/logo/logo-colored/logo-colored
+include /components/logo/logo
 include /components/buttons/buttons
 
 mixin header({userName=false})
@@ -9,7 +9,7 @@ mixin header({userName=false})
 
       .header__content-block
         .header__logo
-          +logo-colored
+          +logo({colored:true})
 
       .header__content-block
 

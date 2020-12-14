@@ -9,6 +9,7 @@
     margin-bottom: 19px;
   }
   &__material-icons {
+    max-width: 48px;
     align-self: center;
     @extend %mat-icons;
     font-size: 3.429rem;
@@ -24,14 +25,19 @@
     display: flex;
   }
 
-  &__text {
+  &__text-block {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
+  }
+  &__text {
+    display: inline;
+    vertical-align: bottom;
     @extend %body-font;
-    box-sizing: border-box;
     &_bold {
       font-weight: bold;
+      padding-top: 1px;
+      margin-bottom: 5px;
     }
   }
   &__block-line {

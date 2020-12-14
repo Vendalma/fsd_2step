@@ -1,14 +1,14 @@
 extends /layout/page-head/page-head
 include /components/colors/colors
 include /components/text-types/text-types
-include /components/logo/logo-gray/logo-gray
+include /components/logo/logo
 
 block head
   title Colors&Types
   body.colors-types
     header.colors-types__header
       .colors-types__logo
-        +logo-gray
+        +logo({colored: false})
     main.colors-types__content-block
       .colors-types__container
         - const {colors} = require('./colors-types.json')

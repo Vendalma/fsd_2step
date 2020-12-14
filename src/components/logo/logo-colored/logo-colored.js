@@ -1,1 +1,0 @@
-import "./logo-colored.scss";

@@ -1,20 +1,20 @@
 mixin iconList({typeIcon, header, text,blockLine= true})
   if blockLine
-    .icon-list&attributes(attributes)
+    .icon-list
       .icon-list__container
         .icon-list__block
           i.icon-list__material-icons #{typeIcon}
         .icon-list__block
-          .icon-list__text 
+          .icon-list__text-block
             span.icon-list__text_bold #{header}
-            span #{text}
+            span.icon-list__text #{text}
       .icon-list__block-line
   else
-    .icon-list&attributes(attributes)
+    .icon-list
       .icon-list__container
         .icon-list__block
           i.icon-list__material-icons #{typeIcon}
         .icon-list__block
-          .icon-list__text 
+          .icon-list__text-block
             span.icon-list__text_bold #{header}
-            span #{text}
+            span.icon-list__text #{text}

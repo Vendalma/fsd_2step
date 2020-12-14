@@ -2,7 +2,7 @@
   &__block-user {
     display: flex;
     flex-direction: row;
-    margin-bottom: 11px;
+    margin-bottom: 10px;
     box-sizing: border-box;
   }
   &__user-photo {
@@ -35,6 +35,7 @@
     margin-right: 4px;
   }
   &__text {
+    padding-top: 2px;
     @extend%body-font;
     max-width: 655px;
   }

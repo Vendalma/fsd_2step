@@ -1,6 +1,6 @@
 import "@components/buttons/buttons";
 import "@components/links/links";
-import "@components/logo/logo-colored/logo-colored";
+import "@components/logo/logo";
 import "./header.scss";
 
 let buttonBurger = document.querySelectorAll(".js-header__burger-menu");

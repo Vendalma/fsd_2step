@@ -31,8 +31,8 @@
     &_margin-b-100 {
       margin-bottom: 100px;
     }
-    &_margin-b-258 {
-      margin-bottom: 258px;
+    &_margin-b-257 {
+      margin-bottom: 257px;
     }
     &_margin-b-90 {
       margin-bottom: 90px;
@@ -69,8 +69,8 @@
     &_margin-b-20 {
       margin-bottom: 20px;
     }
-    &_margin-b-160 {
-      margin-bottom: 160px;
+    &_margin-b-159 {
+      margin-bottom: 159px;
     }
     &_margin-b-22 {
       margin-bottom: 22px;
@@ -101,6 +101,9 @@
     }
     &_margin-b-15 {
       margin-bottom: 15px;
+    }
+    &_margin-b-14 {
+      margin-bottom: 14px;
     }
     &_margin-b-12 {
       margin-bottom: 12px;
@@ -147,8 +150,8 @@
     }
   }
   &__expandable-checkbox {
-    &_margin-b-20 {
-      margin-bottom: 20px;
+    &_margin {
+      margin-bottom: 19px;
     }
   }
   &__rich-checkbox {
@@ -163,5 +166,9 @@
   }
   &__comment {
     margin-top: 9px;
+  }
+  &__radio {
+    max-width: 235px;
+    width: 100%;
   }
 }

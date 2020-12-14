@@ -43,7 +43,7 @@
     @extend %mat-icons;
     position: absolute;
     top: 10px;
-    right: 10px;
+    right: 9px;
     &_default {
       color: $dark-50;
     }
@@ -57,18 +57,34 @@
       display: none;
     }
     &_open {
-      width: 100%;
-      position: absolute;
-      box-sizing: border-box;
-      background: #ffffff;
-      border: 1px solid $dark-50;
-      border-top: none;
-      border-radius: 0px 0px 4px 4px;
-      box-shadow: 0px 10px 20px $dark-05;
-      padding: 6px;
-      padding-left: 14px;
-      padding-bottom: 10px;
-      z-index: 10;
+      &-guests {
+        width: 100%;
+        position: absolute;
+        box-sizing: border-box;
+        background: #ffffff;
+        border: 1px solid $dark-50;
+        border-top: none;
+        border-radius: 0px 0px 4px 4px;
+        box-shadow: 0px 10px 20px $dark-05;
+        padding: 6px;
+        padding-left: 13px;
+        padding-bottom: 11px;
+        z-index: 10;
+      }
+      &-room {
+        width: 100%;
+        position: absolute;
+        box-sizing: border-box;
+        background: #ffffff;
+        border: 1px solid $dark-50;
+        border-top: none;
+        border-radius: 0px 0px 4px 4px;
+        box-shadow: 0px 10px 20px $dark-05;
+        padding: 6px;
+        padding-left: 14px;
+        padding-bottom: 8px;
+        z-index: 10;
+      }
     }
   }
   &__item {
@@ -92,7 +108,7 @@
 
     &_margin {
       margin-top: 6px;
-      margin-bottom: 8px;
+      margin-bottom: 7px;
     }
     &_name {
       @extend %h3-font;
@@ -122,8 +138,8 @@
     }
     &-score {
       box-sizing: border-box;
-      margin-left: 10px * 100%/ 92px;
-      margin-right: 10px * 100%/ 92px;
+      margin-left: 11px * 100%/ 92px;
+      margin-right: 14px;
     }
   }
   &__buttons {

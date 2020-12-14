@@ -1,7 +1,9 @@
 import "./field.scss";
+let $mask = $(".js-text-field").find(".js-text-field__input_mask"); const Inputmask = require("inputmask");
 
-let $mask = $(".js-text-field").find(".js-text-field__input_mask");
-var Inputmask = require("inputmask");
-
-var im = new Inputmask("99.99.9999", { "placeholder": "ДД/ММ/ГГГГ" });
+var im = new Inputmask({
+  alias: "datetime",
+  inputFormat: "dd.mm.yyyy",
+  placeholder: "ДД.ММ.ГГГГ",
+});
 im.mask($mask);

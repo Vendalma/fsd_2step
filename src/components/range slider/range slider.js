@@ -8,7 +8,7 @@ $(function () {
     keyboard: false,
     type: "double",
     min: 0,
-    max: 16000,
+    max: 15900,
     from: 5000,
     to: 10000,
     postfix: "₽",

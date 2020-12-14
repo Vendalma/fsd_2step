@@ -15,7 +15,7 @@ include /components/expandable-checkbox/expandable-checkbox
 include /components/bullet-list/bullet-list
 include /components/icon-list/icon-list
 include /components/comment/comment
-include /components/logo/logo-gray/logo-gray
+include /components/logo/logo
 
 
 block head
@@ -26,7 +26,7 @@ block head
   body.form-elements
     header.form-elements__header
       .form-elements__logo
-        +logo-gray
+        +logo({colored: false})
     main.form-elements__content-block  
       .form-elements__container
         .form-elements__content.form-elements__content_row.form-elements__content_margin-b-100
@@ -47,7 +47,7 @@ block head
                 +description({
                   "type": "text with state",
                   "text": "text field",
-                  "condition": "hover / focus"
+                  "condition":"hover / focus"
               })
               .form-elements__text-field
                 +textField(settingsTextField.hover)
@@ -162,7 +162,7 @@ block head
                 .form-elements__dropdown
                   +dropdown(settingsDropdown.room)
 
-              .form-elements__block.form-elements__block_column.form-elements__block_size-266.form-elements__block_margin-b-160
+              .form-elements__block.form-elements__block_column.form-elements__block_size-266.form-elements__block_margin-b-159
                 .form-elements__description
                   +description({
                     "type": "text with state",
@@ -173,12 +173,12 @@ block head
                   +dropdown(settingsDropdown.roomActive)
 
               .form-elements__block.form-elements__block_column.form-elements__block_size-266
-                .form-elements__expandable-checkbox_margin-b-20
+                .form-elements__expandable-checkbox_margin
                   +expandableCheckbox(expandableCheckbox.close)
                 +expandableCheckbox(expandableCheckbox.open)
 
           .form-elements__content.form-elements__content_column
-            .form-elements__content.form-elements__content_row.form-elements__content_margin-b-258
+            .form-elements__content.form-elements__content_row.form-elements__content_margin-b-257
 
               .form-elements__content.form-elements__content_width-320.form-elements__content_margin-r-72
                 .form-elements__block.form-elements__block_column
@@ -206,7 +206,7 @@ block head
 
               .form-elements__content.form-elements__content_column.form-elements__content_width-320
                 .form-elements__block.form-elements__block_column
-                  .form-elements__description.form-elements__description_margin-b-15
+                  .form-elements__description.form-elements__description_margin-b-14
                     +description({"text": "bullet list"})
                   .form-elements__bullet-list
                     +bulletList({"descriptionText":"bullet list"})

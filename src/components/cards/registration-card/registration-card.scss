@@ -1,6 +1,6 @@
 .registration-card {
   max-width: 380px;
-  padding: 2.857rem 2.143rem 2.143rem;
+  padding: 40px 30px 30px;
   box-sizing: border-box;
   background: #ffffff;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
@@ -9,7 +9,7 @@
   flex-direction: column;
   &__title {
     @extend %h1-font;
-    margin-bottom: 1.429rem;
+    margin-bottom: 20px;
   }
   &__container {
     display: flex;
@@ -19,31 +19,35 @@
     &_row {
       flex-direction: row;
       align-items: center;
+      justify-content: space-between;
     }
     &_margin-b-23 {
-      margin-bottom: 1.643rem;
+      margin-bottom: 23px;
     }
     &_margin-b-10 {
-      margin-bottom: 0.714rem;
+      margin-bottom: 10px;
     }
     &_margin-b-30 {
-      margin-bottom: 2.143rem;
+      margin-bottom: 30px;
+    }
+    &_width-220 {
+      max-width: 220px;
+      width: 100%;
     }
   }
   &__text-field {
-    margin-bottom: 0.714rem;
+    margin-bottom: 10px;
     &_margin-b-8 {
-      margin-bottom: 0.571rem;
+      margin-bottom: 8px;
     }
   }
   &__text {
     @extend %body-font;
     color: #000000;
-    line-height: 18px;
-    margin-right: 2.5rem;
+    line-height: 1.286rem;
   }
   &__description {
-    margin-bottom: 0.357rem;
+    margin-bottom: 5px;
   }
   &__button {
     &_long {
@@ -53,6 +57,6 @@
   }
   &__toggle {
     display: flex;
-    margin-bottom: 1.643rem;
+    margin-bottom: 24px;
   }
 }

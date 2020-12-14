@@ -6,7 +6,7 @@
   &__name {
     @extend %h3-font;
     padding-top: 14.8px;
-    padding-bottom: 14.8px;
+    padding-bottom: 16px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -15,8 +15,8 @@
     @extend %mat-icons;
     color: $dark-50;
     position: absolute;
-    top: 13px;
-    right: 11px;
+    top: 11px;
+    right: 10px;
     &_open {
       transform: rotate(180deg);
     }

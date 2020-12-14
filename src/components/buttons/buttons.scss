@@ -22,7 +22,7 @@
     justify-content: center;
     align-items: center;
     &_padding-lg {
-      padding: 1.23em 1.6em;
+      padding: 14.75px 19.2px;
     }
     &_padding-m {
       padding: 0.75em 1.7em;
@@ -40,7 +40,7 @@
     align-items: center;
     color: $color-one;
     &_padding-lg {
-      padding: 1.07em 1.43em;
+      padding: 12.83px 17.15px;
     }
     &_padding-m {
       padding: 1em 2em;
@@ -71,7 +71,7 @@
     @extend %primary-grad;
     border: none;
     color: #ffffff;
-    padding: 1.23em 1.5em;
+    padding: 14.75px 18px;
     position: relative;
     box-sizing: border-box;
     flex-grow: 1;

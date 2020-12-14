@@ -51,7 +51,12 @@ class Dropdown {
   }
   openContainer() {
     this.select_list.classList.toggle('dropdown__select-list_default');
-    this.select_list.classList.toggle('dropdown__select-list_open');
+    if (!this.checkTypeDropdown()) {
+      this.select_list.classList.toggle('dropdown__select-list_open-room');
+    } else {
+      this.select_list.classList.toggle('dropdown__select-list_open-guests');
+    }
+
 
     this.select_container.classList.toggle(
       'dropdown__select-container_default'

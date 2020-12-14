@@ -1,8 +1,8 @@
 mixin description({type='default',text, condition})
   if type == 'default'
-    .description&attributes(attributes)
+    .description
       h3.description__text #{text}
   else if type == 'text with state'
-    .description&attributes(attributes)
+    .description
       h3.description__text #{text}
-      .description__condition #{condition}
+      span.description__condition #{condition}
