@@ -1,8 +1,8 @@
-extends /layout/page-head/page-head
-include /layout/header/header
-include /layout/footer/footer
-include /layout/footer-small/footer-small
-include /layout/cards/registration-card/registration-card
+extends /components/page-head/page-head
+include /components/header/header
+include /components/footer/footer
+include /components/footer-small/footer-small
+include /components/registration-card/registration-card
 
 block head
   title Registration page
@@ -12,6 +12,6 @@ block head
       .registration-page__slider_wrapper
         .registration-page__slider_item.registration-page__slider_item-one
         .registration-page__slider_item.registration-page__slider_item-two.registration-page__slider_active
-        +registration-card.registration-page__card
+        -//+registration-card.registration-page__card
     +footer.registration-page__footer
     +footer-small.registration-page__footer-small

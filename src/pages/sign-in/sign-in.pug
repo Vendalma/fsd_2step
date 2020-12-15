@@ -1,8 +1,8 @@
-extends /layout/page-head/page-head
-include /layout/header/header
-include /layout/footer/footer
-include /layout/footer-small/footer-small
-include /layout/cards/sign-in-card/sign-in-card
+extends /components/page-head/page-head
+include /components/header/header
+include /components/footer/footer
+include /components/footer-small/footer-small
+include /components/sign-in-card/sign-in-card
 
 block head
   title Sign in page
@@ -12,6 +12,6 @@ block head
       .sign-in__slider_wrapper
         .sign-in__slider_item.sign-in__slider_item-one
         .sign-in__slider_item.sign-in__slider_item-two.sign-in__slider_active
-        +sign-in-card.sign-in__card
-    +footer.sign-in__footer
-    +footer-small.sign-in__footer-small
+        -//+sign-in-card.sign-in__card
+    -//+footer.sign-in__footer
+    -//+footer-small.sign-in__footer-small

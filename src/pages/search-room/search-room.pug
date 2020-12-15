@@ -1,15 +1,15 @@
-extends /layout/page-head/page-head
-include /layout/header/header
+extends /components/page-head/page-head
+include /components/header/header
 include /components/description/description
 include /components/dropdown/dropdown
 include /components/dropdown-date/dropdown-date
 include /components/range slider/range slider
 include /components/checkbox/checkbox
 include /components/expandable-checkbox/expandable-checkbox
-include /layout/cards/room-card/room-card
+include /components/room-card/room-card
 include /components/pagination/pagination
-include /layout/footer/footer
-include /layout/footer-small/footer-small
+include /components/footer/footer
+include /components/footer-small/footer-small
 
 block head
   title Search room
@@ -62,5 +62,5 @@ block head
           +room-card('standart','444', '5 000₽',3 ,'15', room11).rooms__cards-block_item
           +room-card('standart','352', '5 000₽',3 ,'55', room12).rooms__cards-block_item
         +pagination.rooms__pagination
-    +footer.search-room__footer
+    -//+footer.search-room__footer
     +footer-small.search-room__footer-small

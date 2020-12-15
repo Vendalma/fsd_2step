@@ -1,8 +1,8 @@
-extends /layout/page-head/page-head
-include /layout/header/header
-include /layout/footer/footer
-include /layout/footer-small/footer-small
-include /layout/cards/calc-card/calc-card
+extends /components/page-head/page-head
+include /components/header/header
+include /components/footer/footer
+include /components/footer-small/footer-small
+include /components/calc-card/calc-card
 include /components/icon-list/icon-list
 include /components/comment/comment
 include /components/bullet-list/bullet-list
@@ -48,6 +48,6 @@ block head
             h2.container__title Отмена
             .container__text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
       .container__wrapper.container__wrapper_s-380
-        +calc-card('888','9 990',true)
-  +footer.room-details__footer
+        -//+calc-card('888','9 990',true)
+  -//+footer.room-details__footer
   +footer-small.room-details__footer-small

@@ -1,8 +1,8 @@
 import "@/main.scss";
-import "@layout/cards/search-card/search-card";
-import "@layout/footer-small/footer-small";
-import "@layout/footer/footer";
-import "@layout/header/header";
+import "@components/footer-small/footer-small";
+import "@components/footer/footer";
+import "@components/header/header";
+import "@components/search-card/search-card";
 import "./landing.scss";
 
 
