@@ -1,38 +1,98 @@
 {
   "room1": {
-    "imgs": ["room1.png", "room1.png", "room1.png", "room1.png"]
+    "imgs": [
+      "room1.jpg",
+      "room1.jpg",
+      "room1.jpg",
+      "room1.jpg"
+    ]
   },
   "room2": {
-    "imgs": ["room2.png", "room2.png", "room2.png", "room2.png"]
+    "imgs": [
+      "room2.jpg",
+      "room2.jpg",
+      "room2.jpg",
+      "room2.jpg"
+    ]
   },
   "room3": {
-    "imgs": ["room3.png", "room3.png", "room3.png", "room3.png"]
+    "imgs": [
+      "room3.jpg",
+      "room3.jpg",
+      "room3.jpg",
+      "room3.jpg"
+    ]
   },
   "room4": {
-    "imgs": ["room4.png", "room4.png", "room4.png", "room4.png"]
+    "imgs": [
+      "room4.jpg",
+      "room4.jpg",
+      "room4.jpg",
+      "room4.jpg"
+    ]
   },
   "room5": {
-    "imgs": ["room5.png", "room5.png", "room5.png", "room5.png"]
+    "imgs": [
+      "room5.jpg",
+      "room5.jpg",
+      "room5.jpg",
+      "room5.jpg"
+    ]
   },
   "room6": {
-    "imgs": ["room6.png", "room6.png", "room6.png", "room6.png"]
+    "imgs": [
+      "room6.jpg",
+      "room6.jpg",
+      "room6.jpg",
+      "room6.jpg"
+    ]
   },
   "room7": {
-    "imgs": ["room7.png", "room7.png", "room7.png", "room7.png"]
+    "imgs": [
+      "room7.jpg",
+      "room7.jpg",
+      "room7.jpg",
+      "room7.jpg"
+    ]
   },
   "room8": {
-    "imgs": ["room8.png", "room8.png", "room8.png", "room8.png"]
+    "imgs": [
+      "room8.jpg",
+      "room8.jpg",
+      "room8.jpg",
+      "room8.jpg"
+    ]
   },
   "room9": {
-    "imgs": ["room9.png", "room9.png", "room9.png", "room9.png"]
+    "imgs": [
+      "room9.jpg",
+      "room9.jpg",
+      "room9.jpg",
+      "room9.jpg"
+    ]
   },
   "room10": {
-    "imgs": ["room10.png", "room10.png", "room10.png", "room10.png"]
+    "imgs": [
+      "room10.jpg",
+      "room10.jpg",
+      "room10.jpg",
+      "room10.jpg"
+    ]
   },
   "room11": {
-    "imgs": ["room11.png", "room11.png", "room11.png", "room11.png"]
+    "imgs": [
+      "room11.jpg",
+      "room11.jpg",
+      "room11.jpg",
+      "room11.jpg"
+    ]
   },
   "room12": {
-    "imgs": ["room12.png", "room12.png", "room12.png", "room12.png"]
+    "imgs": [
+      "room12.jpg",
+      "room12.jpg",
+      "room12.jpg",
+      "room12.jpg"
+    ]
   }
 }
