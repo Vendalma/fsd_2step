@@ -1,9 +1,7 @@
 import "@components/rate button/rate button";
 import "lightslider";
-import "lightslider/dist/js/lightslider";
-import "../../library/light slider/light-slider.scss";
+import "lightslider/dist/css/lightslider.min.css";
 import "./room-card.scss";
-
 
 let roomSlider = document.querySelectorAll(".room-card__slider");
 

@@ -5,10 +5,10 @@
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-  padding: 2.7857rem 1.5rem 2.1429rem 2.0714rem;
+  padding: 39px 21px 30px 30px;
   display: flex;
   &__container {
-    padding-right: 9px;
+    padding-right: 8px;
     display: flex;
     &_row {
       flex-direction: row;
@@ -19,13 +19,13 @@
       flex-direction: column;
     }
     &_margin-b-21 {
-      margin-bottom: 1.5rem;
+      margin-bottom: 21px;
     }
     &_margin-b-18 {
-      margin-bottom: 1.2857rem;
+      margin-bottom: 18px;
     }
-    &_margin-b-30 {
-      margin-bottom: 2.1429rem;
+    &_margin-b-31 {
+      margin-bottom: 31px;
     }
     &_padding-0 {
       padding: 0px;
@@ -53,7 +53,7 @@
     }
   }
   &__description {
-    margin-bottom: 0.2143rem;
+    margin-bottom: 5px;
   }
   &__group {
     display: flex;
@@ -67,8 +67,8 @@
       max-width: 250px;
     }
     &_margin {
-      margin-top: 0.7143rem;
-      margin-bottom: 1.0714rem;
+      margin-top: 11px;
+      margin-bottom: 14px;
     }
   }
   &__text {
@@ -90,26 +90,27 @@
       position: relative;
       z-index: 1;
       background: #fff;
-      padding-right: 0.3571rem;
+      padding-right: 5.7px;
     }
     &_sum {
       position: relative;
       z-index: 1;
       background: #fff;
-      padding-left: 0.3571rem;
+      text-align: right;
     }
     &_line {
       width: 100%;
+      max-width: 182px;
       height: 1px;
       border-top: 1px dashed $dark-25;
       position: absolute;
-      left: 0;
-      bottom: 5px;
+      left: 65px;
+      bottom: 3px;
     }
   }
   &__circle-item {
     height: min-content;
-    padding: 0.1571rem 0.5286rem;
+    padding: 2.5px 7.5px;
     @extend %body-font;
     font-weight: 700;
     color: $dark-25;

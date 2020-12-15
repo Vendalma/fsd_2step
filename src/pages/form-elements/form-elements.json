@@ -105,20 +105,24 @@
   },
   "buttonSettings": {
     "one": {
-      "theme": "bg-primary-grad button_theme-bg-primary-grad_padding-lg",
+      "theme": "bg-primary-grad",
+      "paddingSize": "lg",
       "text": "click me"
     },
     "two": {
-      "theme": "bg-primary-grad button_theme-bg-primary-grad_padding-lg",
+      "theme": "bg-primary-grad",
+      "paddingSize": "lg",
       "text": "click me",
       "hoverTheme": true
     },
     "three": {
-      "theme": "border-primary-grad button_theme-border-primary-grad_padding-lg",
+      "theme": "border-primary-grad",
+      "paddingSize": "lg",
       "text": "click me"
     },
     "four": {
-      "theme": "border-primary-grad button_theme-border-primary-grad_padding-lg",
+      "theme": "border-primary-grad",
+      "paddingSize": "lg",
       "text": "click me",
       "hoverTheme": true
     },

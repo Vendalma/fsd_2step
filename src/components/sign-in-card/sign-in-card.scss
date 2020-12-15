@@ -1,5 +1,5 @@
 .sign-in-card {
-  padding: 2.857rem 2.143rem 2.143rem;
+  padding: 40px 30px 30px;
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
@@ -21,11 +21,11 @@
       align-items: center;
     }
     &_margin-b-30 {
-      margin-bottom: 2.143rem;
+      margin-bottom: 30px;
     }
   }
   &__text-field {
-    margin-bottom: 0.714rem;
+    margin-bottom: 10px;
   }
   &__text {
     @extend %body-font;
@@ -36,7 +36,7 @@
     &_long {
       display: flex;
       width: 100%;
-      margin-top: 0.714rem;
+      margin-top: 11px;
     }
   }
 }

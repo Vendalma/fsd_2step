@@ -15,7 +15,10 @@ mixin registration-card
           +textField({"type":'text', "placeholder":'Фамилия'})
       .registration-card__container.registration-card__container_row.registration-card__container_margin-b-23.registration-card__container_width-220
         .registration-card__radio
-          +radio({"name":'gender', "text":'Мужчина', "margin": true, "checked": true})
+          +radio({"name":'gender', 
+            "text":'Мужчина', 
+            "margin": true, 
+            "checked": true})
         .registration-card__radio  
           +radio({"name":'gender', "text":'Женщина'})
       .registration-card__container.registration-card__container_column.registration-card__container_margin-b-10
@@ -34,10 +37,15 @@ mixin registration-card
         .registration-card__toggle
           +toggle({"text":'Получать спецпредложения'})
         .registration-card__button_long
-          +button({"theme":'long',"text":'перейти к оплате',"type": 'submit'})
+          +button({"theme":'long', 
+            "text":'перейти к оплате',
+            "type": 'submit'})
 
     .registration-card__container.registration-card__container_row
       .registration-card__text Уже есть аккаунт на Toxin
       .registration-card__button
-        +button({"theme":'border-primary-grad button_theme-border-primary-grad_padding-m',
-          "text":'войти'})
+        +button({isLink: true,
+        "theme":'border-primary-grad',
+        'paddingSize': 'm',
+        "text":'войти',
+        href: './sign-in.html'})

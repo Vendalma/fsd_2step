@@ -17,5 +17,8 @@ mixin sign-in-card
     .sign-in-card__container.sign-in-card__container_row
       .sign-in-card__text Нет аккаунта на Toxin?
       .sign-in-card__button
-        +button({"theme":'border-primary-grad button_theme-border-primary-grad_padding-lg',
-        "text":'создать'})
+        +button({isLink: true,
+          "theme":'border-primary-grad',
+          "paddingSize": 'lg',
+          "text":'создать',
+          href :'./registration.html'})
