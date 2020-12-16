@@ -5,16 +5,18 @@ include /components/footer-small/footer-small
 include /components/search-card/search-card
 
 block head
-  title Landing page
-  .landing-page
-    -//+header.landing-page__header
-    main.landing-page__content
-      .landing-page__slider-wrapper
-        .landing-page__slider_item.landing-page__slider_item-one
-        .landing-page__slider_item.landing-page__slider_item-two
-        .landing-page__slider_item.landing-page__slider_item-three.landing-page__slider_active
-        +search-card(true).landing-page__card 
-        .landing-page__text Лучшие номера для вашей работы, отдыха и просто вдохновения
-    +footer.landing-page__footer
-    +footer-small.landing-page__footer-small
+  title Landing
+  body.landing
+    header.landing__header
+      +header({userName: false})
+    main.landing__content
+      .landing__slider-wrapper
+        .landing__slider_item.landing__slider_item-one
+        .landing__slider_item.landing__slider_item-two
+        .landing__slider_item.landing__slider_item-three.landing__slider_active
+        .landing__card 
+          +search-card
+        .landing__text Лучшие номера для вашей работы, отдыха и просто вдохновения
+    +footer.landing__footer
+    +footer-small.landing__footer-small
 

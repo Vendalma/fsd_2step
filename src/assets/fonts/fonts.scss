@@ -1,35 +1,32 @@
 @font-face {
   font-family: 'Montserrat';
-  src: url('./assets/fonts/montserrat/montserrat-bold.woff2') format('woff2'),
-    url('./assets/fonts/montserrat/montserrat-bold.woff') format('woff');
+  src: url('./montserrat/montserrat-bold.woff2') format('woff2'),
+    url('./montserrat/montserrat-bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Montserrat';
-  src: url('./assets/fonts/montserrat/montserrat-regular.woff2') format('woff2'),
-    url('./assets/fonts/montserrat/montserrat-regular.woff') format('woff');
+  src: url('./montserrat/montserrat-regular.woff2') format('woff2'),
+    url('./montserrat/montserrat-regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Material Icons';
-  src: url('./assets/fonts/material-icons/iconfont/materialIcons-regular.woff2')
+  src: url('./material-icons/iconfont/materialIcons-regular.woff2')
       format('woff2'),
-    url('./assets/fonts/material-icons/iconfont/materialIcons-regular.woff')
-      format('woff');
+    url('./material-icons/iconfont/materialIcons-regular.woff') format('woff');
   font-style: normal;
   font-weight: 400;
 }
 
 @font-face {
   font-family: 'Font Awesome';
-  src: url('./assets/fonts/font-awesome/fonts/fontawesome-webfont.woff2')
-      format('woff2'),
-    url('./assets/fonts/font-awesome/fonts/fontawesome-webfont.woff')
-      format('woff');
+  src: url('./font-awesome/fonts/fontawesome-webfont.woff2') format('woff2'),
+    url('./font-awesome/fonts/fontawesome-webfont.woff') format('woff');
   font-style: normal;
   font-weight: 400;
 }

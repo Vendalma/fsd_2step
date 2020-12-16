@@ -84,8 +84,8 @@ module.exports = {
         test: /\.(woff|woff2)$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]',
-          outputPath: `${PATHS.assets}fonts`,
+          name: `[name].[ext]`,
+          outputPath: `assets/fonts`,
           publicPath: `../fonts`,
         },
       },
@@ -95,7 +95,6 @@ module.exports = {
         options: {
           name: '[name].[ext]',
           outputPath: `${PATHS.assets}images`,
-          publicPath: `${PATHS.assets}images`,
         },
       },
       {
@@ -126,7 +125,7 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: ''
+              publicPath: '../../'
             }
           },
           {
@@ -144,11 +143,20 @@ module.exports = {
               },
             },
           },
-          'sass-loader',
+          {
+            loader: 'resolve-url-loader',
+          }, {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            }
+          },
+
           {
             loader: 'sass-resources-loader',
             options: {
               resources: `${PATHS.src}/assets/scss/sass-patterns/*.scss`,
+              sourceMap: true
             },
           },
         ],
@@ -170,11 +178,7 @@ module.exports = {
       patterns: [{
         from: `${PATHS.src}/${PATHS.assets}favicon`,
         to: `${PATHS.assets}favicon`
-      },
-      /*{
-        from: `${PATHS.src}/${PATHS.assets}fonts`,
-        to: `${PATHS.assets}fonts`
-      },*/]
+      },]
     })
   ],
 };

@@ -1,4 +1,4 @@
-.landing-page {
+.landing {
   &__slider-wrapper {
     width: 100%;
     position: relative;
@@ -19,7 +19,7 @@
     @include image-animation;
   }
   &__slider_item-one {
-    // @include bgimage("bg-image-1");
+    @include bgimage('bg-image-1');
     width: 100%;
   }
   &__slider_item-two {
