@@ -55,8 +55,9 @@
 }
 @media (max-width: 476px) {
   .landing {
-    &__slider-wrapper {
-      padding-left: 0;
+    &__wrapper {
+      padding-left: 0px;
+      padding-right: 0px;
     }
     &__card {
       margin: 0 auto;

@@ -18,9 +18,6 @@ $this.each(function () {
 
   if ($this.hasClass("js-dropdown-date_range")) {
     let $start = $(".js-dropdown-date__input_range-start");
-    let $end = $(".js-dropdown-date__input_range-end");
-    let start = document.querySelector(".js-dropdown-date__input_range-start");
-
     let picker = $(".js-dropdown-date__input_range-start").datepicker({
       range: true,
       multipleDates: true,
@@ -59,7 +56,7 @@ $this.each(function () {
       .$datepicker.find(".datepicker--buttons");
 
     buttons.append(applyButton);
-    setRange(picker);
+    picker.hasClass('js-dropdown-date__set-date') ? setRange(picker) : null;
   }
 
   /*

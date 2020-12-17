@@ -20,6 +20,7 @@ mixin calc-card({isLuxury = false})
         .calc-card__dropdown-date
           +dropdownDate({"type":'range',
             "active":true,
+            "setDate": true,
             "description1":'прибытие',
             "description2":'выезд'})
       .calc-card__container.calc-card__container_column.calc-card__container_margin-b-18
