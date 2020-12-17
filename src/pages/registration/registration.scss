@@ -1,59 +1,48 @@
-.registration-page {
-  &__slider_wrapper {
+.registration {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  &__content {
     width: 100%;
-    position: relative;
-    padding-top: 19px;
-    padding-bottom: 19px;
-    box-sizing: border-box;
-  }
-  &__slider_item {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    z-index: -1;
-    opacity: 0;
-  }
-  &__slider_active {
+    background-image: url('/assets/images/bg-image-4.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     @include image-animation;
   }
-  &__slider_item-one {
-    // @include bgimage("bg-image-3");
+  &__wrapper {
+    max-width: 1200px;
     width: 100%;
-  }
-  &__slider_item-two {
-    // @include bgimage("bg-image-4");
-    width: 100%;
-    background-position: bottom;
+    margin: 0 auto;
+    padding-top: 19px;
+    padding-bottom: 19px;
   }
   &__card {
+    width: 100%;
     max-width: 380px;
     margin: 0 auto;
+    padding-left: 3px;
   }
-}
-
-/*
-
-<------------ @media 769px ---------->
-
-*/
-@media (min-width: 769px) {
-  .registration-page {
-    &__footer-small {
+  &__footer {
+    margin-top: auto;
+    &_small {
       display: none;
     }
   }
 }
 
-/*
-
-<------------ @media 768px ---------->
-
-*/
 @media (max-width: 768px) {
-  .registration-page {
-    &__footer-small {
-      display: block;
+  .registration {
+    &__card {
+      padding: 0px;
+    }
+    &__footer {
+      &_default {
+        display: none;
+      }
+      &_small {
+        display: block;
+      }
     }
   }
 }

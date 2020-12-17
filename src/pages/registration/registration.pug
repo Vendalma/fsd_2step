@@ -5,13 +5,17 @@ include /components/footer-small/footer-small
 include /components/registration-card/registration-card
 
 block head
-  title Registration page
-  .registration-page
-    -//+header.registration-page__header
-    main.registration-page__content
-      .registration-page__slider_wrapper
-        .registration-page__slider_item.registration-page__slider_item-one
-        .registration-page__slider_item.registration-page__slider_item-two.registration-page__slider_active
-        -//+registration-card.registration-page__card
-    +footer.registration-page__footer
-    +footer-small.registration-page__footer-small
+  title Registration
+  body
+    .registration
+      header.registration__header
+        +header({userName: false})
+      main.registration__content.js-registration__content
+        .registration__wrapper
+          .registration__card
+            +registration-card
+      footer.registration__footer
+        .registration__footer_default
+          +footer
+        .registration__footer_small
+          +footer-small
