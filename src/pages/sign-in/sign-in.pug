@@ -5,13 +5,17 @@ include /components/footer-small/footer-small
 include /components/sign-in-card/sign-in-card
 
 block head
-  title Sign in page
-  .sign-in
-    -//+header.sign-in__header
-    main.sign-in__content
-      .sign-in__slider_wrapper
-        .sign-in__slider_item.sign-in__slider_item-one
-        .sign-in__slider_item.sign-in__slider_item-two.sign-in__slider_active
-        -//+sign-in-card.sign-in__card
-    -//+footer.sign-in__footer
-    -//+footer-small.sign-in__footer-small
+  title Sign in
+  body
+    .sign-in
+      header.sign-in__header
+        +header({userName: false})
+      main.sign-in__content.js-sign-in__content
+        .sign-in__wrapper
+          .sign-in__card
+            +sign-in-card
+      footer.sign-in__footer
+        .sign-in__footer_default
+          +footer
+        .sign-in__footer_small
+          +footer-small

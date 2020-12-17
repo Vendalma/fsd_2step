@@ -5,28 +5,14 @@ import "@components/header/header";
 import "@components/sign-in-card/sign-in-card";
 import "./sign-in.scss";
 
-
-
-//идея реализации слайдера позаимствована здесь --> http://gnatkovsky.com.ua/plavnaya-smena-fona-s-ispolzovaniem-jquery.html
-
-$(function () {
-  var transTime = 40000;
-  var numBgColors = $(".sign-in__slider_item").length;
-  var bgtrans = setInterval(function () {
-    if (
-      $(".sign-in__slider_active").index() ==
-      $(".sign-in__slider_item").length - 1
-    ) {
-      $(".sign-in__slider_active").removeClass("sign-in__slider_active");
-      $(".sign-in__slider_item").eq(0).addClass("sign-in__slider_active");
-    } else {
-      var curIndex = $(".sign-in__slider_item.sign-in__slider_active").index();
-      $(".sign-in__slider_item.sign-in__slider_active").removeClass(
-        "sign-in__slider_active"
-      );
-      $(".sign-in__slider_item")
-        .eq(curIndex + 1)
-        .addClass("sign-in__slider_active");
-    }
-  }, transTime);
-});
+//change background by --> https://www.youtube.com/watch?v=NTqmimXu1XM
+let signInContent = document.querySelector('.js-sign-in__content');
+let images = [
+  'url("/assets/images/bg-image-1.jpg")',
+  'url("/assets/images/bg-image-4.jpg")',
+]
+function changeBg() {
+  let bg = images[Math.floor(Math.random() * images.length)]
+  signInContent.style.backgroundImage = bg;
+}
+setInterval(changeBg, 30000)
