@@ -1,6 +1,6 @@
 include /components/like-button/like-button
 
-mixin comment({userPhoto,userName,date,likeCount,likeActive,text})
+mixin comment({userPhoto,userName,date,likeCount,likeActive= false,text})
   .comment
     .comment__block-user
       .comment__user-photo

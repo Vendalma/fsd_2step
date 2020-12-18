@@ -99,8 +99,7 @@
       text-align: right;
     }
     &_line {
-      width: 100%;
-      max-width: 182px;
+      width: 182px * 100%/ 380px;
       height: 1px;
       border-top: 1px dashed $dark-25;
       position: absolute;
