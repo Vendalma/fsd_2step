@@ -123,6 +123,7 @@ $this.each(function () {
       },
     });
     addButtons($(".js-dropdown-date__input_filter"));
+    setRange($(".js-dropdown-date__input_filter"))
   }
 
   //фун-ция добавления кнопки 'Применить'

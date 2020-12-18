@@ -14,15 +14,17 @@ import "./search-room.scss";
 
 
 
-let optionsBlock = document.querySelector(".options");
-let blockMenu = document.querySelector(".options__block_menu");
-let blockClose = document.querySelector(".options__block_close");
-let filter = document.querySelector(".filter");
-let rooms = document.querySelector(".rooms");
+let optionsBlock = document.querySelector(".js-search-room__icon");
+let blockMenu = document.querySelector(".js-search-room__icon_menu");
+let blockClose = document.querySelector(".js-search-room__icon_close");
+let filter = document.querySelector('.js-search-room__filter')
+let rooms = document.querySelector('.js-search-room__rooms')
 
-optionsBlock.addEventListener("click", function () {
+optionsBlock.addEventListener("click", openFilter.bind(this));
+
+function openFilter() {
   blockMenu.classList.toggle("options__block_active");
   blockClose.classList.toggle("options__block_active");
   filter.classList.toggle("search-room_active");
   rooms.classList.toggle("search-room_close");
-});
+}

@@ -29,6 +29,15 @@ block head
         .cards__item
           +dropdownDate({"type":'inline'})
         .cards__item
-          +room-card('luxury','888', '9 990₽',5 ,'145', room1)
+          +room-card({isLuxury: true,
+          number:'888',
+          price: '9 990₽',
+          rate:5 ,
+          reviews:'145', 
+          imgs: room1})
         .cards__item
-          +room-card('standart','840', '9 900₽',4 ,'65', room2)
+          +room-card({number:'840',
+          price: '9 900₽',
+          rate: 4 ,
+          reviews:'65',
+          imgs: room2})

@@ -1,98 +1,220 @@
 {
-  "room1": {
-    "imgs": [
-      "room1.jpg",
-      "room1.jpg",
-      "room1.jpg",
-      "room1.jpg"
-    ]
+  "roomCards": [
+    {
+      "isLuxury": true,
+      "number": "888",
+      "price": "9 990₽",
+      "rate": 5,
+      "reviews": "145",
+      "imgs": [
+        "room1.jpg",
+        "room1.jpg",
+        "room1.jpg",
+        "room1.jpg"
+      ]
+    },
+    {
+      "number": "840",
+      "price": "9 900₽",
+      "rate": 4,
+      "reviews": "65",
+      "imgs": [
+        "room2.jpg",
+        "room2.jpg",
+        "room2.jpg",
+        "room2.jpg"
+      ]
+    },
+    {
+      "isLuxury": true,
+      "number": "980",
+      "price": "8 500₽",
+      "rate": 3,
+      "reviews": "35",
+      "imgs": [
+        "room3.jpg",
+        "room3.jpg",
+        "room3.jpg",
+        "room3.jpg"
+      ]
+    },
+    {
+      "number": "856",
+      "price": "7 300₽",
+      "rate": 5,
+      "reviews": "19",
+      "imgs": [
+        "room4.jpg",
+        "room4.jpg",
+        "room4.jpg",
+        "room4.jpg"
+      ]
+    },
+    {
+      "number": "740",
+      "price": "6 000₽",
+      "rate": 4,
+      "reviews": "44",
+      "imgs": [
+        "room5.jpg",
+        "room5.jpg",
+        "room5.jpg",
+        "room5.jpg"
+      ]
+    },
+    {
+      "number": "982",
+      "price": "5 800₽",
+      "rate": 3,
+      "reviews": "56",
+      "imgs": [
+        "room6.jpg",
+        "room6.jpg",
+        "room6.jpg",
+        "room6.jpg"
+      ]
+    },
+    {
+      "number": "678",
+      "price": "5 500₽",
+      "rate": 5,
+      "reviews": "45",
+      "imgs": [
+        "room7.jpg",
+        "room7.jpg",
+        "room7.jpg",
+        "room7.jpg"
+      ]
+    },
+    {
+      "number": "450",
+      "price": "5 300₽",
+      "rate": 4,
+      "reviews": "39",
+      "imgs": [
+        "room8.jpg",
+        "room8.jpg",
+        "room8.jpg",
+        "room8.jpg"
+      ]
+    },
+    {
+      "number": "350",
+      "price": "5 000₽",
+      "rate": 3,
+      "reviews": "77",
+      "imgs": [
+        "room9.jpg",
+        "room9.jpg",
+        "room9.jpg",
+        "room9.jpg"
+      ]
+    },
+    {
+      "number": "666",
+      "price": "5 000₽",
+      "rate": 5,
+      "reviews": "25",
+      "imgs": [
+        "room10.jpg",
+        "room10.jpg",
+        "room10.jpg",
+        "room10.jpg"
+      ]
+    },
+    {
+      "number": "444",
+      "price": "5 000₽",
+      "rate": 3,
+      "reviews": "15",
+      "imgs": [
+        "room11.jpg",
+        "room11.jpg",
+        "room11.jpg",
+        "room11.jpg"
+      ]
+    },
+    {
+      "number": "352",
+      "price": "5 000₽",
+      "rate": 3,
+      "reviews": "55",
+      "imgs": [
+        "room12.jpg",
+        "room12.jpg",
+        "room12.jpg",
+        "room12.jpg"
+      ]
+    }
+  ],
+  "dropdownDate": {
+    "type": "filter",
+    "active": true,
+    "description1": "даты пребывания в отеле"
   },
-  "room2": {
-    "imgs": [
-      "room2.jpg",
-      "room2.jpg",
-      "room2.jpg",
-      "room2.jpg"
-    ]
+  "dropdown": {
+    "guests": {
+      "type": "guests",
+      "score1": 2,
+      "score2": 1,
+      "score3": 1
+    },
+    "room": {
+      "type": "room",
+      "score1": 2,
+      "score2": 2
+    }
   },
-  "room3": {
-    "imgs": [
-      "room3.jpg",
-      "room3.jpg",
-      "room3.jpg",
-      "room3.jpg"
-    ]
+  "checkboxSettings": {
+    "smoking": {
+      "text": "Можно курить"
+    },
+    "pets": {
+      "text": "Можно с питомцами",
+      "checked": true
+    },
+    "guests": {
+      "text": "Можно пригласить гостей (до 10 человек)",
+      "checked": true,
+      "shortText": true
+    }
   },
-  "room4": {
-    "imgs": [
-      "room4.jpg",
-      "room4.jpg",
-      "room4.jpg",
-      "room4.jpg"
-    ]
+  "richCheckboxSettings": {
+    "corridor": {
+      "type": "rich",
+      "head": "Широкий коридор",
+      "text": "Ширина коридоров в номере не менее 91 см.",
+      "shortText": true
+    },
+    "assistant": {
+      "type": "rich",
+      "head": "Помощник для инвалидов",
+      "text": "На 1 этаже вас встретит специалист и проводит до номера."
+    }
   },
-  "room5": {
-    "imgs": [
-      "room5.jpg",
-      "room5.jpg",
-      "room5.jpg",
-      "room5.jpg"
-    ]
-  },
-  "room6": {
-    "imgs": [
-      "room6.jpg",
-      "room6.jpg",
-      "room6.jpg",
-      "room6.jpg"
-    ]
-  },
-  "room7": {
-    "imgs": [
-      "room7.jpg",
-      "room7.jpg",
-      "room7.jpg",
-      "room7.jpg"
-    ]
-  },
-  "room8": {
-    "imgs": [
-      "room8.jpg",
-      "room8.jpg",
-      "room8.jpg",
-      "room8.jpg"
-    ]
-  },
-  "room9": {
-    "imgs": [
-      "room9.jpg",
-      "room9.jpg",
-      "room9.jpg",
-      "room9.jpg"
-    ]
-  },
-  "room10": {
-    "imgs": [
-      "room10.jpg",
-      "room10.jpg",
-      "room10.jpg",
-      "room10.jpg"
-    ]
-  },
-  "room11": {
-    "imgs": [
-      "room11.jpg",
-      "room11.jpg",
-      "room11.jpg",
-      "room11.jpg"
-    ]
-  },
-  "room12": {
-    "imgs": [
-      "room12.jpg",
-      "room12.jpg",
-      "room12.jpg",
-      "room12.jpg"
+  "expandableCheckbox": {
+    "text": "дополнительные удобства",
+    "items": [
+      {
+        "text": "Завтрак"
+      },
+      {
+        "text": "Письменный стол",
+        "checked": true
+      },
+      {
+        "text": "Стул для кормления",
+        "checked": true
+      },
+      {
+        "text": "Кроватка"
+      },
+      {
+        "text": "Телевизор"
+      },
+      {
+        "text": "Шампунь"
+      }
     ]
   }
 }
