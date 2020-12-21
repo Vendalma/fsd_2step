@@ -3,7 +3,6 @@ const merge = require('webpack-merge');
 const baseWebpackConfig = require('./webpack.base.config');
 
 const devWebpackConfig = merge(baseWebpackConfig, {
-  mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
     contentBase: baseWebpackConfig.externals.paths.dist,
