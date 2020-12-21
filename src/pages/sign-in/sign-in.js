@@ -8,8 +8,8 @@ import "./sign-in.scss";
 //change background by --> https://www.youtube.com/watch?v=NTqmimXu1XM
 let signInContent = document.querySelector('.js-sign-in__content');
 let images = [
-  'url("/assets/images/bg-image-1.jpg")',
-  'url("/assets/images/bg-image-4.jpg")',
+  'url("assets/images/bg-image-1.jpg")',
+  'url("assets/images/bg-image-4.jpg")',
 ]
 function changeBg() {
   let bg = images[Math.floor(Math.random() * images.length)]
