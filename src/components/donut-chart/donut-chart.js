@@ -1,1 +1,0 @@
-import "./donut-chart.scss";
