@@ -13,7 +13,7 @@ include /components/footer-small/footer-small
 
 block head
   title Search room
-  - const{roomCards,dropdownDate,dropdown,richCheckboxSettings,expandableCheckbox,checkboxSettings} =  require('./search-room.json')
+  - const{roomCards,dropdownDate,dropdown,richCheckboxSettings,expandableCheckbox,checkboxSettings} =  require("./search-room.json")
   body
     .search-room
       header.search-room__header
@@ -30,16 +30,16 @@ block head
               +dropdownDate(dropdownDate)
           .search-room__block.search-room__block_margin-b-31
             .search-room__description
-              +description({text:'гости'})
+              +description({text:"гости"})
             .search-room__dropdown
               +dropdown(dropdown.guests)
           .search-room__block.search-room__block_margin-b-31
             .search-room__range-slider
-              +rangeSlider({text:'диапазон цены'})
+              +rangeSlider({text:"диапазон цены"})
             p.search-room__range-slider_text Стоимость за сутки пребывания в номере
           .search-room__block.search-room__block_margin-b-31
             .search-room__description.search-room__description_margin-b-15
-              +description({text:'правила дома'})
+              +description({text:"правила дома"})
             .search-room__checkbox-block
               .search-room__checkbox
                 +checkbox(checkboxSettings.smoking)
@@ -49,7 +49,7 @@ block head
                 +checkbox(checkboxSettings.guests)
           .search-room__block.search-room__block_margin-b-31
             .search-room__description.search-room__description_margin-b-17
-              +description({text:'доступность'})
+              +description({text:"доступность"})
             .search-room__rich-checkbox-block
               .search-room__rich-checkbox.search-room__rich-checkbox_margin
                 +checkbox(richCheckboxSettings.corridor)
@@ -57,7 +57,7 @@ block head
                 +checkbox(richCheckboxSettings.assistant)
           .search-room__block.search-room__block_margin-b-16
             .search-room__description
-              +description({text:'удобства номера'})
+              +description({text:"удобства номера"})
             .search-room__dropdown-room
               +dropdown(dropdown.room)
           .search-room__block

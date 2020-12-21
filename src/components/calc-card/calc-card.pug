@@ -18,18 +18,18 @@ mixin calc-card({isLuxury = false})
           span.calc-card__price_text  в сутки
       .calc-card__container.calc-card__container_margin-b-21
         .calc-card__dropdown-date
-          +dropdownDate({"type":'range',
-            "active":true,
-            "setDate": true,
-            "description1":'прибытие',
-            "description2":'выезд'})
+          +dropdownDate({type:"range",
+            active:true,
+            setDate: true,
+            description1:"прибытие",
+            description2:"выезд"})
       .calc-card__container.calc-card__container_column.calc-card__container_margin-b-18
         .calc-card__description
-          +description({"text":'гости'}).calc-card__description
+          +description({text:"гости"}).calc-card__description
         .calc-card__dropdown
-          +dropdown({"type":'guests',
-            "score1" :2,
-            "score2": 1})
+          +dropdown({type:"guests",
+            score1 :2,
+            score2: 1})
       .calc-card__container.calc-card__container_column.calc-card__container_margin-b-31
         .calc-card__calculating
           .calc-card__group
@@ -52,6 +52,6 @@ mixin calc-card({isLuxury = false})
           span.calc-card__total_sum 38 081₽
       .calc-card__container
         .calc-card__button
-          +button({"theme":'long',
-            "text":'Забронировать',
-            "type": "submit"})
+          +button({theme:"long",
+            text:"Забронировать",
+            type: "submit"})

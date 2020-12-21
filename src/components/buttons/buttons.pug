@@ -1,8 +1,8 @@
-mixin button({theme,paddingSize,text,hoverTheme=false,type ='button',isLink=false, href})
+mixin button({theme,paddingSize,text,hoverTheme=false,type ="button",isLink=false, href})
   if !isLink
     button.button(class =`button_theme-${theme}` 
       class = `button_theme-${theme}_padding-${paddingSize}`
-      class= hoverTheme? `button_hover` : '' 
+      class= hoverTheme? "button_hover" : ""
       type=type)&attributes(attributes) #{text}
   else if isLink
     .button__link-container

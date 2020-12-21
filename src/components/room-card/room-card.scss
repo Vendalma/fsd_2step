@@ -2,9 +2,9 @@
   max-width: 270px;
   @extend %shadow-bg-secondary;
   border-radius: 4px;
-  cursor: pointer;
   &__container {
     background-color: #ffffff;
+    border-radius: 4px;
   }
   &__image {
     width: 100%;
@@ -39,6 +39,7 @@
     line-height: 1.125rem;
     font-weight: 700;
     color: $dark-50;
+    padding-bottom: 5px;
     &_info {
       font-weight: 400;
     }
@@ -71,7 +72,7 @@
   margin-bottom: 20px;
 }
 .lSSlideOuter .lSPager.lSpg {
-  margin-right: 15px;
+  margin-right: 14px;
   margin-bottom: 12px;
   padding: 0;
   position: absolute;

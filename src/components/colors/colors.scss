@@ -5,12 +5,11 @@
   justify-content: space-between;
   min-width: 280px;
   margin-bottom: 20px;
-  box-sizing: border-box;
-}
-.rectangle {
-  min-width: 70px;
-  min-height: 70px;
-  border-radius: 6px;
+  &__rectangle {
+    min-width: 70px;
+    min-height: 70px;
+    border-radius: 6px;
+  }
   &_dark-100 {
     background-color: $dark-100;
   }
@@ -32,14 +31,14 @@
   &_color-two {
     background-color: $color-two;
   }
-}
-.info {
-  min-width: 170px;
-  @extend %h1-font;
-  font-size: 1.357rem;
-  line-height: 2rem;
-  display: flex;
-  flex-direction: column;
+  &__info {
+    min-width: 170px;
+    @extend %h1-font;
+    font-size: 1.357rem;
+    line-height: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
   &__code {
     font-weight: normal;
   }

@@ -1,7 +1,7 @@
 mixin colors (arr = {color,name, code})
   for color in arr
     .color-block
-      .rectangle.color-block__rectangle(class=`rectangle_${color.color}`)
-      .info.color-block__info
-        span.info__name #{color.name}
-        span.info__code #{color.code}
+      .color-block__rectangle(class=`color-block_${color.color}`)
+      .color-block__info
+        span.color-block__name #{color.name}
+        span.color-block__code #{color.code}

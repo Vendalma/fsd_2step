@@ -4,7 +4,7 @@ include /components/copyright-bar/copyright-bar
 include /components/field/field
 
 mixin footer
-  - const {navigationLinks, aboutUsLinks,supportServiceLinks} = require('@components/footer/footer.json')
+  - const {navigationLinks, aboutUsLinks,supportServiceLinks} = require("@components/footer/footer.json")
   .footer
     .footer__container
       .footer__content-block_primary-shadow
@@ -39,7 +39,7 @@ mixin footer
             .footer__header.footer__header_margin-b-18 Подписка
             .footer__text.footer__text_margin Получайте специальные предложения и новости сервиса
             .footer__email-field
-              +textField({"type": 'email', "placeholder": "Email", "materialIcon": true})
+              +textField({type: "email", placeholder: "Email", materialIcon: true})
 
       .footer__content-block_secondary-shadow
         .footer__content-block_copyright-wrapper

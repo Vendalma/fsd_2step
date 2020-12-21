@@ -1,13 +1,13 @@
-mixin checkbox({type='default',checked=false, shortText = false, text, head})
-  if type == 'rich'
+mixin checkbox({type="default",checked=false, shortText = false, text, head})
+  if type == "rich"
     .checkbox.checkbox_rich
-      label(class='checkbox__label checkbox__label_rich') 
-        input(type="checkbox" class='checkbox__input' checked=checked)
+      label(class="checkbox__label checkbox__label_rich") 
+        input(type="checkbox" class="checkbox__input" checked=checked)
         .checkbox__mark
         .checkbox__label_rich-header #{head}
-        .checkbox__label_rich-text(class=shortText? 'checkbox__short-text_width-200': '') #{text}
-  else if type == 'default'
+        .checkbox__label_rich-text(class=shortText? "checkbox__short-text_width-200": "") #{text}
+  else if type == "default"
     .checkbox
-      label.checkbox__label(class=shortText? 'checkbox__short-text_width-230': '') #{text}
-        input(type = 'checkbox' class='checkbox__input' checked=checked)
+      label.checkbox__label(class=shortText? "checkbox__short-text_width-230": "") #{text}
+        input(type = "checkbox" class="checkbox__input" checked=checked)
         .checkbox__mark

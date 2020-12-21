@@ -16,7 +16,6 @@
       margin-right: 20px;
     }
     &_wrapper {
-      box-sizing: border-box;
       display: flex;
       flex-direction: column;
       width: 100%;
@@ -39,7 +38,6 @@
   &__input {
     width: 100%;
     @extend %body-font;
-    box-sizing: border-box;
     padding: 9.2px 44px 9.2px 15px;
     outline: none;
     background: #ffffff;
@@ -104,7 +102,6 @@
 
 .datepicker--cell {
   border-radius: 4px;
-  box-sizing: border-box;
   cursor: pointer;
   display: flex;
   position: relative;
@@ -282,7 +279,6 @@
   border: 1px solid $dark-25;
   box-shadow: 0 10px 20px $dark-05;
   border-radius: 4px;
-  box-sizing: border-box;
   width: 320px;
   padding: 16px 19px 19px;
   position: absolute;
@@ -336,7 +332,6 @@
 }
 
 .datepicker--content {
-  box-sizing: border-box;
   padding-top: 7px;
   padding-bottom: 21px;
 }
@@ -414,13 +409,10 @@
 }
 
 .datepicker--button {
-  color: $dark-50;
   @extend %h3-font;
   cursor: pointer;
   border-radius: 4px;
   flex: 0;
   display: inline-flex;
-  &-colored {
-    color: $color-one;
-  }
+  color: $color-one;
 }

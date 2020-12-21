@@ -4,11 +4,11 @@ mixin comment({userPhoto,userName,date,likeCount,likeActive= false,text})
   .comment
     .comment__block-user
       .comment__user-photo
-        img(src=require(`@images/${userPhoto}`).default, alt='user photo' class='comment__photo')
+        img.comment__photo(src=require(`@images/${userPhoto}`).default, alt="user photo")
       .comment__user-info
         span.comment__user-name #{userName}
         span.comment__date #{date}
     .comment__block
       .comment__like-button
-        +likeButton({'count':likeCount,'active':likeActive})
+        +likeButton({count:likeCount,active:likeActive})
       .comment__text #{text}

@@ -10,42 +10,41 @@ mixin registration-card
     form.registration-card__form
       .registration-card__container.registration-card__container_column
         .registration-card__text-field
-          +textField({"type":'text', "placeholder":'Имя'})
+          +textField({type:"text", placeholder:"Имя"})
         .registration-card__text-field
-          +textField({"type":'text', "placeholder":'Фамилия'})
+          +textField({type:"text", placeholder:"Фамилия"})
       .registration-card__container.registration-card__container_row.registration-card__container_margin-b-23.registration-card__container_width-220
         .registration-card__radio
-          +radio({"name":'gender', 
-            "text":'Мужчина', 
-            "margin": true, 
-            "checked": true})
+          +radio({name:"gender", 
+            text:"Мужчина", 
+            checked: true})
         .registration-card__radio  
-          +radio({"name":'gender', "text":'Женщина'})
+          +radio({name:"gender", text:"Женщина"})
       .registration-card__container.registration-card__container_column.registration-card__container_margin-b-10
         .registration-card__description
-          +description({"text":'дата рождения'})
+          +description({text:"дата рождения"})
         .registration-card__text-field
-          +textField({"type":'mask',"placeholder": 'ДД.ММ.ГГГГ'})
+          +textField({type:"mask",placeholder: "ДД.ММ.ГГГГ"})
       .registration-card__container.registration-card__container_column
         .registration-card__description
-          +description({"text":'данные для входа в сервис'})
+          +description({text:"данные для входа в сервис"})
         .registration-card__text-field
-          +textField({"type":'email',"placeholder": 'Email'})
+          +textField({type:"email",placeholder: "Email"})
         .registration-card__text-field.registration-card__text-field_margin-b-8
-          +textField({"type":'password',"placeholder": 'Пароль'})
+          +textField({type:"password",placeholder: "Пароль"})
       .registration-card__container.registration-card__container_column.registration-card__container_margin-b-30
         .registration-card__toggle
-          +toggle({"text":'Получать спецпредложения'})
+          +toggle({text:"Получать спецпредложения"})
         .registration-card__button_long
-          +button({"theme":'long', 
-            "text":'перейти к оплате',
-            "type": 'submit'})
+          +button({theme:"long", 
+            text:"перейти к оплате",
+            type: "submit"})
 
     .registration-card__container.registration-card__container_row
       .registration-card__text Уже есть аккаунт на Toxin
       .registration-card__button
         +button({isLink: true,
-        "theme":'border-primary-grad',
-        'paddingSize': 'm',
-        "text":'войти',
-        href: './sign-in.html'})
+        theme:"border-primary-grad",
+        paddingSize: "m",
+        text:"войти",
+        href: "./sign-in.html"})

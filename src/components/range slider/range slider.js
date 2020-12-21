@@ -4,7 +4,7 @@ import "jquery";
 import "./range slider.scss";
 
 $(function () {
-  $(".range").ionRangeSlider({
+  $(".js-range-slider__input").ionRangeSlider({
     keyboard: false,
     type: "double",
     min: 0,

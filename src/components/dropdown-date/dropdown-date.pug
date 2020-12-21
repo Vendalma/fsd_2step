@@ -1,41 +1,41 @@
 include /components/buttons/buttons
 include /components/description/description
 
-mixin dropdownDate({type,active=false,setDate=false,placeholder1='ДД.ММ.ГГГГ',description1,placeholder2 ='ДД.ММ.ГГГГ',description2})
-  if type == 'filter'
-    .dropdown-date(class=active? 'js-dropdown-date_active js-dropdown-date_filter': '')
+mixin dropdownDate({type,active=false,setDate=false,placeholder1="ДД.ММ.ГГГГ",description1,placeholder2 ="ДД.ММ.ГГГГ",description2})
+  if type == "filter"
+    .dropdown-date(class=active? "js-dropdown-date_active js-dropdown-date_filter": "")
       .dropdown-date__block_wrapper
         .dropdown-date__description
-          +description({'type':'default','text' : description1})
+          +description({type:"default",text : description1})
         .dropdown-date__block
-          input(type='text' placeholder=placeholder1  
-          class='dropdown-date__input'
-          class=active? 'js-dropdown-date__input_filter' : '' 
+          input(type="text" placeholder=placeholder1  
+          class="dropdown-date__input"
+          class=active? "js-dropdown-date__input_filter" : "" 
           disabled=!active)
-  else if type == 'inline'
+  else if type == "inline"
     .dropdown-date.js-dropdown-date_active.js-dropdown-date_inline
-  else if type == 'range'
-    .dropdown-date.dropdown-date_margin-s(class=active? 'js-dropdown-date_active js-dropdown-date_range': '')
+  else if type == "range"
+    .dropdown-date.dropdown-date_margin-s(class=active? "js-dropdown-date_active js-dropdown-date_range": "")
       .dropdown-date__container_range.js-dropdown-date__container_range
         .dropdown-date__block_wrapper.dropdown-date__block_margin
           .dropdown-date__description
-            +description({'type':'default','text' : description1})
+            +description({type:"default",text : description1})
           .dropdown-date__block
-          input(type='text' placeholder=placeholder1 
-            class = 'dropdown-date__input'
-            class = 'dropdown-date__input_s-150'
-            class=active? 'js-dropdown-date__input_range-start' : ''
-            class = setDate? 'js-dropdown-date__set-date' : ''
-            class ='dropdown-date__input_range'
+          input(type="text" placeholder=placeholder1 
+            class = "dropdown-date__input"
+            class = "dropdown-date__input_s-150"
+            class=active? "js-dropdown-date__input_range-start" : ""
+            class = setDate? "js-dropdown-date__set-date" : ""
+            class ="dropdown-date__input_range"
             disabled=!active)
         .dropdown-date__block_wrapper
           .dropdown-date__description
-            +description({'type':'default','text' : description2})
+            +description({type:"default",text : description2})
           .dropdown-date__block
-          input(type='text' placeholder=placeholder2 
-            class='dropdown-date__input'
-            class = 'dropdown-date__input_s-150'
-            class=active? 'js-dropdown-date__input_range-end' : ''
-            class ='dropdown-date__input_range'
+          input(type="text" placeholder=placeholder2 
+            class="dropdown-date__input"
+            class = "dropdown-date__input_s-150"
+            class=active? "js-dropdown-date__input_range-end" : ""
+            class ="dropdown-date__input_range"
             disabled=!active)
 

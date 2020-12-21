@@ -9,7 +9,7 @@ include /components/logo/logo
 
 block head
   title Cards
-  - const {room1,room2} = require('./cards.json')
+  - const {room1,room2} = require("./cards.json")
   body
     .cards
       header.cards__header
@@ -23,22 +23,22 @@ block head
             +registration-card
         .cards__container_column.cards__container_margin
           .cards__item
-            +calc-card({"isLuxury":true})
+            +calc-card({isLuxury:true})
           .cards__item
             +sign-in-card
         .cards__container_column
           .cards__item
-            +dropdownDate({"type":'inline'})
+            +dropdownDate({type:"inline"})
           .cards__item
             +room-card({isLuxury: true,
-            number:'888',
-            price: '9 990₽',
+            number:"888",
+            price: "9 990₽",
             rate:5 ,
-            reviews:'145', 
+            reviews:"145", 
             imgs: room1})
           .cards__item
-            +room-card({number:'840',
-            price: '9 900₽',
+            +room-card({number:"840",
+            price: "9 900₽",
             rate: 4 ,
-            reviews:'65',
+            reviews:"65",
             imgs: room2})

@@ -10,22 +10,22 @@ include /components/donut-chart/donut-chart
 
 block head
   title Room details
-  - const {iconLists,comments} =  require('./room-details.json')
+  - const {iconLists,comments} =  require("./room-details.json")
   body
     .room-details
       header.room-details__header
         +header({userName: false})
       main.room-details__content
         .room-details__block
-          .room-details__gallery
-            .room-details__gallery-item
-              img.room-details__image(src=require("@images/bg-image-7.jpg").default alt="")
+          article.room-details__gallery
+            figure.room-details__gallery-item
+              img.room-details__image(src=require("@images/bg-image-7.jpg").default alt="room №888")
             .room-details__block.room-details__block_column.room-details__block_width-459
-              .room-details__gallery-item
-                img.room-details__image.room-details__image_big(src=require("@images/bg-image-5.jpg").default alt="")
-              .room-details__gallery-item
-                img.room-details__image(src=require("@images/bg-image-6.jpg").default alt="")
-        .room-details__block.room-details__block_width-1200
+              figure.room-details__gallery-item
+                img.room-details__image.room-details__image_big(src=require("@images/bg-image-5.jpg").default alt="room №888")
+              figure.room-details__gallery-item
+                img.room-details__image(src=require("@images/bg-image-6.jpg").default alt="room №888")
+        article.room-details__block.room-details__block_width-1200
           .room-details__block.room-details__block_column.room-details__block_width-712
             .room-details__block.room-details__block_row.room-details__block_margin-b-15
               section.room-details__container.room-details__container_margin-r-10

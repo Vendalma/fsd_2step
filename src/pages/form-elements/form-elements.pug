@@ -20,9 +20,9 @@ include /components/logo/logo
 
 block head
   title Form elements
-  - const {settingsTextField, settingsDropdown,checkboxSettings,radioSettings} = require('./form-elements.json')
-  - const {toggleSettings, likeButtonSettings, rangeSlider, buttonSettings,dropdownDateSettings} = require('./form-elements.json')
-  - const {expandableCheckbox,richCheckboxSettings,iconLists,comment} = require('./form-elements.json')
+  - const {settingsTextField, settingsDropdown,checkboxSettings,radioSettings} = require("./form-elements.json")
+  - const {toggleSettings, likeButtonSettings, rangeSlider, buttonSettings,dropdownDateSettings} = require("./form-elements.json")
+  - const {expandableCheckbox,richCheckboxSettings,iconLists,comment} = require("./form-elements.json")
   body
     .form-elements
       header.form-elements__header
@@ -36,9 +36,9 @@ block head
               .form-elements__block.form-elements__block_column.form-elements__block_margin-b-22
                 .form-elements__description
                   +description({
-                    "type": "text with state",
-                    "text": "text field",
-                    "condition": "default"
+                    type: "text with state",
+                    text: "text field",
+                    condition: "default"
                   })
                 .form-elements__text-field
                   +textField(settingsTextField.text)
@@ -46,22 +46,22 @@ block head
               .form-elements__block.form-elements__block_column.form-elements__block_margin-b-20
                 .form-elements__description
                   +description({
-                    "type": "text with state",
-                    "text": "text field",
-                    "condition":"hover / focus"
+                    type: "text with state",
+                    text: "text field",
+                    condition:"hover / focus"
                 })
                 .form-elements__text-field
                   +textField(settingsTextField.hover)
 
               .form-elements__block.form-elements__block_column.form-elements__block_margin-b-22
                 .form-elements__description
-                  +description({"text": "dropdown"})
+                  +description({text: "dropdown"})
                 .form-elements__dropdown
                   +dropdown(settingsDropdown.guestsOne)
 
               .form-elements__block.form-elements__block_column.form-elements__block_margin-b-42
                 .form-elements__description
-                  +description({"text": "masked text field"})
+                  +description({text: "masked text field"})
                 .form-elements__text-field
                   +textField(settingsTextField.mask)
 
@@ -75,7 +75,7 @@ block head
 
               .form-elements__block.form-elements__block_column.form-elements__block_size-266
                 .form-elements__description
-                  +description({"text": "subscription text field"})
+                  +description({text: "subscription text field"})
                 .form-elements__text-field
                   +textField(settingsTextField.subscribe)
 
@@ -83,7 +83,7 @@ block head
 
               .form-elements__block.form-elements__block_column.form-elements__block_margin-b-41.form-elements__block_size-266
                 .form-elements__description
-                  +description({"text": "checkbox buttons"})
+                  +description({text: "checkbox buttons"})
                 .form-elements__checkbox
                   +checkbox(checkboxSettings.smoking)
                   +checkbox(checkboxSettings.pets)
@@ -91,28 +91,28 @@ block head
 
               .form-elements__block.form-elements__block_column.form-elements__block_margin-b-41
                 .form-elements__description.form-elements__description_margin-b-16
-                  +description({"text": "radio buttons"})
+                  +description({text: "radio buttons"})
                 .form-elements__radio
                   +radio(radioSettings.male)
                   +radio(radioSettings.female)
 
               .form-elements__block.form-elements__block_column.form-elements__block_margin-b-45
                 .form-elements__description.form-elements__description_margin-b-12
-                  +description({"text": "toggle"})
+                  +description({text: "toggle"})
                 .form-elements__toggle
                   +toggle(toggleSettings.first)
                   +toggle(toggleSettings.second)
 
               .form-elements__block.form-elements__block_column.form-elements__block_margin-b-41
                 .form-elements__description.form-elements__description_margin-b-16
-                  +description({"text": "like button"})
+                  +description({text: "like button"})
                 .form-elements__like-buttons
                   +likeButton(likeButtonSettings.first)
                   +likeButton(likeButtonSettings.second)
 
               .form-elements__block.form-elements__block_column
                 .form-elements__description.form-elements__description_margin-b-16
-                  +description({"text": "rate button"})
+                  +description({text: "rate button"})
                 .form-elements__rate-button
                   .form-elements__rate-button_margin
                     +rateButton(4)
@@ -120,13 +120,13 @@ block head
 
             .form-elements__content.form-elements__content_column.form-elements__content_width-320
 
-              .form-elements__block.form-elements__block_size-266.form-elements__block_margin-b-10
+              .form-elements__block.form-elements__block_size-266.form-elements__block_margin-b-45
                 .form-elements__range-slider
                   +rangeSlider(rangeSlider)
 
               .form-elements__block.form-elements__block_column.form-elements__block_margin-b-41
                 .form-elements__description.form-elements__description_margin-b-15
-                  +description({"text": "buttons"})
+                  +description({text: "buttons"})
                 .form-elements__buttons.form-elements__buttons_column
                   .form-elements__buttons.form-elements__buttons_row.form-elements__buttons_margin-b-30
                     .form-elements__buttons_margin-r-20
@@ -145,7 +145,7 @@ block head
 
               .form-elements__block.form-elements__block_column
                 .form-elements__description.form-elements__description_margin-b-16
-                  +description({"text": "pagination"})
+                  +description({text: "pagination"})
                 .form-elements__pagination
                   +pagination
 
@@ -156,9 +156,9 @@ block head
                 .form-elements__block.form-elements__block_column.form-elements__block_size-266.form-elements__block_margin-b-20
                   .form-elements__description
                     +description({
-                      "type": "text with state",
-                      "text": "dropdown",
-                      "condition": "default"
+                      type: "text with state",
+                      text: "dropdown",
+                      condition: "default"
                     })
                   .form-elements__dropdown
                     +dropdown(settingsDropdown.room)
@@ -166,9 +166,9 @@ block head
                 .form-elements__block.form-elements__block_column.form-elements__block_size-266.form-elements__block_margin-b-159
                   .form-elements__description
                     +description({
-                      "type": "text with state",
-                      "text": "dropdown",
-                      "condition": "expanded"
+                      type: "text with state",
+                      text: "dropdown",
+                      condition: "expanded"
                     })
                   .form-elements__dropdown
                     +dropdown(settingsDropdown.roomActive)
@@ -184,14 +184,14 @@ block head
                 .form-elements__content.form-elements__content_width-320.form-elements__content_margin-r-72
                   .form-elements__block.form-elements__block_column
                     .form-elements__description
-                      +description({"text": "dropdown"})
+                      +description({text: "dropdown"})
                     .form-elements__dropdown
                       +dropdown(settingsDropdown.guestsTwo)
 
                 .form-elements__content.form-elements__content_column.form-elements__content_width-320
                   .form-elements__block.form-elements__block_column
                     .form-elements__description
-                      +description({"text": "dropdown"})
+                      +description({text: "dropdown"})
                     .form-elements__dropdown
                       +dropdown(settingsDropdown.guestsThree)
 
@@ -199,7 +199,7 @@ block head
                 .form-elements__content_column.form-elements__content_width-320
                   .form-elements__block.form-elements__block_column.form-elements__block_size-266
                     .form-elements__description.form-elements__description_margin-b-16
-                      +description({"text": "Rich Checkbox Buttons"})
+                      +description({text: "Rich Checkbox Buttons"})
                     .form-elements__rich-checkbox
                       .form-elements__rich-checkbox_margin-b-10
                         +checkbox(richCheckboxSettings.corridor)
@@ -208,9 +208,9 @@ block head
                 .form-elements__content.form-elements__content_column.form-elements__content_width-320
                   .form-elements__block.form-elements__block_column
                     .form-elements__description.form-elements__description_margin-b-14
-                      +description({"text": "bullet list"})
+                      +description({text: "bullet list"})
                     .form-elements__bullet-list
-                      +bulletList({"descriptionText":"bullet list"})
+                      +bulletList({descriptionText:"bullet list"})
 
           .form-elements__content.form-elements__content_row
             .form-elements__content.form-elements__content_column.form-elements__content_width-320

@@ -19,9 +19,9 @@
   }
   &__card {
     width: 100%;
-    max-width: 380px;
+    max-width: 383px;
     margin: 0 auto;
-    padding-left: 3px;
+    padding-left: 4px;
   }
   &__footer {
     margin-top: auto;
@@ -34,6 +34,7 @@
 @media (max-width: 768px) {
   .registration {
     &__card {
+      max-width: 380px;
       padding: 0px;
     }
     &__footer {

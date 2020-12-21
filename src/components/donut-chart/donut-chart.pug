@@ -2,21 +2,21 @@ mixin chart
   .chart
     .chart__svg
       svg.chart__chart( viewBox="0 0 34 34")
-        circle.chart__hole(cx='50%' cy='50%' r='15.9' fill='#FFF')
+        circle.chart__hole(cx="50%" cy="50%" r="15.9" fill="#FFF")
         circle.chart__ring(cx="50%" cy="50%" r="15.9" fill="transparent" stroke="#fff" stroke-width="2")
-        circle.chart__segment_one(cx="50%" cy="50%" r="15.9" fill="transparent" stroke='url(#primary-gradient)' stroke-width="1" stroke-dasharray="24.5 100" stroke-dashoffset="-75")
+        circle.chart__segment_one(cx="50%" cy="50%" r="15.9" fill="transparent" stroke="url(#primary-gradient)" stroke-width="1" stroke-dasharray="24.5 100" stroke-dashoffset="-75")
         circle.chart__segment_two(cx="50%" cy="50%" r="15.9" fill="transparent" stroke="url(#secondary-gradient)" stroke-width="1" stroke-dasharray="24.5 100" stroke-dashoffset="0")
         circle.chart__segment_two(cx="50%" cy="50%" r="15.9" fill="transparent" stroke="url(#third-gradient)" stroke-width="1" stroke-dasharray="49.5 100" stroke-dashoffset="-25")
         defs.chart__defs
           linearGradient(id="primary-gradient" x1="0%" y1="0%" x2="0%" y2="100%")
-            stop(offset="0%" stop-color='#BC9CFF')
-            stop(offset="100%" stop-color='#8BA4F9')
+            stop(offset="0%" stop-color="#BC9CFF")
+            stop(offset="100%" stop-color="#8BA4F9")
           linearGradient(id="secondary-gradient" x1="0%" y1="0%" x2="100%" y2="0%")
-            stop(offset="0%" stop-color='#66D2EA')
-            stop(offset="100%" stop-color='#6fcf97')
+            stop(offset="0%" stop-color="#66D2EA")
+            stop(offset="100%" stop-color="#6fcf97")
           linearGradient(id="third-gradient" x1="0%" y1="0%" x2="0%" y2="100%")
-            stop(offset="0%" stop-color='#FFE39C')
-            stop(offset="100%" stop-color='#FFBA9C')
+            stop(offset="0%" stop-color="#FFE39C")
+            stop(offset="100%" stop-color="#FFBA9C")
       .chart__info
         p.chart__count 260
         p.chart__text голосов

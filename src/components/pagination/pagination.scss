@@ -64,7 +64,6 @@ span.ellipse.clickable {
 
 .simple-pagination li {
   max-width: 40px;
-  box-sizing: border-box;
   padding-left: 17.65px;
   padding-right: 17.65px;
   display: flex;
@@ -95,7 +94,6 @@ span.ellipse.clickable {
 }
 .next {
   max-width: 40px;
-  box-sizing: border-box;
   padding: 8px 9.5px;
   @extend %secondary-grad;
   color: #ffffff;

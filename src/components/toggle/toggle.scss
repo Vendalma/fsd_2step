@@ -1,5 +1,4 @@
 .toggle {
-  box-sizing: border-box;
   &__label {
     position: relative;
     cursor: pointer;
@@ -11,7 +10,6 @@
   }
   &__control {
     padding: 9px 19px;
-    box-sizing: border-box;
     display: inline-block;
     position: absolute;
     top: 0px;

@@ -12,7 +12,7 @@ block head
           +logo({colored: false})
       main.colors-types__content-block
         .colors-types__container
-          - const {colors} = require('./colors-types.json')
+          - const {colors} = require("./colors-types.json")
           .colors-types__color-block
             +colors(colors)  
           .colors-types__text-types

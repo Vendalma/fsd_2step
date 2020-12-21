@@ -1,9 +1,9 @@
-import "air-datepicker";
-import "air-datepicker/dist/js/datepicker";
-import "../description/description";
-import "./dropdown-date.scss";
+import 'air-datepicker';
+import 'air-datepicker/dist/js/datepicker';
+import '../description/description';
+import './dropdown-date.scss';
 
-var $this = $("body").find(".js-dropdown-date_active");
+var $this = $('body').find('.js-dropdown-date_active');
 
 $this.each(function () {
   let $this = $(this);
@@ -16,15 +16,15 @@ $this.each(function () {
 <----------------------------------------------------->
 */
 
-  if ($this.hasClass("js-dropdown-date_range")) {
-    let $start = $(".js-dropdown-date__input_range-start");
-    let picker = $(".js-dropdown-date__input_range-start").datepicker({
+  if ($this.hasClass('js-dropdown-date_range')) {
+    let $start = $('.js-dropdown-date__input_range-start');
+    let picker = $('.js-dropdown-date__input_range-start').datepicker({
       range: true,
       multipleDates: true,
-      multipleDatesSeparator: " - ",
-      language: "ru",
+      multipleDatesSeparator: ' - ',
+      language: 'ru',
       navTitles: {
-        days: "MM yyyy",
+        days: 'MM yyyy',
       },
       keyboardNav: false,
       clearButton: true,
@@ -32,30 +32,16 @@ $this.each(function () {
       nextHtml: '<i class="material--icon">arrow_forward</i>',
 
       onSelect: function (fd, d, picker) {
-        $(".js-dropdown-date__input_range-start").val(fd.split("-")[0]);
-        $(".js-dropdown-date__input_range-end").val(fd.split("-")[1]);
+        $('.js-dropdown-date__input_range-start').val(fd.split('-')[0]);
+        $('.js-dropdown-date__input_range-end').val(fd.split('-')[1]);
       },
     });
 
-    $(".js-dropdown-date__input_range-end").on("click", () => {
-      picker.data("datepicker").show();
-    });
-
-    let applyButton = document.createElement("span");
-    applyButton.setAttribute("data-action", "apply");
-    applyButton.classList.add("datepicker--button");
-    applyButton.classList.add("datepicker--button-colored");
-    applyButton.innerHTML = "Применить";
-
-    applyButton.addEventListener("click", function () {
-      $start.data("datepicker").hide();
-    });
-
-    let buttons = picker
-      .data("datepicker")
-      .$datepicker.find(".datepicker--buttons");
-
-    buttons.append(applyButton);
+    $('.js-dropdown-date__input_range-end').on(
+      'click',
+      showDatepicker.bind(this, picker)
+    );
+    addButtons(picker);
     picker.hasClass('js-dropdown-date__set-date') ? setRange(picker) : null;
   }
 
@@ -66,34 +52,33 @@ $this.each(function () {
   
   <----------------------------------------------------->
   */
-  if ($this.hasClass("js-dropdown-date_inline")) {
-    $(".js-dropdown-date_inline").datepicker({
+  if ($this.hasClass('js-dropdown-date_inline')) {
+    $('.js-dropdown-date_inline').datepicker({
       range: true,
       multipleDates: true,
-      multipleDatesSeparator: " - ",
-      language: "ru",
+      multipleDatesSeparator: ' - ',
+      language: 'ru',
       navTitles: {
-        days: "MM yyyy",
+        days: 'MM yyyy',
       },
       keyboardNav: false,
       clearButton: true,
       prevHtml: '<i class="material--icon">arrow_back</i>',
       nextHtml: '<i class="material--icon">arrow_forward</i>',
       onRenderCell: function (date, cellType) {
-        if (
-          date.getDate() == "8" &&
-          date.getMonth() == "7" &&
-          date.getFullYear() == "2019" &&
-          cellType == "day"
-        ) {
+        let findCurrentDate =
+          date.getDate() == '8' &&
+          date.getMonth() == '7' &&
+          date.getFullYear() == '2019';
+        if (findCurrentDate && cellType == 'day') {
           return {
-            classes: "datepicker--cell -current-",
+            classes: 'datepicker--cell -current-',
           };
         }
       },
     });
-    addButtons($(".js-dropdown-date_inline"));
-    setRange($(".js-dropdown-date_inline"));
+    addButtons($('.js-dropdown-date_inline'));
+    setRange($('.js-dropdown-date_inline'));
   }
 
   /*
@@ -104,43 +89,40 @@ $this.each(function () {
   <----------------------------------------------------->
   */
 
-  if ($this.hasClass("js-dropdown-date_filter")) {
-    $(".js-dropdown-date__input_filter").datepicker({
-      language: "ru",
+  if ($this.hasClass('js-dropdown-date_filter')) {
+    $('.js-dropdown-date__input_filter').datepicker({
+      language: 'ru',
       range: true,
       multipleDates: true,
-      multipleDatesSeparator: " - ",
-      dateFormat: "dd M",
+      multipleDatesSeparator: ' - ',
+      dateFormat: 'dd M',
       navTitles: {
-        days: "MM yyyy",
+        days: 'MM yyyy',
       },
       keyboardNav: false,
       clearButton: true,
       prevHtml: '<i class="material--icon">arrow_back</i>',
       nextHtml: '<i class="material--icon">arrow_forward</i>',
       onSelect: function (fd, d) {
-        $(".js-dropdown-date__input_filter").val(fd.toLowerCase());
+        $('.js-dropdown-date__input_filter').val(fd.toLowerCase());
       },
     });
-    addButtons($(".js-dropdown-date__input_filter"));
-    setRange($(".js-dropdown-date__input_filter"))
+    addButtons($('.js-dropdown-date__input_filter'));
+    setRange($('.js-dropdown-date__input_filter'));
   }
 
   //фун-ция добавления кнопки 'Применить'
   function addButtons(elem) {
-    let applyButton = document.createElement("span");
-    applyButton.setAttribute("data-action", "apply");
-    applyButton.classList.add("datepicker--button");
-    applyButton.classList.add("datepicker--button-colored");
-    applyButton.innerHTML = "Применить";
+    let applyButton = document.createElement('span');
+    applyButton.setAttribute('data-action', 'hide');
+    applyButton.classList.add('datepicker--button');
+    applyButton.innerHTML = 'Применить';
 
-    applyButton.addEventListener("click", function () {
-      elem.data("datepicker").hide();
-    });
+    applyButton.addEventListener('click', hideDatepicker.bind(this, elem));
 
     let buttons = elem
-      .data("datepicker")
-      .$datepicker.find(".datepicker--buttons");
+      .data('datepicker')
+      .$datepicker.find('.datepicker--buttons');
 
     buttons.append(applyButton);
   }
@@ -148,7 +130,15 @@ $this.each(function () {
   //ф-ция устанавливает интервал дат
   function setRange(elem) {
     elem
-      .data("datepicker")
-      .selectDate([new Date("2019-08-19"), new Date("2019-08-23")]);
+      .data('datepicker')
+      .selectDate([new Date('2019-08-19'), new Date('2019-08-23')]);
+  }
+
+  function showDatepicker(elem) {
+    elem.data('datepicker').show();
+  }
+
+  function hideDatepicker(elem) {
+    elem.data('datepicker').hide();
   }
 });

@@ -9,25 +9,25 @@ class Dropdown {
     this.clickMin();
     this.clickMax();
     this.checkMaterialIcons();
-    this.clickClearButton()
-    this.clickApplyButton()
-    this.checkActiveDropdown()
+    this.clickClearButton();
+    this.clickApplyButton();
+    this.checkActiveDropdown();
   }
 
   init() {
-    this.select_container = this.container.querySelector(
+    this.selectContainer = this.container.querySelector(
       '.js-dropdown__select-container'
     );
-    this.select_list = this.container.querySelector(
-      '.js-dropdown__select-list'
-    );
+    this.selectList = this.container.querySelector('.js-dropdown__select-list');
     this.placeholder = this.container.querySelector(
       '.js-dropdown__placeholder'
     );
-    this.material_icon = this.container.querySelector(
+    this.materialIcon = this.container.querySelector(
       '.js-dropdown__material-icons'
     );
-    this.item_score = this.container.querySelectorAll('.js-dropdown__item-score');
+    this.itemScore = this.container.querySelectorAll(
+      '.js-dropdown__item-score'
+    );
     this.minuses = this.container.querySelectorAll(
       '.js-dropdown__item-button_min'
     );
@@ -35,39 +35,36 @@ class Dropdown {
       '.js-dropdown__item-button_plus'
     );
     if (this.checkTypeDropdown()) {
-      this.clear_button = this.container.querySelector(
+      this.clearButton = this.container.querySelector(
         '.js-dropdown__clear-button'
       );
-      this.apply_button = this.container.querySelector(
+      this.applyButton = this.container.querySelector(
         '.js-dropdown__apply-button'
       );
     }
   }
   clickSelectContainer() {
-    this.select_container.addEventListener(
+    this.selectContainer.addEventListener(
       'click',
       this.openContainer.bind(this)
     );
   }
   openContainer() {
-    this.select_list.classList.toggle('dropdown__select-list_default');
+    this.selectList.classList.toggle('dropdown__select-list_default');
     if (!this.checkTypeDropdown()) {
-      this.select_list.classList.toggle('dropdown__select-list_open-room');
+      this.selectList.classList.toggle('dropdown__select-list_open-room');
     } else {
-      this.select_list.classList.toggle('dropdown__select-list_open-guests');
+      this.selectList.classList.toggle('dropdown__select-list_open-guests');
     }
 
-
-    this.select_container.classList.toggle(
-      'dropdown__select-container_default'
-    );
-    this.select_container.classList.toggle('dropdown__select-container_open');
+    this.selectContainer.classList.toggle('dropdown__select-container_default');
+    this.selectContainer.classList.toggle('dropdown__select-container_open');
 
     this.placeholder.classList.toggle('dropdown__placeholder_default');
     this.placeholder.classList.toggle('dropdown__placeholder_open');
 
-    this.material_icon.classList.toggle('dropdown__material-icons_default');
-    this.material_icon.classList.toggle('dropdown__material-icons_open');
+    this.materialIcon.classList.toggle('dropdown__material-icons_default');
+    this.materialIcon.classList.toggle('dropdown__material-icons_open');
   }
   clickMin() {
     this.minuses.forEach((elem) => {
@@ -76,12 +73,10 @@ class Dropdown {
   }
   checkMaterialIcons() {
     if (
-      this.select_container.classList.contains(
-        'dropdown__select-container_open'
-      )
+      this.selectContainer.classList.contains('dropdown__select-container_open')
     ) {
-      this.material_icon.classList.toggle('dropdown__material-icons_default');
-      this.material_icon.classList.toggle('dropdown__material-icons_open');
+      this.materialIcon.classList.toggle('dropdown__material-icons_default');
+      this.materialIcon.classList.toggle('dropdown__material-icons_open');
     }
   }
   onMinClick(elem) {
@@ -89,35 +84,35 @@ class Dropdown {
     if (Number(score.innerHTML) > 0) {
       score.innerHTML = Number(score.innerHTML) - 1;
     }
-    this.hideMinButton()
+    this.hideMinButton();
     this.hideClearButton();
-    this.checkCorrectItemName(this.item_score);
+    this.checkCorrectItemName(this.itemScore);
   }
   hideClearButton() {
-    if (this.checkCountScore(this.item_score) && this.checkTypeDropdown()) {
-      this.clear_button.classList.add('dropdown__clear-button_hidden');
+    if (this.checkCountScore(this.itemScore) && this.checkTypeDropdown()) {
+      this.clearButton.classList.add('dropdown__clear-button_hidden');
     }
   }
   setClearButton() {
     if (this.checkTypeDropdown()) {
-      this.clear_button.classList.remove('dropdown__clear-button_hidden');
+      this.clearButton.classList.remove('dropdown__clear-button_hidden');
     }
   }
   hideMinButton() {
     this.minuses.forEach((elem) => {
       let score = elem.nextElementSibling;
       if (Number(score.innerHTML) <= 0) {
-        elem.classList.add('dropdown__item-button_hidden')
+        elem.classList.add('dropdown__item-button_hidden');
       }
-    })
+    });
   }
   setMinButton() {
     this.minuses.forEach((elem) => {
       let score = elem.nextElementSibling;
       if (Number(score.innerHTML) > 0) {
-        elem.classList.remove('dropdown__item-button_hidden')
+        elem.classList.remove('dropdown__item-button_hidden');
       }
-    })
+    });
   }
   clickMax() {
     this.pluses.forEach((elem) => {
@@ -127,9 +122,9 @@ class Dropdown {
   onPlusClick(elem) {
     let score = elem.target.previousElementSibling;
     score.innerHTML = Number(score.innerHTML) + 1;
-    this.setMinButton()
+    this.setMinButton();
     this.setClearButton();
-    this.checkCorrectItemName(this.item_score);
+    this.checkCorrectItemName(this.itemScore);
   }
   checkTypeDropdown() {
     return this.container.classList.contains('dropdown_guests');
@@ -217,22 +212,27 @@ class Dropdown {
       str3 = bathrooms + ' ванных комнат';
     }
 
-    if (bedrooms == 0 && beds == 0 && bathrooms > 0) {
-      this.placeholder.innerHTML = str3;
-    } else if (bedrooms == 0 && beds > 0 && bathrooms > 0) {
+    let allRoomsZero = bedrooms === 0 && beds === 0 && bathrooms === 0;
+
+    if (allRoomsZero) {
+      this.placeholder.innerHTML = 'Удобства номера';
+    } else {
+      this.placeholder.innerHTML = str1 + str2 + str3;
+    }
+
+    let bedsAndBathrooms = beds > 0 && bathrooms > 0;
+    let bedroomsAndBathrooms = bedrooms > 0 && bathrooms > 0;
+    let allRoomsNotZero = bedrooms > 0 && beds > 0 && bathrooms > 0;
+    let bedroomsAndBed = bedrooms > 0 && beds > 0;
+
+    if (bedrooms == 0 && bedsAndBathrooms) {
       this.placeholder.innerHTML = str2 + ', ' + str3;
-    } else if (bedrooms > 0 && beds == 0 && bathrooms > 0) {
+    } else if (bedroomsAndBathrooms && beds == 0) {
       this.placeholder.innerHTML = str1 + ', ' + str3;
-    } else if (bedrooms > 0 && beds > 0 && bathrooms > 0) {
+    } else if (allRoomsNotZero) {
       this.placeholder.innerHTML = str1 + ', ' + str2 + ', ' + str3;
-    } else if (bedrooms > 0 && beds > 0 && bathrooms == 0) {
+    } else if (bedroomsAndBed && bathrooms == 0) {
       this.placeholder.innerHTML = str1 + ', ' + str2 + '...';
-    } else if (bedrooms == 0 && beds > 0 && bathrooms == 0) {
-      this.placeholder.innerHTML = str2;
-    } else if (bedrooms == 0 && beds == 0 && bathrooms == 0) {
-      this.placeholder.innerHTML = 'Какие удобства';
-    } else if (bedrooms > 0 && beds == 0 && bathrooms == 0) {
-      this.placeholder.innerHTML = str1;
     }
   }
   checkCorrectItemName(array) {
@@ -252,36 +252,36 @@ class Dropdown {
     return true;
   }
   cleanScore() {
-    for (let elem of this.item_score) {
+    for (let elem of this.itemScore) {
       elem.innerHTML = 0;
-      this.hideClearButton()
-      this.checkCorrectItemName(this.item_score);
+      this.hideClearButton();
+      this.checkCorrectItemName(this.itemScore);
     }
   }
   clickClearButton() {
     if (this.checkTypeDropdown()) {
-      this.clear_button.addEventListener('click', this.onClickClearButton.bind(this))
+      this.clearButton.addEventListener(
+        'click',
+        this.onClickClearButton.bind(this)
+      );
     }
   }
   onClickClearButton() {
-    this.cleanScore()
-    this.hideClearButton()
-    this.hideMinButton()
+    this.cleanScore();
+    this.hideClearButton();
+    this.hideMinButton();
   }
   clickApplyButton() {
     if (this.checkTypeDropdown()) {
-      this.apply_button.addEventListener('click', this.openContainer.bind(this))
+      this.applyButton.addEventListener('click', this.openContainer.bind(this));
     }
   }
   checkActiveDropdown() {
-    if (!this.checkCountScore(this.item_score)) {
-      this.checkCorrectItemName(this.item_score);
-      this.setClearButton()
-      this.setMinButton()
+    if (!this.checkCountScore(this.itemScore)) {
+      this.checkCorrectItemName(this.itemScore);
+      this.setClearButton();
+      this.setMinButton();
     }
-  }
-  checkPlaceholderLength() {
-
   }
 }
 

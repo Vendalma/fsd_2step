@@ -9,17 +9,17 @@ mixin search-card(activeCalendar=true)
     form.search-card__form
       .search-card__container.search-card__container_margin-b-22
         .search-card__date
-          +dropdownDate({"type": 'range',
-            "active":activeCalendar,
-            "description1":'прибытие',  
-            "description2": 'выезд'})
+          +dropdownDate({type: "range",
+            active:activeCalendar,
+            description1:"прибытие",  
+            description2: "выезд"})
       .search-card__container.search-card__container_column.search-card__container_margin-b-30
         .search-card__description
-          +description({"text":'гости'})
+          +description({text:"гости"})
         .search-card__dropdown
-          +dropdown({"type":'guests'})
+          +dropdown({type:"guests"})
       .search-card__container
         .search-card__button
-          +button({"theme":'long',
-            "text":'подобрать номер',
-            "type": 'submit'})
+          +button({theme:"long",
+            text:"подобрать номер",
+            type: "submit"})
