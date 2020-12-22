@@ -26,7 +26,7 @@ https://github.com/Vendalma/fsd_2step.git
 
 ## NPM
 
-`npm init ` - инициализация проекта
+`npm install ` - инициализация проекта
 
 `npm build-dev` - development build
 
