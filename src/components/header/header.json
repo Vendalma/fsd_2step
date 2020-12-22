@@ -21,13 +21,15 @@
   ],
   "buttonsSettings": {
     "one": {
-      "theme": "border-primary-grad button_theme-border-primary-grad_padding-s",
+      "theme": "border-primary-grad",
+      "paddingSize": "s",
       "text": "Войти",
       "isLink": true,
       "href": "./sign-in.html"
     },
     "two": {
-      "theme": "bg-primary-grad button_theme-bg-primary-grad_padding-m",
+      "theme": "bg-primary-grad",
+      "paddingSize": "m",
       "text": "Зарегистрироваться",
       "isLink": true,
       "href": "./registration.html"

@@ -279,7 +279,8 @@
   border: 1px solid $dark-25;
   box-shadow: 0 10px 20px $dark-05;
   border-radius: 4px;
-  width: 320px;
+  max-width: 320px;
+  min-width: 320px;
   padding: 16px 19px 19px;
   position: absolute;
   left: -100000px;
