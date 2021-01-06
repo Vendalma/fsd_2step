@@ -1,15 +1,4 @@
 .dropdown-date {
-  &__container_range {
-    display: flex;
-    flex-direction: row;
-  }
-  &_filter {
-    max-width: 266px;
-    flex-shrink: 0;
-  }
-  &__description {
-    margin-bottom: 5px;
-  }
   &__block {
     position: relative;
     &_margin {
@@ -34,6 +23,9 @@
       right: 0px;
       top: 2px;
     }
+  }
+  &__description {
+    margin-bottom: 5px;
   }
   &__input {
     width: 100%;
@@ -89,6 +81,10 @@
         opacity: 1;
       }
     }
+  }
+  &__container_range {
+    display: flex;
+    flex-direction: row;
   }
 }
 

@@ -20,10 +20,13 @@
       transform: rotate(180deg);
     }
   }
+  &__items {
+    &_hidden {
+      display: none;
+    }
+  }
+
   &__item {
     margin-bottom: 13px;
-  }
-  &__items_hidden {
-    display: none;
   }
 }

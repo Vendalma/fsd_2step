@@ -85,12 +85,6 @@
   }
 }
 
-/*
-
-<------------ @media 769px -- 960px ---------->
-
-*/
-
 @media (min-width: 769px) and (max-width: 960px) {
   .footer {
     &__content-block_wrapper {
@@ -104,11 +98,6 @@
   }
 }
 
-/*
-
-<------------ @media 768px ---------->
-
-*/
 @media (max-width: 768px) {
   .footer {
     display: none;
