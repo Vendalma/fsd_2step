@@ -26,15 +26,15 @@ https://github.com/Vendalma/fsd_2step.git
 
 ## NPM
 
-`npm install ` - инициализация проекта
+`npm install` - инициализация проекта
 
-`npm build-dev` - development build
+`npm run build-dev` - development build
 
-`npm build-prod` - production build
+`npm run build-prod` - production build
 
-`npm start` - запуск dev-server
+`npm run start` - запуск dev-server
 
-`npm lint` - запуск линтера
+`npm run lint` - запуск линтера
 
 ## jQuery плагины
 
