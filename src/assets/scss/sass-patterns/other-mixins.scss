@@ -25,9 +25,14 @@
 }
 
 @mixin bg-color-animation {
-  -webkit-transition: background 0.5s ease;
-  -moz-transition: background 0.5s ease;
-  -ms-transition: background 0.5s ease;
-  -o-transition: background 0.5s ease;
   transition: background 0.5s ease;
+}
+@mixin font-face($font-name, $path, $weight: 400, $style: normal) {
+  @font-face {
+    font-family: quote($font-name);
+    src: url($path + '.woff2') format('woff2'),
+      url($path + '.woff') format('woff');
+    font-weight: $weight;
+    font-style: $style;
+  }
 }

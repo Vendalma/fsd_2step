@@ -32,10 +32,13 @@
   &__font-awesome {
     min-width: 24px;
     min-height: 24px;
+    font-family: 'Font-Awesome';
+    font-style: normal;
+    font-weight: normal;
     @extend %primary-grad;
-    background-clip: border-box;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     color: transparent;
-    @extend %aws-font;
     font-size: 1.714rem;
     line-height: 1.643rem;
     cursor: pointer;
