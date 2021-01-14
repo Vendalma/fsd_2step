@@ -12,7 +12,6 @@
   line-height: 12px;
   position: relative;
   &:focus {
-    -webkit-box-shadow: 1px 1px 10px 1px rgba(31, 32, 65, 0.2);
     box-shadow: 1px 1px 10px 1px rgba(31, 32, 65, 0.2);
   }
   &_active {
@@ -20,12 +19,10 @@
     border-radius: 22px;
     background-origin: border-box;
     background-clip: padding-box, border-box;
-    -webkit-background-clip: padding-box, border-box;
     background-image: linear-gradient(white, white),
       linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
     color: $color-one;
     &:focus {
-      -webkit-box-shadow: 1px 1px 10px 1px rgba(188, 156, 255, 0.7);
       box-shadow: 1px 1px 10px 1px rgba(188, 156, 255, 0.7);
     }
   }
@@ -44,8 +41,7 @@
       &::before {
         content: 'favorite';
         @extend %primary-grad;
-        background-clip: border-box;
-        -webkit-background-clip: text;
+        background-clip: text;
         -webkit-text-fill-color: transparent;
       }
     }

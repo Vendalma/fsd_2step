@@ -15,8 +15,7 @@
     font-size: 3.429rem;
     line-height: 2.929rem;
     @extend %primary-grad;
-    background-clip: border-box;
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   &__block {

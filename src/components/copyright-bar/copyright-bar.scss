@@ -34,8 +34,6 @@
     min-height: 24px;
     @extend %primary-grad;
     background-clip: border-box;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     color: transparent;
     @extend %aws-font;
     font-size: 1.714rem;

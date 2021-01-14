@@ -37,9 +37,6 @@
     line-height: 129%;
     color: $dark-25;
     flex-shrink: 1;
-    &::-webkit-input-placeholder {
-      color: $dark-25;
-    }
     &_mask {
       border: 1px solid $dark-25;
       line-height: 129%;
@@ -57,22 +54,11 @@
       &::placeholder {
         color: $dark-75;
       }
-      &::-moz-placeholder {
-        color: $dark-75;
-        opacity: 1;
-      }
     }
     &:hover {
       border: 1px solid $dark-50;
       &::placeholder {
         color: $dark-75;
-      }
-      &::-webkit-input-placeholder {
-        color: $dark-75;
-      }
-      &::-moz-placeholder {
-        color: $dark-75;
-        opacity: 1;
       }
     }
     &:focus {
@@ -82,13 +68,6 @@
 
       &::placeholder {
         color: $dark-75;
-      }
-      &::-webkit-input-placeholder {
-        color: $dark-75;
-      }
-      &::-moz-placeholder {
-        color: $dark-75;
-        opacity: 1;
       }
     }
   }

@@ -7,9 +7,7 @@
   border-radius: 22px;
   background-origin: border-box;
   background-clip: padding-box, border-box;
-  -webkit-background-clip: padding-box, border-box;
   &:focus {
-    -webkit-box-shadow: 1px 1px 5px 3px rgba(188, 156, 255, 1);
     box-shadow: 1px 1px 5px 3px rgba(188, 156, 255, 1);
   }
   &_theme-bg-primary-grad {

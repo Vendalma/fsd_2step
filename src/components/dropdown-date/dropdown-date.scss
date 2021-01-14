@@ -40,13 +40,6 @@
     &::placeholder {
       color: $dark-75;
     }
-    &::-webkit-input-placeholder {
-      color: $dark-75;
-    }
-    &::-moz-placeholder {
-      color: $dark-75;
-      opacity: 1;
-    }
 
     &_s-150 {
       max-width: 150px;
@@ -57,13 +50,6 @@
       &::placeholder {
         color: $dark-75;
       }
-      &::-webkit-input-placeholder {
-        color: $dark-75;
-      }
-      &::-moz-placeholder {
-        color: $dark-75;
-        opacity: 1;
-      }
     }
     &:focus {
       border: 1px solid $dark-50;
@@ -72,13 +58,6 @@
 
       &::placeholder {
         color: $dark-75;
-      }
-      &::-webkit-input-placeholder {
-        color: $dark-75;
-      }
-      &::-moz-placeholder {
-        color: $dark-75;
-        opacity: 1;
       }
     }
   }

@@ -6,7 +6,6 @@
     line-height: 1.429rem;
     @extend %primary-grad;
     background-clip: text;
-    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 }

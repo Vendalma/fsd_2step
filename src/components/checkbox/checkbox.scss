@@ -33,10 +33,7 @@
   }
 
   &__input {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    position: absolute;
+    display: none;
   }
 
   &__mark {
@@ -61,8 +58,6 @@
       width: 6px;
       height: 8px;
       border-width: 0 2px 2px 0;
-      -moz-border-image: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-      -webkit-border-image: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
       border-image: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
       border-color: transparent;
       border-image-slice: 1;
