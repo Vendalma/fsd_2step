@@ -3,6 +3,7 @@ import "@components/footer-small/footer-small";
 import "@components/footer/footer";
 import "@components/header/header";
 import "@components/registration-card/registration-card";
+import "normalize.css";
 import "./registration.scss";
 
 //change background by --> https://www.youtube.com/watch?v=NTqmimXu1XM

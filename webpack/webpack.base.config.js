@@ -8,7 +8,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const PATHS = {
   src: path.join(__dirname, '../src'),
   dist: path.join(__dirname, '../dist'),
-  assets: 'assets/'
+  assets: 'assets/',
 };
 
 const pagesDir = path.join(PATHS.src, '/pages');
@@ -18,7 +18,7 @@ const createHtmlWebpackPlugins = (pagesFolderPath) =>
     (pageFolder) =>
       new HtmlWebpackPlugin({
         template: path.join(pagesFolderPath, pageFolder, `${pageFolder}.pug`),
-        filename: `${pageFolder}.html`,
+        filename: `pages/${pageFolder}/${pageFolder}.html`,
         chunks: [pageFolder],
       })
   );
@@ -32,7 +32,6 @@ const createEntryPoints = () => {
 
   return entryPoints;
 };
-
 module.exports = {
   externals: {
     paths: PATHS,
@@ -50,7 +49,7 @@ module.exports = {
 
   output: {
     path: PATHS.dist,
-    filename: `${PATHS.assets}js/[name].js`,
+    filename: `pages/[name]/[name].js`,
   },
   optimization: {
     splitChunks: {
@@ -59,10 +58,10 @@ module.exports = {
           name: 'vendors',
           test: /node_modules/,
           chunks: 'all',
-          enforce: true
-        }
-      }
-    }
+          enforce: true,
+        },
+      },
+    },
   },
   module: {
     rules: [
@@ -86,7 +85,7 @@ module.exports = {
         options: {
           name: `[name].[ext]`,
           outputPath: `assets/fonts`,
-          publicPath: `../fonts`,
+          publicPath: `../../assets/fonts`,
         },
       },
       {
@@ -95,6 +94,7 @@ module.exports = {
         options: {
           name: '[name].[ext]',
           outputPath: `${PATHS.assets}images`,
+          publicPath: `../../assets/images`,
         },
       },
       {
@@ -104,19 +104,19 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 1
-            }
+              importLoaders: 1,
+            },
           },
           {
             loader: 'postcss-loader',
             options: {
               sourceMap: true,
-              'postcssOptions': {
-                'config': `./postcss.config.js`
+              postcssOptions: {
+                config: `./postcss.config.js`,
               },
             },
           },
-        ]
+        ],
       },
       {
         test: /\.scss$/,
@@ -125,38 +125,39 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: '../../'
-            }
+              publicPath: '../../',
+            },
           },
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
               sourceMap: true,
-            }
+            },
           },
           {
             loader: 'postcss-loader',
             options: {
               sourceMap: true,
-              'postcssOptions': {
-                'config': `./postcss.config.js`
+              postcssOptions: {
+                config: `./postcss.config.js`,
               },
             },
           },
           {
             loader: 'resolve-url-loader',
-          }, {
+          },
+          {
             loader: 'sass-loader',
             options: {
               sourceMap: true,
-            }
+            },
           },
 
           {
             loader: 'sass-resources-loader',
             options: {
               resources: `${PATHS.src}/assets/scss/sass-patterns/*.scss`,
-              sourceMap: true
+              sourceMap: true,
             },
           },
         ],
@@ -165,7 +166,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: `${PATHS.assets}css/[name].css`,
+      filename: `pages/[name]/[name].css`,
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
@@ -175,10 +176,12 @@ module.exports = {
     }),
     ...createHtmlWebpackPlugins(pagesDir),
     new CopyWebpackPlugin({
-      patterns: [{
-        from: `${PATHS.src}/${PATHS.assets}favicon`,
-        to: `${PATHS.assets}favicon`
-      },]
-    })
+      patterns: [
+        {
+          from: `${PATHS.src}/${PATHS.assets}favicon`,
+          to: `${PATHS.assets}favicon`,
+        },
+      ],
+    }),
   ],
 };

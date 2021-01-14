@@ -3,6 +3,7 @@ import "@components/footer-small/footer-small";
 import "@components/footer/footer";
 import "@components/header/header";
 import "@components/search-card/search-card";
+import "normalize.css";
 import "./landing.scss";
 
 //change background by --> https://www.youtube.com/watch?v=NTqmimXu1XM

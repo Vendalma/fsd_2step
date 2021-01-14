@@ -7,6 +7,7 @@ import "@components/footer-small/footer-small";
 import "@components/footer/footer";
 import "@components/header/header";
 import "@components/icon-list/icon-list";
+import "normalize.css";
 import "./room-details.scss";
 
 

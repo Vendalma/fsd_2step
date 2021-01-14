@@ -10,6 +10,7 @@ import "@components/header/header";
 import "@components/pagination/pagination";
 import "@components/range slider/range slider";
 import "@components/room-card/room-card";
+import "normalize.css";
 import "./search-room.scss";
 
 

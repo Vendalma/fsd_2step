@@ -7,6 +7,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   devServer: {
     contentBase: baseWebpackConfig.externals.paths.dist,
     port: 9000,
+    openPage: 'pages/toxin-page/toxin-page.html'
   },
   plugins: [
     new webpack.SourceMapDevToolPlugin({
