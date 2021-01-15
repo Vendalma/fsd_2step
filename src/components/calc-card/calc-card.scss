@@ -24,30 +24,39 @@
     &_margin-b-18 {
       margin-bottom: 18px;
     }
-    &_margin-b-31 {
-      margin-bottom: 31px;
+    &_margin-b-23 {
+      margin-bottom: 23px;
     }
     &_padding-0 {
       padding: 0px;
     }
   }
-  &__room-info {
-    @extend %h1-font;
-    &_no {
+  &__info {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    &-no {
+      @extend %h1-font;
       font-size: 1rem;
       line-height: 1.214rem;
     }
-    &_luxury {
+    &-num {
+      font-size: 1.714rem;
+      line-height: 2.071rem;
+    }
+    &-luxury {
       @extend %h3-font;
       color: $color-one;
     }
-  }
-  &__price {
-    @extend %body-font;
-    line-height: 1.286rem;
-    font-weight: 700;
-    color: $dark-50;
-    &_text {
+    &-price {
+      @extend %body-font;
+      line-height: 1.286rem;
+      font-weight: 700;
+      color: $dark-50;
+    }
+    &-text {
       font-size: 0.857rem;
       font-weight: 400;
     }
@@ -55,76 +64,72 @@
   &__description {
     margin-bottom: 5px;
   }
-  &__group {
+
+  &__item {
+    @extend %body-font;
+    list-style-type: none;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    @extend %body-font;
-    &_block {
+    &-group {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       max-width: 250px;
     }
+    &-calculating {
+      max-width: 215px;
+    }
     &_margin {
       margin-top: 11px;
-      margin-bottom: 14px;
+      margin-bottom: 11px;
     }
-  }
-  &__text {
-    @extend %body-font;
-    &_small {
-      line-height: 1.286rem;
-      max-width: 214px;
+    &-circle {
+      max-height: 20px;
+      width: 100%;
+      max-width: 20px;
+      padding: 2.5px 7.5px;
+      font-weight: 700;
+      color: $dark-25;
+      line-height: 16px;
+      font-size: 13.712px;
+      border: 1px solid $dark-25;
+      border-radius: 50%;
+      margin-left: 5px;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
     }
   }
 
   &__total {
     width: 100%;
-    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     @extend %h2-font;
-    &_text {
-      position: relative;
+    position: relative;
+    &-text {
       z-index: 1;
       background: #fff;
       padding-right: 5.7px;
     }
-    &_sum {
-      position: relative;
+    &-sum {
       z-index: 1;
       background: #fff;
       text-align: right;
     }
-    &_line {
-      width: 182px * 100%/ 380px;
-      height: 1px;
-      border-top: 1px dashed $dark-25;
+    &-line {
+      width: 100%;
       position: absolute;
-      left: 65px;
-      bottom: 3px;
+      bottom: 4px;
+      border-bottom: 1px dashed $dark-25;
     }
   }
-  &__circle-item {
-    height: min-content;
-    padding: 2.5px 7.5px;
-    @extend %body-font;
-    font-weight: 700;
-    color: $dark-25;
-    line-height: 1rem;
-    font-size: 0.857rem;
-    border: 1px solid $dark-25;
-    border-radius: 50%;
-    margin-left: 5px;
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
   &__button {
     width: 100%;
     display: flex;

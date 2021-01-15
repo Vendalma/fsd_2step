@@ -1,5 +1,8 @@
-mixin colors (arr = {color,name, code})
-  for color in arr
+mixin colors (items = {})
+  -
+    const {color,name, code} = items
+
+  for color in items
     .color-block
       .color-block__rectangle(class=`color-block_${color.color}`)
       .color-block__info

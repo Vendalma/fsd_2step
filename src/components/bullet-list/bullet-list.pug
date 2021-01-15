@@ -1,8 +1,12 @@
-include /components/description/description
+mixin bulletList(options = {})
+  - 
+    var options = [
+      {"Нельзя с питомцами"},
+      {"Без вечеринок и мероприятий"},
+      {"Время прибытия — после 13:00, а выезд до 12:00"},
+    ]
 
-mixin bulletList
   .bullet-list
     ul.bullet-list__items
-      li.bullet-list__item Нельзя с питомцами
-      li.bullet-list__item Без вечеринок и мероприятий
-      li.bullet-list__item Время прибытия — после 13:00, а выезд до 12:00
+      each item in options
+        li.bullet-list__item #{item}

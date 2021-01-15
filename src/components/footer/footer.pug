@@ -1,7 +1,7 @@
 include /components/logo/logo
 include /components/links/links
-include /components/copyright-bar/copyright-bar
 include /components/field/field
+include /components/social-buttons/social-buttons
 
 mixin footer
   - const {navigationLinks, aboutUsLinks,supportServiceLinks} = require("@components/footer/footer.json")
@@ -44,5 +44,5 @@ mixin footer
       .footer__content-block_secondary-shadow
         .footer__content-block_copyright-wrapper
           .footer__block_copyright
-            +copyright-bar({flexColumn: false})
+            -//+socialButtons
 

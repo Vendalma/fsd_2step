@@ -1,4 +1,3 @@
-import '../buttons/buttons';
 import '../checkbox/checkbox';
 import './expandable-checkbox.scss';
 

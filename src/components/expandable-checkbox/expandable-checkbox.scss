@@ -21,6 +21,7 @@
     }
   }
   &__items {
+    list-style-type: none;
     &_hidden {
       display: none;
     }

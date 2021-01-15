@@ -3,19 +3,29 @@ include /components/dropdown/dropdown
 include /components/description/description
 include /components/buttons/buttons
 
-mixin calc-card({isLuxury = false})
+mixin calc-card(options = {})
+  -  
+    const  {
+      roomNumber = "888",
+      isLuxury = true,
+      roomPrice = "9 900",
+      dayCalculating = "9 900₽ x 4 суток", 
+      dayCalculatingTotal = "39 960", 
+      serviceSale = "2 179", 
+      serviceTotal = "0", 
+      additionalServiceTotal = "300",
+      totalSum = "38 081"} = options
+
   .calc-card
-    form.calc-card__form
+    form(action="formAction" method="post").calc-card__form
       .calc-card__container.calc-card__container_row.calc-card__container_margin-b-21
-        .calc-card__room-info
-          .calc-card__room-info_title
-            span.calc-card__room-info_no № 
-            span.calc-card__room-info_num 888
+        p.calc-card__info
+          span.calc-card__info-no № 
+            span.calc-card__info-num #{roomNumber}
             if isLuxury
-            span.calc-card__room-info_luxury  люкс
-        .calc-card__price 
-          span.calc-card__price_num 9 990₽
-          span.calc-card__price_text  в сутки
+              span.calc-card__info-luxury люкс
+          span.calc-card__info-price #{roomPrice}₽ 
+            span.calc-card__info-text в сутки
       .calc-card__container.calc-card__container_margin-b-21
         .calc-card__dropdown-date
           +dropdownDate({type:"range",
@@ -25,31 +35,31 @@ mixin calc-card({isLuxury = false})
             description2:"выезд"})
       .calc-card__container.calc-card__container_column.calc-card__container_margin-b-18
         .calc-card__description
-          +description({text:"гости"}).calc-card__description
+          +description({text:"гости"})
         .calc-card__dropdown
           +dropdown({type:"guests",
             score1 :2,
             score2: 1})
-      .calc-card__container.calc-card__container_column.calc-card__container_margin-b-31
-        .calc-card__calculating
-          .calc-card__group
-            span.calc-card__text 9 990₽ х 4 суток 
-            span.calc-card__text 39 960₽
-          .calc-card__group.calc-card__group_margin
-            .calc-card__group_block
-              span.calc-card__text Сбор за услуги: скидка 2 179₽
-              .calc-card__circle-item i
-            span.calc-card__text 0₽
-          .calc-card__group
-            .calc-card__group_block
-              span.calc-card__text.calc-card__text_small Сбор за дополнительные услуги
-              .calc-card__circle-item i
-            span.calc-card__text 300₽
+      .calc-card__container.calc-card__container_column.calc-card__container_margin-b-23
+        ul.calc-card__items
+          li.calc-card__item
+            span.calc-card__item-calculating #{dayCalculating}
+            span.calc-card__item-total #{dayCalculatingTotal}₽
+          li.calc-card__item.calc-card__item_margin
+            .calc-card__item-group
+              span.calc-card__item-calculating Сбор за услуги: скидка #{serviceSale}₽
+              span.calc-card__item-circle i
+            span.calc-card__item-total #{serviceTotal}₽
+          li.calc-card__item
+            .calc-card__item-group
+              span.calc-card__item-calculating Сбор за дополнительные услуги
+              span.calc-card__item-circle i
+            span.calc-card__item-total #{additionalServiceTotal}₽         
       .calc-card__container.calc-card__container_padding-0.calc-card__container_margin-b-21
-        .calc-card__total
-          span.calc-card__total_text Итого
-          span.calc-card__total_line
-          span.calc-card__total_sum 38 081₽
+        p.calc-card__total
+          span.calc-card__total-text Итого
+          span.calc-card__total-line
+          span.calc-card__total-sum #{totalSum}₽
       .calc-card__container
         .calc-card__button
           +button({theme:"long",
