@@ -1,0 +1,25 @@
+.social-icons {
+  width: 100%;
+  max-width: 112px;
+  &__items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__item {
+    list-style-type: none;
+  }
+  &__font-awesome {
+    min-width: 24px;
+    min-height: 24px;
+    font-family: 'Font-Awesome';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.714rem;
+    line-height: 1.643rem;
+    @extend %primary-grad;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

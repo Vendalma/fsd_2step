@@ -1,0 +1,14 @@
+mixin socialIcons(items)
+  -
+    items= items || [
+      {href: "https://twitter.com/?lang=ru", iconName : "fa-twitter"},
+      {href: "https://www.facebook.com", iconName : "fa-facebook-square"},
+      {href: "https://www.instagram.com/?hl=ru", iconName : "fa-instagram"},
+    ] 
+
+  .social-icons
+    ul.social-icons__items
+      for item in items
+        li.social-icons__item
+          a.social-icons__link(href= item.href target="_blank" rel="noopener noreferrer")
+            i.social-icons__font-awesome.fa(class= item.iconName)
