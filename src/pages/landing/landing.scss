@@ -11,9 +11,7 @@
     @include image-animation;
   }
   &__wrapper {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
+    @include pageSettings;
     padding-top: 70px;
     padding-left: 20px;
     padding-right: 12px;

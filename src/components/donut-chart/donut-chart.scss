@@ -12,9 +12,11 @@
     position: relative;
   }
   &__info {
+    display: inline-flex;
+    flex-direction: column;
     position: absolute;
     text-align: center;
-    top: 31%;
+    top: 29%;
     left: 24%;
   }
   &__count {

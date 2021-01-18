@@ -1,13 +1,8 @@
 .cards {
   background: #f4f4f6;
-  &__logo {
-    padding-top: 30px * 100%/ 1410px;
-    padding-left: 30px * 100%/ 1410px;
-  }
   &__content-block {
-    max-width: 1200px;
+    @include pageSettings;
     padding: 72px 20px 100px;
-    margin: 0 auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

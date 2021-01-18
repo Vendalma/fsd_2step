@@ -3,14 +3,8 @@
   position: relative;
   background-color: #ffffff;
   &__content-block {
-    &_primary-shadow {
-      @extend %shadow-bg-primary;
-    }
-    &_secondary-shadow {
-      @extend %shadow-bg-secondary;
-      margin-top: 1px;
-    }
     &_wrapper {
+      @extend %shadow-bg-primary;
       max-width: 1200px;
       padding: 100px 20px 81px;
       margin: 0 auto;
@@ -19,27 +13,29 @@
       justify-content: space-between;
     }
     &_copyright-wrapper {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 23px 20px;
+      @extend %shadow-bg-secondary;
+      border-top: 1px solid #e5e5e5;
     }
   }
   &__block {
-    &_logo-info {
+    &-logo {
       max-width: 260px;
       margin-right: 40px;
     }
-    &_navigation {
+    &-navigation {
       display: flex;
       flex-direction: row;
       width: 600px * 100%/ 1160px;
       padding-top: 5px;
     }
-    &_subscription {
+    &-subscription {
       max-width: 260px;
       padding-top: 5px;
     }
-    &_copyright {
+    &-copyright {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 23px 20px;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -56,18 +52,19 @@
       margin-bottom: 24px;
     }
   }
-  &__nav-bar {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
   &__link {
-    &_list {
+    &-list {
+      width: 100%;
       display: flex;
       flex-direction: column;
+      margin-right: 30px;
     }
-    &_item {
+    &-title {
+      list-style-type: none;
+      @extend %h3-font;
+      margin-bottom: 21px;
+    }
+    &-item {
       list-style-type: none;
       margin-bottom: 20px;
       @extend %body-font;
@@ -91,7 +88,7 @@
       justify-content: space-around;
     }
     &__block {
-      &_navigation {
+      &-navigation {
         display: none;
       }
     }

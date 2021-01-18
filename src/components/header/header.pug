@@ -2,7 +2,7 @@ include /components/links/links
 include /components/logo/logo
 include /components/buttons/buttons
 
-mixin header({userName=false})
+mixin header({userName=false}={})
   - const {linkList,buttonsSettings} = require("@components/header/header.json")
   .header
     .header__container
@@ -19,12 +19,11 @@ mixin header({userName=false})
           .header__burger-menu_close.js-header__burger-menu_close.header__burger-menu_hidden
             i.header__material-icons close
 
-        .header__menu.js-header__menu
-          nav.header__nav-bar
-            ul.header__link_list
-              for link in linkList
-                li.header__link_item
-                  +link(link)
+        nav.header__nav-bar.js-header__nav-bar
+          ul.header__link-list
+            for link in linkList
+              li.header__link-item
+                +link(link)
           if userName 
             .header__user-info
               .header__vert-block

@@ -1,4 +1,4 @@
-mixin link({type = "default",text,materialIcons= false})
+mixin link({type = "default",text,materialIcons= false}={})
   if type == "active" 
     a(href="/mock-address/change-me" class="link link_active") #{text}
 

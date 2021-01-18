@@ -1,7 +1,7 @@
 {
   "settingsTextField": {
     "text": {
-      "type": "email",
+      "type": "text",
       "placeholder": "Email"
     },
     "hover": {
@@ -14,8 +14,7 @@
     },
     "subscribe": {
       "type": "email",
-      "placeholder": "Email",
-      "materialIcon": true
+      "placeholder": "Email"
     }
   },
   "settingsDropdown": {
@@ -59,13 +58,16 @@
   },
   "checkboxSettings": {
     "smoking": {
+      "name": "smoking",
       "text": "Можно курить"
     },
     "pets": {
+      "name": "pets",
       "text": "Можно с питомцами",
       "checked": true
     },
     "guests": {
+      "name": "guests",
       "text": "Можно пригласить гостей (до 10 человек)",
       "checked": true,
       "shortText": true
@@ -75,11 +77,13 @@
     "male": {
       "text": "Мужчина",
       "name": "gender",
+      "value": "male",
       "checked": true
     },
     "female": {
       "text": "Женщина",
-      "name": "gender"
+      "name": "gender",
+      "value": "female"
     }
   },
   "toggleSettings": {
@@ -144,24 +148,30 @@
       "text": "expandable checkbox list",
       "items": [
         {
-          "text": "Завтрак"
+          "text": "Завтрак",
+          "name": "breakfast"
         },
         {
           "text": "Письменный стол",
+          "name": "table",
           "checked": true
         },
         {
           "text": "Стул для кормления",
+          "name": "chair for babies",
           "checked": true
         },
         {
-          "text": "Кроватка"
+          "text": "Кроватка",
+          "name": "bed for babies"
         },
         {
-          "text": "Телевизор"
+          "text": "Телевизор",
+          "name": "TV"
         },
         {
-          "text": "Шампунь"
+          "text": "Шампунь",
+          "name": "shampoo"
         }
       ]
     },
@@ -169,24 +179,30 @@
       "text": "expandable checkbox list",
       "items": [
         {
-          "text": "Завтрак"
+          "text": "Завтрак",
+          "name": "breakfast"
         },
         {
           "text": "Письменный стол",
+          "name": "table",
           "checked": true
         },
         {
           "text": "Стул для кормления",
+          "name": "chair for babies",
           "checked": true
         },
         {
-          "text": "Кроватка"
+          "text": "Кроватка",
+          "name": "bed for babies"
         },
         {
-          "text": "Телевизор"
+          "text": "Телевизор",
+          "name": "TV"
         },
         {
-          "text": "Шампунь"
+          "text": "Шампунь",
+          "name": "shampoo"
         }
       ],
       "open": true
@@ -195,13 +211,15 @@
   "richCheckboxSettings": {
     "corridor": {
       "type": "rich",
-      "head": "Широкий коридор",
+      "name": "wide corridor",
+      "header": "Широкий коридор",
       "text": "Ширина коридоров в номере не менее 91 см.",
       "shortText": true
     },
     "assistant": {
       "type": "rich",
-      "head": "Помощник для инвалидов",
+      "name": "assistant",
+      "header": "Помощник для инвалидов",
       "text": "На 1 этаже вас встретит специалист и проводит до номера."
     }
   },
@@ -209,8 +227,10 @@
     "userPhoto": "user1.jpg",
     "userName": "Мурад Сарафанов",
     "date": "5 дней назад",
-    "likeCount": "12",
-    "likeActive": true,
+    "like": {
+      "count": 12,
+      "active": true
+    },
     "text": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
   },
   "iconLists": {

@@ -1,4 +1,4 @@
-mixin textField({type, placeholder, materialIcon = false}) 
+mixin textField({type, placeholder} = {}) 
   if type == "text"
     .text-field
       label.text-field__label
@@ -9,14 +9,13 @@ mixin textField({type, placeholder, materialIcon = false})
         input(type="text" placeholder=placeholder).text-field__input.text-field__input_hover
   else if type == "email"
     .text-field
-      label.text-field__label(class = materialIcon? "text-field__label_subscribe" : "")
-        input(type="email" placeholder=placeholder 
-          class = materialIcon? "text-field__input_subscribe" : "").text-field__input
+      label.text-field__label.text-field__label_subscribe
+        input(type="email" placeholder=placeholder).text-field__input.text-field__input_subscribe
   else if type == "mask"
     .text-field.js-text-field
       .text-field__block
         label.text-field__label
-          input(type="text" placeholder=placeholder ).text-field__input.text-field__input_mask.js-text-field__input_mask
+          input(type="text" placeholder=placeholder ).text-field__input.js-text-field__input_mask
   else if type == "password"
     .text-field
       label.text-field__label

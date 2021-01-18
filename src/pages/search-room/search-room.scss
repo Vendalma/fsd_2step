@@ -3,9 +3,8 @@
   width: 100%;
   margin: 0 auto;
   &__content {
-    max-width: 1200px;
+    @include pageSettings;
     padding: 30px 20px 72px;
-    margin: 0 auto;
 
     display: flex;
     flex-direction: row;

@@ -1,16 +1,20 @@
-.logo-gray {
-  display: flex;
-  align-items: center;
-  width: max-content;
-}
-.logo-colored {
-  display: flex;
+.logo {
+  &__logo-gray {
+    padding-top: 30px * 100%/ 1410px;
+    padding-left: 30px * 100%/ 1410px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: max-content;
+  }
+
   &__link {
     display: flex;
     flex-direction: row;
     align-items: center;
     width: max-content;
   }
+
   &__text {
     margin-left: 12.5px;
   }

@@ -37,12 +37,7 @@
     line-height: 129%;
     color: $dark-25;
     flex-shrink: 1;
-    &_mask {
-      border: 1px solid $dark-25;
-      line-height: 129%;
-      color: $dark-25;
-      flex-shrink: 0;
-    }
+
     &_subscribe {
       width: 100%;
       padding-right: 44px;

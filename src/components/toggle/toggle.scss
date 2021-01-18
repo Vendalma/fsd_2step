@@ -39,6 +39,6 @@
   border: 1px solid $color-one;
 }
 .toggle__input:checked + .toggle__control::before {
-  transform: translateX(18px);
+  transform: translateX(19px);
   @extend %primary-grad;
 }

@@ -1,6 +1,5 @@
 .dropdown-date {
   &__block {
-    position: relative;
     &_margin {
       margin-right: 20px;
     }
@@ -10,6 +9,11 @@
       width: 100%;
       cursor: pointer;
     }
+  }
+  &__label {
+    width: 100%;
+    @extend %h3-font;
+    position: relative;
     &::before {
       content: 'expand_more';
       width: 42px;
@@ -21,11 +25,8 @@
       color: $dark-50;
       position: absolute;
       right: 0px;
-      top: 2px;
+      bottom: 0px;
     }
-  }
-  &__description {
-    margin-bottom: 5px;
   }
   &__input {
     width: 100%;
@@ -36,6 +37,7 @@
     border: 1px solid $dark-25;
     border-radius: 4px;
     cursor: pointer;
+    margin-top: 5px;
 
     &::placeholder {
       color: $dark-75;

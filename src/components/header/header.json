@@ -25,14 +25,14 @@
       "paddingSize": "s",
       "text": "Войти",
       "isLink": true,
-      "href": "./sign-in.html"
+      "href": "../sign-in/sign-in.html"
     },
     "two": {
       "theme": "bg-primary-grad",
       "paddingSize": "m",
       "text": "Зарегистрироваться",
       "isLink": true,
-      "href": "./registration.html"
+      "href": "../registration/registration.html"
     }
   }
 }

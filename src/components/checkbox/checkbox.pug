@@ -4,7 +4,6 @@ mixin checkbox(options = {})
       type="default",
       checked=false,
       name,
-      value,
       shortText = false,
       text,
       header
@@ -13,12 +12,12 @@ mixin checkbox(options = {})
   if type == "rich"
     .checkbox.checkbox_rich
       label(class="checkbox__label checkbox__label_rich") 
-        input(type="checkbox" class="checkbox__input" checked=checked name=name value=value)
+        input(type="checkbox" class="checkbox__input" checked=checked name=name)
         span.checkbox__mark
         span.checkbox__label-header #{header}
         span.checkbox__label-text(class=shortText? "checkbox__short-text_width-200": "") #{text}
   else if type == "default"
     .checkbox
       label.checkbox__label(class=shortText? "checkbox__short-text_width-230": "") #{text}
-        input(type = "checkbox" class="checkbox__input" checked=checked name=name value=value)
+        input(type = "checkbox" class="checkbox__input" checked=checked name=name)
         span.checkbox__mark

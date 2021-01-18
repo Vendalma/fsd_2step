@@ -1,6 +1,15 @@
 include /components/like-button/like-button
 
-mixin comment({userPhoto,userName,date,likeCount,likeActive= false,text} = {})
+mixin comment(options = {})
+  -
+    const {
+      userPhoto,
+      userName,
+      date,
+      like = {},
+      text,
+    } = options
+
   .comment
     .comment__block-user
       .comment__user-photo
@@ -10,5 +19,5 @@ mixin comment({userPhoto,userName,date,likeCount,likeActive= false,text} = {})
         span.comment__date #{date}
     .comment__block
       .comment__like-button
-        +likeButton({count:likeCount,active:likeActive})
+        +likeButton(like)
       p.comment__text #{text}

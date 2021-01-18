@@ -1,13 +1,8 @@
 .form-elements {
   width: 100%;
   background-color: #ffffff;
-  &__logo {
-    padding-top: 30px * 100%/ 1410px;
-    padding-left: 30px * 100%/ 1410px;
-  }
   &__container {
-    max-width: 1200px;
-    margin: 0 auto;
+    @include pageSettings;
     margin-top: 65px;
     margin-bottom: 132px;
     padding-right: 20px;

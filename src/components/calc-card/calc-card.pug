@@ -9,15 +9,24 @@ mixin calc-card(options = {})
       roomNumber = "888",
       isLuxury = true,
       roomPrice = "9 900",
-      dayCalculating = "9 900₽ x 4 суток", 
-      dayCalculatingTotal = "39 960", 
+      dropdownDateSetting ={type:"range",
+        active:true,
+        setDate: true,
+        description1:"прибытие",
+        description2:"выезд"},
+      dropdownSettings = {type:"guests",
+        score1 :2,
+        score2: 1},
+      priceCalculating = "9 900",
+      dayCalculating = "4 суток", 
+      calculatingTotal = "39 960", 
       serviceSale = "2 179", 
       serviceTotal = "0", 
       additionalServiceTotal = "300",
       totalSum = "38 081"} = options
 
   .calc-card
-    form(action="formAction" method="post").calc-card__form
+    form(action="/mock-address/change-me" method="post").calc-card__form
       .calc-card__container.calc-card__container_row.calc-card__container_margin-b-21
         p.calc-card__info
           span.calc-card__info-no № 
@@ -28,23 +37,17 @@ mixin calc-card(options = {})
             span.calc-card__info-text в сутки
       .calc-card__container.calc-card__container_margin-b-21
         .calc-card__dropdown-date
-          +dropdownDate({type:"range",
-            active:true,
-            setDate: true,
-            description1:"прибытие",
-            description2:"выезд"})
+          +dropdownDate(dropdownDateSetting)
       .calc-card__container.calc-card__container_column.calc-card__container_margin-b-18
         .calc-card__description
           +description({text:"гости"})
         .calc-card__dropdown
-          +dropdown({type:"guests",
-            score1 :2,
-            score2: 1})
+          +dropdown(dropdownSettings)
       .calc-card__container.calc-card__container_column.calc-card__container_margin-b-23
         ul.calc-card__items
           li.calc-card__item
-            span.calc-card__item-calculating #{dayCalculating}
-            span.calc-card__item-total #{dayCalculatingTotal}₽
+            span.calc-card__item-calculating #{priceCalculating}₽ x #{dayCalculating}
+            span.calc-card__item-total #{calculatingTotal}₽
           li.calc-card__item.calc-card__item_margin
             .calc-card__item-group
               span.calc-card__item-calculating Сбор за услуги: скидка #{serviceSale}₽
