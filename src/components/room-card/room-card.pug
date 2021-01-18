@@ -1,26 +1,25 @@
 include /components/rate button/rate button
 
-mixin room-card({isLuxury=false, number, price, rate, reviews,imgs})
+mixin room-card({isLuxury=false, number, price, rate, reviews,imgs}={})
   .room-card
     .room-card__container
-      .room-card__slider-block
-        .room-card__slider
-          each image in imgs
-            img.room-card__image(src=require(`@images/${image}`).default,  alt=`room №${number}`)
-    .room-card__container
+      .room-card__slider
+        each image in imgs
+          img.room-card__image(src=require(`@images/${image}`).default,  alt=`room №${number}`)
+    .room-card__container.room-card__container_padding
       .room-card__block
-        .room-card__info-room
-          span.room-card__info-room_no № 
-          span.room-card__info-room_number #{number}
+        p.room-card__room
+          span.room-card__room-no &#8470;
+          span.room-card__room-number &#32;#{number}
           if isLuxury
-            span.room-card__info-room_luxury  люкс
-        .room-card__price
-          span.room-card__price_text #{price}
-          span.room-card__price_info  в сутки
+            span.room-card__room-luxury люкс
+        p.room-card__price
+          span.room-card__price-text #{price}&#8381;
+          span.room-card__price-info &#32;в сутки
       .room-card__block
         .room-card__line   
-      .room-card__block.room-card__block_padding
+      .room-card__block
         .room-card__rate-button
           +rateButton(rate)
-        .room-card__reviews #{reviews}
-          span.room-card__reviews_info  Отзывов
+        p.room-card__reviews #{reviews}
+          span.room-card__reviews-info &#32;Отзывов

@@ -7,7 +7,7 @@ include /components/field/field
 mixin registration-card
   .registration-card
     h1.registration-card__title Регистрация аккаунта
-    form.registration-card__form
+    form(action="/mock-address/change-me" method="post").registration-card__form
       .registration-card__container.registration-card__container_column
         .registration-card__text-field
           +textField({type:"text", placeholder:"Имя"})
@@ -15,11 +15,12 @@ mixin registration-card
           +textField({type:"text", placeholder:"Фамилия"})
       .registration-card__container.registration-card__container_row.registration-card__container_margin-b-23.registration-card__container_width-220
         .registration-card__radio
-          +radio({name:"gender", 
+          +radio({name:"gender",
+            value: "male", 
             text:"Мужчина", 
             checked: true})
         .registration-card__radio  
-          +radio({name:"gender", text:"Женщина"})
+          +radio({name:"gender",value: "female", text:"Женщина"})
       .registration-card__container.registration-card__container_column.registration-card__container_margin-b-10
         .registration-card__description
           +description({text:"дата рождения"})
@@ -41,10 +42,10 @@ mixin registration-card
             type: "submit"})
 
     .registration-card__container.registration-card__container_row
-      .registration-card__text Уже есть аккаунт на Toxin
+      p.registration-card__text Уже есть аккаунт на Toxin
       .registration-card__button
         +button({isLink: true,
         theme:"border-primary-grad",
         paddingSize: "m",
         text:"войти",
-        href: "./sign-in.html"})
+        href: "../sign-in/sign-in.html"})

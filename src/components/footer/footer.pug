@@ -6,7 +6,7 @@ include /components/social-icons/social-icons
 mixin footer
   - const {navigationLinks, aboutUsLinks,supportServiceLinks} = require("@components/footer/footer.json")
   .footer
-    .footer__content-block_wrapper
+    .footer__container
       .footer__block-logo
         .footer__logo
           +logo({colored: true})
@@ -33,9 +33,9 @@ mixin footer
         p.footer__header.footer__header_margin-b-18 Подписка
         p.footer__text.footer__text_margin Получайте специальные предложения и новости сервиса
         form(action="/mock-address/change-me" method="post").footer__email-field
-          +textField({type: "email", placeholder: "Email"})
+          +textField({type: "email", placeholder: "Email", arrow: true})
 
-    .footer__content-block_copyright-wrapper
+    .footer__container-copyright
       .footer__block-copyright
         p.footer__text Copyright &#169; 2018 Toxin отель. Все права защищены.
         .footer__social

@@ -5,6 +5,11 @@
   &__container {
     background-color: #ffffff;
     border-radius: 4px;
+    &_padding {
+      padding-left: 20px;
+      padding-right: 17px;
+      padding-bottom: 15px;
+    }
   }
   &__image {
     width: 100%;
@@ -16,20 +21,14 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding-left: 20px;
-    padding-right: 17px;
-    &_padding {
-      padding-bottom: 15px;
-      padding-right: 20px;
-    }
   }
-  &__info-room {
+  &__room {
     @extend %h2-font;
-    &_no {
+    &-no {
       font-size: 1rem;
       line-height: 1.214rem;
     }
-    &_luxury {
+    &-luxury {
       @extend %h3-font;
       color: $color-one;
     }
@@ -40,7 +39,7 @@
     font-weight: 700;
     color: $dark-50;
     align-self: flex-end;
-    &_info {
+    &-info {
       font-size: 0.857rem;
       font-weight: 400;
     }
@@ -59,7 +58,8 @@
     font-weight: 700;
     color: $dark-50;
     padding-bottom: 5px;
-    &_info {
+    padding-right: 3px;
+    &-info {
       font-weight: 400;
     }
   }

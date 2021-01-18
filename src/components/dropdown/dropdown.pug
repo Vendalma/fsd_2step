@@ -29,7 +29,7 @@ mixin dropdown({type, score1 = 0, score2 = 0, score3 = 0,active = false}={})
           +button({theme:"text-colored",text:"Очистить"}).dropdown__clear-button.js-dropdown__clear-button.dropdown__clear-button_hidden
           +button({theme:"text-colored",text:"Применить"}).dropdown__apply-button.js-dropdown__apply-button
   else if type == "room" 
-    .dropdown.js-dropdown.dropdown_room&attributes(attributes)  
+    .dropdown.js-dropdown.dropdown_room
       .dropdown__select-container.js-dropdown__select-container(class = active? "dropdown__select-container_open" : "dropdown__select-container_default")
         span.dropdown__placeholder.js-dropdown__placeholder(class = active? "dropdown__placeholder_open" : "dropdown__placeholder_default") 
         i.dropdown__material-icons.js-dropdown__material-icons.dropdown__material-icons_default expand_more

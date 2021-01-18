@@ -1,12 +1,12 @@
 mixin chart
   .chart
     .chart__svg
-      svg.chart__chart( viewBox="0 0 33 33")
+      svg.chart__container( viewBox="0 0 33 33")
         circle.chart__hole(cx="50%" cy="50%" r="15.9" fill="#FFF")
         circle.chart__ring(cx="50%" cy="50%" r="15.9" fill="transparent" stroke="#fff" stroke-width="2")
         circle.chart__segment_one(cx="50%" cy="50%" r="15.9" fill="transparent" stroke="url(#primary-gradient)" stroke-width="1" stroke-dasharray="24.5 100" stroke-dashoffset="-75")
         circle.chart__segment_two(cx="50%" cy="50%" r="15.9" fill="transparent" stroke="url(#secondary-gradient)" stroke-width="1" stroke-dasharray="24.5 100" stroke-dashoffset="0")
-        circle.chart__segment_two(cx="50%" cy="50%" r="15.9" fill="transparent" stroke="url(#third-gradient)" stroke-width="1" stroke-dasharray="49.5 100" stroke-dashoffset="-25")
+        circle.chart__segment_three(cx="50%" cy="50%" r="15.9" fill="transparent" stroke="url(#third-gradient)" stroke-width="1" stroke-dasharray="49.5 100" stroke-dashoffset="-25")
         defs.chart__defs
           linearGradient(id="primary-gradient" x1="0%" y1="0%" x2="0%" y2="100%")
             stop(offset="0%" stop-color="#BC9CFF")

@@ -8,7 +8,7 @@ mixin calc-card(options = {})
     const  {
       roomNumber = "888",
       isLuxury = true,
-      roomPrice = "9 900",
+      roomPrice = "9 990",
       dropdownDateSetting ={type:"range",
         active:true,
         setDate: true,
@@ -17,7 +17,7 @@ mixin calc-card(options = {})
       dropdownSettings = {type:"guests",
         score1 :2,
         score2: 1},
-      priceCalculating = "9 900",
+      priceCalculating = "9 990",
       dayCalculating = "4 суток", 
       calculatingTotal = "39 960", 
       serviceSale = "2 179", 
@@ -29,11 +29,11 @@ mixin calc-card(options = {})
     form(action="/mock-address/change-me" method="post").calc-card__form
       .calc-card__container.calc-card__container_row.calc-card__container_margin-b-21
         p.calc-card__info
-          span.calc-card__info-no № 
+          span.calc-card__info-no &#8470;&#32;
             span.calc-card__info-num #{roomNumber}
             if isLuxury
               span.calc-card__info-luxury люкс
-          span.calc-card__info-price #{roomPrice}₽ 
+          span.calc-card__info-price #{roomPrice}&#8381;&#32;
             span.calc-card__info-text в сутки
       .calc-card__container.calc-card__container_margin-b-21
         .calc-card__dropdown-date
@@ -43,26 +43,26 @@ mixin calc-card(options = {})
           +description({text:"гости"})
         .calc-card__dropdown
           +dropdown(dropdownSettings)
-      .calc-card__container.calc-card__container_column.calc-card__container_margin-b-23
+      .calc-card__container.calc-card__container_column.calc-card__container_margin-b-31
         ul.calc-card__items
           li.calc-card__item
-            span.calc-card__item-calculating #{priceCalculating}₽ x #{dayCalculating}
-            span.calc-card__item-total #{calculatingTotal}₽
+            span.calc-card__item-calculating #{priceCalculating}&#8381; x #{dayCalculating}
+            span.calc-card__item-total #{calculatingTotal}&#8381;
           li.calc-card__item.calc-card__item_margin
             .calc-card__item-group
-              span.calc-card__item-calculating Сбор за услуги: скидка #{serviceSale}₽
+              span.calc-card__item-calculating Сбор за услуги: скидка #{serviceSale}&#8381;
               span.calc-card__item-circle i
-            span.calc-card__item-total #{serviceTotal}₽
+            span.calc-card__item-total #{serviceTotal}&#8381;
           li.calc-card__item
             .calc-card__item-group
-              span.calc-card__item-calculating Сбор за дополнительные услуги
+              span.calc-card__item-calculating.calc-card__item-calculating_font-size Сбор за дополнительные услуги
               span.calc-card__item-circle i
-            span.calc-card__item-total #{additionalServiceTotal}₽         
+            span.calc-card__item-total #{additionalServiceTotal}&#8381;         
       .calc-card__container.calc-card__container_padding-0.calc-card__container_margin-b-21
         p.calc-card__total
           span.calc-card__total-text Итого
           span.calc-card__total-line
-          span.calc-card__total-sum #{totalSum}₽
+          span.calc-card__total-sum #{totalSum}&#8381;
       .calc-card__container
         .calc-card__button
           +button({theme:"long",

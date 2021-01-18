@@ -18,7 +18,7 @@ block head
       main.cards__content-block
         .cards__container_column.cards__container_margin
           .cards__item
-            +search-card(false)
+            +search-card({activeCalendar:false})
           .cards__item
             +registration-card
         .cards__container_column.cards__container_margin
@@ -32,13 +32,13 @@ block head
           .cards__item
             +room-card({isLuxury: true,
             number:"888",
-            price: "9 990₽",
+            price: "9 990",
             rate:5 ,
             reviews:"145", 
             imgs: room1})
           .cards__item
             +room-card({number:"840",
-            price: "9 900₽",
+            price: "9 900",
             rate: 4 ,
             reviews:"65",
             imgs: room2})

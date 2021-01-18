@@ -1,4 +1,4 @@
-mixin textField({type, placeholder} = {}) 
+mixin textField({type, placeholder, arrow = false} = {}) 
   if type == "text"
     .text-field
       label.text-field__label
@@ -9,7 +9,7 @@ mixin textField({type, placeholder} = {})
         input(type="text" placeholder=placeholder).text-field__input.text-field__input_hover
   else if type == "email"
     .text-field
-      label.text-field__label.text-field__label_subscribe
+      label.text-field__label(class = arrow? "text-field__label_subscribe" : "")
         input(type="email" placeholder=placeholder).text-field__input.text-field__input_subscribe
   else if type == "mask"
     .text-field.js-text-field
