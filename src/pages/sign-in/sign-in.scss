@@ -1,13 +1,8 @@
 .sign-in {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  @include flexAndHeight;
   &__content {
     width: 100%;
-    background-image: url('~@/assets/images/bg-image-4.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    @include addBackgroundImage('bg-image-4.jpg');
     @include image-animation;
   }
   &__wrapper {
@@ -28,12 +23,9 @@
   }
 }
 
-@media (max-width: 768px) {
+@include bp-768 {
   .sign-in {
     &__footer {
-      &_default {
-        display: none;
-      }
       &_small {
         display: block;
       }

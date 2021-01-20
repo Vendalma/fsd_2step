@@ -46,13 +46,14 @@
     }
   }
   &__range-slider {
-    margin-bottom: 14px;
+    margin-bottom: 11px;
     &_text {
       @extend %h3-font;
       line-height: 1rem;
       color: $dark-50;
       text-transform: none;
       font-weight: normal;
+      text-align: center;
     }
   }
   &__checkbox {
@@ -104,21 +105,14 @@
   }
 }
 
-@media (max-width: 1024px) {
-  .search-room {
-    &__rooms {
-      &-item {
-        margin-right: 5px;
-      }
-    }
-  }
-}
-
-@media (max-width: 881px) {
+@include bp-1024 {
   .search-room {
     &__rooms {
       justify-content: center;
       align-items: center;
+      &-item {
+        margin-right: 5px;
+      }
       &-cards {
         align-items: center;
         justify-content: center;
@@ -126,7 +120,8 @@
     }
   }
 }
-@media (max-width: 768px) {
+
+@include bp-768 {
   .search-room {
     position: relative;
     &__filter {
@@ -165,11 +160,10 @@
     &_close {
       display: none;
     }
-
+    &__title {
+      text-align: center;
+    }
     &__footer {
-      &_default {
-        display: none;
-      }
       &_small {
         display: block;
       }

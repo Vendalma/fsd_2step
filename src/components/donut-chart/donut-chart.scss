@@ -5,6 +5,7 @@
   align-items: flex-end;
   &__wrapper {
     position: relative;
+    margin-bottom: 10px;
   }
   &__info {
     display: inline-flex;
@@ -25,6 +26,7 @@
   }
   &__legend {
     padding-left: 29px;
+    padding-bottom: 10px;
   }
   &__item {
     @extend %body-font;
@@ -44,10 +46,13 @@
   }
 }
 
-@media (max-width: 360px) {
+@include bp-380 {
   .chart {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    &__legend {
+      padding-bottom: 0px;
+    }
   }
 }

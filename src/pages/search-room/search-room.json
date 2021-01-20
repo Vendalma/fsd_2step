@@ -3,7 +3,7 @@
     {
       "isLuxury": true,
       "number": "888",
-      "price": "9 990₽",
+      "price": "9 990",
       "rate": 5,
       "reviews": "145",
       "imgs": [
@@ -15,7 +15,7 @@
     },
     {
       "number": "840",
-      "price": "9 900₽",
+      "price": "9 900",
       "rate": 4,
       "reviews": "65",
       "imgs": [
@@ -28,7 +28,7 @@
     {
       "isLuxury": true,
       "number": "980",
-      "price": "8 500₽",
+      "price": "8 500",
       "rate": 3,
       "reviews": "35",
       "imgs": [
@@ -40,7 +40,7 @@
     },
     {
       "number": "856",
-      "price": "7 300₽",
+      "price": "7 300",
       "rate": 5,
       "reviews": "19",
       "imgs": [
@@ -52,7 +52,7 @@
     },
     {
       "number": "740",
-      "price": "6 000₽",
+      "price": "6 000",
       "rate": 4,
       "reviews": "44",
       "imgs": [
@@ -64,7 +64,7 @@
     },
     {
       "number": "982",
-      "price": "5 800₽",
+      "price": "5 800",
       "rate": 3,
       "reviews": "56",
       "imgs": [
@@ -76,7 +76,7 @@
     },
     {
       "number": "678",
-      "price": "5 500₽",
+      "price": "5 500",
       "rate": 5,
       "reviews": "45",
       "imgs": [
@@ -88,7 +88,7 @@
     },
     {
       "number": "450",
-      "price": "5 300₽",
+      "price": "5 300",
       "rate": 4,
       "reviews": "39",
       "imgs": [
@@ -100,7 +100,7 @@
     },
     {
       "number": "350",
-      "price": "5 000₽",
+      "price": "5 000",
       "rate": 3,
       "reviews": "77",
       "imgs": [
@@ -112,7 +112,7 @@
     },
     {
       "number": "666",
-      "price": "5 000₽",
+      "price": "5 000",
       "rate": 5,
       "reviews": "25",
       "imgs": [
@@ -124,7 +124,7 @@
     },
     {
       "number": "444",
-      "price": "5 000₽",
+      "price": "5 000",
       "rate": 3,
       "reviews": "15",
       "imgs": [
@@ -136,7 +136,7 @@
     },
     {
       "number": "352",
-      "price": "5 000₽",
+      "price": "5 000",
       "rate": 3,
       "reviews": "55",
       "imgs": [
@@ -149,7 +149,6 @@
   ],
   "dropdownDate": {
     "type": "filter",
-    "active": true,
     "description1": "даты пребывания в отеле"
   },
   "dropdown": {
@@ -167,13 +166,16 @@
   },
   "checkboxSettings": {
     "smoking": {
+      "name": "smoking",
       "text": "Можно курить"
     },
     "pets": {
+      "name": "pets",
       "text": "Можно с питомцами",
       "checked": true
     },
     "guests": {
+      "name": "guests",
       "text": "Можно пригласить гостей (до 10 человек)",
       "checked": true,
       "shortText": true
@@ -182,13 +184,15 @@
   "richCheckboxSettings": {
     "corridor": {
       "type": "rich",
-      "head": "Широкий коридор",
+      "name": "wide corridor",
+      "header": "Широкий коридор",
       "text": "Ширина коридоров в номере не менее 91 см.",
       "shortText": true
     },
     "assistant": {
       "type": "rich",
-      "head": "Помощник для инвалидов",
+      "name": "assistant",
+      "header": "Помощник для инвалидов",
       "text": "На 1 этаже вас встретит специалист и проводит до номера."
     }
   },
@@ -196,24 +200,30 @@
     "text": "дополнительные удобства",
     "items": [
       {
-        "text": "Завтрак"
+        "text": "Завтрак",
+        "name": "breakfast"
       },
       {
         "text": "Письменный стол",
+        "name": "table",
         "checked": true
       },
       {
         "text": "Стул для кормления",
+        "name": "chair for babies",
         "checked": true
       },
       {
-        "text": "Кроватка"
+        "text": "Кроватка",
+        "name": "bed for babies"
       },
       {
-        "text": "Телевизор"
+        "text": "Телевизор",
+        "name": "TV"
       },
       {
-        "text": "Шампунь"
+        "text": "Шампунь",
+        "name": "shampoo"
       }
     ]
   }

@@ -1,13 +1,8 @@
 .landing {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  @include flexAndHeight;
   &__content {
     width: 100%;
-    background-image: url('~@/assets/images/bg-image-1.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    @include addBackgroundImage('bg-image-1.jpg');
     @include image-animation;
   }
   &__wrapper {
@@ -39,26 +34,25 @@
   }
 }
 
-@media (max-width: 768px) {
+@include bp-768 {
   .landing {
     &__footer {
-      &_default {
-        display: none;
-      }
       &_small {
         display: block;
       }
     }
   }
 }
-@media (max-width: 476px) {
+@include bp-480 {
   .landing {
     &__wrapper {
       padding-left: 0px;
       padding-right: 0px;
+      align-items: center;
+      justify-content: center;
     }
-    &__card {
-      margin: 0 auto;
+    &__text {
+      opacity: 0;
     }
   }
 }

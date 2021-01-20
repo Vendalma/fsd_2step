@@ -14,10 +14,10 @@ block head
   body
     .room-details
       header.room-details__header
-        +header({userName: false})
+        +header
       main.room-details__content
-        .room-details__block
-          article.room-details__gallery
+        article.room-details__block
+          .room-details__gallery
             figure.room-details__gallery-item
               img.room-details__image(src=require("@images/bg-image-7.jpg").default alt="room №888")
             .room-details__block.room-details__block_column.room-details__block_width-459
@@ -57,8 +57,8 @@ block head
               section.room-details__container.room-details__container_width-341
                 h2.room-details__title Отмена
                 .room-details__text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
-          .room-details__block.room-details__block_width-380
-            aside.room-details__container.room-details__container_relative
+          aside.room-details__block.room-details__block_width-380
+            .room-details__container.room-details__container_relative
               .room-details__card
                 +calc-card({isLuxury: true})
       footer.room-details__footer
