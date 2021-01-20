@@ -1,0 +1,28 @@
+{
+  "chartOptions": {
+    "total": 260,
+    "totalText": "голосов",
+    "items": [
+      {
+        "count": 130,
+        "text": "Великолепно",
+        "className": "excellent"
+      },
+      {
+        "count": 65,
+        "text": "Хорошо",
+        "className": "good"
+      },
+      {
+        "count": 65,
+        "text": "Удовлетворительно",
+        "className": "satisfactory"
+      },
+      {
+        "count": 0,
+        "text": "Разочарован",
+        "className": "disappointed"
+      }
+    ]
+  }
+}
