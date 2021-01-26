@@ -4,14 +4,14 @@ import './dropdown.scss';
 class Dropdown {
   constructor(container) {
     this.container = container;
+    this.data = {};
     this.init();
     this.clickSelectContainer();
-    this.clickMin();
-    this.clickMax();
     this.checkMaterialIcons();
     this.clickClearButton();
     this.clickApplyButton();
     this.checkActiveDropdown();
+    this.countClick();
   }
 
   init() {
@@ -25,14 +25,8 @@ class Dropdown {
     this.materialIcon = this.container.querySelector(
       '.js-dropdown__material-icons'
     );
-    this.itemScore = this.container.querySelectorAll(
-      '.js-dropdown__item-score'
-    );
-    this.minuses = this.container.querySelectorAll(
-      '.js-dropdown__item-button_min'
-    );
-    this.pluses = this.container.querySelectorAll(
-      '.js-dropdown__item-button_plus'
+    this.countContainer = this.container.querySelectorAll(
+      '.dropdown__item-count'
     );
     if (this.checkTypeDropdown()) {
       this.clearButton = this.container.querySelector(
@@ -43,12 +37,14 @@ class Dropdown {
       );
     }
   }
+
   clickSelectContainer() {
     this.selectContainer.addEventListener(
       'click',
       this.openContainer.bind(this)
     );
   }
+
   openContainer() {
     this.selectList.classList.toggle('dropdown__select-list_default');
     if (!this.checkTypeDropdown()) {
@@ -60,17 +56,10 @@ class Dropdown {
     this.selectContainer.classList.toggle('dropdown__select-container_default');
     this.selectContainer.classList.toggle('dropdown__select-container_open');
 
-    this.placeholder.classList.toggle('dropdown__placeholder_default');
-    this.placeholder.classList.toggle('dropdown__placeholder_open');
-
     this.materialIcon.classList.toggle('dropdown__material-icons_default');
     this.materialIcon.classList.toggle('dropdown__material-icons_open');
   }
-  clickMin() {
-    this.minuses.forEach((elem) => {
-      elem.addEventListener('click', this.onMinClick.bind(this));
-    });
-  }
+
   checkMaterialIcons() {
     if (
       this.selectContainer.classList.contains('dropdown__select-container_open')
@@ -79,185 +68,133 @@ class Dropdown {
       this.materialIcon.classList.toggle('dropdown__material-icons_open');
     }
   }
+
   onMinClick(elem) {
-    let score = elem.target.nextElementSibling;
+    let score = elem.nextElementSibling;
     if (Number(score.innerHTML) > 0) {
       score.innerHTML = Number(score.innerHTML) - 1;
     }
-    this.hideMinButton();
-    this.hideClearButton();
-    this.checkCorrectItemName(this.itemScore);
+    if (Number(score.innerHTML) <= 0) {
+      this.hideMinButton(elem);
+    }
+    return Number(score.innerHTML);
   }
+
+  hideMinButton(elem) {
+    elem.classList.add('dropdown__item-button_hidden');
+  }
+
+  setMinButton(elem) {
+    elem.classList.remove('dropdown__item-button_hidden');
+  }
+
   hideClearButton() {
-    if (this.checkCountScore(this.itemScore) && this.checkTypeDropdown()) {
+    if (this.checkCountScore() && this.checkTypeDropdown()) {
       this.clearButton.classList.add('dropdown__clear-button_hidden');
     }
   }
+
   setClearButton() {
     if (this.checkTypeDropdown()) {
       this.clearButton.classList.remove('dropdown__clear-button_hidden');
     }
   }
-  hideMinButton() {
-    this.minuses.forEach((elem) => {
-      let score = elem.nextElementSibling;
-      if (Number(score.innerHTML) <= 0) {
-        elem.classList.add('dropdown__item-button_hidden');
-      }
-    });
-  }
-  setMinButton() {
-    this.minuses.forEach((elem) => {
-      let score = elem.nextElementSibling;
-      if (Number(score.innerHTML) > 0) {
-        elem.classList.remove('dropdown__item-button_hidden');
-      }
-    });
-  }
-  clickMax() {
-    this.pluses.forEach((elem) => {
-      elem.addEventListener('click', this.onPlusClick.bind(this));
-    });
-  }
+
   onPlusClick(elem) {
-    let score = elem.target.previousElementSibling;
+    let score = elem.previousElementSibling;
     score.innerHTML = Number(score.innerHTML) + 1;
-    this.setMinButton();
+    this.setMinButton(score.previousElementSibling);
     this.setClearButton();
-    this.checkCorrectItemName(this.itemScore);
+    return Number(score.innerHTML);
   }
+
+  countClick() {
+    this.countContainer.forEach((item) => {
+      item.addEventListener('click', this.onCountClick.bind(this));
+      if (!this.data[item.dataset.num]) {
+        this.data[item.dataset.num] = {};
+        this.data[item.dataset.num].name = item.dataset.name;
+      }
+    });
+  }
+
+  onCountClick(event) {
+    let score;
+    if (event.target.classList.contains('js-dropdown__item-button_plus')) {
+      score = this.onPlusClick(event.target);
+    } else if (
+      event.target.classList.contains('js-dropdown__item-button_min')
+    ) {
+      score = this.onMinClick(event.target);
+    }
+    let num = event.target.parentElement.dataset.num;
+    this.data[num].score = score;
+    this.renderStr();
+  }
+
   checkTypeDropdown() {
     return this.container.classList.contains('dropdown_guests');
   }
-  setItemNameForGuests(array) {
-    let sum = 0;
-    let sumChild = 0;
 
+  renderStr() {
     let str = '';
-    let strChild = '';
-    for (let elem of array) {
-      if (elem.classList.contains('dropdown__item-score_child')) {
-        sumChild = sumChild + Number(elem.innerHTML);
-      } else {
-        sum = sum + Number(elem.innerHTML);
-      }
+    for (let item in this.data) {
+      const { name, score } = this.data[item];
+      score > 0 &&
+        (str += `${score} ${this.setRightName(score, name.split('|'))}, `);
     }
-
-    if (sum == 1) {
-      str = sum + ' гость';
-    } else if (sum > 1 && sum <= 4) {
-      str = sum + ' гостя';
-    } else if (sum >= 5 && sum <= 20) {
-      str = sum + ' гостей';
-    }
-
-    if (sumChild == 1) {
-      strChild = sumChild + ' младенец';
-    } else if (sumChild > 1 && sumChild <= 4) {
-      strChild = sumChild + ' младенца';
-    } else if (sumChild >= 5 && sumChild <= 20) {
-      strChild = sumChild + ' младенцев';
-    }
-
-    if (sum == 0 && sumChild == 0) {
+    if (str === '' && this.checkTypeDropdown()) {
       this.placeholder.innerHTML = 'Сколько гостей';
-    } else if (sum == 0 && sumChild > 0) {
-      this.placeholder.innerHTML = strChild;
-    } else if (sum > 0 && sumChild == 0) {
-      this.placeholder.innerHTML = str;
+      this.hideClearButton();
+    } else if (str === '' && !this.checkTypeDropdown()) {
+      this.placeholder.innerHTML = 'Какие удобства';
+      this.hideClearButton();
     } else {
-      this.placeholder.innerHTML = str + ', ' + strChild;
-    }
-  }
-  setItemNameForRoom(array) {
-    let bedrooms = 0;
-    let beds = 0;
-    let bathrooms = 0;
-
-    let str1 = '';
-    let str2 = '';
-    let str3 = '';
-
-    for (let elem of array) {
-      if (elem.classList.contains('dropdown__item-score_bedrooms')) {
-        bedrooms = bedrooms + Number(elem.innerHTML);
-      } else if (elem.classList.contains('dropdown__item-score_beds')) {
-        beds = beds + Number(elem.innerHTML);
-      } else if (elem.classList.contains('dropdown__item-score_bathrooms')) {
-        bathrooms = bathrooms + Number(elem.innerHTML);
-      }
-    }
-
-    if (bedrooms == 1) {
-      str1 = bedrooms + ' спальня';
-    } else if (bedrooms > 1 && bedrooms <= 4) {
-      str1 = bedrooms + ' спальни';
-    } else if (bedrooms >= 5 && bedrooms <= 20) {
-      str1 = bedrooms + ' спален';
-    }
-
-    if (beds == 1) {
-      str2 = beds + ' кровать';
-    } else if (beds > 1 && beds <= 4) {
-      str2 = beds + ' кровати';
-    } else if (beds >= 5 && beds <= 20) {
-      str2 = beds + ' кроватей';
-    }
-
-    if (bathrooms == 1) {
-      str3 = bathrooms + ' ванная комната';
-    } else if (bathrooms > 1 && bathrooms <= 4) {
-      str3 = bathrooms + ' ванные комнаты';
-    } else if (bathrooms >= 5 && bathrooms <= 20) {
-      str3 = bathrooms + ' ванных комнат';
-    }
-
-    let allRoomsZero = bedrooms === 0 && beds === 0 && bathrooms === 0;
-
-    if (allRoomsZero) {
-      this.placeholder.innerHTML = 'Удобства номера';
-    } else {
-      this.placeholder.innerHTML = str1 + str2 + str3;
-    }
-
-    let bedsAndBathrooms = beds > 0 && bathrooms > 0;
-    let bedroomsAndBathrooms = bedrooms > 0 && bathrooms > 0;
-    let allRoomsNotZero = bedrooms > 0 && beds > 0 && bathrooms > 0;
-    let bedroomsAndBed = bedrooms > 0 && beds > 0;
-
-    if (bedrooms == 0 && bedsAndBathrooms) {
-      this.placeholder.innerHTML = str2 + ', ' + str3;
-    } else if (bedroomsAndBathrooms && beds == 0) {
-      this.placeholder.innerHTML = str1 + ', ' + str3;
-    } else if (allRoomsNotZero) {
-      this.placeholder.innerHTML = str1 + ', ' + str2 + ', ' + str3;
-    } else if (bedroomsAndBed && bathrooms == 0) {
-      this.placeholder.innerHTML = str1 + ', ' + str2 + '...';
-    }
-  }
-  checkCorrectItemName(array) {
-    if (this.checkTypeDropdown()) {
-      this.setItemNameForGuests(array);
-    } else {
-      this.setItemNameForRoom(array);
+      this.placeholder.innerHTML = str.substring(0, str.length - 2);
     }
   }
 
-  checkCountScore(arr) {
-    for (let elem of arr) {
-      if (Number(elem.innerHTML) > 0) {
+  setRightName(num, arrItemName) {
+    num = Math.abs(num) % 100;
+    var num1 = num % 10;
+    if (num > 10 && num < 20) {
+      return arrItemName[2];
+    }
+    if (num1 > 1 && num1 < 5) {
+      return arrItemName[1];
+    }
+    if (num1 == 1) {
+      return arrItemName[0];
+    }
+    return arrItemName[2];
+  }
+
+  checkCountScore() {
+    for (let item in this.data) {
+      if (this.data[item].score > 0) {
         return false;
       }
     }
     return true;
   }
+
   cleanScore() {
-    for (let elem of this.itemScore) {
-      elem.innerHTML = 0;
+    for (let item in this.data) {
+      this.data[item].score = 0;
       this.hideClearButton();
-      this.checkCorrectItemName(this.itemScore);
+      this.renderStr();
     }
+    this.countContainer.forEach((item) => {
+      let scoreContainer = item.querySelector('.js-dropdown__item-score');
+      scoreContainer.innerHTML = '0';
+
+      let minButtons = item.querySelectorAll('.js-dropdown__item-button_min');
+      minButtons.forEach((elem) => {
+        this.hideMinButton(elem);
+      });
+    });
   }
+
   clickClearButton() {
     if (this.checkTypeDropdown()) {
       this.clearButton.addEventListener(
@@ -266,22 +203,31 @@ class Dropdown {
       );
     }
   }
+
   onClickClearButton() {
     this.cleanScore();
     this.hideClearButton();
-    this.hideMinButton();
   }
+
   clickApplyButton() {
     if (this.checkTypeDropdown()) {
       this.applyButton.addEventListener('click', this.openContainer.bind(this));
     }
   }
+
   checkActiveDropdown() {
-    if (!this.checkCountScore(this.itemScore)) {
-      this.checkCorrectItemName(this.itemScore);
-      this.setClearButton();
-      this.setMinButton();
-    }
+    this.countContainer.forEach((item) => {
+      let scoreContainer = item.querySelector('.js-dropdown__item-score');
+      let min = item.querySelector('.js-dropdown__item-button_min');
+      if (Number(scoreContainer.innerHTML) > 0) {
+        this.data[item.dataset.num] = {};
+        this.data[item.dataset.num].name = item.dataset.name;
+        this.data[item.dataset.num].score = Number(scoreContainer.innerHTML);
+        this.setMinButton(min);
+        this.setClearButton();
+      }
+    });
+    this.renderStr();
   }
 }
 

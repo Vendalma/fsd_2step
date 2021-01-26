@@ -84,7 +84,7 @@
     justify-content: space-between;
     flex-shrink: 0;
 
-    &_count {
+    &-count {
       max-width: 92px;
       min-width: 91px;
       display: flex;
@@ -99,11 +99,11 @@
       margin-top: 6px;
       margin-bottom: 7px;
     }
-    &_name {
+    &_margin-top {
+      margin-top: 21px;
+    }
+    &-name {
       @extend %h3-font;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
     &-button {
       padding: 3.2px 11px;
@@ -128,14 +128,6 @@
       margin-left: 11px * 100%/ 92px;
       margin-right: 14px;
     }
-  }
-  &__buttons {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 21px;
   }
   &__clear-button {
     &_hidden {
