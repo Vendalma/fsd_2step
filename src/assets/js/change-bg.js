@@ -1,7 +1,7 @@
 class BgSlider {
   constructor(container, images) {
     this.container = container;
-    this.images = images;
+    this.images = images; /* eslint-disable-line */
     setInterval(this.changeBg.bind(this), 30000);
   }
 

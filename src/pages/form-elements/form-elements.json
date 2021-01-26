@@ -14,7 +14,8 @@
     },
     "subscribe": {
       "type": "email",
-      "placeholder": "Email"
+      "placeholder": "Email",
+      "arrow": true
     }
   },
   "settingsDropdown": {
