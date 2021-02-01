@@ -21,18 +21,18 @@
   ],
   "buttonsSettings": {
     "one": {
-      "theme": "border-primary-grad",
-      "paddingSize": "s",
+      "theme": "bordered",
+      "type": "link",
+      "size": "s",
       "text": "Войти",
-      "isLink": true,
-      "href": "../sign-in/sign-in.html"
+      "url": "../sign-in/sign-in.html"
     },
     "two": {
-      "theme": "bg-primary-grad",
-      "paddingSize": "m",
+      "theme": "filled",
+      "type": "link",
+      "size": "s",
       "text": "Зарегистрироваться",
-      "isLink": true,
-      "href": "../registration/registration.html"
+      "url": "../registration/registration.html"
     }
   }
 }

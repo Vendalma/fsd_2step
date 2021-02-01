@@ -53,6 +53,7 @@
     line-height: 1.286rem;
   }
   &__button {
+    min-width: 99px;
     &_long {
       width: 100%;
       display: flex;

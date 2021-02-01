@@ -128,17 +128,18 @@ block head
                 .form-elements__description.form-elements__description_margin-b-15
                   +description({text: "buttons"})
                 .form-elements__buttons.form-elements__buttons_column
-                  .form-elements__buttons.form-elements__buttons_row.form-elements__buttons_margin-b-30
-                    .form-elements__buttons_margin-r-20
+                  .form-elements__buttons_row
+                    .form-elements__buttons_size-m
                       +button(buttonSettings.one)
-                    +button(buttonSettings.two)
-                  .form-elements__buttons.form-elements__buttons_row.form-elements__buttons_margin-b-30
-                    .form-elements__buttons_margin-r-20
+                    .form-elements__buttons_size-m
+                      +button(buttonSettings.two)
+                  .form-elements__buttons_row
+                    .form-elements__buttons_size-m
                       +button(buttonSettings.three)
-                    +button(buttonSettings.four)
-                  .form-elements__buttons.form-elements__buttons_row.form-elements__buttons_margin-b-30
-                    .form-elements__buttons_margin-r-20
-                      +button(buttonSettings.five)
+                    .form-elements__buttons_size-m
+                      +button(buttonSettings.four)
+                  .form-elements__buttons_row.form-elements__buttons_size-s
+                    +button(buttonSettings.five)
                     +button(buttonSettings.six)
                   .form-elements__buttons
                     +button(buttonSettings.seven)

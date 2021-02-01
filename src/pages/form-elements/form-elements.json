@@ -110,33 +110,33 @@
   },
   "buttonSettings": {
     "one": {
-      "theme": "bg-primary-grad",
-      "paddingSize": "lg",
+      "theme": "filled",
+      "size": "m",
       "text": "click me"
     },
     "two": {
-      "theme": "bg-primary-grad",
-      "paddingSize": "lg",
+      "theme": "filled",
+      "size": "m",
       "text": "click me",
-      "hoverTheme": true
+      "isDisabled": true
     },
     "three": {
-      "theme": "border-primary-grad",
-      "paddingSize": "lg",
+      "theme": "bordered",
+      "size": "m",
       "text": "click me"
     },
     "four": {
-      "theme": "border-primary-grad",
-      "paddingSize": "lg",
+      "theme": "bordered",
+      "size": "m",
       "text": "click me",
-      "hoverTheme": true
+      "isDisabled": true
     },
     "five": {
-      "theme": "text-colored",
+      "theme": "textColored",
       "text": "click me"
     },
     "six": {
-      "theme": "text-default",
+      "theme": "textDefault",
       "text": "click me"
     },
     "seven": {

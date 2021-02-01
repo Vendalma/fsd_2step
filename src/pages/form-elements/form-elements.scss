@@ -130,16 +130,23 @@
   &__buttons {
     display: flex;
     &_row {
+      display: flex;
       flex-direction: row;
+      justify-content: space-between;
+      max-width: 218px;
+      margin-bottom: 31px;
     }
     &_column {
+      display: flex;
       flex-direction: column;
     }
-    &_margin-r-20 {
-      margin-right: 20px;
+    &_size-m {
+      width: 100%;
+      max-width: 99px;
     }
-    &_margin-b-30 {
-      margin-bottom: 30px;
+    &_size-s {
+      width: 100%;
+      max-width: 142px;
     }
   }
   &__expandable-checkbox {
