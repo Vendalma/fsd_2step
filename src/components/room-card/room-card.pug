@@ -2,11 +2,11 @@ include /components/rate button/rate button
 
 mixin room-card({isLuxury=false, number, price, rate, reviews,imgs}={})
   .room-card
-    .room-card__container
+    .room-card__slider-wrapper
       .room-card__slider
         each image in imgs
           img.room-card__image(src=require(`@images/${image}`).default,  alt=`room №${number}`)
-    .room-card__container.room-card__container_padding
+    .room-card__container
       .room-card__block
         p.room-card__room
           span.room-card__room-no &#8470;
@@ -16,8 +16,7 @@ mixin room-card({isLuxury=false, number, price, rate, reviews,imgs}={})
         p.room-card__price
           span.room-card__price-text #{price}&#8381;
           span.room-card__price-info &#32;в сутки
-      .room-card__block
-        .room-card__line   
+      .room-card__line   
       .room-card__block
         .room-card__rate-button
           +rateButton(rate)

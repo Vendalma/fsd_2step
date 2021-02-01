@@ -7,18 +7,16 @@ mixin search-card
   .search-card
     h1.search-card__title Найдём номера под ваши пожелания
     form(action="/mock-address/change-me" method="post").search-card__form
-      .search-card__container.search-card__container_margin-b-22
-        .search-card__date
-          +dropdownDate({type: "range",
-            description1:"прибытие",  
-            description2: "выезд"})
-      .search-card__container.search-card__container_column.search-card__container_margin-b-30
+      .search-card__date
+        +dropdownDate({type: "range",
+          description1:"прибытие",  
+          description2: "выезд"})
+      .search-card__container
         .search-card__description
           +description({text:"гости"})
         .search-card__dropdown
           +dropdown({type:"guests"})
-      .search-card__container
-        .search-card__button
-          +button({theme:"long",
-            text:"подобрать номер",
-            type: "submit"})
+      .search-card__button
+        +button({theme:"long",
+          text:"подобрать номер",
+          type: "submit"})

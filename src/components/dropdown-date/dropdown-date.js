@@ -44,7 +44,7 @@ class DatePicker {
       },
     });
     this.addButtons($('.js-dropdown-date_inline'));
-    this.setRange($('.js-dropdown-date_inline'));
+    this.setDate($('.js-dropdown-date_inline'));
   }
 
   filter() {
@@ -66,12 +66,16 @@ class DatePicker {
       },
     });
     this.addButtons($('.js-dropdown-date__input_filter'));
-    this.setRange($('.js-dropdown-date__input_filter'));
+    this.setDate($('.js-dropdown-date__input_filter'));
   }
 
   range() {
-    let start = this.container.querySelector('.js-dropdown-date__input_range-start')
-    let end = this.container.querySelector('.js-dropdown-date__input_range-end')
+    let start = this.container.querySelector(
+      '.js-dropdown-date__input_range-start'
+    );
+    let end = this.container.querySelector(
+      '.js-dropdown-date__input_range-end'
+    );
     let picker = $(start).datepicker({
       range: true,
       multipleDates: true,
@@ -90,13 +94,10 @@ class DatePicker {
         $(end).val(fd.split('-')[1]);
       },
     });
-    $(end).on(
-      'click',
-      this.showDatepicker.bind(this, $(start))
-    );
+    $(end).on('click', this.showDatepicker.bind(this, $(start)));
     this.addButtons(picker);
-    picker.hasClass('js-dropdown-date__set-date')
-      ? this.setRange(picker)
+    picker.hasClass('js-dropdown-date__setting-date')
+      ? this.setDate(picker)
       : null;
   }
 
@@ -121,7 +122,7 @@ class DatePicker {
   hideDatepicker(elem) {
     elem.data('datepicker').hide();
   }
-  setRange(elem) {
+  setDate(elem) {
     elem
       .data('datepicker')
       .selectDate([new Date('2019-08-19'), new Date('2019-08-23')]);
@@ -131,5 +132,5 @@ class DatePicker {
 let container = document.querySelectorAll('.js-dropdown-date');
 
 container.forEach((elem) => {
-  let datePicker = new DatePicker(elem)
-})
+  let datePicker = new DatePicker(elem);
+});

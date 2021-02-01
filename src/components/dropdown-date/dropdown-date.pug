@@ -5,7 +5,7 @@ mixin dropdownDate(options={})
   - 
     const {
       type,
-      setDate=false,
+      isSettingDate=false,
       placeholder1="ДД.ММ.ГГГГ",
       description1,
       placeholder2="ДД.ММ.ГГГГ",
@@ -14,7 +14,7 @@ mixin dropdownDate(options={})
 
   if type == "filter"
     .dropdown-date.js-dropdown-date.js-dropdown-date_filter
-      .dropdown-date__block_wrapper
+      .dropdown-date__block
         label.dropdown-date__label #{description1}
           input(type="text" placeholder=placeholder1  
           class="dropdown-date__input"
@@ -22,21 +22,19 @@ mixin dropdownDate(options={})
   else if type == "inline"
     .dropdown-date.js-dropdown-date.js-dropdown-date_inline
   else if type == "range"
-    .dropdown-date.dropdown-date_margin-s.js-dropdown-date.js-dropdown-date_range
-      .dropdown-date__container_range.js-dropdown-date__container_range
-        .dropdown-date__block_wrapper.dropdown-date__block_margin
+    .dropdown-date.js-dropdown-date.js-dropdown-date_range
+      .dropdown-date__wrapper
+        .dropdown-date__block
           label.dropdown-date__label #{description1}
             input(type="text" placeholder=placeholder1 
               class = "dropdown-date__input"
-              class = "dropdown-date__input_s-150"
+              class = "dropdown-date__input_small"
               class="js-dropdown-date__input_range-start"
-              class = setDate? "js-dropdown-date__set-date" : ""
-              class ="dropdown-date__input_range")
-        .dropdown-date__block_wrapper
+              class = isSettingDate? "js-dropdown-date__setting-date" : "")
+        .dropdown-date__block
           label.dropdown-date__label #{description2}
             input(type="text" placeholder=placeholder2 
               class="dropdown-date__input"
-              class = "dropdown-date__input_s-150"
-              class="js-dropdown-date__input_range-end"
-              class ="dropdown-date__input_range")
+              class = "dropdown-date__input_small"
+              class="js-dropdown-date__input_range-end")
 

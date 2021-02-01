@@ -1,5 +1,5 @@
 .sign-in-card {
-  padding: 40px 30px 30px;
+  padding: 40px 28px 30px 30px;
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
@@ -8,34 +8,29 @@
     @extend %h1-font;
     margin-bottom: 1.429rem;
   }
+  &__form {
+    margin-bottom: 30px;
+    & > :nth-child(1) {
+      margin-bottom: 10px;
+    }
+    & > :nth-child(2) {
+      margin-bottom: 21px;
+    }
+  }
+  &__button-long {
+    display: flex;
+    width: 100%;
+  }
   &__container {
     display: flex;
     width: 100%;
-    &_column {
-      flex-direction: column;
-    }
-    &_row {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-    }
-    &_margin-b-30 {
-      margin-bottom: 30px;
-    }
-  }
-  &__text-field {
-    margin-bottom: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
   &__text {
     @extend %body-font;
     line-height: 1.286rem;
     color: #000000;
-  }
-  &__button {
-    &_long {
-      display: flex;
-      width: 100%;
-      margin-top: 11px;
-    }
   }
 }

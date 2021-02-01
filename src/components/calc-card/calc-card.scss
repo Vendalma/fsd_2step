@@ -1,5 +1,6 @@
 .calc-card {
   max-width: 380px;
+
   width: 100%;
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.12);
@@ -7,32 +8,17 @@
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   padding: 39px 21px 30px 30px;
   display: flex;
-  &__container {
-    padding-right: 8px;
-    display: flex;
-    &_row {
-      flex-direction: row;
-      align-items: baseline;
-      justify-content: space-between;
-    }
-    &_column {
-      flex-direction: column;
-    }
-    &_margin-b-21 {
-      margin-bottom: 21px;
-    }
-    &_margin-b-18 {
-      margin-bottom: 18px;
-    }
-    &_margin-b-31 {
-      margin-bottom: 31px;
-    }
-    &_padding-0 {
-      padding: 0px;
-    }
+  &__wrapper {
+    margin-right: 8px;
+    margin-bottom: 31px;
   }
+  &__guests {
+    margin-bottom: 18px;
+  }
+
   &__info {
     width: 100%;
+    margin-bottom: 22px;
     display: inline-flex;
     flex-direction: row;
     justify-content: space-between;
@@ -64,7 +50,15 @@
   &__description {
     margin-bottom: 5px;
   }
-
+  &__dropdown-date {
+    margin-bottom: 21px;
+  }
+  &__calculating-items {
+    & > :nth-of-type(2) {
+      margin-top: 11px;
+      margin-bottom: 11px;
+    }
+  }
   &__item {
     @extend %body-font;
     list-style-type: none;
@@ -75,18 +69,13 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      max-width: 250px;
+      max-width: 240px;
     }
     &-calculating {
-      max-width: 215px;
-      &_font-size {
+      &_small {
         line-height: 1.286rem;
         padding-top: 3px;
       }
-    }
-    &_margin {
-      margin-top: 11px;
-      margin-bottom: 11px;
     }
     &-circle {
       max-height: 20px;
@@ -108,9 +97,9 @@
       flex-shrink: 0;
     }
   }
-
   &__total {
     width: 100%;
+    margin-bottom: 20.5px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -136,6 +125,7 @@
 
   &__button {
     width: 100%;
+    max-width: 320px;
     display: flex;
   }
 }

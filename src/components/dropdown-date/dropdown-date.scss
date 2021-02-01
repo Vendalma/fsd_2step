@@ -1,14 +1,16 @@
 .dropdown-date {
-  &__block {
-    &_margin {
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    & > :nth-child(1) {
       margin-right: 20px;
     }
-    &_wrapper {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      cursor: pointer;
-    }
+  }
+  &__block {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    cursor: pointer;
   }
   &__label {
     width: 100%;
@@ -39,14 +41,15 @@
     cursor: pointer;
     margin-top: 5px;
 
+    &_small {
+      max-width: 150px;
+      display: flex;
+    }
+
     &::placeholder {
       color: $dark-75;
     }
 
-    &_s-150 {
-      max-width: 150px;
-      display: flex;
-    }
     &:hover {
       border: 1px solid $dark-50;
       &::placeholder {
@@ -62,10 +65,6 @@
         color: $dark-75;
       }
     }
-  }
-  &__container_range {
-    display: flex;
-    flex-direction: row;
   }
 }
 
@@ -202,6 +201,7 @@
 
 .datepicker--day-name {
   @extend %h3-font;
+  text-transform: none;
   color: $color-one;
   height: 40px;
   display: flex;
@@ -258,7 +258,7 @@
   border-radius: 4px;
   max-width: 320px;
   min-width: 320px;
-  padding: 16px 19px 19px;
+  padding: 17px 19px 19px 20px;
   position: absolute;
   left: -100000px;
   opacity: 0;
@@ -310,7 +310,8 @@
 }
 
 .datepicker--content {
-  padding-top: 7px;
+  padding-left: 2px;
+  padding-top: 6px;
   padding-bottom: 21px;
 }
 .-only-timepicker- .datepicker--content {
@@ -330,7 +331,6 @@
 .datepicker--nav {
   display: flex;
   justify-content: space-between;
-
   min-height: 32px;
 }
 .-only-timepicker- .datepicker--nav {
@@ -348,7 +348,7 @@
 .datepicker--nav-action {
   user-select: none;
   align-self: flex-start;
-  padding-top: 4px;
+  padding-top: 3px;
 }
 .material--icon {
   @extend %mat-icons;
@@ -371,7 +371,8 @@
 
 .datepicker--nav-title {
   @extend %h2-font;
-  padding: 0 8px;
+  padding-right: 8px;
+  padding-left: 10px;
   max-width: 100px;
   text-align: center;
   line-height: 1.786rem;
