@@ -1,62 +1,63 @@
 .calc-card {
-  max-width: 380px;
-
-  width: 100%;
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  @include template-for-cards;
   padding: 39px 21px 30px 30px;
-  display: flex;
   &__wrapper {
     margin-right: 8px;
     margin-bottom: 31px;
   }
-  &__guests {
-    margin-bottom: 18px;
-  }
-
-  &__info {
-    width: 100%;
-    margin-bottom: 22px;
+  &__room-info {
     display: inline-flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
-    &-no {
-      @extend %h1-font;
-      font-size: 1rem;
-      line-height: 1.214rem;
+    margin-bottom: 22px;
+    width: 100%;
+  }
+  &__number {
+    @extend %h1-font;
+    font-size: 1.714rem;
+    line-height: 2.071rem;
+    &_font {
+      &_small {
+        font-size: 1rem;
+        line-height: 1.214rem;
+      }
     }
-    &-num {
-      font-size: 1.714rem;
-      line-height: 2.071rem;
-    }
-    &-luxury {
+    &-lux {
       @extend %h3-font;
       color: $color-one;
     }
-    &-price {
-      @extend %body-font;
-      line-height: 1.286rem;
-      font-weight: 700;
-      color: $dark-50;
-    }
-    &-text {
-      font-size: 0.857rem;
-      font-weight: 400;
+  }
+  &__price {
+    @extend %body-font;
+    line-height: 1.286rem;
+    font-weight: 700;
+    color: $dark-50;
+
+    &_font {
+      &_small {
+        font-size: 0.857rem;
+        font-weight: 400;
+      }
     }
   }
-  &__description {
-    margin-bottom: 5px;
-  }
+
   &__dropdown-date {
     margin-bottom: 21px;
   }
+
+  &__guests {
+    margin-bottom: 18px;
+  }
+
+  &__description {
+    margin-bottom: 5px;
+  }
+
   &__calculating-items {
     & > :nth-of-type(2) {
       margin-top: 11px;
-      margin-bottom: 11px;
+      margin-bottom: 12px;
     }
   }
   &__item {
@@ -65,67 +66,61 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    &-group {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      max-width: 240px;
-    }
+
     &-calculating {
-      &_small {
-        line-height: 1.286rem;
-        padding-top: 3px;
+      width: 100%;
+      max-width: 240px;
+      &_font {
+        &_small {
+          line-height: 1.286rem;
+        }
+      }
+      &_type {
+        &_with-icon {
+          padding-right: 10px;
+          position: relative;
+          &::before {
+            content: 'i';
+            position: absolute;
+            right: 0;
+            @extend %h3-font;
+            text-transform: lowercase;
+            color: $dark-25;
+            border: 1px solid $dark-25;
+            border-radius: 50%;
+            padding: 2.5px 7.5px;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+          }
+        }
       }
     }
-    &-circle {
-      max-height: 20px;
-      width: 100%;
-      max-width: 20px;
-      padding: 2.5px 7.5px;
-      font-weight: 700;
-      color: $dark-25;
-      line-height: 1rem;
-      font-size: 0.857rem;
-      border: 1px solid $dark-25;
-      border-radius: 50%;
-      margin-left: 5px;
-      margin-top: 2px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
+    &-total {
+      white-space: nowrap;
     }
   }
   &__total {
     width: 100%;
-    margin-bottom: 20.5px;
-    display: flex;
+    margin-bottom: 22px;
+    display: inline-flex;
     flex-direction: row;
     justify-content: space-between;
-    @extend %h2-font;
-    position: relative;
     &-text {
-      z-index: 1;
-      background: #fff;
-      padding-right: 5.7px;
-    }
-    &-sum {
-      z-index: 1;
-      background: #fff;
-      text-align: right;
+      @extend %h2-font;
+      white-space: nowrap;
     }
     &-line {
       width: 100%;
-      position: absolute;
+      position: relative;
       bottom: 4px;
       border-bottom: 1px dashed $dark-25;
     }
   }
-
   &__button {
     width: 100%;
     max-width: 320px;
-    display: flex;
   }
 }

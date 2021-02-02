@@ -1,40 +1,50 @@
-include /components/buttons/buttons
-include /components/description/description
-
 mixin dropdownDate(options={})
   - 
     const {
-      type,
+      type="inline",
       isSettingDate=false,
       placeholder1="ДД.ММ.ГГГГ",
       description1,
       placeholder2="ДД.ММ.ГГГГ",
       description2
-      } = options
+      } = options;
 
-  if type == "filter"
-    .dropdown-date.js-dropdown-date.js-dropdown-date_filter
+    const types = {
+      inline:"dropdown-date_type_inline",
+      filter: "dropdown-date_type_filter",
+      range: "dropdown-date_type_range"
+    };
+
+    const classes = [
+      types[type]
+    ];
+
+    const jsClassName = `js-${classes}`;
+
+  .dropdown-date.js-dropdown-date(class=classes, class=jsClassName)
+    if type == "filter"
       .dropdown-date__block
         label.dropdown-date__label #{description1}
           input(type="text" placeholder=placeholder1  
           class="dropdown-date__input"
-          class="js-dropdown-date__input_filter")
-  else if type == "inline"
-    .dropdown-date.js-dropdown-date.js-dropdown-date_inline
-  else if type == "range"
-    .dropdown-date.js-dropdown-date.js-dropdown-date_range
+          class="dropdown-date__input_type_filter"
+          class="js-dropdown-date__input_type_filter")
+
+    else if type == "range"
       .dropdown-date__wrapper
         .dropdown-date__block
           label.dropdown-date__label #{description1}
             input(type="text" placeholder=placeholder1 
               class = "dropdown-date__input"
-              class = "dropdown-date__input_small"
-              class="js-dropdown-date__input_range-start"
-              class = isSettingDate? "js-dropdown-date__setting-date" : "")
+              class = "dropdown-date__input_size_small"
+              class="dropdown-date__input_type_range-start"
+              class="js-dropdown-date__input_type_range-start"
+              class = isSettingDate? "dropdown-date__input_with-set-date" : "")
         .dropdown-date__block
           label.dropdown-date__label #{description2}
             input(type="text" placeholder=placeholder2 
               class="dropdown-date__input"
-              class = "dropdown-date__input_small"
-              class="js-dropdown-date__input_range-end")
+              class = "dropdown-date__input_size_small"
+              class="dropdown-date__input_type_range-end"
+              class="js-dropdown-date__input_type_range-end")
 

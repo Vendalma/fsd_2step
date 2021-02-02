@@ -1,6 +1,5 @@
 import 'air-datepicker';
 import 'air-datepicker/dist/js/datepicker';
-import '../description/description';
 import './dropdown-date.scss';
 
 class DatePicker {
@@ -9,17 +8,21 @@ class DatePicker {
     this.init();
   }
   init() {
-    if (this.container.classList.contains('js-dropdown-date_inline')) {
+    if (this.container.classList.contains('js-dropdown-date_type_inline')) {
       this.inline();
-    } else if (this.container.classList.contains('js-dropdown-date_filter')) {
+    } else if (
+      this.container.classList.contains('js-dropdown-date_type_filter')
+    ) {
       this.filter();
-    } else if (this.container.classList.contains('js-dropdown-date_range')) {
+    } else if (
+      this.container.classList.contains('js-dropdown-date_type_range')
+    ) {
       this.range();
     }
   }
 
   inline() {
-    $('.js-dropdown-date_inline').datepicker({
+    $('.js-dropdown-date_type_inline').datepicker({
       range: true,
       multipleDates: true,
       multipleDatesSeparator: ' - ',
@@ -43,12 +46,12 @@ class DatePicker {
         }
       },
     });
-    this.addButtons($('.js-dropdown-date_inline'));
-    this.setDate($('.js-dropdown-date_inline'));
+    this.addButtons($('.js-dropdown-date_type_inline'));
+    this.setDate($('.js-dropdown-date_type_inline'));
   }
 
   filter() {
-    $('.js-dropdown-date__input_filter').datepicker({
+    $('.js-dropdown-date__input_type_filter').datepicker({
       language: 'ru',
       range: true,
       multipleDates: true,
@@ -62,19 +65,19 @@ class DatePicker {
       prevHtml: '<i class="material--icon">arrow_back</i>',
       nextHtml: '<i class="material--icon">arrow_forward</i>',
       onSelect: function (fd, d) {
-        $('.js-dropdown-date__input_filter').val(fd.toLowerCase());
+        $('.js-dropdown-date__input_type_filter').val(fd.toLowerCase());
       },
     });
-    this.addButtons($('.js-dropdown-date__input_filter'));
-    this.setDate($('.js-dropdown-date__input_filter'));
+    this.addButtons($('.js-dropdown-date__input_type_filter'));
+    this.setDate($('.js-dropdown-date__input_type_filter'));
   }
 
   range() {
     let start = this.container.querySelector(
-      '.js-dropdown-date__input_range-start'
+      '.js-dropdown-date__input_type_range-start'
     );
     let end = this.container.querySelector(
-      '.js-dropdown-date__input_range-end'
+      '.js-dropdown-date__input_type_range-end'
     );
     let picker = $(start).datepicker({
       range: true,
@@ -96,7 +99,7 @@ class DatePicker {
     });
     $(end).on('click', this.showDatepicker.bind(this, $(start)));
     this.addButtons(picker);
-    picker.hasClass('js-dropdown-date__setting-date')
+    picker.hasClass('dropdown-date__input_with-set-date')
       ? this.setDate(picker)
       : null;
   }

@@ -1,11 +1,8 @@
-mixin button({theme,type="button",size,text,url, isDisabled=false})
+mixin button({theme,type="button",size,color,text,url,isDisabled=false})
   -
     const themes = {
       filled : "button_theme_filled",
       bordered: "button_theme_bordered",
-      long: "button_theme_long",
-      textColored: "button_theme_text-colored",
-      textDefault: "button_theme_text-default"
     }
 
     const types = {
@@ -14,8 +11,10 @@ mixin button({theme,type="button",size,text,url, isDisabled=false})
       link: "button_type_link",
     };
 
+    const colors = {
+      grey: "button_color_grey"
+    }
     const sizes = {
-      lg : "button_size_lg",
       m : "button_size_m",
       s : "button_size_s",
     }
@@ -23,15 +22,15 @@ mixin button({theme,type="button",size,text,url, isDisabled=false})
     const classes = [
       types[type],
       themes[theme],
-      sizes[size]
+      sizes[size],
+      colors[color]
     ];
     const tag = type === "link"? "a" : "button";
     const buttonType = type === "link"? false : type;
-    const disabled = isDisabled? "button_theme_disabled": "";
 
   #{tag}.button(type=buttonType 
     name=name 
     value=value 
-    class=classes 
-    class=disabled 
-    href=url)&attributes(attributes) #{text}
+    class=classes  
+    href=url
+    disabled=isDisabled)&attributes(attributes) #{text}

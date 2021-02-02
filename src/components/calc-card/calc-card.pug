@@ -1,7 +1,7 @@
 include /components/dropdown-date/dropdown-date
 include /components/dropdown/dropdown
 include /components/description/description
-include /components/buttons/buttons
+include /components/button/button
 
 mixin calc-card(options = {})
   -  
@@ -27,13 +27,15 @@ mixin calc-card(options = {})
   .calc-card
     form(action="/mock-address/change-me" method="post").calc-card__form
       .calc-card__wrapper
-        p.calc-card__info
-          span.calc-card__info-no &#8470;&#32;
-            span.calc-card__info-num #{roomNumber}
+        .calc-card__room-info
+          p.calc-card__number-info
+            span.calc-card__number.calc-card__number_font_small &#8470;&#32;
+            span.calc-card__number #{roomNumber}
             if isLuxury
-              span.calc-card__info-luxury люкс
-          span.calc-card__info-price #{roomPrice}&#8381;&#32;
-            span.calc-card__info-text в сутки
+              span.calc-card__number-lux люкс
+          p.calc-card__price-info
+            span.calc-card__price #{roomPrice}&#8381;&#32;
+            span.calc-card__price.calc-card__price_font_small в сутки
 
         .calc-card__dropdown-date
           +dropdownDate(dropdownDateSetting)
@@ -44,24 +46,21 @@ mixin calc-card(options = {})
             +dropdown(dropdownSettings)
         ul.calc-card__calculating-items
           li.calc-card__item
-            span.calc-card__item-calculating #{priceCalculating}&#8381; x #{dayCalculating}
-            span.calc-card__item-total #{calculatingTotal}&#8381;
+            p.calc-card__item-calculating #{priceCalculating}&#8381; x #{dayCalculating}
+            p.calc-card__item-total #{calculatingTotal}&#8381;
           li.calc-card__item
-            .calc-card__item-group
-              span.calc-card__item-calculating Сбор за услуги: скидка #{serviceSale}&#8381;
-              span.calc-card__item-circle i
-            span.calc-card__item-total #{serviceTotal}&#8381;
+            p.calc-card__item-calculating.calc-card__item-calculating_type_with-icon Сбор за услуги: скидка #{serviceSale}&#8381;
+            p.calc-card__item-total #{serviceTotal}&#8381;
           li.calc-card__item
-            .calc-card__item-group
-              span.calc-card__item-calculating.calc-card__item-calculating_small Сбор за дополнительные услуги
-              span.calc-card__item-circle i
-            span.calc-card__item-total #{additionalServiceTotal}&#8381;
+            p.calc-card__item-calculating.calc-card__item-calculating_type_with-icon.calc-card__item-calculating_font_small Сбор за дополнительные услуги
+            p.calc-card__item-total #{additionalServiceTotal}&#8381;
 
       p.calc-card__total
         span.calc-card__total-text Итого
         span.calc-card__total-line
-        span.calc-card__total-sum #{totalSum}&#8381;
+        span.calc-card__total-text #{totalSum}&#8381;
       .calc-card__button
-        +button({theme:"long",
+        +button({theme:"filled",
+          size:"m",
           text:"Забронировать",
           type: "submit"})

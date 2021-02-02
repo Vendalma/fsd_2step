@@ -1,6 +1,6 @@
-include /components/rate button/rate button
+include /components/rate-button/rate-button
 
-mixin room-card({isLuxury=false, number, price, rate, reviews,imgs}={})
+mixin room-card({isLuxury=false, number, price, rating, reviews,imgs}={})
   .room-card
     .room-card__slider-wrapper
       .room-card__slider
@@ -8,17 +8,18 @@ mixin room-card({isLuxury=false, number, price, rate, reviews,imgs}={})
           img.room-card__image(src=require(`@images/${image}`).default,  alt=`room №${number}`)
     .room-card__container
       .room-card__block
-        p.room-card__room
-          span.room-card__room-no &#8470;
+        p.room-card__room-info
+          span.room-card__room-number.room-card__room-number_font_small &#8470;
           span.room-card__room-number &#32;#{number}
           if isLuxury
-            span.room-card__room-luxury люкс
+            span.room-card__room-lux люкс
         p.room-card__price
           span.room-card__price-text #{price}&#8381;
-          span.room-card__price-info &#32;в сутки
+          span.room-card__price-text.room-card__price-text_font_small &#32;в сутки
       .room-card__line   
       .room-card__block
         .room-card__rate-button
-          +rateButton(rate)
-        p.room-card__reviews #{reviews}
-          span.room-card__reviews-info &#32;Отзывов
+          +rateButton(rating)
+        p.room-card__reviews
+          span.room-card__reviews-text #{reviews}
+          span.room-card__reviews-text.room-card__reviews-text_font_narrow &#32;Отзывов
