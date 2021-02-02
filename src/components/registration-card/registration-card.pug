@@ -1,7 +1,7 @@
 include /components/radio/radio
 include /components/description/description
 include /components/toggle/toggle
-include /components/buttons/buttons 
+include /components/button/button
 include /components/field/field 
 
 mixin registration-card
@@ -34,8 +34,9 @@ mixin registration-card
           +textField({type:"password",placeholder: "Пароль"})
       .registration-card__toggle
         +toggle({text:"Получать спецпредложения"})
-      .registration-card__button-long
-        +button({theme:"long", 
+      .registration-card__button-submit
+        +button({theme:"filled", 
+          size:"m",
           text:"перейти к оплате",
           type: "submit"})
 
@@ -44,6 +45,6 @@ mixin registration-card
       .registration-card__button
         +button({type: "link",
         theme:"bordered",
-        size: "lg",
+        size: "m",
         text:"войти",
         url: "../sign-in/sign-in.html"})

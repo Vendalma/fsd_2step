@@ -1,9 +1,6 @@
 .sign-in-card {
+  @include template-for-cards;
   padding: 40px 28px 30px 30px;
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
   &__title {
     @extend %h1-font;
     margin-bottom: 1.429rem;
@@ -17,13 +14,8 @@
       margin-bottom: 21px;
     }
   }
-  &__button-long {
-    display: flex;
-    width: 100%;
-  }
   &__container {
     display: flex;
-    width: 100%;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -32,5 +24,9 @@
     @extend %body-font;
     line-height: 1.286rem;
     color: #000000;
+  }
+  &__button {
+    width: 100%;
+    max-width: 99px;
   }
 }

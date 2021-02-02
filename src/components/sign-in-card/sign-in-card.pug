@@ -1,4 +1,4 @@
-include /components/buttons/buttons
+include /components/button/button
 include /components/field/field
 
 mixin sign-in-card
@@ -9,8 +9,9 @@ mixin sign-in-card
         +textField({type: "email", placeholder:"Email"})
       .sign-in-card__text-field
         +textField({type:"password", placeholder:"Пароль"})
-      .sign-in-card__button-long
-        +button({theme:"long",
+      .sign-in-card__button-submit
+        +button({theme:"filled",
+          size:"m",
           text:"войти",
           type :"submit"})
     .sign-in-card__container
@@ -18,6 +19,6 @@ mixin sign-in-card
       .sign-in-card__button
         +button({type: "link",
           theme:"bordered",
-          size: "lg",
+          size: "m",
           text:"создать",
           url :"../registration/registration.html"})

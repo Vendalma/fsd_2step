@@ -1,7 +1,7 @@
 include /components/dropdown-date/dropdown-date
 include /components/dropdown/dropdown
 include /components/description/description
-include /components/buttons/buttons
+include /components/button/button
 
 mixin search-card
   .search-card
@@ -17,6 +17,7 @@ mixin search-card
         .search-card__dropdown
           +dropdown({type:"guests"})
       .search-card__button
-        +button({theme:"long",
+        +button({theme:"filled",
+          size: "m",
           text:"подобрать номер",
           type: "submit"})
