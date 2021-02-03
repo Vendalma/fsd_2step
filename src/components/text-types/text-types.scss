@@ -2,53 +2,58 @@
   max-width: 436px;
   display: flex;
   flex-direction: row;
-
-  &__headers {
+  &__headers-wrapper {
     margin-right: 29px;
     text-align: right;
   }
-  &__item {
-    &-h1 {
-      @extend %h1-font;
-      font-weight: normal;
-      color: $dark-25;
-      margin-bottom: 81px;
-    }
+  &__header {
+    &_type {
+      &_h1 {
+        @extend %h1-font;
+        text-transform: uppercase;
+        font-weight: normal;
+        color: $dark-25;
+        margin-bottom: 81px;
+      }
 
-    &-h2 {
-      @extend %h2-font;
-      font-weight: normal;
-      color: $dark-25;
-      margin-bottom: 76px;
-    }
-    &-h3 {
-      @extend %h3-font;
-      font-weight: normal;
-      color: $dark-25;
-      margin-bottom: 48px;
-    }
-    &-body {
-      @extend %body-font;
-      color: $dark-25;
+      &_h2 {
+        @extend %h2-font;
+        text-transform: uppercase;
+        font-weight: normal;
+        color: $dark-25;
+        margin-bottom: 76px;
+      }
+      &_h3 {
+        @extend %h3-font;
+        font-weight: normal;
+        color: $dark-25;
+        margin-bottom: 48px;
+      }
+      &_body {
+        @extend %body-font;
+        color: $dark-25;
+      }
     }
   }
 
   &__text {
-    &-h1 {
-      @extend %h1-font;
-      margin-bottom: 53px;
-    }
-    &-h2 {
-      @extend %h2-font;
-      margin-bottom: 52px;
-    }
-    &-h3 {
-      @extend %h3-font;
-      margin-bottom: 47px;
-    }
-    &-body {
-      @extend %body-font;
-      max-width: 301px;
+    &_type {
+      &_h1 {
+        @extend %h1-font;
+        margin-bottom: 53px;
+      }
+      &_h2 {
+        @extend %h2-font;
+        margin-bottom: 52px;
+      }
+      &_h3 {
+        @extend %h3-font;
+        margin-bottom: 47px;
+      }
+      &_body {
+        @extend %body-font;
+        max-width: 301px;
+      }
     }
   }
 }

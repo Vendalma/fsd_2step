@@ -1,11 +1,11 @@
 include /components/checkbox/checkbox
 
-mixin expandableCheckbox({text,items, open= false}={})
+mixin expandableCheckbox({text,items, isOpened= false}={})
   .expandable-checkbox.js-expandable-checkbox
     .expandable-checkbox__name #{text} 
-      i.expandable-checkbox__material-icon.js-expandable-checkbox__material-icon(
-        class = open? "expandable-checkbox__material-icon_open" : "") expand_more
-    ul.expandable-checkbox__items.js-expandable-checkbox__items(class = !open? "expandable-checkbox__items_hidden":"")
+      i.expandable-checkbox__arrow.js-expandable-checkbox__arrow(
+        class = isOpened? "expandable-checkbox__arrow_opened" : "") expand_more
+    ul.expandable-checkbox__items.js-expandable-checkbox__items(class = !isOpened? "expandable-checkbox__items_hidden":"")
       for item in items
         li.expandable-checkbox__item
           +checkbox(item)

@@ -1,12 +1,23 @@
-mixin text-types
+mixin text-types(items={})
+  -
+    const {
+      headers= {
+        h1: "h1",
+        h2: "h2",
+        h3: "h3",
+        body: "Body",
+      },
+      texts ={
+        h1: "This one is the sub-section or widget title",
+        h2: "Next one is the item title inside widgets",
+        h3: "This is a label or CTA text",
+        body: "This is the body text which is used for most of the design, like paragraphs, lists, etc.",
+      }
+    } = items;
   .text-types
-    .text-types__headers
-      .text-types__item-h1 H1
-      .text-types__item-h2 H2
-      .text-types__item-h3 H3
-      .text-types__item-body Body
+    .text-types__headers-wrapper
+      each text,key in headers
+        div.text-types__header(class=`text-types__header_type_${key}`) #{text}
     .text-types__content
-      h1.text-types__text-h1 This one is the sub-section or widget title
-      h2.text-types__text-h2 Next one is the item title inside widgets
-      h3.text-types__text-h3 This is a label or CTA text
-      p.text-types__text-body This is the body text which is used for most of the design, like paragraphs, lists, etc.
+      each text,key in texts
+        div.text-types__text(class=`text-types__text_type_${key}`) #{text}

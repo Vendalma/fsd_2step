@@ -28,6 +28,12 @@
       padding-top: 5px;
     }
     &-subscription {
+      & > :first-child {
+        margin-bottom: 18px;
+      }
+      & > :nth-child(2) {
+        margin-bottom: 24px;
+      }
       max-width: 260px;
       padding-top: 5px;
     }
@@ -47,9 +53,6 @@
     @extend %body-font;
     cursor: default;
     display: flex;
-    &_margin {
-      margin-bottom: 24px;
-    }
   }
   &__link {
     &-list {

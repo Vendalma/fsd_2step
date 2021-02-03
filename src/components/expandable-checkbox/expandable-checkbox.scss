@@ -10,13 +10,13 @@
     flex-direction: row;
     align-items: center;
   }
-  &__material-icon {
+  &__arrow {
     @extend %mat-icons;
     color: $dark-50;
     position: absolute;
     top: 11px;
     right: 10px;
-    &_open {
+    &_opened {
       transform: rotate(180deg);
     }
   }

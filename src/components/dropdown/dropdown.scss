@@ -1,80 +1,81 @@
 .dropdown {
   width: 100%;
   position: relative;
-  cursor: pointer;
-  flex-grow: 1;
-  flex-shrink: 0;
   &__select-container {
     width: 100%;
     background: #ffffff;
-    padding: 9.4px 44px 9.4px 14px;
     display: inline-flex;
-    align-items: center;
     position: relative;
-
-    &_default {
+  }
+  &__input {
+    cursor: pointer;
+    outline: none;
+    width: 100%;
+    padding: 9.4px 44px 9.4px 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @extend %body-font;
+    &::placeholder {
+      color: $dark-75;
+    }
+    :focus {
+      border: 1px solid $dark-50;
+    }
+    &_closed {
       border: 1px solid $dark-25;
       border-radius: 4px;
       &:hover {
         border: 1px solid $dark-50;
       }
     }
-    &_open {
+    &_opened {
       border: 1px solid $dark-50;
       border-radius: 4px 4px 0px 0px;
     }
   }
-  &__placeholder {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    @extend %body-font;
-  }
 
-  &__material-icons {
+  &__icon {
     @extend %mat-icons;
     position: absolute;
     top: 10px;
     right: 9px;
-    &_default {
+    &_closed {
       color: $dark-50;
     }
-    &_open {
+    &_opened {
       color: $dark-75;
     }
   }
 
   &__select-list {
-    &_default {
+    & > :nth-child(2) {
+      margin-top: 7px;
+      margin-bottom: 7px;
+    }
+    &_type {
+      &_guests {
+        & > :last-child {
+          margin-top: 19px;
+        }
+        padding: 5px 6px 12px 15px;
+      }
+      &_room {
+        padding: 5px 6px 8px 15px;
+      }
+    }
+    &_closed {
       display: none;
     }
-    &_open {
-      &-guests {
-        width: 100%;
-        position: absolute;
-        background: #ffffff;
-        border: 1px solid $dark-50;
-        border-top: none;
-        border-radius: 0px 0px 4px 4px;
-        box-shadow: 0px 10px 20px $dark-05;
-        padding: 6px;
-        padding-left: 13px;
-        padding-bottom: 11px;
-        z-index: 10;
-      }
-      &-room {
-        width: 100%;
-        position: absolute;
-        background: #ffffff;
-        border: 1px solid $dark-50;
-        border-top: none;
-        border-radius: 0px 0px 4px 4px;
-        box-shadow: 0px 10px 20px $dark-05;
-        padding: 6px;
-        padding-left: 14px;
-        padding-bottom: 8px;
-        z-index: 10;
-      }
+    &_opened {
+      width: 100%;
+      z-index: 10;
+      position: absolute;
+      background: #ffffff;
+      border: 1px solid $dark-50;
+      border-top: none;
+      border-radius: 0px 0px 4px 4px;
+      box-shadow: 0px 10px 20px $dark-05;
     }
   }
   &__item {
@@ -83,58 +84,53 @@
     align-items: center;
     justify-content: space-between;
     flex-shrink: 0;
-
-    &-count {
-      max-width: 92px;
-      min-width: 91px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      flex-shrink: 0;
-      align-items: center;
-      @extend %h3-font;
+  }
+  &__name {
+    @extend %h3-font;
+  }
+  &__score {
+    width: 100%;
+    align-self: center;
+    text-align: center;
+  }
+  &__count {
+    max-width: 92px;
+    min-width: 91px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-shrink: 0;
+    align-items: center;
+    @extend %h3-font;
+  }
+  &__button {
+    &_theme {
+      &_circled {
+        cursor: pointer;
+        user-select: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        min-width: 30px;
+        max-width: 30px;
+        @extend %body-font;
+        font-size: 18px;
+        line-height: 22px;
+        color: $dark-50;
+        border: 1px solid $dark-25;
+        border-radius: 22px;
+        padding-top: 3.2px;
+        padding-bottom: 3.2px;
+      }
     }
-
-    &_margin {
-      margin-top: 6px;
-      margin-bottom: 7px;
-    }
-    &_margin-top {
-      margin-top: 21px;
-    }
-    &-name {
-      @extend %h3-font;
-    }
-    &-button {
-      padding: 3.2px 11px;
-      flex-shrink: 0;
-      max-width: 30px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      @extend %body-font;
-      font-size: 18px;
-      line-height: 22px;
-      color: $dark-50;
-      border: 1px solid $dark-25;
-      border-radius: 22px;
-
+    &_visibility {
       &_hidden {
+        opacity: 0;
+      }
+      &_transparent {
         opacity: 0.38;
       }
     }
-    &-score {
-      margin-left: 11px * 100%/ 92px;
-      margin-right: 14px;
-    }
-  }
-  &__clear-button {
-    &_hidden {
-      opacity: 0;
-    }
-  }
-  &__apply-button {
-    padding: 0;
   }
 }

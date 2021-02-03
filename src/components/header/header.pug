@@ -1,23 +1,21 @@
-include /components/links/links
+include /components/link/link
 include /components/logo/logo
-include /components/buttons/buttons
+include /components/button/button
 
 mixin header({userName=false}={})
   - const {linkList,buttonsSettings} = require("@components/header/header.json")
   .header
     .header__container
-
-      .header__content-block
-        .header__logo
-          +logo({colored:true})
+      .header__logo
+        +logo({colored:true})
 
       .header__content-block
 
         .header__burger-menu.js-header__burger-menu
-          .header__burger-menu_open.js-header__burger-menu_open
-            i.header__material-icons menu
-          .header__burger-menu_close.js-header__burger-menu_close.header__burger-menu_hidden
-            i.header__material-icons close
+          .header__menu-icon.header__menu-icon_type_opened.js-header__menu-icon_type_opened
+            i.header__icon menu
+          .header__menu-icon.header__menu-icon_type_closed.js-header__menu-icon_type_closed.header__menu-icon_visibility_hidden
+            i.header__icon close
 
         nav.header__nav-bar.js-header__nav-bar
           ul.header__link-list
@@ -27,11 +25,11 @@ mixin header({userName=false}={})
           if userName 
             .header__user-info
               .header__vert-block
-              .header__user-name  Юлий Цезарь
+              p.header__user-name  Юлий Цезарь
           else
             .header__buttons-block
-              .header__button.header__button_margin
+              .header__button.header__button_size_s
                 +button(buttonsSettings.one)
-              .header__button
+              .header__button.header__button_size_m
                 +button(buttonsSettings.two)
 

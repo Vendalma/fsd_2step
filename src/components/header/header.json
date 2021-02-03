@@ -6,7 +6,7 @@
     },
     {
       "text": "Услуги",
-      "materialIcons": true
+      "isWithArrow": true
     },
     {
       "text": "Вакансии"
@@ -16,7 +16,7 @@
     },
     {
       "text": "Соглашения",
-      "materialIcons": true
+      "isWithArrow": true
     }
   ],
   "buttonsSettings": {

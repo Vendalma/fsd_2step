@@ -4,13 +4,13 @@ import './expandable-checkbox.scss';
 class ExpandableCheckbox {
   constructor(container) {
     this.container = container;
-    this.init()
+    this.init();
     this.openList();
   }
   init() {
     this.items = this.container.querySelector('.js-expandable-checkbox__items');
     this.materialIcons = this.container.querySelector(
-      '.js-expandable-checkbox__material-icon'
+      '.js-expandable-checkbox__arrow'
     );
   }
   openList() {
@@ -19,9 +19,7 @@ class ExpandableCheckbox {
 
   bindThis() {
     this.items.classList.toggle('expandable-checkbox__items_hidden');
-    this.materialIcons.classList.toggle(
-      'expandable-checkbox__material-icon_open'
-    );
+    this.materialIcons.classList.toggle('expandable-checkbox__arrow_opened');
   }
 }
 

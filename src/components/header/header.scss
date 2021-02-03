@@ -23,13 +23,18 @@
     display: flex;
   }
   &__burger-menu {
+    user-select: none;
     display: none;
     max-width: 40px;
-    &_hidden {
-      display: none;
+  }
+  &__menu-icon {
+    &_visibility {
+      &_hidden {
+        display: none;
+      }
     }
   }
-  &__material-icons {
+  &__icon {
     @extend %mat-icons;
     color: $dark-50;
     font-size: 3.286rem;
@@ -60,8 +65,7 @@
   }
   &__vert-block {
     height: 30px;
-    width: 1px;
-    background-color: rgba(31, 32, 65, 0.1);
+    border-left: 1px solid $dark-10;
     margin-right: 20px;
   }
   &__user-name {
@@ -74,15 +78,24 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    & > :nth-child(1) {
+      margin-right: 18px;
+    }
   }
   &__button {
-    &_margin {
-      margin-right: 18px;
+    width: 100%;
+    &_size {
+      &_m {
+        min-width: 197px;
+      }
+      &_s {
+        min-width: 87px;
+      }
     }
   }
 }
 
-@media (max-width: 960px) {
+@include bp-960 {
   .header {
     position: relative;
 
@@ -93,8 +106,8 @@
       justify-content: space-between;
     }
     &__burger-menu {
-      display: block;
       cursor: pointer;
+      display: block;
     }
 
     &__nav-bar {
@@ -134,15 +147,6 @@
     }
     &__button {
       min-height: 44px;
-      &_margin {
-        margin-right: 40px;
-      }
-    }
-
-    .header__link-list > .header__link-item {
-      font-weight: bold;
-      font-size: 1.188rem;
-      line-height: 1.5rem;
     }
     &__user-info {
       min-width: 200px;
@@ -160,6 +164,11 @@
       height: 1px;
       order: -1;
       margin: 0;
+    }
+    &__link-item {
+      font-weight: bold;
+      font-size: 1.188rem;
+      line-height: 1.5rem;
     }
   }
 }

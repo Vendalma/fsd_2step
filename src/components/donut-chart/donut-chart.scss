@@ -31,17 +31,27 @@
   &__item {
     @extend %body-font;
     list-style-type: none;
-    &_excellent {
-      @include chartColors(linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%));
-    }
-    &_good {
-      @include chartColors(linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%));
-    }
-    &_satisfactory {
-      @include chartColors(linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%));
-    }
-    &_disappointed {
-      @include chartColors(linear-gradient(180deg, #919191 0%, #3d4975 100%));
+    &_type {
+      &_excellent {
+        @include chart-colors(
+          linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%)
+        );
+      }
+      &_good {
+        @include chart-colors(
+          linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%)
+        );
+      }
+      &_satisfactory {
+        @include chart-colors(
+          linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%)
+        );
+      }
+      &_disappointed {
+        @include chart-colors(
+          linear-gradient(180deg, #919191 0%, #3d4975 100%)
+        );
+      }
     }
   }
 }

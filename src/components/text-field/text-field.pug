@@ -1,0 +1,21 @@
+mixin textField({type, theme, placeholder}) 
+  - 
+    const themes = {
+      active: "text-field__input_theme_active",
+      subscribe: "text-field__input_theme_subscribe",
+      mask: "text-field__input_theme_mask js-text-field__input_theme_mask",
+    }
+    const types = {
+      text: "text-field__input_type_text",
+      email: "text-field__input_type_email",
+      password: "text-field__input_type_password",
+    }
+    const classes = [
+      themes[theme],
+      types[type],
+    ]
+    const labelTheme = theme==="subscribe"? "text-field__label_theme_subscribe" : ""
+
+  .text-field
+    label.text-field__label(class=labelTheme)
+      input.text-field__input(type=`${type}` placeholder=placeholder class=classes)

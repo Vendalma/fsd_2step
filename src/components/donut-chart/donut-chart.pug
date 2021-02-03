@@ -8,4 +8,4 @@ mixin chart
         span.chart__text #{chartOptions.totalText}
     ul.chart__legend
       for item in chartOptions.items
-        li.chart__item(class = `chart__item_${item.className}`) #{item.text}
+        li.chart__item(class = `chart__item_type_${item.className}`) #{item.text}

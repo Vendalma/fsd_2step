@@ -1,20 +1,19 @@
-import "@components/buttons/buttons";
-import "@components/links/links";
-import "@components/logo/logo";
-import "./header.scss";
+import '@components/button/button';
+import '@components/link/link';
+import '@components/logo/logo';
+import './header.scss';
+let buttonMenu = document.querySelectorAll('.js-header__burger-menu');
 
-let buttonBurger = document.querySelectorAll(".js-header__burger-menu");
-
-buttonBurger.forEach((elem) => {
+buttonMenu.forEach((elem) => {
   let navBar = elem.parentElement.querySelector('.js-header__nav-bar');
-  let iconMenu = elem.querySelector(".js-header__burger-menu_open");
-  let iconClose = elem.querySelector(".js-header__burger-menu_close");
+  let iconMenu = elem.querySelector('.js-header__menu-icon_type_opened');
+  let iconClose = elem.querySelector('.js-header__menu-icon_type_closed');
 
-  elem.addEventListener("click", bindThis.bind(this));
+  elem.addEventListener('click', bindThis.bind(this));
 
   function bindThis() {
-    navBar.classList.toggle("header__nav-bar_open");
-    iconMenu.classList.toggle("header__burger-menu_hidden");
-    iconClose.classList.toggle("header__burger-menu_hidden");
+    navBar.classList.toggle('header__nav-bar_open');
+    iconMenu.classList.toggle('header__menu-icon_visibility_hidden');
+    iconClose.classList.toggle('header__menu-icon_visibility_hidden');
   }
 });

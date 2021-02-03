@@ -3,12 +3,14 @@
   @extend %body-font;
   color: $dark-50;
   line-height: 1.214rem;
-  &_active {
-    font-weight: bold;
-    color: $dark-75;
+  &_type {
+    &_active {
+      font-weight: bold;
+      color: $dark-75;
+    }
   }
 
-  &__material-icons {
+  &__icon {
     @extend %mat-icons;
     color: $dark-50;
     font-size: 1.714rem;

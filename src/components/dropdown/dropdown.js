@@ -1,4 +1,4 @@
-import '../buttons/buttons';
+import '../button/button';
 import './dropdown.scss';
 
 class Dropdown {
@@ -6,7 +6,7 @@ class Dropdown {
     this.container = container;
     this.data = {};
     this.init();
-    this.clickSelectContainer();
+    this.clickOnInput();
     this.checkMaterialIcons();
     this.clickClearButton();
     this.clickApplyButton();
@@ -15,57 +15,43 @@ class Dropdown {
   }
 
   init() {
-    this.selectContainer = this.container.querySelector(
-      '.js-dropdown__select-container'
-    );
+    this.input = this.container.querySelector('.js-dropdown__input');
     this.selectList = this.container.querySelector('.js-dropdown__select-list');
-    this.placeholder = this.container.querySelector(
-      '.js-dropdown__placeholder'
-    );
-    this.materialIcon = this.container.querySelector(
-      '.js-dropdown__material-icons'
-    );
-    this.countContainer = this.container.querySelectorAll(
-      '.dropdown__item-count'
-    );
+    this.icon = this.container.querySelector('.js-dropdown__icon');
+    this.countContainer = this.container.querySelectorAll('.dropdown__count');
     if (this.checkTypeDropdown()) {
       this.clearButton = this.container.querySelector(
-        '.js-dropdown__clear-button'
+        '.js-dropdown__button_type_clear'
       );
       this.applyButton = this.container.querySelector(
-        '.js-dropdown__apply-button'
+        '.js-dropdown__button_type_apply'
       );
     }
   }
 
-  clickSelectContainer() {
-    this.selectContainer.addEventListener(
-      'click',
-      this.openContainer.bind(this)
-    );
+  clickOnInput() {
+    this.input.addEventListener('click', this.openContainer.bind(this));
   }
 
   openContainer() {
-    this.selectList.classList.toggle('dropdown__select-list_default');
+    this.selectList.classList.toggle('dropdown__select-list_closed');
     if (!this.checkTypeDropdown()) {
-      this.selectList.classList.toggle('dropdown__select-list_open-room');
+      this.selectList.classList.toggle('dropdown__select-list_opened');
     } else {
-      this.selectList.classList.toggle('dropdown__select-list_open-guests');
+      this.selectList.classList.toggle('dropdown__select-list_opened');
     }
 
-    this.selectContainer.classList.toggle('dropdown__select-container_default');
-    this.selectContainer.classList.toggle('dropdown__select-container_open');
+    this.input.classList.toggle('dropdown__input_closed');
+    this.input.classList.toggle('dropdown__input_opened');
 
-    this.materialIcon.classList.toggle('dropdown__material-icons_default');
-    this.materialIcon.classList.toggle('dropdown__material-icons_open');
+    this.icon.classList.toggle('dropdown__icon_default');
+    this.icon.classList.toggle('dropdown__icon_open');
   }
 
   checkMaterialIcons() {
-    if (
-      this.selectContainer.classList.contains('dropdown__select-container_open')
-    ) {
-      this.materialIcon.classList.toggle('dropdown__material-icons_default');
-      this.materialIcon.classList.toggle('dropdown__material-icons_open');
+    if (this.input.classList.contains('dropdown__input_opened')) {
+      this.icon.classList.toggle('dropdown__icon_closed');
+      this.icon.classList.toggle('dropdown__icon_opened');
     }
   }
 
@@ -81,28 +67,29 @@ class Dropdown {
   }
 
   hideMinButton(elem) {
-    elem.classList.add('dropdown__item-button_hidden');
+    elem.classList.add('dropdown__button_visibility_transparent');
   }
 
   setMinButton(elem) {
-    elem.classList.remove('dropdown__item-button_hidden');
+    elem.classList.remove('dropdown__button_visibility_transparent');
   }
 
   hideClearButton() {
     if (this.checkCountScore() && this.checkTypeDropdown()) {
-      this.clearButton.classList.add('dropdown__clear-button_hidden');
+      this.clearButton.classList.add('dropdown__button_visibility_hidden');
     }
   }
 
   setClearButton() {
     if (this.checkTypeDropdown()) {
-      this.clearButton.classList.remove('dropdown__clear-button_hidden');
+      this.clearButton.classList.remove('dropdown__button_visibility_hidden');
     }
   }
 
   onPlusClick(elem) {
     let score = elem.previousElementSibling;
     score.innerHTML = Number(score.innerHTML) + 1;
+    console.log(score.previousElementSibling);
     this.setMinButton(score.previousElementSibling);
     this.setClearButton();
     return Number(score.innerHTML);
@@ -111,29 +98,29 @@ class Dropdown {
   countClick() {
     this.countContainer.forEach((item) => {
       item.addEventListener('click', this.onCountClick.bind(this));
-      if (!this.data[item.dataset.num]) {
-        this.data[item.dataset.num] = {};
-        this.data[item.dataset.num].name = item.dataset.name;
+      if (!this.data[item.dataset.id]) {
+        this.data[item.dataset.id] = {};
+        this.data[item.dataset.id].name = item.dataset.name;
       }
     });
   }
 
   onCountClick(event) {
     let score;
-    if (event.target.classList.contains('js-dropdown__item-button_plus')) {
+    if (event.target.classList.contains('js-dropdown__button_type_plus')) {
       score = this.onPlusClick(event.target);
     } else if (
-      event.target.classList.contains('js-dropdown__item-button_min')
+      event.target.classList.contains('js-dropdown__button_type_min')
     ) {
       score = this.onMinClick(event.target);
     }
-    let num = event.target.parentElement.dataset.num;
-    this.data[num].score = score;
+    let id = event.target.parentElement.dataset.id;
+    this.data[id].score = score;
     this.renderStr();
   }
 
   checkTypeDropdown() {
-    return this.container.classList.contains('dropdown_guests');
+    return this.container.classList.contains('dropdown_type_guests');
   }
 
   renderStr() {
@@ -144,13 +131,13 @@ class Dropdown {
         (str += `${score} ${this.setRightName(score, name.split('|'))}, `);
     }
     if (str === '' && this.checkTypeDropdown()) {
-      this.placeholder.innerHTML = 'Сколько гостей';
+      this.input.placeholder = 'Сколько гостей';
       this.hideClearButton();
     } else if (str === '' && !this.checkTypeDropdown()) {
-      this.placeholder.innerHTML = 'Какие удобства';
+      this.input.placeholder = 'Какие удобства';
       this.hideClearButton();
     } else {
-      this.placeholder.innerHTML = str.substring(0, str.length - 2);
+      this.input.placeholder = str.substring(0, str.length - 2);
     }
   }
 
@@ -185,10 +172,10 @@ class Dropdown {
       this.renderStr();
     }
     this.countContainer.forEach((item) => {
-      let scoreContainer = item.querySelector('.js-dropdown__item-score');
+      let scoreContainer = item.querySelector('.js-dropdown__score');
       scoreContainer.innerHTML = '0';
 
-      let minButtons = item.querySelectorAll('.js-dropdown__item-button_min');
+      let minButtons = item.querySelectorAll('.js-dropdown__button_type_min');
       minButtons.forEach((elem) => {
         this.hideMinButton(elem);
       });
@@ -217,12 +204,12 @@ class Dropdown {
 
   checkActiveDropdown() {
     this.countContainer.forEach((item) => {
-      let scoreContainer = item.querySelector('.js-dropdown__item-score');
-      let min = item.querySelector('.js-dropdown__item-button_min');
+      let scoreContainer = item.querySelector('.js-dropdown__score');
+      let min = item.querySelector('.js-dropdown__button_type_min');
       if (Number(scoreContainer.innerHTML) > 0) {
-        this.data[item.dataset.num] = {};
-        this.data[item.dataset.num].name = item.dataset.name;
-        this.data[item.dataset.num].score = Number(scoreContainer.innerHTML);
+        this.data[item.dataset.id] = {};
+        this.data[item.dataset.id].name = item.dataset.name;
+        this.data[item.dataset.id].score = Number(scoreContainer.innerHTML);
         this.setMinButton(min);
         this.setClearButton();
       }

@@ -1,5 +1,4 @@
 mixin colors (items)
-
   - 
     items = items || [
       {
@@ -41,7 +40,7 @@ mixin colors (items)
 
   for color in items
     .color-block
-      .color-block__rectangle(class=`color-block_${color.color}`)
+      .color-block__color-area(class=`color-block__color-area_type_${color.color}`)
       p.color-block__info
-        span.color-block__name #{color.name}
-        span.color-block__code #{color.code}
+        span.color-block__text #{color.name}
+        span.color-block__text.color-block__text_type_narrow #{color.code}

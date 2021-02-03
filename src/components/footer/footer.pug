@@ -1,6 +1,6 @@
 include /components/logo/logo
-include /components/links/links
-include /components/field/field
+include /components/link/link
+include /components/text-field/text-field
 include /components/social-icons/social-icons
 
 mixin footer
@@ -30,10 +30,12 @@ mixin footer
               +link(linkSupport)
 
       .footer__block-subscription
-        p.footer__header.footer__header_margin-b-18 Подписка
-        p.footer__text.footer__text_margin Получайте специальные предложения и новости сервиса
+        p.footer__header Подписка
+        p.footer__text Получайте специальные предложения и новости сервиса
         form(action="/mock-address/change-me" method="post").footer__email-field
-          +textField({type: "email", placeholder: "Email", arrow: true})
+          +textField({type: "email",
+            placeholder: "Email",
+            theme: "subscribe"})
 
     .footer__container-copyright
       .footer__block-copyright
