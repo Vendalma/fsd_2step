@@ -1,12 +1,12 @@
 .registration-card {
   @include template-for-cards;
-  padding: 42px 30px 27px 31px;
+  padding: 42px 30px 27px 30px;
   &__form {
     margin-bottom: 31px;
   }
   &__title {
     @extend %h1-font;
-    margin-bottom: 20px;
+    margin-bottom: 19px;
   }
 
   &__text-field {

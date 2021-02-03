@@ -13,9 +13,16 @@ mixin calc-card(options = {})
         isSettingDate: true,
         description1:"прибытие",
         description2:"выезд"},
-      dropdownSettings = {type:"guests",
-        score1 :2,
-        score2: 1},
+      dropdownSettings = {type: "guests",
+      items: [
+        "взрослые",
+        "дети",
+        "младенцы"
+      ],
+      scores: {
+        "взрослые": 2,
+        "дети": 1
+      }},
       priceCalculating = "9 990",
       dayCalculating = "4 суток", 
       calculatingTotal = "39 960", 

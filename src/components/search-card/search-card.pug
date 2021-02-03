@@ -15,7 +15,10 @@ mixin search-card
         .search-card__description
           +description({text:"гости"})
         .search-card__dropdown
-          +dropdown({type:"guests"})
+          +dropdown({
+          type:'guests',
+          items : ["взрослые","дети","младенцы"]
+          })
       .search-card__button
         +button({theme:"filled",
           size: "m",

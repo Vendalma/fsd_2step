@@ -1,6 +1,6 @@
 .search-card {
   @include template-for-cards;
-  padding: 40px 28px 29px 30px;
+  padding: 40px 28px 29px 29px;
   &__title {
     @extend %h1-font;
     margin-bottom: 22px;

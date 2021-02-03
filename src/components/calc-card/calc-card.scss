@@ -81,6 +81,8 @@
           position: relative;
           &::before {
             content: 'i';
+            width: 20px;
+            height: 20px;
             position: absolute;
             right: 0;
             @extend %h3-font;
@@ -88,7 +90,6 @@
             color: $dark-25;
             border: 1px solid $dark-25;
             border-radius: 50%;
-            padding: 2.5px 7.5px;
 
             display: flex;
             flex-direction: row;
