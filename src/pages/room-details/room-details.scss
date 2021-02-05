@@ -1,153 +1,169 @@
 .room-details {
-  @include flexAndHeight;
+  @include flex-and-height;
   &__gallery {
     display: flex;
     flex-direction: row;
-    width: 100%;
     &-item {
       width: 100%;
-      max-height: 485px;
       margin: 0;
+      &_size {
+        &_large {
+          width: 68%;
+          display: flex;
+        }
+      }
     }
+  }
+  &__gallery-block {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
   }
   &__image {
     display: flex;
     width: 100%;
-    &_big {
-      height: 101%;
-    }
+    height: 100%;
   }
-  &__block {
-    display: flex;
+
+  &__wrapper {
+    @include page-settings;
+    padding-left: 20px;
+    padding-right: 20px;
     width: 100%;
-    &_column {
-      flex-direction: column;
-    }
-    &_row {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-    &_width-459 {
-      max-width: 459px * 100%/ 1440px;
-    }
-    &_width-1200 {
-      @include pageSettings;
-      padding-left: 20px;
-      padding-right: 20px;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      flex-direction: row;
-    }
-    &_width-712 {
-      max-width: 712px * 100%/ 1160px;
-      padding-top: 70px;
-      padding-bottom: 62px;
-      margin-right: 54px;
-    }
-    &_width-380 {
-      max-width: 380px * 100%/ 1160px;
-    }
-    &_margin-b-15 {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    position: relative;
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 712px;
+    padding-top: 70px;
+    padding-bottom: 63px;
+    margin-right: 54px;
+    & > :first-child {
       margin-bottom: 15px;
     }
-    &_margin-b-35 {
-      margin-bottom: 35px;
+    & > :nth-child(2) {
+      margin-bottom: 34px;
     }
   }
-  &__container {
+  &__row {
+    display: flex;
+    flex-direction: row;
     width: 100%;
-    &_margin-r-10 {
-      margin-right: 10px;
+  }
+
+  &__bonus-icon-container {
+    width: 100%;
+    max-width: 360px;
+    & > :first-child {
+      margin-bottom: 22px;
     }
-    &-info {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      margin-bottom: 2px;
-    }
-    &_relative {
-      position: relative;
-      width: 100%;
-      margin-top: 70px;
-      margin-bottom: 70px;
-    }
-    &_width-341 {
-      max-width: 341px;
-      margin-right: 10px;
-    }
-    &_width-292 {
-      max-width: 292px;
+    & > :nth-child(3) {
+      margin-top: 22px;
+      margin-bottom: 20px;
     }
   }
+
+  &__donut-chart-container {
+    & > :first-child {
+      margin-bottom: 23px;
+    }
+  }
+  &__comments-container {
+    & > :nth-child(2) {
+      margin-bottom: 26px;
+    }
+  }
+  &__container-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 2px;
+  }
+
   &__title {
     @extend %h2-font;
     margin-bottom: 20px;
     &_margin-b-23 {
       margin-bottom: 23px;
     }
-    &_padding-l {
-      padding-left: 20px;
-    }
-  }
-  &__icon-list {
-    width: 100%;
-    max-width: 280px;
-    &_margin {
-      margin-top: 23px;
-      margin-bottom: 24px;
-    }
-  }
-  &__chart {
-    justify-content: flex-start;
   }
   &__text {
     @extend %body-font;
-
-    &_item {
-      line-height: 16px;
-      color: $dark-50;
-      padding-top: 7px;
-      padding-left: 2px;
+    &_theme {
+      &_small-font {
+        line-height: 16px;
+        color: $dark-50;
+        padding-top: 7px;
+        padding-left: 2px;
+      }
     }
   }
-  &__comment {
-    &_margin {
-      margin-bottom: 26px;
+  &__bullet-list-container {
+    width: 100%;
+    max-width: 360px;
+    & > :first-child {
+      padding-left: 20px;
     }
+  }
+  &__text-container {
+    width: 100%;
+    max-width: 341px;
+  }
+
+  &__sidebar {
+    position: relative;
+    margin-top: 70px;
+    margin-bottom: 70px;
   }
   &__card {
     position: sticky;
     top: 70px;
     bottom: 70px;
   }
+
   &__line {
     border-top: 1px solid $dark-25;
     width: 100%;
   }
   &__footer {
-    margin-top: auto;
-    &_small {
-      display: none;
+    &-block {
+      margin-top: auto;
+    }
+    &_type {
+      &_simple {
+        display: none;
+      }
     }
   }
 }
 
-@include bp-960 {
+@include bp-1024 {
   .room-details {
-    &__block {
-      &_width-1200 {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+    &__gallery {
+      &-block {
+        display: none;
       }
-      &_width-712 {
-        width: 100%;
-        max-width: 712px;
-        margin-right: 0px;
+      &-item {
+        &_size {
+          &_large {
+            width: 100%;
+          }
+        }
       }
-      &_width-380 {
-        max-width: 380px;
-      }
+    }
+    &__wrapper {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    &__column {
+      margin-left: 10px;
+      margin-right: 10px;
     }
   }
 }
@@ -155,8 +171,10 @@
 @include bp-768 {
   .room-details {
     &__footer {
-      &_small {
-        display: block;
+      &_type {
+        &_simple {
+          display: block;
+        }
       }
     }
   }
@@ -164,48 +182,41 @@
 
 @include bp-480 {
   .room-details {
-    &__block {
-      &_row {
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-      }
-      &_width-459 {
-        display: none;
-      }
-    }
-    &__container {
-      display: flex;
-      flex-direction: column;
+    &__row {
+      flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      margin-bottom: 20px;
-      &_margin-r-10 {
-        margin-right: 0px;
-      }
-      &_relative {
-        margin-top: 0px;
-        margin-bottom: 70px;
-      }
-      &-info {
-        align-items: center;
-        justify-content: center;
-      }
     }
-    &__title {
-      &_padding-l {
-        padding-left: 0px;
-      }
+    &__icon-list-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    &__donut-chart-container {
+      margin-bottom: 20px;
     }
     &__text {
-      &_item {
-        display: none;
+      &_theme {
+        &_small-font {
+          display: none;
+        }
       }
     }
-    &__card {
-      position: relative;
-      top: 0;
-      bottom: 0;
+    &__bullet-list-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    &__text-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    &__sidebar {
+      margin-top: 0px;
     }
   }
 }

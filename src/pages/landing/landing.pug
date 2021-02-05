@@ -1,7 +1,7 @@
 extends /components/page-head/page-head
 include /components/header/header
 include /components/footer/footer
-include /components/footer-small/footer-small
+include /components/simple-footer/simple-footer
 include /components/search-card/search-card
 
 block head
@@ -15,9 +15,9 @@ block head
           section.landing__card 
             +search-card
           p.landing__text Лучшие номера для вашей работы, отдыха и просто вдохновения
-      footer.landing__footer
-        .landing__footer_default
+      footer.landing__footer-block
+        .landing__footer.landing__footer_type_default
           +footer
-        .landing__footer_small
-          +footer-small
+        .landing__footer.landing__footer_type_simple
+          +simple-footer
 

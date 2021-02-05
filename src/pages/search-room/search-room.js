@@ -1,31 +1,45 @@
-import "@/main.scss";
-import "@components/checkbox/checkbox";
-import "@components/description/description";
-import "@components/dropdown-date/dropdown-date";
-import "@components/dropdown/dropdown";
-import "@components/expandable-checkbox/expandable-checkbox";
-import "@components/footer-small/footer-small";
-import "@components/footer/footer";
-import "@components/header/header";
-import "@components/pagination/pagination";
-import "@components/range slider/range slider";
-import "@components/room-card/room-card";
-import "normalize.css";
-import "./search-room.scss";
+import '@/main.scss';
+import '@components/checkbox/checkbox';
+import '@components/description/description';
+import '@components/dropdown-date/dropdown-date';
+import '@components/dropdown/dropdown';
+import '@components/expandable-checkbox/expandable-checkbox';
+import '@components/footer/footer';
+import '@components/header/header';
+import '@components/pagination/pagination';
+import '@components/range-slider/range-slider';
+import '@components/room-card/room-card';
+import '@components/simple-footer/simple-footer';
+import 'normalize.css';
+import './search-room.scss';
 
+let optionsBlock = document.querySelector('.js-search-room__menu');
+let blockOpen = document.querySelector(
+  '.js-search-room__menu-item_type_opened'
+);
+let blockClose = document.querySelector(
+  '.js-search-room__menu-item_type_closed'
+);
+let filter = document.querySelector('.js-search-room__filter');
+let rooms = document.querySelector('.js-search-room__rooms');
 
-
-let optionsBlock = document.querySelector(".js-search-room__icon");
-let blockMenu = document.querySelector(".js-search-room__icon_menu");
-let blockClose = document.querySelector(".js-search-room__icon_close");
-let filter = document.querySelector('.js-search-room__filter')
-let rooms = document.querySelector('.js-search-room__rooms')
-
-optionsBlock.addEventListener("click", openFilter.bind(this));
+optionsBlock.addEventListener('click', openFilter.bind(this));
 
 function openFilter() {
-  blockMenu.classList.toggle("options__block_active");
-  blockClose.classList.toggle("options__block_active");
-  filter.classList.toggle("search-room_active");
-  rooms.classList.toggle("search-room_close");
+  blockOpen.classList.toggle('search-room__menu-item_visibility_hidden');
+  blockClose.classList.toggle('search-room__menu-item_visibility_hidden');
+  filter.classList.toggle('search-room__filter_visibility_visible');
+  filter.classList.toggle('search-room__filter_visibility_hidden');
+  rooms.classList.toggle('search-room__rooms_visibility_hidden');
 }
+
+window.addEventListener('resize', checkWindowSize.bind(this));
+function checkWindowSize() {
+  if (window.matchMedia('(max-width: 768px)').matches) {
+    filter.classList.add('search-room__filter_visibility_hidden');
+  } else {
+    filter.classList.remove('search-room__filter_visibility_hidden');
+  }
+}
+
+checkWindowSize();

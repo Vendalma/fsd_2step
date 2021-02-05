@@ -1,47 +1,80 @@
 {
   "settingsTextField": {
     "text": {
-      "type": "text",
+      "type": "email",
       "placeholder": "Email"
     },
     "hover": {
-      "type": "hoverText",
+      "type": "text",
+      "theme": "active",
       "placeholder": "This is pretty awesome"
     },
     "mask": {
-      "type": "mask",
+      "type": "text",
+      "theme": "mask",
       "placeholder": "ДД.ММ.ГГГГ"
     },
     "subscribe": {
       "type": "email",
       "placeholder": "Email",
-      "arrow": true
+      "theme": "subscribe"
     }
   },
   "settingsDropdown": {
     "guestsOne": {
-      "type": "guests"
+      "type": "guests",
+      "items": [
+        "взрослые",
+        "дети",
+        "младенцы"
+      ]
     },
     "room": {
       "type": "room",
-      "score1": 2,
-      "score2": 2
+      "items": [
+        "спальни",
+        "кровати",
+        "ванные комнаты"
+      ],
+      "scores": {
+        "спальни": 2,
+        "кровати": 2
+      }
     },
     "roomActive": {
       "type": "room",
-      "score1": 2,
-      "score2": 2,
-      "active": true
+      "isActive": true,
+      "items": [
+        "спальни",
+        "кровати",
+        "ванные комнаты"
+      ],
+      "scores": {
+        "спальни": 2,
+        "кровати": 2
+      }
     },
     "guestsTwo": {
+      "isActive": true,
       "type": "guests",
-      "active": true
+      "items": [
+        "взрослые",
+        "дети",
+        "младенцы"
+      ]
     },
     "guestsThree": {
+      "isActive": true,
       "type": "guests",
-      "score1": 2,
-      "score2": 1,
-      "active": true
+      "items": [
+        "взрослые",
+        "дети",
+        "младенцы"
+      ],
+      "scores": {
+        "взрослые": 2,
+        "дети": 1
+      }
     }
   },
   "dropdownDateSettings": {
@@ -132,15 +165,16 @@
       "isDisabled": true
     },
     "five": {
-      "theme": "textColored",
       "text": "click me"
     },
     "six": {
-      "theme": "textDefault",
-      "text": "click me"
+      "text": "click me",
+      "color": "grey"
     },
     "seven": {
-      "theme": "long",
+      "theme": "filled",
+      "type": "submit",
+      "size": "m",
       "text": "перейти к оплате"
     }
   },
@@ -206,19 +240,20 @@
           "name": "shampoo"
         }
       ],
-      "open": true
+      "isOpened": true
     }
   },
   "richCheckboxSettings": {
     "corridor": {
-      "type": "rich",
+      "isTypeRich": true,
+      "textWidth": "medium",
       "name": "wide corridor",
       "header": "Широкий коридор",
-      "text": "Ширина коридоров в номере не менее 91 см.",
-      "shortText": true
+      "text": "Ширина коридоров в номере не менее 91 см."
     },
     "assistant": {
-      "type": "rich",
+      "isTypeRich": true,
+      "textWidth": "large",
       "name": "assistant",
       "header": "Помощник для инвалидов",
       "text": "На 1 этаже вас встретит специалист и проводит до номера."
@@ -234,7 +269,7 @@
     },
     "text": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
   },
-  "iconLists": {
+  "bonusIcon": {
     "one": {
       "typeIcon": "insert_emoticon",
       "header": "Комфорт",

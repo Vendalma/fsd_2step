@@ -1,12 +1,12 @@
 .landing {
-  @include flexAndHeight;
+  @include flex-and-height;
   &__content {
     width: 100%;
-    @include addBackgroundImage('bg-image-1.jpg');
+    @include add-background-image('bg-image-1.jpg');
     @include image-animation;
   }
   &__wrapper {
-    @include pageSettings;
+    @include page-settings;
     padding-top: 70px;
     padding-left: 20px;
     padding-right: 12px;
@@ -27,9 +27,13 @@
     align-self: flex-end;
   }
   &__footer {
-    margin-top: auto;
-    &_small {
-      display: none;
+    &-block {
+      margin-top: auto;
+    }
+    &_type {
+      &_simple {
+        display: none;
+      }
     }
   }
 }
@@ -37,8 +41,10 @@
 @include bp-768 {
   .landing {
     &__footer {
-      &_small {
-        display: block;
+      &_type {
+        &_simple {
+          display: block;
+        }
       }
     }
   }

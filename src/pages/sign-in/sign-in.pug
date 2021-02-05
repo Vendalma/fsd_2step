@@ -1,7 +1,7 @@
 extends /components/page-head/page-head
 include /components/header/header
 include /components/footer/footer
-include /components/footer-small/footer-small
+include /components/simple-footer/simple-footer
 include /components/sign-in-card/sign-in-card
 
 block head
@@ -14,8 +14,8 @@ block head
         .sign-in__wrapper
           section.sign-in__card
             +sign-in-card
-      footer.sign-in__footer
-        .sign-in__footer_default
+      footer.sign-in__footer-block
+        .sign-in__footer.sign-in__footer_type_default
           +footer
-        .sign-in__footer_small
-          +footer-small
+        .sign-in__footer.sign-in__footer_type_simple
+          +simple-footer

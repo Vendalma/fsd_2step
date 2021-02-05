@@ -1,19 +1,19 @@
 extends /components/page-head/page-head
 include /components/description/description
-include /components/field/field
+include /components/text-field/text-field
 include /components/dropdown/dropdown
 include /components/dropdown-date/dropdown-date
 include /components/checkbox/checkbox
 include /components/radio/radio
 include /components/toggle/toggle
 include /components/like-button/like-button
-include /components/rate button/rate button
-include /components/range slider/range slider
-include /components/buttons/buttons
+include /components/rate-button/rate-button
+include /components/range-slider/range-slider
+include /components/button/button
 include /components/pagination/pagination
 include /components/expandable-checkbox/expandable-checkbox
 include /components/bullet-list/bullet-list
-include /components/icon-list/icon-list
+include /components/bonus-icon/bonus-icon
 include /components/comment/comment
 include /components/logo/logo
 
@@ -22,207 +22,202 @@ block head
   title Form elements
   - const {settingsTextField, settingsDropdown,checkboxSettings,radioSettings} = require("./form-elements.json")
   - const {toggleSettings, likeButtonSettings, rangeSlider, buttonSettings,dropdownDateSettings} = require("./form-elements.json")
-  - const {expandableCheckbox,richCheckboxSettings,iconLists,comment} = require("./form-elements.json")
+  - const {expandableCheckbox,richCheckboxSettings,bonusIcon,comment} = require("./form-elements.json")
   body
     .form-elements
       header.form-elements__header
         .form-elements__logo
           +logo
-      main.form-elements__content-block  
-        .form-elements__container
-          .form-elements__content.form-elements__content_row.form-elements__content_margin-b-100
-            .form-elements__content.form-elements__content_column.form-elements__content_margin-r-53.form-elements__content_width-320
+      main.form-elements__container
+        .form-elements__row
+          .form-elements__block-left
 
-              .form-elements__block.form-elements__block_column.form-elements__block_margin-b-22
-                .form-elements__description
-                  +description({
-                    type: "text with state",
-                    text: "text field",
-                    condition: "default"
-                  })
-                .form-elements__text-field
-                  +textField(settingsTextField.text)
-
-              .form-elements__block.form-elements__block_column.form-elements__block_margin-b-20
-                .form-elements__description
-                  +description({
-                    type: "text with state",
-                    text: "text field",
-                    condition:"hover / focus"
+            .form-elements__text-field-container
+              .form-elements__description
+                +description({
+                  isWithStatus: true,
+                  text: "text field",
+                  status: "default"
                 })
-                .form-elements__text-field
-                  +textField(settingsTextField.hover)
+              .form-elements__text-field
+                +text-field(settingsTextField.text)
 
-              .form-elements__block.form-elements__block_column.form-elements__block_margin-b-22
+            .form-elements__text-field-container
+              .form-elements__description
+                +description({
+                  isWithStatus: true,
+                  text: "text field",
+                  status:"hover / focus"
+              })
+              .form-elements__text-field
+                +text-field(settingsTextField.hover)
+
+            .form-elements__dropdown-container
+              +description({text: "dropdown"})
+              .form-elements__dropdown
+                +dropdown(settingsDropdown.guestsOne)
+
+            .form-elements__text-field-container
+              .form-elements__description
+                +description({text: "masked text field"})
+              .form-elements__text-field
+                +text-field(settingsTextField.mask)
+
+            .form-elements__dropdown-date
+              +dropdown-date(dropdownDateSettings.range)
+
+            .form-elements__dropdown-date.form-elements__dropdown-date_size_small
+              +dropdown-date(dropdownDateSettings.filter)
+
+            .form-elements__text-field-container.form-elements__text-field-container_size_small
+              .form-elements__description
+                +description({text: "subscription text field"})
+              .form-elements__text-field
+                +text-field(settingsTextField.subscribe)
+
+          .form-elements__block-center
+
+            .form-elements__checkbox-container
+              .form-elements__description
+                +description({text: "checkbox buttons"})
+              .form-elements__checkbox
+                +checkbox(checkboxSettings.smoking)
+              .form-elements__checkbox
+                +checkbox(checkboxSettings.pets)
+              .form-elements__checkbox
+                +checkbox(checkboxSettings.guests)
+
+            .form-elements__radio-buttons-container
+              .form-elements__description
+                +description({text: "radio buttons"})
+              .form-elements__radio-buttons-row
+                .form-elements__radio-button
+                  +radio(radioSettings.male)
+                .form-elements__radio-button
+                  +radio(radioSettings.female)
+
+            .form-elements__toggle-container
+              .form-elements__description
+                +description({text: "toggle"})
+              .form-elements__toggle
+                +toggle(toggleSettings.first)
+              .form-elements__toggle
+                +toggle(toggleSettings.second)
+
+            .form-elements__like-button-container
+              .form-elements__description
+                +description({text: "like button"})
+              .form-elements__like-button-row
+                .form-elements__like-button
+                  +like-button(likeButtonSettings.first)
+                .form-elements__like-button
+                  +like-button(likeButtonSettings.second)
+
+            .form-elements__rate-button-container
+              .form-elements__description
+                +description({text: "rate button"})
+              .form-elements__rate-button-row
+                .form-elements__rate-button
+                  +rate-button(4)
+                .form-elements__rate-button
+                  +rate-button(5)
+
+          .form-elements__block-right
+
+            .form-elements__range-slider
+              +range-slider({text:"range slider"})
+
+            .form-elements__buttons-container
+              .form-elements__description
+                +description({text: "buttons"})
+              .form-elements__buttons-wrapper
+                .form-elements__button.form-elements__button_size_s
+                  +button(buttonSettings.one)
+                .form-elements__button.form-elements__button_size_s
+                  +button(buttonSettings.two)
+              .form-elements__buttons-wrapper
+                .form-elements__button.form-elements__button_size_s
+                  +button(buttonSettings.three)
+                .form-elements__button.form-elements__button_size_s
+                  +button(buttonSettings.four)
+              .form-elements__buttons-wrapper.form-elements__buttons-wrapper_size_s
+                .form-elements__button
+                  +button(buttonSettings.five)
+                .form-elements__button
+                  +button(buttonSettings.six)
+              .form-elements__button
+                +button(buttonSettings.seven)
+
+            .form-elements__pagination-container
+              .form-elements__description
+                +description({text: "pagination"})
+              .form-elements__pagination
+                +pagination
+
+        .form-elements__row
+          .form-elements__left-wrapper
+
+            .form-elements__dropdown-container.form-elements__dropdown-container_size_s
+              .form-elements__description
+                +description({
+                  isWithStatus: true,
+                  text: "dropdown",
+                  status: "default"
+                })
+              .form-elements__dropdown
+                +dropdown(settingsDropdown.room)
+
+            .form-elements__dropdown-container.form-elements__dropdown-container_size_s
+              .form-elements__description
+                +description({
+                  isWithStatus: true,
+                  text: "dropdown",
+                  status: "expanded"
+                })
+              .form-elements__dropdown
+                +dropdown(settingsDropdown.roomActive)
+
+            .form-elements__expandable-checkbox-container
+              .form-elements__expandable-checkbox
+                +expandable-checkbox(expandableCheckbox.close)
+              .form-elements__expandable-checkbox
+                +expandable-checkbox(expandableCheckbox.open)
+
+            .form-elements__bonus-icon-container
+              .form-elements__bonus-icon
+                +bonus-icon(bonusIcon.one)
+              .form-elements__bonus-icon
+                +bonus-icon(bonusIcon.two)
+
+          .form-elements__center-wrapper
+
+            .form-elements__row
+              .form-elements__dropdown-container
                 .form-elements__description
                   +description({text: "dropdown"})
                 .form-elements__dropdown
-                  +dropdown(settingsDropdown.guestsOne)
+                  +dropdown(settingsDropdown.guestsTwo)
 
-              .form-elements__block.form-elements__block_column.form-elements__block_margin-b-42
+              .form-elements__dropdown-container
                 .form-elements__description
-                  +description({text: "masked text field"})
-                .form-elements__text-field
-                  +textField(settingsTextField.mask)
+                  +description({text: "dropdown"})
+                .form-elements__dropdown
+                  +dropdown(settingsDropdown.guestsThree)
 
-              .form-elements__block.form-elements__block_column.form-elements__block_margin-b-42
-                .form-elements__dropdown-date
-                  +dropdownDate(dropdownDateSettings.range)
-
-              .form-elements__block.form-elements__block_column.form-elements__block_margin-b-42.form-elements__block_size-266
-                .form-elements__dropdown-date
-                  +dropdownDate(dropdownDateSettings.filter)
-
-              .form-elements__block.form-elements__block_column.form-elements__block_size-266
+            .form-elements__row
+              .form-elements__rich-checkbox-container
                 .form-elements__description
-                  +description({text: "subscription text field"})
-                .form-elements__text-field
-                  +textField(settingsTextField.subscribe)
+                  +description({text: "Rich Checkbox Buttons"})
+                .form-elements__rich-checkbox
+                  +checkbox(richCheckboxSettings.corridor)
+                .form-elements__rich-checkbox  
+                  +checkbox(richCheckboxSettings.assistant)
 
-            .form-elements__content.form-elements__content_column.form-elements__content_width-320
-
-              .form-elements__block.form-elements__block_column.form-elements__block_margin-b-41.form-elements__block_size-266
+              .form-elements__bullet-list-container
                 .form-elements__description
-                  +description({text: "checkbox buttons"})
-                .form-elements__checkbox
-                  +checkbox(checkboxSettings.smoking)
-                  +checkbox(checkboxSettings.pets)
-                  +checkbox(checkboxSettings.guests)
+                  +description({text: "bullet list"})
+                .form-elements__bullet-list
+                  +bullet-list({descriptionText:"bullet list"})
 
-              .form-elements__block.form-elements__block_column.form-elements__block_margin-b-41
-                .form-elements__description.form-elements__description_margin-b-16
-                  +description({text: "radio buttons"})
-                .form-elements__radio
-                  +radio(radioSettings.male)
-                  +radio(radioSettings.female)
-
-              .form-elements__block.form-elements__block_column.form-elements__block_margin-b-45
-                .form-elements__description.form-elements__description_margin-b-12
-                  +description({text: "toggle"})
-                .form-elements__toggle
-                  +toggle(toggleSettings.first)
-                  +toggle(toggleSettings.second)
-
-              .form-elements__block.form-elements__block_column.form-elements__block_margin-b-41
-                .form-elements__description.form-elements__description_margin-b-16
-                  +description({text: "like button"})
-                .form-elements__like-buttons
-                  +likeButton(likeButtonSettings.first)
-                  +likeButton(likeButtonSettings.second)
-
-              .form-elements__block.form-elements__block_column
-                .form-elements__description.form-elements__description_margin-b-16
-                  +description({text: "rate button"})
-                .form-elements__rate-button
-                  .form-elements__rate-button_margin
-                    +rateButton(4)
-                  +rateButton(5)
-
-            .form-elements__content.form-elements__content_column.form-elements__content_width-320
-
-              .form-elements__block.form-elements__block_size-266.form-elements__block_margin-b-41
-                .form-elements__range-slider
-                  +rangeSlider(rangeSlider)
-
-              .form-elements__block.form-elements__block_column.form-elements__block_margin-b-41
-                .form-elements__description.form-elements__description_margin-b-15
-                  +description({text: "buttons"})
-                .form-elements__buttons.form-elements__buttons_column
-                  .form-elements__buttons_row
-                    .form-elements__buttons_size-m
-                      +button(buttonSettings.one)
-                    .form-elements__buttons_size-m
-                      +button(buttonSettings.two)
-                  .form-elements__buttons_row
-                    .form-elements__buttons_size-m
-                      +button(buttonSettings.three)
-                    .form-elements__buttons_size-m
-                      +button(buttonSettings.four)
-                  .form-elements__buttons_row.form-elements__buttons_size-s
-                    +button(buttonSettings.five)
-                    +button(buttonSettings.six)
-                  .form-elements__buttons
-                    +button(buttonSettings.seven)
-
-              .form-elements__block.form-elements__block_column
-                .form-elements__description.form-elements__description_margin-b-16
-                  +description({text: "pagination"})
-                .form-elements__pagination
-                  +pagination
-
-          .form-elements__content.form-elements__content_row.form-elements__content_margin-b-90
-            .form-elements__content.form-elements__content_column.form-elements__content_margin-r-126.form-elements__content_width-320
-
-              .form-elements__block.form-elements__block_column
-                .form-elements__block.form-elements__block_column.form-elements__block_size-266.form-elements__block_margin-b-20
-                  .form-elements__description
-                    +description({
-                      type: "text with state",
-                      text: "dropdown",
-                      condition: "default"
-                    })
-                  .form-elements__dropdown
-                    +dropdown(settingsDropdown.room)
-
-                .form-elements__block.form-elements__block_column.form-elements__block_size-266.form-elements__block_margin-b-159
-                  .form-elements__description
-                    +description({
-                      type: "text with state",
-                      text: "dropdown",
-                      condition: "expanded"
-                    })
-                  .form-elements__dropdown
-                    +dropdown(settingsDropdown.roomActive)
-
-                .form-elements__block.form-elements__block_column.form-elements__block_size-266
-                  .form-elements__expandable-checkbox_margin
-                    +expandableCheckbox(expandableCheckbox.close)
-                  +expandableCheckbox(expandableCheckbox.open)
-
-            .form-elements__content.form-elements__content_column
-              .form-elements__content.form-elements__content_row.form-elements__content_margin-b-257
-
-                .form-elements__content.form-elements__content_width-320.form-elements__content_margin-r-72
-                  .form-elements__block.form-elements__block_column
-                    .form-elements__description
-                      +description({text: "dropdown"})
-                    .form-elements__dropdown
-                      +dropdown(settingsDropdown.guestsTwo)
-
-                .form-elements__content.form-elements__content_column.form-elements__content_width-320
-                  .form-elements__block.form-elements__block_column
-                    .form-elements__description
-                      +description({text: "dropdown"})
-                    .form-elements__dropdown
-                      +dropdown(settingsDropdown.guestsThree)
-
-              .form-elements__content_row
-                .form-elements__content_column.form-elements__content_width-320
-                  .form-elements__block.form-elements__block_column.form-elements__block_size-266
-                    .form-elements__description.form-elements__description_margin-b-16
-                      +description({text: "Rich Checkbox Buttons"})
-                    .form-elements__rich-checkbox
-                      .form-elements__rich-checkbox_margin-b-10
-                        +checkbox(richCheckboxSettings.corridor)
-                      +checkbox(richCheckboxSettings.assistant)
-
-                .form-elements__content.form-elements__content_column.form-elements__content_width-320
-                  .form-elements__block.form-elements__block_column
-                    .form-elements__description.form-elements__description_margin-b-14
-                      +description({text: "bullet list"})
-                    .form-elements__bullet-list
-                      +bulletList({descriptionText:"bullet list"})
-
-          .form-elements__content.form-elements__content_row
-            .form-elements__content.form-elements__content_column.form-elements__content_width-320
-
-              .form-elements__block.form-elements__block_column
-                .form-elements__icon-list
-                  .form-elements__icon-list_margin-b-24
-                    +iconList(iconLists.one)
-                  +iconList(iconLists.two)
-
-            .form-elements__content.form-elements__content_column.form-elements__content_width-711
-              .form-elements__block
-                .form-elements__comment
-                  +comment(comment)
+            .form-elements__comment
+              +comment(comment)

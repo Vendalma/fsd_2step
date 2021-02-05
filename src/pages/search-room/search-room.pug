@@ -3,13 +3,13 @@ include /components/header/header
 include /components/description/description
 include /components/dropdown/dropdown
 include /components/dropdown-date/dropdown-date
-include /components/range slider/range slider
+include /components/range-slider/range-slider
 include /components/checkbox/checkbox
 include /components/expandable-checkbox/expandable-checkbox
 include /components/room-card/room-card
 include /components/pagination/pagination
 include /components/footer/footer
-include /components/footer-small/footer-small
+include /components/simple-footer/simple-footer
 
 block head
   title Search room
@@ -19,61 +19,67 @@ block head
       header.search-room__header
         +header
       main.search-room__content
-        .js-search-room__icon.search-room__icon
-          .search-room__icon-block.search-room__icon_menu.js-search-room__icon_menu.search-room__icon_active
-            i.search-room__icon_material-icons tune
-          .search-room__icon-block.search-room__icon_close.js-search-room__icon_close
-            i.search-room__icon_material-icons close
+
+        .search-room__menu.js-search-room__menu
+          .search-room__menu-item.search-room__menu-item_type_opened.js-search-room__menu-item_type_opened
+            i.search-room__icon tune
+          .search-room__menu-item.search-room__menu-item_type_closed.js-search-room__menu-item_type_closed.search-room__menu-item_visibility_hidden
+            i.search-room__icon close
+
         aside.search-room__filter.js-search-room__filter
-          .search-room__block.search-room__block_margin-b-21
-            .search-room__dropdown-date
-              +dropdownDate(dropdownDate)
-          .search-room__block.search-room__block_margin-b-31
+
+          .search-room__dropdown-date
+            +dropdown-date(dropdownDate)
+
+          .search-room__block-guests
             .search-room__description
               +description({text:"гости"})
             .search-room__dropdown
               +dropdown(dropdown.guests)
-          .search-room__block.search-room__block_margin-b-31
+
+          .search-room__block-slider
             .search-room__range-slider
-              +rangeSlider({text:"диапазон цены"})
-            p.search-room__range-slider_text Стоимость за сутки пребывания в номере
-          .search-room__block.search-room__block_margin-b-31
-            .search-room__description.search-room__description_margin-b-15
+              +range-slider({text:"диапазон цены"})
+            p.search-room__text Стоимость за сутки пребывания в номере
+
+          .search-room__checkboxes
+            .search-room__description
               +description({text:"правила дома"})
-            .search-room__checkbox-block
-              .search-room__checkbox
-                +checkbox(checkboxSettings.smoking)
-              .search-room__checkbox.search-room__checkbox_margin
-                +checkbox(checkboxSettings.pets)
-              .search-room__checkbox
-                +checkbox(checkboxSettings.guests)
-          .search-room__block.search-room__block_margin-b-31
-            .search-room__description.search-room__description_margin-b-17
+            .search-room__checkbox
+              +checkbox(checkboxSettings.smoking)
+            .search-room__checkbox
+              +checkbox(checkboxSettings.pets)
+            .search-room__checkbox
+              +checkbox(checkboxSettings.guests)
+
+          .search-room__rich-checkboxes
+            .search-room__description
               +description({text:"доступность"})
-            .search-room__rich-checkbox-block
-              .search-room__rich-checkbox.search-room__rich-checkbox_margin
-                +checkbox(richCheckboxSettings.corridor)
-              .search-room__rich-checkbox
-                +checkbox(richCheckboxSettings.assistant)
-          .search-room__block.search-room__block_margin-b-16
+            .search-room__rich-checkbox
+              +checkbox(richCheckboxSettings.corridor)
+            .search-room__rich-checkbox
+              +checkbox(richCheckboxSettings.assistant)
+
+          .search-room__dropdown-room-block
             .search-room__description
               +description({text:"удобства номера"})
             .search-room__dropdown-room
               +dropdown(dropdown.room)
-          .search-room__block
-            .search-room__expandable-checkbox
-              +expandableCheckbox(expandableCheckbox)
+
+          .search-room__expandable-checkbox
+            +expandable-checkbox(expandableCheckbox)
+
         section.search-room__rooms.js-search-room__rooms
           h1.search-room__title Номера, которые мы для вас подобрали
-          .search-room__rooms-cards
+          ul.search-room__card-list
             for card in roomCards
-              .search-room__rooms-item
+              li.search-room__card-item
                 +room-card(card)
           .search-room__pagination
             +pagination
-      footer.search-room__footer
+      footer.search-room__footer-block
         .search-room__line
-        .search-room__footer_default
+        .search-room__footer.search-room__footer_type_default
           +footer
-        .search-room__footer_small
-          +footer-small 
+        .search-room__footer.search-room__footer_type_simple
+          +simple-footer

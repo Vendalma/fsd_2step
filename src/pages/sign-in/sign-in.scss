@@ -1,12 +1,12 @@
 .sign-in {
-  @include flexAndHeight;
+  @include flex-and-height;
   &__content {
     width: 100%;
-    @include addBackgroundImage('bg-image-4.jpg');
+    @include add-background-image('bg-image-4.jpg');
     @include image-animation;
   }
   &__wrapper {
-    @include pageSettings;
+    @include page-settings;
     padding-top: 163px;
     padding-bottom: 163px;
   }
@@ -16,9 +16,13 @@
     margin: 0 auto;
   }
   &__footer {
-    margin-top: auto;
-    &_small {
-      display: none;
+    &-block {
+      margin-top: auto;
+    }
+    &_type {
+      &_simple {
+        display: none;
+      }
     }
   }
 }
@@ -26,8 +30,10 @@
 @include bp-768 {
   .sign-in {
     &__footer {
-      &_small {
-        display: block;
+      &_type {
+        &_simple {
+          display: block;
+        }
       }
     }
   }

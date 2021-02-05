@@ -1,12 +1,12 @@
 .registration {
-  @include flexAndHeight;
+  @include flex-and-height;
   &__content {
     width: 100%;
-    @include addBackgroundImage('bg-image-4.jpg');
+    @include add-background-image('bg-image-4.jpg');
     @include image-animation;
   }
   &__wrapper {
-    @include pageSettings;
+    @include page-settings;
     padding-top: 19px;
     padding-bottom: 19px;
   }
@@ -17,9 +17,13 @@
     padding-left: 4px;
   }
   &__footer {
-    margin-top: auto;
-    &_small {
-      display: none;
+    &-block {
+      margin-top: auto;
+    }
+    &_type {
+      &_simple {
+        display: none;
+      }
     }
   }
 }
@@ -30,8 +34,10 @@
       padding: 0px;
     }
     &__footer {
-      &_small {
-        display: block;
+      &_type {
+        &_simple {
+          display: block;
+        }
       }
     }
   }

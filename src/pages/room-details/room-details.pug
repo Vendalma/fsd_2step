@@ -1,69 +1,73 @@
 extends /components/page-head/page-head
 include /components/header/header
 include /components/footer/footer
-include /components/footer-small/footer-small
+include /components/simple-footer/simple-footer
 include /components/calc-card/calc-card
-include /components/icon-list/icon-list
+include /components/bonus-icon/bonus-icon
 include /components/comment/comment
 include /components/bullet-list/bullet-list
 include /components/donut-chart/donut-chart
 
 block head
   title Room details
-  - const {iconLists,comments} =  require("./room-details.json")
+  - const {bonusIcon,comments} =  require("./room-details.json")
   body
     .room-details
       header.room-details__header
         +header
       main.room-details__content
-        article.room-details__block
-          .room-details__gallery
+
+        .room-details__gallery
+          figure.room-details__gallery-item.room-details__gallery-item_size_large
+            img.room-details__image(src=require("@images/bg-image-7.jpg").default alt="room №888")
+          .room-details__gallery-block
             figure.room-details__gallery-item
-              img.room-details__image(src=require("@images/bg-image-7.jpg").default alt="room №888")
-            .room-details__block.room-details__block_column.room-details__block_width-459
-              figure.room-details__gallery-item
-                img.room-details__image.room-details__image_big(src=require("@images/bg-image-5.jpg").default alt="room №888")
-              figure.room-details__gallery-item
-                img.room-details__image(src=require("@images/bg-image-6.jpg").default alt="room №888")
-        article.room-details__block.room-details__block_width-1200
-          .room-details__block.room-details__block_column.room-details__block_width-712
-            .room-details__block.room-details__block_row.room-details__block_margin-b-15
-              section.room-details__container.room-details__container_margin-r-10
-                h2.room-details__title.room-details__title_margin-b-23  Сведения о номере
-                .room-details__icon-list
-                  +iconList(iconLists.one)
-                .room-details__icon-list.room-details__icon-list_margin
-                  +iconList(iconLists.two)
-                .room-details__icon-list
-                  +iconList(iconLists.three)
-              section.room-details__container
-                h2.room-details__title.room-details__title_margin-b-23  Впечатления от номера
+              img.room-details__image(src=require("@images/bg-image-5.jpg").default alt="room №888")
+            figure.room-details__gallery-item
+              img.room-details__image(src=require("@images/bg-image-6.jpg").default alt="room №888")
+
+        article.room-details__wrapper
+          .room-details__column
+            .room-details__row
+              section.room-details__bonus-icon-container
+                h2.room-details__title  Сведения о номере
+                .room-details__bonus-icon
+                  +bonus-icon(bonusIcon.one)
+                .room-details__bonus-icon
+                  +bonus-icon(bonusIcon.two)
+                .room-details__bonus-icon
+                  +bonus-icon(bonusIcon.three)
+
+              section.room-details__donut-chart-container
+                h2.room-details__title  Впечатления от номера
                 .room-details__chart
                   +chart
-            .room-details__block.room-details__block_margin-b-35
-              section.room-details__container
-                .room-details__container-info
-                  h2.room-details__title  Отзывы посетителей номера
-                  span.room-details__text.room-details__text_item 2 отзыва
-                .room-details__comment.room-details__comment_margin  
-                  +comment(comments.man)
-                .room-details__comment 
-                  +comment(comments.woman)
-            .room-details__block.room-details__block_row
-              section.room-details__container.room-details__container_width-292
-                h2.room-details__title.room-details__title_padding-l Правила
+
+            section.room-details__comments-container
+              .room-details__container-info
+                h2.room-details__title  Отзывы посетителей номера
+                span.room-details__text.room-details__text_theme_small-font 2 отзыва
+              .room-details__comment 
+                +comment(comments.man)
+              .room-details__comment 
+                +comment(comments.woman)
+
+            .room-details__row
+              section.room-details__bullet-list-container
+                h2.room-details__title Правила
                 .room-details__bullet-list
-                  +bulletList
-              section.room-details__container.room-details__container_width-341
+                  +bullet-list
+              section.room-details__text-container
                 h2.room-details__title Отмена
                 .room-details__text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
-          aside.room-details__block.room-details__block_width-380
-            .room-details__container.room-details__container_relative
-              .room-details__card
-                +calc-card({isLuxury: true})
-      footer.room-details__footer
+
+          aside.room-details__sidebar
+            .room-details__card
+              +calc-card
+
+      footer.room-details__footer-block
         .room-details__line
-        .room-details__footer_default
+        .room-details__footer.room-details__footer_type_default
           +footer
-        .room-details__footer_small
-          +footer-small
+        .room-details__footer.room-details__footer_type_simple
+          +simple-footer

@@ -2,93 +2,119 @@
   background-color: #ffffff;
   width: 100%;
   margin: 0 auto;
+  @include flex-and-height;
   &__content {
-    @include pageSettings;
+    @include page-settings;
     padding: 30px 20px 72px;
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
-  &__icon {
+  &__menu {
     display: none;
+    user-select: none;
     cursor: pointer;
-    background-color: #ffffff;
     box-shadow: 0 0 5px 1px $dark-25;
-    &_material-icons {
-      @extend %mat-icons;
-      color: $dark-50;
-    }
+    background-color: #ffffff;
+  }
+  &__icon {
+    @extend %mat-icons;
+    color: $dark-50;
   }
   &__filter {
     width: 100%;
     max-width: 266px;
     margin-right: 20px;
+    &_visibility {
+      &_visible {
+        display: flex;
+        flex-direction: column;
+        min-width: 748px * 100%/ 768px;
+        margin: 0 auto;
+        z-index: 99;
+      }
+      &_hidden {
+        display: none;
+      }
+    }
   }
-  &__block {
-    &_margin-b-16 {
-      margin-bottom: 16px;
-    }
-    &_margin-b-21 {
-      margin-bottom: 21px;
-    }
-    &_margin-b-31 {
-      margin-bottom: 31px;
-    }
+  &__dropdown-date {
+    margin-bottom: 21px;
   }
-  &__description {
-    margin-bottom: 5px;
-    &_margin-b-15 {
+  &__block-guests {
+    & > :first-child {
+      margin-bottom: 5px;
+    }
+    margin-bottom: 31px;
+  }
+  &__block-slider {
+    & > :first-child {
+      margin-bottom: 11px;
+    }
+    margin-bottom: 31px;
+  }
+  &__text {
+    @extend %h3-font;
+    line-height: 1rem;
+    color: $dark-50;
+    text-transform: none;
+    font-weight: normal;
+    text-align: center;
+  }
+  &__checkboxes {
+    & > :first-child {
       margin-bottom: 15px;
     }
-    &_margin-b-17 {
-      margin-bottom: 17px;
-    }
-  }
-  &__range-slider {
-    margin-bottom: 11px;
-    &_text {
-      @extend %h3-font;
-      line-height: 1rem;
-      color: $dark-50;
-      text-transform: none;
-      font-weight: normal;
-      text-align: center;
-    }
-  }
-  &__checkbox {
-    &_margin {
+    & > :nth-child(3) {
       margin-top: 14px;
       margin-bottom: 13px;
     }
+    margin-bottom: 31px;
   }
-  &__rich-checkbox {
-    &_margin {
+
+  &__rich-checkboxes {
+    & > :first-child {
+      margin-bottom: 17px;
+    }
+    & > :nth-child(2) {
       margin-bottom: 10px;
     }
+    margin-bottom: 31px;
+  }
+  &__dropdown-room-block {
+    & > :first-child {
+      margin-bottom: 5px;
+    }
+    margin-bottom: 16px;
   }
   &__rooms {
     width: 100%;
     max-width: 835px;
     display: flex;
     flex-direction: column;
-    &-cards {
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      margin-bottom: 23px;
-    }
-    &-item {
-      margin-bottom: 21px;
+    &_visibility {
+      &_hidden {
+        display: none;
+      }
     }
   }
+
   &__title {
     @extend %h1-font;
     margin-bottom: 21px;
   }
-
+  &__card-list {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 19px;
+  }
+  &__card-item {
+    list-style-type: none;
+    margin-bottom: 21px;
+  }
   &__pagination {
     align-self: center;
     margin-right: 13px;
@@ -98,9 +124,13 @@
     width: 100%;
   }
   &__footer {
-    margin-top: auto;
-    &_small {
-      display: none;
+    &-block {
+      margin-top: auto;
+    }
+    &_type {
+      &_simple {
+        display: none;
+      }
     }
   }
 }
@@ -110,13 +140,18 @@
     &__rooms {
       justify-content: center;
       align-items: center;
-      &-item {
-        margin-right: 5px;
-      }
-      &-cards {
-        align-items: center;
-        justify-content: center;
-      }
+    }
+    &__card-item {
+      margin-right: 5px;
+    }
+  }
+}
+
+@include bp-960 {
+  .search-room {
+    &__card-list {
+      align-items: center;
+      justify-content: center;
     }
   }
 }
@@ -124,10 +159,7 @@
 @include bp-768 {
   .search-room {
     position: relative;
-    &__filter {
-      display: none;
-    }
-    &__icon {
+    &__menu {
       display: block;
       width: 50px;
       height: 50px;
@@ -136,36 +168,28 @@
       right: 30px;
       bottom: 30px;
       z-index: 100;
-
-      &-block {
-        display: none;
-      }
-      &_active {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-      }
     }
-    &_active {
+    &__menu-item {
+      width: 100%;
+      height: 100%;
       display: flex;
-      flex-direction: column;
-      min-width: 748px * 100%/ 768px;
-      margin: 0 auto;
-      z-index: 99;
-      background-color: #ffffff;
-    }
-    &_close {
-      display: none;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      &_visibility {
+        &_hidden {
+          display: none;
+        }
+      }
     }
     &__title {
       text-align: center;
     }
     &__footer {
-      &_small {
-        display: block;
+      &_type {
+        &_simple {
+          display: block;
+        }
       }
     }
   }
