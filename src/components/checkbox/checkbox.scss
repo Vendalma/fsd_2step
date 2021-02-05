@@ -11,10 +11,9 @@
     line-height: 1.286rem;
     color: $dark-50;
     padding-left: 30px;
-    &_type {
-      &_rich {
-        flex-direction: column;
-      }
+
+    &_rich {
+      flex-direction: column;
     }
   }
 
@@ -64,12 +63,12 @@
     line-height: 1.286rem;
     color: $dark-50;
     white-space: pre-wrap;
-    &_type {
-      &_rich {
-        line-height: 1rem;
-        font-size: 0.857rem;
-      }
+
+    &_rich {
+      line-height: 1rem;
+      font-size: 0.857rem;
     }
+
     &_width {
       &_medium {
         max-width: 200px;

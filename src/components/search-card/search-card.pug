@@ -8,7 +8,7 @@ mixin search-card
     h1.search-card__title Найдём номера под ваши пожелания
     form(action="/mock-address/change-me" method="post").search-card__form
       .search-card__date
-        +dropdownDate({type: "range",
+        +dropdown-date({type: "range",
           description1:"прибытие",  
           description2: "выезд"})
       .search-card__container

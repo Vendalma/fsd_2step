@@ -7,14 +7,7 @@ mixin dropdown(options={})
     items = [],
     scores= {}
     } = options;
-    const types = {
-      guests: "dropdown_type_guests",
-      room: "dropdown_type_room",
-    }
 
-    const classes = [
-      types[type]
-    ]
     const itemNameVariables = {
       "взрослые": "взрослый|взрослых|взрослых",
       "дети": "ребенок|ребенка|детей",
@@ -28,13 +21,15 @@ mixin dropdown(options={})
       guests: "Сколько гостей",
       rooms: "Какие удобства"
     }
-  .dropdown.js-dropdown(class=classes)
+
+  .dropdown.js-dropdown(class=`dropdown_type_${type}`)
     label.dropdown__select-container.js-dropdown__select-container
       input.dropdown__input.js-dropdown__input(type="text" 
       readonly
       placeholder=`${placeholderVariables[type]}`
       class = isActive? "dropdown__input_opened" : "dropdown__input_closed")
-      i.dropdown__icon.js-dropdown__icon.dropdown__icon_closed expand_more
+      i.dropdown__icon.js-dropdown__icon(
+        class = isActive? "dropdown__icon_opened" : "dropdown__icon_closed") expand_more
     ul.dropdown__select-list.js-dropdown__select-list(
       class = isActive?  "dropdown__select-list_opened" : "dropdown__select-list_closed"
       class=`dropdown__select-list_type_${type}`)
@@ -47,7 +42,7 @@ mixin dropdown(options={})
             .dropdown__button.dropdown__button_theme_circled.dropdown__button_type_plus.js-dropdown__button_type_plus +
 
       if options.type === 'guests'
-        li.dropdown__item.dropdown__item_margin-top
+        li.dropdown__item
           .dropdown__button.dropdown__button_type_clear.js-dropdown__button_type_clear.dropdown__button_visibility_hidden
             +button({text:"Очистить"})
           .dropdown__button.dropdown__button_type_apply.js-dropdown__button_type_apply

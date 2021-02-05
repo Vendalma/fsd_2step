@@ -6,9 +6,9 @@ mixin sign-in-card
     h1.sign-in-card__title Войти
     form(action="/mock-address/change-me" method="post").sign-in-card__form
       .sign-in-card__text-field
-        +textField({type: "email", placeholder:"Email"})
+        +text-field({type: "email", placeholder:"Email"})
       .sign-in-card__text-field
-        +textField({type:"password", placeholder:"Пароль"})
+        +text-field({type:"password", placeholder:"Пароль"})
       .sign-in-card__button-submit
         +button({theme:"filled",
           size:"m",

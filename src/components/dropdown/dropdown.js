@@ -7,7 +7,6 @@ class Dropdown {
     this.data = {};
     this.init();
     this.clickOnInput();
-    this.checkMaterialIcons();
     this.clickClearButton();
     this.clickApplyButton();
     this.checkActiveDropdown();
@@ -44,15 +43,8 @@ class Dropdown {
     this.input.classList.toggle('dropdown__input_closed');
     this.input.classList.toggle('dropdown__input_opened');
 
-    this.icon.classList.toggle('dropdown__icon_default');
-    this.icon.classList.toggle('dropdown__icon_open');
-  }
-
-  checkMaterialIcons() {
-    if (this.input.classList.contains('dropdown__input_opened')) {
-      this.icon.classList.toggle('dropdown__icon_closed');
-      this.icon.classList.toggle('dropdown__icon_opened');
-    }
+    this.icon.classList.toggle('dropdown__icon_closed');
+    this.icon.classList.toggle('dropdown__icon_opened');
   }
 
   onMinClick(elem) {
@@ -89,7 +81,6 @@ class Dropdown {
   onPlusClick(elem) {
     let score = elem.previousElementSibling;
     score.innerHTML = Number(score.innerHTML) + 1;
-    console.log(score.previousElementSibling);
     this.setMinButton(score.previousElementSibling);
     this.setClearButton();
     return Number(score.innerHTML);

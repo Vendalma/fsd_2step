@@ -3,7 +3,7 @@ import 'lightslider';
 import 'lightslider/dist/css/lightslider.min.css';
 import './room-card.scss';
 
-let roomSlider = document.querySelectorAll('.room-card__slider');
+let roomSlider = document.querySelectorAll('.js-room-card__slider');
 
 roomSlider.forEach((elem) => {
   $(document).ready(function () {

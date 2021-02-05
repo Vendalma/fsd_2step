@@ -9,9 +9,9 @@ mixin registration-card
     h1.registration-card__title Регистрация аккаунта
     form(action="/mock-address/change-me" method="post").registration-card__form
       .registration-card__text-field
-        +textField({type:"text", placeholder:"Имя"})
+        +text-field({type:"text", placeholder:"Имя"})
       .registration-card__text-field
-        +textField({type:"text", placeholder:"Фамилия"})
+        +text-field({type:"text", placeholder:"Фамилия"})
       .registration-card__radio-wrapper
         .registration-card__radio
           +radio({name:"gender",
@@ -24,14 +24,14 @@ mixin registration-card
         .registration-card__description
           +description({text:"дата рождения"})
         .registration-card__text-field
-          +textField({type:"mask",placeholder: "ДД.ММ.ГГГГ"})
+          +text-field({type:"mask",placeholder: "ДД.ММ.ГГГГ"})
       .registration-card__email
         .registration-card__description
           +description({text:"данные для входа в сервис"})
         .registration-card__text-field
-          +textField({type:"email",placeholder: "Email"})
+          +text-field({type:"email",placeholder: "Email"})
         .registration-card__text-field
-          +textField({type:"password",placeholder: "Пароль"})
+          +text-field({type:"password",placeholder: "Пароль"})
       .registration-card__toggle
         +toggle({text:"Получать спецпредложения"})
       .registration-card__button-submit

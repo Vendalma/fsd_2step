@@ -1,4 +1,4 @@
-mixin link({type = "default",text,isWithArrow=false}={})
+mixin link({type,text,isWithArrow=false}={})
   a(href="/mock-address/change-me" class=type==="active"? "link_type_active" : "").link #{text} 
     if isWithArrow
       i.link__icon expand_more

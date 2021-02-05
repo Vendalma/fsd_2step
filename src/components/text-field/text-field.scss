@@ -34,7 +34,6 @@
     width: inherit;
     @extend %body-font;
     padding: 12.2px 15px;
-
     border: 1px solid $dark-25;
     line-height: 1.286rem;
     color: $dark-25;
@@ -46,7 +45,6 @@
         }
       }
       &_subscribe {
-        width: 100%;
         padding-right: 44px;
       }
     }

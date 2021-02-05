@@ -5,7 +5,7 @@
     margin-bottom: 10px;
   }
   &__user-photo {
-    margin-right: 10px;
+    margin-right: 12px;
     max-width: 46px;
     max-height: 46px;
   }
@@ -26,6 +26,7 @@
   &__block {
     display: flex;
     flex-direction: row;
+    padding-left: 5px;
   }
   &__like-button {
     margin-left: 1px;

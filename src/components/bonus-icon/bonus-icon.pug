@@ -1,0 +1,11 @@
+mixin bonus-icon({typeIcon, header, text,isBlockLine=true}={})
+  .bonus-icon
+    .bonus-icon__container
+      .bonus-icon__block
+        i.bonus-icon__icon #{typeIcon}
+      .bonus-icon__block
+        p.bonus-icon__text-block
+          span.bonus-icon__header #{header}
+          span.bonus-icon__text #{text}
+    if isBlockLine
+      .bonus-icon__block-line

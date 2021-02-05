@@ -1,8 +1,5 @@
-mixin description({type="default",text, condition}={})
-  if type == "default"
-    .description
-      p.description__text #{text}
-  else if type == "text with state"
-    .description
-      p.description__text #{text}
-      p.description__condition #{condition}
+mixin description({text,isWithStatus=false,status}={})
+  .description
+    p.description__text #{text}
+    if isWithStatus
+      p.description__status #{status}

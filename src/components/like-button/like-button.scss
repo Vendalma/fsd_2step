@@ -8,8 +8,8 @@
   outline: none;
   @extend %body-font;
   color: $dark-25;
-  font-size: 10px;
-  line-height: 12px;
+  font-size: 0.714rem;
+  line-height: 0.857rem;
   position: relative;
   &:focus {
     box-shadow: 1px 1px 10px 1px rgba(31, 32, 65, 0.2);

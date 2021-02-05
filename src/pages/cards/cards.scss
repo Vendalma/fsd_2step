@@ -1,7 +1,7 @@
 .cards {
   background: #f4f4f6;
   &__content-block {
-    @include pageSettings;
+    @include page-settings;
     padding: 72px 20px 100px;
     display: flex;
     flex-direction: row;

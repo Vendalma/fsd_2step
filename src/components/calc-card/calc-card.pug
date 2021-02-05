@@ -39,13 +39,13 @@ mixin calc-card(options = {})
             span.calc-card__number.calc-card__number_font_small &#8470;&#32;
             span.calc-card__number #{roomNumber}
             if isLuxury
-              span.calc-card__number-lux люкс
+              span.calc-card__number-lux &nbsp;&nbsp;люкс
           p.calc-card__price-info
             span.calc-card__price #{roomPrice}&#8381;&#32;
             span.calc-card__price.calc-card__price_font_small в сутки
 
         .calc-card__dropdown-date
-          +dropdownDate(dropdownDateSetting)
+          +dropdown-date(dropdownDateSetting)
         .calc-card__guests
           .calc-card__description
             +description({text:"гости"})
