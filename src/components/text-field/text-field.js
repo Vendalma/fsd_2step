@@ -1,5 +1,5 @@
 import './text-field.scss';
-let $mask = $('.js-text-field__input_theme_mask');
+let $mask = $('.js-text-field__input_masked');
 const Inputmask = require('inputmask');
 
 var im = new Inputmask({

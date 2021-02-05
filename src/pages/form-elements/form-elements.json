@@ -11,8 +11,8 @@
     },
     "mask": {
       "type": "text",
-      "theme": "mask",
-      "placeholder": "ДД.ММ.ГГГГ"
+      "placeholder": "ДД.ММ.ГГГГ",
+      "isWithMask": true
     },
     "subscribe": {
       "type": "email",

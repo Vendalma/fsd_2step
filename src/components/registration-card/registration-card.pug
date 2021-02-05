@@ -24,7 +24,9 @@ mixin registration-card
         .registration-card__description
           +description({text:"дата рождения"})
         .registration-card__text-field
-          +text-field({type:"mask",placeholder: "ДД.ММ.ГГГГ"})
+          +text-field({type:"text",
+            placeholder: "ДД.ММ.ГГГГ",
+            isWithMask:true})
       .registration-card__email
         .registration-card__description
           +description({text:"данные для входа в сервис"})

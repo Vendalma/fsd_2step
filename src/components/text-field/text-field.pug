@@ -1,9 +1,8 @@
-mixin text-field({type, theme, placeholder}) 
+mixin text-field({type, theme, placeholder, isWithMask= false}) 
   - 
     const themes = {
       active: "text-field__input_theme_active",
       subscribe: "text-field__input_theme_subscribe",
-      mask: "text-field__input_theme_mask js-text-field__input_theme_mask",
     }
     const types = {
       text: "text-field__input_type_text",
@@ -18,4 +17,7 @@ mixin text-field({type, theme, placeholder})
 
   .text-field
     label.text-field__label(class=labelTheme)
-      input.text-field__input(type=`${type}` placeholder=placeholder class=classes)
+      input.text-field__input(type=`${type}` 
+        placeholder=placeholder 
+        class=classes
+        class=isWithMask? "text-field__input_masked js-text-field__input_masked" : "")
