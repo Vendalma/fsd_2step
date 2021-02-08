@@ -5,17 +5,17 @@ include /components/simple-footer/simple-footer
 include /components/sign-in-card/sign-in-card
 
 block head
-  title Sign in
-  body
-    .sign-in
-      header.sign-in__header
-        +header
-      main.sign-in__content.js-sign-in__content
-        .sign-in__wrapper
-          section.sign-in__card
-            +sign-in-card
-      footer.sign-in__footer-block
-        .sign-in__footer.sign-in__footer_type_default
-          +footer
-        .sign-in__footer.sign-in__footer_type_simple
-          +simple-footer
+  - var title = "Sign in"
+block content
+  .sign-in
+    header.sign-in__header
+      +header
+    main.sign-in__content.js-sign-in__content
+      .sign-in__wrapper
+        section.sign-in__card
+          +sign-in-card
+    footer.sign-in__footer-block
+      .sign-in__footer.sign-in__footer_type_default
+        +footer
+      .sign-in__footer.sign-in__footer_type_simple
+        +simple-footer

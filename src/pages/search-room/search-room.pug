@@ -12,9 +12,9 @@ include /components/footer/footer
 include /components/simple-footer/simple-footer
 
 block head
-  title Search room
+  - var title = "Search room"
+block content
   - const{roomCards,dropdownDate,dropdown,richCheckboxSettings,expandableCheckbox,checkboxSettings} =  require("./search-room.json")
-  body
     .search-room
       header.search-room__header
         +header

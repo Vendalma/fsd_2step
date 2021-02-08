@@ -5,17 +5,17 @@ include /components/simple-footer/simple-footer
 include /components/registration-card/registration-card
 
 block head
-  title Registration
-  body
-    .registration
-      header.registration__header
-        +header
-      main.registration__content.js-registration__content
-        .registration__wrapper
-          section.registration__card
-            +registration-card
-      footer.registration__footer-block
-        .registration__footer.registration__footer_type_default
-          +footer
-        .registration__footer.registration__footer_type_simple
-          +simple-footer
+  - var title = "Registration"
+block content
+  .registration
+    header.registration__header
+      +header
+    main.registration__content.js-registration__content
+      .registration__wrapper
+        section.registration__card
+          +registration-card
+    footer.registration__footer-block
+      .registration__footer.registration__footer_type_default
+        +footer
+      .registration__footer.registration__footer_type_simple
+        +simple-footer

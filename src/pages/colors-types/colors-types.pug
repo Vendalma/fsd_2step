@@ -4,15 +4,15 @@ include /components/text-types/text-types
 include /components/logo/logo
 
 block head
-  title Colors&Types
-  body
-    .colors-types
-      header.colors-types__header
-        .colors-types__logo
-          +logo
-      main.colors-types__content-block
-        .colors-types__container
-          .colors-types__color-block
-            +colors  
-          .colors-types__text-types
-            +text-types
+  - var title = "Colors&Types"
+block content
+  .colors-types
+    header.colors-types__header
+      .colors-types__logo
+        +logo
+    main.colors-types__content-block
+      .colors-types__container
+        .colors-types__color-block
+          +colors  
+        .colors-types__text-types
+          +text-types

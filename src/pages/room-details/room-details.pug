@@ -9,65 +9,65 @@ include /components/bullet-list/bullet-list
 include /components/donut-chart/donut-chart
 
 block head
-  title Room details
+  - var title = "Room details"
+block content
   - const {bonusIcon,comments} =  require("./room-details.json")
-  body
-    .room-details
-      header.room-details__header
-        +header
-      main.room-details__content
+  .room-details
+    header.room-details__header
+      +header
+    main.room-details__content
 
-        .room-details__gallery
-          figure.room-details__gallery-item.room-details__gallery-item_size_large
-            img.room-details__image(src=require("@images/bg-image-7.jpg").default alt="room №888")
-          .room-details__gallery-block
-            figure.room-details__gallery-item
-              img.room-details__image(src=require("@images/bg-image-5.jpg").default alt="room №888")
-            figure.room-details__gallery-item
-              img.room-details__image(src=require("@images/bg-image-6.jpg").default alt="room №888")
+      .room-details__gallery
+        figure.room-details__gallery-item.room-details__gallery-item_size_large
+          img.room-details__image(src=require("@images/bg-image-7.jpg").default alt="room №888")
+        .room-details__gallery-block
+          figure.room-details__gallery-item
+            img.room-details__image(src=require("@images/bg-image-5.jpg").default alt="room №888")
+          figure.room-details__gallery-item
+            img.room-details__image(src=require("@images/bg-image-6.jpg").default alt="room №888")
 
-        article.room-details__wrapper
-          .room-details__column
-            .room-details__row
-              section.room-details__bonus-icon-container
-                h2.room-details__title  Сведения о номере
-                .room-details__bonus-icon
-                  +bonus-icon(bonusIcon.one)
-                .room-details__bonus-icon
-                  +bonus-icon(bonusIcon.two)
-                .room-details__bonus-icon
-                  +bonus-icon(bonusIcon.three)
+      article.room-details__wrapper
+        .room-details__column
+          .room-details__row
+            section.room-details__bonus-icon-container
+              h2.room-details__title  Сведения о номере
+              .room-details__bonus-icon
+                +bonus-icon(bonusIcon.one)
+              .room-details__bonus-icon
+                +bonus-icon(bonusIcon.two)
+              .room-details__bonus-icon
+                +bonus-icon(bonusIcon.three)
 
-              section.room-details__donut-chart-container
-                h2.room-details__title  Впечатления от номера
-                .room-details__chart
-                  +chart
+            section.room-details__donut-chart-container
+              h2.room-details__title  Впечатления от номера
+              .room-details__chart
+                +chart
 
-            section.room-details__comments-container
-              .room-details__container-info
-                h2.room-details__title  Отзывы посетителей номера
-                span.room-details__text.room-details__text_theme_small-font 2 отзыва
-              .room-details__comment 
-                +comment(comments.man)
-              .room-details__comment 
-                +comment(comments.woman)
+          section.room-details__comments-container
+            .room-details__container-info
+              h2.room-details__title  Отзывы посетителей номера
+              span.room-details__text.room-details__text_theme_small-font 2 отзыва
+            .room-details__comment 
+              +comment(comments.man)
+            .room-details__comment 
+              +comment(comments.woman)
 
-            .room-details__row
-              section.room-details__bullet-list-container
-                h2.room-details__title Правила
-                .room-details__bullet-list
-                  +bullet-list
-              section.room-details__text-container
-                h2.room-details__title Отмена
-                .room-details__text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+          .room-details__row
+            section.room-details__bullet-list-container
+              h2.room-details__title Правила
+              .room-details__bullet-list
+                +bullet-list
+            section.room-details__text-container
+              h2.room-details__title Отмена
+              .room-details__text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 
-          aside.room-details__sidebar
-            .room-details__card
-              +calc-card
+        aside.room-details__sidebar
+          .room-details__card
+            +calc-card
 
-      footer.room-details__footer-block
-        .room-details__line
-        .room-details__footer.room-details__footer_type_default
-          +footer
-        .room-details__footer.room-details__footer_type_simple
-          +simple-footer
+    footer.room-details__footer-block
+      .room-details__line
+      .room-details__footer.room-details__footer_type_default
+        +footer
+      .room-details__footer.room-details__footer_type_simple
+        +simple-footer

@@ -5,19 +5,19 @@ include /components/simple-footer/simple-footer
 include /components/search-card/search-card
 
 block head
-  title Landing
-  body
-    .landing
-      header.landing__header
-        +header
-      main.landing__content.js-landing__content
-        .landing__wrapper
-          section.landing__card 
-            +search-card
-          p.landing__text Лучшие номера для вашей работы, отдыха и просто вдохновения
-      footer.landing__footer-block
-        .landing__footer.landing__footer_type_default
-          +footer
-        .landing__footer.landing__footer_type_simple
-          +simple-footer
+  - var title = "Landing"
+block content
+  .landing
+    header.landing__header
+      +header
+    main.landing__content.js-landing__content
+      .landing__wrapper
+        section.landing__card 
+          +search-card
+        p.landing__text Лучшие номера для вашей работы, отдыха и просто вдохновения
+    footer.landing__footer-block
+      .landing__footer.landing__footer_type_default
+        +footer
+      .landing__footer.landing__footer_type_simple
+        +simple-footer
 
