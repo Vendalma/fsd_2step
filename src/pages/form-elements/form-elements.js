@@ -1,4 +1,4 @@
-import '@/main.scss';
+import '@/main';
 import '@components/bonus-icon/bonus-icon';
 import '@components/bullet-list/bullet-list';
 import '@components/button/button';

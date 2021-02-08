@@ -1,4 +1,2 @@
-import '@/main.scss';
-import "normalize.css";
+import '@/main';
 import './toxin-page.scss';
-

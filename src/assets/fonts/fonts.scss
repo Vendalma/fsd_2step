@@ -1,11 +1,7 @@
-@include font-face(
-  Montserrat,
-  './assets/fonts/montserrat/montserrat-bold',
-  700
-);
-@include font-face(Montserrat, './assets/fonts/montserrat/montserrat-regular');
+@include font-face(Montserrat, './montserrat/montserrat-bold', 700);
+@include font-face(Montserrat, './montserrat/montserrat-regular');
 @include font-face(
   Material Icons,
-  './assets/fonts/material-icons/iconfont/materialIcons-regular'
+  './material-icons/iconfont/materialIcons-regular'
 );
-@include font-face(Font-Awesome, './assets/fonts/font-awesome/font-awesome');
+@include font-face(Font-Awesome, './font-awesome/font-awesome');

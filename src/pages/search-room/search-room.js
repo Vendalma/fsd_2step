@@ -1,4 +1,4 @@
-import '@/main.scss';
+import '@/main';
 import '@components/checkbox/checkbox';
 import '@components/description/description';
 import '@components/dropdown-date/dropdown-date';
@@ -10,7 +10,6 @@ import '@components/pagination/pagination';
 import '@components/range-slider/range-slider';
 import '@components/room-card/room-card';
 import '@components/simple-footer/simple-footer';
-import 'normalize.css';
 import './search-room.scss';
 
 let optionsBlock = document.querySelector('.js-search-room__menu');

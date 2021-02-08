@@ -1,4 +1,4 @@
-import '@/main.scss';
+import '@/main';
 import '@components/bonus-icon/bonus-icon';
 import '@components/bullet-list/bullet-list';
 import '@components/calc-card/calc-card';
@@ -7,5 +7,4 @@ import '@components/donut-chart/donut-chart';
 import '@components/footer/footer';
 import '@components/header/header';
 import '@components/simple-footer/simple-footer';
-import 'normalize.css';
 import './room-details.scss';
