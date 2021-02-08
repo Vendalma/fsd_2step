@@ -3,6 +3,7 @@
   padding: 40px 28px 29px 29px;
   &__title {
     @extend %h1-font;
+    margin-top: 0px;
     margin-bottom: 22px;
   }
   &__date {

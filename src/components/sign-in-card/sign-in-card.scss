@@ -3,15 +3,16 @@
   padding: 40px 28px 30px 30px;
   &__title {
     @extend %h1-font;
-    margin-bottom: 1.429rem;
+    margin-top: 0px;
+    margin-bottom: 22px;
   }
   &__form {
-    margin-bottom: 30px;
+    margin-bottom: 29px;
     & > :nth-child(1) {
       margin-bottom: 10px;
     }
     & > :nth-child(2) {
-      margin-bottom: 21px;
+      margin-bottom: 20px;
     }
   }
   &__container {
