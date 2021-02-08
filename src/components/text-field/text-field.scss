@@ -38,14 +38,14 @@
     line-height: 1.286rem;
     color: $dark-25;
     &_theme {
-      &_active {
-        border: 1px solid $dark-50;
-        &::placeholder {
-          color: $dark-75;
-        }
-      }
       &_subscribe {
         padding-right: 44px;
+      }
+    }
+    &_active {
+      border: 1px solid $dark-50;
+      &::placeholder {
+        color: $dark-75;
       }
     }
     &:hover {

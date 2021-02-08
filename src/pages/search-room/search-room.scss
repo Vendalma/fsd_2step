@@ -25,17 +25,15 @@
     width: 100%;
     max-width: 266px;
     margin-right: 20px;
-    &_visibility {
-      &_visible {
-        display: flex;
-        flex-direction: column;
-        min-width: 748px * 100%/ 768px;
-        margin: 0 auto;
-        z-index: 99;
-      }
-      &_hidden {
-        display: none;
-      }
+    &_visible {
+      display: flex;
+      flex-direction: column;
+      min-width: 748px * 100%/ 768px;
+      margin: 0 auto;
+      z-index: 99;
+    }
+    &_hidden {
+      display: none;
     }
   }
   &__dropdown-date {
@@ -92,10 +90,8 @@
     max-width: 835px;
     display: flex;
     flex-direction: column;
-    &_visibility {
-      &_hidden {
-        display: none;
-      }
+    &_hidden {
+      display: none;
     }
   }
 
@@ -176,10 +172,8 @@
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      &_visibility {
-        &_hidden {
-          display: none;
-        }
+      &_hidden {
+        display: none;
       }
     }
     &__title {

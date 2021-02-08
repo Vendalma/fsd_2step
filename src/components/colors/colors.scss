@@ -9,7 +9,7 @@
     min-width: 70px;
     min-height: 70px;
     border-radius: 6px;
-    &_type {
+    &_color {
       &_dark-100 {
         background-color: $dark-100;
       }
@@ -43,7 +43,7 @@
     @extend %h1-font;
     font-size: 1.357rem;
     line-height: 2rem;
-    &_type {
+    &_size {
       &_narrow {
         font-weight: normal;
       }

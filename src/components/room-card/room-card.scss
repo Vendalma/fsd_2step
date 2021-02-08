@@ -17,7 +17,7 @@
   &__room {
     &-number {
       @extend %h2-font;
-      &_font {
+      &_size {
         &_small {
           font-size: 1rem;
           line-height: 1.214rem;
@@ -36,7 +36,7 @@
       line-height: 1.286rem;
       font-weight: 700;
       color: $dark-50;
-      &_font {
+      &_size {
         &_small {
           font-size: 0.857rem;
           font-weight: 400;
@@ -58,7 +58,7 @@
       line-height: 1.125rem;
       font-weight: 700;
       color: $dark-50;
-      &_font {
+      &_size {
         &_narrow {
           font-weight: 400;
         }

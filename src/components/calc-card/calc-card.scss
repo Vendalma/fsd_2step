@@ -17,7 +17,7 @@
     @extend %h1-font;
     font-size: 1.714rem;
     line-height: 2.071rem;
-    &_font {
+    &_size {
       &_small {
         font-size: 1rem;
         line-height: 1.214rem;
@@ -34,7 +34,7 @@
     font-weight: 700;
     color: $dark-50;
 
-    &_font {
+    &_size {
       &_small {
         font-size: 0.857rem;
         font-weight: 400;
@@ -70,7 +70,7 @@
     &-calculating {
       width: 100%;
       max-width: 240px;
-      &_font {
+      &_size {
         &_small {
           line-height: 1.286rem;
         }

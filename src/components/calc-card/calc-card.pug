@@ -36,13 +36,13 @@ mixin calc-card(options = {})
       .calc-card__wrapper
         .calc-card__room-info
           p.calc-card__number-info
-            span.calc-card__number.calc-card__number_font_small &#8470;&#32;
+            span.calc-card__number.calc-card__number_size_small &#8470;&#32;
             span.calc-card__number #{roomNumber}
             if isLuxury
               span.calc-card__number-lux &nbsp;&nbsp;люкс
           p.calc-card__price-info
             span.calc-card__price #{roomPrice}&#8381;&#32;
-            span.calc-card__price.calc-card__price_font_small в сутки
+            span.calc-card__price.calc-card__price_size_small в сутки
 
         .calc-card__dropdown-date
           +dropdown-date(dropdownDateSetting)
@@ -59,7 +59,7 @@ mixin calc-card(options = {})
             p.calc-card__item-calculating.calc-card__item-calculating_type_with-icon Сбор за услуги: скидка #{serviceSale}&#8381;
             p.calc-card__item-total #{serviceTotal}&#8381;
           li.calc-card__item
-            p.calc-card__item-calculating.calc-card__item-calculating_type_with-icon.calc-card__item-calculating_font_small Сбор за дополнительные услуги
+            p.calc-card__item-calculating.calc-card__item-calculating_type_with-icon.calc-card__item-calculating_size_small Сбор за дополнительные услуги
             p.calc-card__item-total #{additionalServiceTotal}&#8381;
 
       p.calc-card__total

@@ -6,7 +6,7 @@
     },
     "hover": {
       "type": "text",
-      "theme": "active",
+      "isActive": true,
       "placeholder": "This is pretty awesome"
     },
     "mask": {
