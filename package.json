@@ -7,7 +7,8 @@
     "build-prod": "webpack --mode production --config ./webpack/webpack.prod.config.js",
     "build-dev": "webpack --mode development  --config ./webpack/webpack.dev.config.js",
     "start": "webpack-dev-server --open  --watch --config ./webpack/webpack.dev.config.js",
-    "lint": "node_modules/.bin/eslint . --fix --ext .js"
+    "lint": "node_modules/.bin/eslint . --fix --ext .js",
+    "deploy": "gh-pages -b pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -18,13 +19,12 @@
   "bugs": {
     "url": "https://github.com/Vendalma/fsd_2step/issues"
   },
-  "homepage": "https://github.com/Vendalma/fsd_2step#readme",
+  "homepage": "https://github.com/Vendalma/fsd_2step",
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@babel/preset-env": "^7.12.7",
     "autoprefixer": "^10.2.1",
     "babel-loader": "^8.2.2",
-    "chart.js": "^2.9.4",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^6.4.0",
     "css-loader": "^3.6.0",
@@ -32,6 +32,7 @@
     "eslint": "^7.14.0",
     "eslint-plugin-fsd": "^1.0.1",
     "file-loader": "^6.0.0",
+    "gh-pages": "^3.1.0",
     "html-webpack-plugin": "^4.3.0",
     "mini-css-extract-plugin": "^0.9.0",
     "postcss": "^8.1.10",
@@ -49,6 +50,7 @@
   },
   "dependencies": {
     "air-datepicker": "^2.2.3",
+    "chart.js": "^2.9.4",
     "inputmask": "^5.0.3",
     "ion-rangeslider": "^2.3.1",
     "jquery": "^3.5.1",

@@ -36,6 +36,8 @@ https://github.com/Vendalma/fsd_2step.git
 
 `npm run lint` - запуск линтера
 
+`npm run deploy` - загрузка проекта на GitHub Pages
+
 ## jQuery плагины
 
 [air-datepicker](https://github.com/t1m0n/air-datepicker)
