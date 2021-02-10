@@ -120,6 +120,7 @@
     position: relative;
     margin-top: 70px;
     margin-bottom: 70px;
+    min-width: 380px;
   }
   &__card {
     position: sticky;
@@ -170,31 +171,26 @@
 
 @include bp-768 {
   .room-details {
-    &__footer {
-      &_type {
-        &_simple {
-          display: block;
-        }
-      }
-    }
-  }
-}
-
-@include bp-480 {
-  .room-details {
     &__row {
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
     }
-    &__icon-list-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    &__donut-chart-container {
+      height: 100%;
       margin-bottom: 20px;
     }
-    &__donut-chart-container {
+    &__title {
+      width: 100%;
+      text-align: center;
+    }
+    &__icon-list-container {
       margin-bottom: 20px;
+    }
+    &__bonus-icon {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
     }
     &__text {
       &_theme {
@@ -217,6 +213,23 @@
     }
     &__sidebar {
       margin-top: 0px;
+      min-width: inherit;
+    }
+    &__footer {
+      &_type {
+        &_simple {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+@include bp-480 {
+  .room-details {
+    &__wrapper {
+      padding-left: 10px;
+      padding-right: 10px;
     }
   }
 }
