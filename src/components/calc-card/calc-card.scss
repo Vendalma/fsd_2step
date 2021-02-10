@@ -68,7 +68,7 @@
     justify-content: space-between;
 
     &-calculating {
-      width: 100%;
+      width: 80%;
       max-width: 240px;
       &_size {
         &_small {
@@ -77,7 +77,7 @@
       }
       &_type {
         &_with-icon {
-          padding-right: 10px;
+          padding-right: 20px;
           position: relative;
           &::before {
             content: 'i';
@@ -101,6 +101,9 @@
     }
     &-total {
       white-space: nowrap;
+      text-align: right;
+      width: 20%;
+      margin-left: 10px;
     }
   }
   &__total {
@@ -123,5 +126,23 @@
   &__button {
     width: 100%;
     max-width: 320px;
+  }
+}
+
+@include bp-380 {
+  .calc-card {
+    padding-left: 20px;
+    padding-right: 20px;
+    &__wrapper {
+      margin-right: 0px;
+    }
+    &__item-calculating {
+      line-height: 1.286rem;
+      max-width: 210px;
+      padding-right: 30px;
+      &::before {
+        top: 7px;
+      }
+    }
   }
 }

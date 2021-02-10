@@ -26,7 +26,7 @@ mixin calc-card(options = {})
       priceCalculating = "9 990",
       dayCalculating = "4 суток", 
       calculatingTotal = "39 960", 
-      serviceSale = "2 179", 
+      serviceSale = `2\u00A0179`,
       serviceTotal = "0", 
       additionalServiceTotal = "300",
       totalSum = "38 081"} = options
@@ -56,7 +56,7 @@ mixin calc-card(options = {})
             p.calc-card__item-calculating #{priceCalculating}&#8381; x #{dayCalculating}
             p.calc-card__item-total #{calculatingTotal}&#8381;
           li.calc-card__item
-            p.calc-card__item-calculating.calc-card__item-calculating_type_with-icon Сбор за услуги: скидка #{serviceSale}&#8381;
+            p.calc-card__item-calculating.calc-card__item-calculating_type_with-icon Сбор за услуги: скидка&nbsp;#{serviceSale}&#8381;
             p.calc-card__item-total #{serviceTotal}&#8381;
           li.calc-card__item
             p.calc-card__item-calculating.calc-card__item-calculating_type_with-icon.calc-card__item-calculating_size_small Сбор за дополнительные услуги
