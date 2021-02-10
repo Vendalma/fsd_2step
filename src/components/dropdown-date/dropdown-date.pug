@@ -23,28 +23,25 @@ mixin dropdown-date(options={})
 
   .dropdown-date.js-dropdown-date(class=classes, class=jsClassName)
     if type == "filter"
-      .dropdown-date__block
-        label.dropdown-date__label #{description1}
-          input(type="text" placeholder=placeholder1  
-          class="dropdown-date__input"
-          class="dropdown-date__input_type_filter"
-          class="js-dropdown-date__input_type_filter")
+      label.dropdown-date__label #{description1}
+        input(type="text" placeholder=placeholder1  
+        class="dropdown-date__input"
+        class="dropdown-date__input_type_filter"
+        class="js-dropdown-date__input_type_filter")
 
     else if type == "range"
-      .dropdown-date__wrapper
-        .dropdown-date__block
-          label.dropdown-date__label #{description1}
-            input(type="text" placeholder=placeholder1 
-              class = "dropdown-date__input"
-              class = "dropdown-date__input_size_small"
-              class="dropdown-date__input_type_range-start"
-              class="js-dropdown-date__input_type_range-start"
-              class = isSettingDate? "dropdown-date__input_with-set-date" : "")
-        .dropdown-date__block
-          label.dropdown-date__label #{description2}
-            input(type="text" placeholder=placeholder2 
-              class="dropdown-date__input"
-              class = "dropdown-date__input_size_small"
-              class="dropdown-date__input_type_range-end"
-              class="js-dropdown-date__input_type_range-end")
+      .dropdown-date__wrapper.js-dropdown-date__wrapper
+        label.dropdown-date__label #{description1}
+          input(type="text" placeholder=placeholder1 
+            class = "dropdown-date__input"
+            class = "dropdown-date__input_size_small"
+            class="dropdown-date__input_type_range-start"
+            class="js-dropdown-date__input_type_range-start"
+            class = isSettingDate? "dropdown-date__input_with-set-date" : "")
+        label.dropdown-date__label #{description2}
+          input(type="text" placeholder=placeholder2 
+            class="dropdown-date__input"
+            class = "dropdown-date__input_size_small"
+            class="dropdown-date__input_type_range-end"
+            class="js-dropdown-date__input_type_range-end")
 

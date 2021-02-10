@@ -6,16 +6,13 @@
       margin-right: 20px;
     }
   }
-  &__block {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    cursor: pointer;
-  }
   &__label {
+    cursor: pointer;
     width: 100%;
     @extend %h3-font;
     position: relative;
+    display: flex;
+    flex-direction: column;
     &::before {
       content: 'expand_more';
       width: 42px;
@@ -74,6 +71,7 @@
 .datepicker--cells {
   display: flex;
   flex-wrap: wrap;
+  height: 100%;
 }
 
 .datepicker--cell {
@@ -83,12 +81,13 @@
   position: relative;
   align-items: center;
   justify-content: center;
-  height: 40px;
   z-index: 1;
-
+  height: 100%;
   @extend %h3-font;
   font-weight: normal;
   color: $dark-50;
+  padding: 4.5% 0px;
+  max-height: 40px;
 }
 .datepicker--cell.-focus- {
   color: #fff;
@@ -196,14 +195,14 @@
 
 .datepicker--days-names {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
+  margin-bottom: 15px;
 }
 
 .datepicker--day-name {
   @extend %h3-font;
   text-transform: none;
   color: $color-one;
-  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -241,6 +240,8 @@
           Datepicker
          ------------------------------------------------- */
 .datepickers-container {
+  width: 100%;
+  max-width: 320px;
   position: absolute;
   left: 0;
   top: 0;
@@ -256,9 +257,13 @@
   border: 1px solid $dark-25;
   box-shadow: 0 10px 20px $dark-05;
   border-radius: 4px;
-  max-width: 320px;
-  min-width: 320px;
-  padding: 17px 19px 19px 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 17px;
+  padding-left: 19px * 100% / 320px;
+  padding-right: 20px * 100% / 320px;
+  padding-bottom: 19px;
   position: absolute;
   left: -100000px;
   opacity: 0;
@@ -303,6 +308,7 @@
   opacity: 1;
   -webkit-transform: none;
   transform: none;
+  max-width: 320px;
 }
 
 .datepicker-inline .datepicker--pointer {
@@ -311,8 +317,9 @@
 
 .datepicker--content {
   padding-left: 2px;
-  padding-top: 6px;
-  padding-bottom: 21px;
+  padding-top: 17px;
+  padding-bottom: 23px;
+  width: 100%;
 }
 .-only-timepicker- .datepicker--content {
   display: none;
@@ -323,6 +330,7 @@
 }
 .datepicker--body.active {
   display: block;
+  width: 100%;
 }
 
 /* -------------------------------------------------
@@ -394,4 +402,28 @@
   flex: 0;
   display: inline-flex;
   color: $color-one;
+}
+
+@include bp-380 {
+  .dropdown-date {
+    &__wrapper {
+      flex-wrap: wrap;
+      & > :first-child {
+        margin-right: 0px;
+        margin-bottom: 10px;
+      }
+    }
+
+    &__input {
+      &_size {
+        &_small {
+          width: 100%;
+          max-width: none;
+        }
+      }
+    }
+  }
+  .datepicker--cell {
+    padding: 3.9% 0px;
+  }
 }

@@ -1,4 +1,3 @@
-import 'air-datepicker';
 import 'air-datepicker/dist/js/datepicker';
 import './dropdown-date.scss';
 
@@ -51,7 +50,10 @@ class DatePicker {
   }
 
   filter() {
-    $('.js-dropdown-date__input_type_filter').datepicker({
+    let filterInput = this.container.querySelector(
+      '.js-dropdown-date__input_type_filter'
+    );
+    $(filterInput).datepicker({
       language: 'ru',
       range: true,
       multipleDates: true,
@@ -65,11 +67,18 @@ class DatePicker {
       prevHtml: '<i class="material--icon">arrow_back</i>',
       nextHtml: '<i class="material--icon">arrow_forward</i>',
       onSelect: function (fd, d) {
-        $('.js-dropdown-date__input_type_filter').val(fd.toLowerCase());
+        $(filterInput).val(fd.toLowerCase());
+      },
+      onShow: function (dp, animationCompleted) {
+        if (!animationCompleted) {
+          if (window.matchMedia('(max-width: 380px)').matches) {
+            dp.$datepicker[0].style.maxWidth = `${filterInput.offsetWidth}px`;
+          }
+        }
       },
     });
-    this.addButtons($('.js-dropdown-date__input_type_filter'));
-    this.setDate($('.js-dropdown-date__input_type_filter'));
+    this.addButtons($(filterInput));
+    this.setDate($(filterInput));
   }
 
   range() {
@@ -79,6 +88,7 @@ class DatePicker {
     let end = this.container.querySelector(
       '.js-dropdown-date__input_type_range-end'
     );
+    let wrapper = this.container.querySelector('.js-dropdown-date__wrapper');
     let picker = $(start).datepicker({
       range: true,
       multipleDates: true,
@@ -96,7 +106,13 @@ class DatePicker {
         $(start).val(fd.split('-')[0]);
         $(end).val(fd.split('-')[1]);
       },
+      onShow: function (dp, animationCompleted) {
+        if (!animationCompleted) {
+          dp.$datepicker[0].style.maxWidth = `${wrapper.offsetWidth}px`;
+        }
+      },
     });
+
     $(end).on('click', this.showDatepicker.bind(this, $(start)));
     this.addButtons(picker);
     picker.hasClass('dropdown-date__input_with-set-date')
@@ -117,7 +133,6 @@ class DatePicker {
 
     buttons.append(applyButton);
   }
-
   showDatepicker(elem) {
     elem.data('datepicker').show();
   }
@@ -133,7 +148,6 @@ class DatePicker {
 }
 
 let container = document.querySelectorAll('.js-dropdown-date');
-
 container.forEach((elem) => {
   let datePicker = new DatePicker(elem);
 });
