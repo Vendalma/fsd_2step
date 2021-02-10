@@ -4,11 +4,12 @@ include /components/description/description
 include /components/button/button
 
 mixin calc-card(options = {})
+  - const formatNumber = require("@/assets/js/formatNumber.js").default;
   -  
     const  {
       roomNumber = "888",
       isLuxury = true,
-      roomPrice = "9 990",
+      roomPrice = 9990,
       dropdownDateSetting ={type:"range",
         isSettingDate: true,
         description1:"прибытие",
@@ -23,13 +24,14 @@ mixin calc-card(options = {})
         "взрослые": 2,
         "дети": 1
       }},
-      priceCalculating = "9 990",
-      dayCalculating = "4 суток", 
-      calculatingTotal = "39 960", 
-      serviceSale = `2\u00A0179`,
-      serviceTotal = "0", 
-      additionalServiceTotal = "300",
-      totalSum = "38 081"} = options
+      priceCalculating = 9990,
+      dayCount = 4,
+      dayName = "суток", 
+      calculatingTotal = 39960, 
+      serviceSale = 2179,
+      serviceTotal = 0, 
+      additionalServiceTotal = 300,
+      totalSum = 38081} = options
 
   .calc-card
     form(action="/mock-address/change-me" method="post").calc-card__form
@@ -41,7 +43,7 @@ mixin calc-card(options = {})
             if isLuxury
               span.calc-card__number-lux &nbsp;&nbsp;люкс
           p.calc-card__price-info
-            span.calc-card__price #{roomPrice}&#8381;&#32;
+            span.calc-card__price #{formatNumber(roomPrice)}&#32;
             span.calc-card__price.calc-card__price_size_small в сутки
 
         .calc-card__dropdown-date
@@ -53,19 +55,19 @@ mixin calc-card(options = {})
             +dropdown(dropdownSettings)
         ul.calc-card__calculating-items
           li.calc-card__item
-            p.calc-card__item-calculating #{priceCalculating}&#8381; x #{dayCalculating}
-            p.calc-card__item-total #{calculatingTotal}&#8381;
+            p.calc-card__item-calculating #{formatNumber(priceCalculating)} x #{dayCount}&nbsp;#{dayName}
+            p.calc-card__item-total #{formatNumber(calculatingTotal)}
           li.calc-card__item
-            p.calc-card__item-calculating.calc-card__item-calculating_type_with-icon Сбор за услуги: скидка&nbsp;#{serviceSale}&#8381;
-            p.calc-card__item-total #{serviceTotal}&#8381;
+            p.calc-card__item-calculating.calc-card__item-calculating_type_with-icon Сбор за услуги: скидка&nbsp;#{formatNumber(serviceSale)}
+            p.calc-card__item-total #{formatNumber(serviceTotal)}
           li.calc-card__item
             p.calc-card__item-calculating.calc-card__item-calculating_type_with-icon.calc-card__item-calculating_size_small Сбор за дополнительные услуги
-            p.calc-card__item-total #{additionalServiceTotal}&#8381;
+            p.calc-card__item-total #{formatNumber(additionalServiceTotal)}
 
       p.calc-card__total
         span.calc-card__total-text Итого
         span.calc-card__total-line
-        span.calc-card__total-text #{totalSum}&#8381;
+        span.calc-card__total-text #{formatNumber(totalSum)}
       .calc-card__button
         +button({theme:"filled",
           size:"m",
