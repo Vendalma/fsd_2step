@@ -42,3 +42,12 @@
     }
   }
 }
+
+@include bp-480 {
+  .registration {
+    &__content {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}

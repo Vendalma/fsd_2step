@@ -52,8 +52,8 @@
 @include bp-480 {
   .landing {
     &__wrapper {
-      padding-left: 0px;
-      padding-right: 0px;
+      padding-left: 10px;
+      padding-right: 10px;
       align-items: center;
       justify-content: center;
     }

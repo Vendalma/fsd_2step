@@ -38,3 +38,12 @@
     }
   }
 }
+
+@include bp-480 {
+  .sign-in {
+    &__content {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}
