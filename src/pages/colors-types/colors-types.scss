@@ -14,3 +14,19 @@
     padding: 67px 16px 125px 10px;
   }
 }
+
+@include bp-768 {
+  .colors-types {
+    &__content-block {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    &__container {
+      & > :first-child {
+        margin-bottom: 30px;
+      }
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  }
+}
