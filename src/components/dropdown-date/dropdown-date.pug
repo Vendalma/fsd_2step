@@ -27,7 +27,8 @@ mixin dropdown-date(options={})
         input(type="text" placeholder=placeholder1  
         class="dropdown-date__input"
         class="dropdown-date__input_type_filter"
-        class="js-dropdown-date__input_type_filter")
+        class="js-dropdown-date__input_type_filter"
+        readonly)
 
     else if type == "range"
       .dropdown-date__wrapper.js-dropdown-date__wrapper
@@ -37,11 +38,13 @@ mixin dropdown-date(options={})
             class = "dropdown-date__input_size_small"
             class="dropdown-date__input_type_range-start"
             class="js-dropdown-date__input_type_range-start"
-            class = isSettingDate? "dropdown-date__input_with-set-date" : "")
+            class = isSettingDate? "dropdown-date__input_with-set-date" : ""
+            readonly)
         label.dropdown-date__label #{description2}
           input(type="text" placeholder=placeholder2 
             class="dropdown-date__input"
             class = "dropdown-date__input_size_small"
             class="dropdown-date__input_type_range-end"
-            class="js-dropdown-date__input_type_range-end")
+            class="js-dropdown-date__input_type_range-end"
+            readonly)
 

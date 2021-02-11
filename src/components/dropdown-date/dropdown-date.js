@@ -73,6 +73,8 @@ class DatePicker {
         if (!animationCompleted) {
           if (window.matchMedia('(max-width: 380px)').matches) {
             dp.$datepicker[0].style.maxWidth = `${filterInput.offsetWidth}px`;
+          } else {
+            dp.$datepicker[0].style.maxWidth = `320px`;
           }
         }
       },
