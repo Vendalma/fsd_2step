@@ -1,13 +1,13 @@
 .sign-in-card {
   @include template-for-cards;
-  padding: 40px 28px 30px 30px;
+  padding: 40px 28px 31px 29px;
   &__title {
     @extend %h1-font;
     margin-top: 0px;
-    margin-bottom: 22px;
+    margin-bottom: 21px;
   }
   &__form {
-    margin-bottom: 29px;
+    margin-bottom: 30px;
     & > :nth-child(1) {
       margin-bottom: 10px;
     }
@@ -28,6 +28,6 @@
   }
   &__button {
     width: 100%;
-    max-width: 99px;
+    max-width: 100px;
   }
 }

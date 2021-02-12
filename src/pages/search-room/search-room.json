@@ -2,10 +2,10 @@
   "roomCards": [
     {
       "isLuxury": true,
-      "number": "888",
-      "price": "9 990",
+      "number": 888,
+      "price": 9990,
       "rating": 5,
-      "reviews": "145",
+      "reviews": 145,
       "imgs": [
         "room1.jpg",
         "room1.jpg",
@@ -14,10 +14,10 @@
       ]
     },
     {
-      "number": "840",
-      "price": "9 900",
+      "number": 840,
+      "price": 9900,
       "rating": 4,
-      "reviews": "65",
+      "reviews": 65,
       "imgs": [
         "room2.jpg",
         "room2.jpg",
@@ -27,10 +27,10 @@
     },
     {
       "isLuxury": true,
-      "number": "980",
-      "price": "8 500",
+      "number": 980,
+      "price": 8500,
       "rating": 3,
-      "reviews": "35",
+      "reviews": 35,
       "imgs": [
         "room3.jpg",
         "room3.jpg",
@@ -39,10 +39,10 @@
       ]
     },
     {
-      "number": "856",
-      "price": "7 300",
+      "number": 856,
+      "price": 7300,
       "rating": 5,
-      "reviews": "19",
+      "reviews": 19,
       "imgs": [
         "room4.jpg",
         "room4.jpg",
@@ -51,10 +51,10 @@
       ]
     },
     {
-      "number": "740",
-      "price": "6 000",
+      "number": 740,
+      "price": 6000,
       "rating": 4,
-      "reviews": "44",
+      "reviews": 44,
       "imgs": [
         "room5.jpg",
         "room5.jpg",
@@ -63,10 +63,10 @@
       ]
     },
     {
-      "number": "982",
-      "price": "5 800",
+      "number": 982,
+      "price": 5800,
       "rating": 3,
-      "reviews": "56",
+      "reviews": 56,
       "imgs": [
         "room6.jpg",
         "room6.jpg",
@@ -75,10 +75,10 @@
       ]
     },
     {
-      "number": "678",
-      "price": "5 500",
+      "number": 678,
+      "price": 5500,
       "rating": 5,
-      "reviews": "45",
+      "reviews": 45,
       "imgs": [
         "room7.jpg",
         "room7.jpg",
@@ -87,10 +87,10 @@
       ]
     },
     {
-      "number": "450",
-      "price": "5 300",
+      "number": 450,
+      "price": 5300,
       "rating": 4,
-      "reviews": "39",
+      "reviews": 39,
       "imgs": [
         "room8.jpg",
         "room8.jpg",
@@ -99,10 +99,10 @@
       ]
     },
     {
-      "number": "350",
-      "price": "5 000",
+      "number": 350,
+      "price": 5000,
       "rating": 3,
-      "reviews": "77",
+      "reviews": 77,
       "imgs": [
         "room9.jpg",
         "room9.jpg",
@@ -111,10 +111,10 @@
       ]
     },
     {
-      "number": "666",
-      "price": "5 000",
+      "number": 666,
+      "price": 5000,
       "rating": 5,
-      "reviews": "25",
+      "reviews": 25,
       "imgs": [
         "room10.jpg",
         "room10.jpg",
@@ -123,10 +123,10 @@
       ]
     },
     {
-      "number": "444",
-      "price": "5 000",
+      "number": 444,
+      "price": 5000,
       "rating": 3,
-      "reviews": "15",
+      "reviews": 15,
       "imgs": [
         "room11.jpg",
         "room11.jpg",
@@ -135,10 +135,10 @@
       ]
     },
     {
-      "number": "352",
-      "price": "5 000",
+      "number": 352,
+      "price": 5000,
       "rating": 3,
-      "reviews": "55",
+      "reviews": 55,
       "imgs": [
         "room12.jpg",
         "room12.jpg",

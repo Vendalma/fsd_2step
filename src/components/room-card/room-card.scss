@@ -31,11 +31,13 @@
   }
   &__price {
     align-self: flex-end;
+    height: 100%;
     &-text {
       @extend %body-font;
       line-height: 1.286rem;
       font-weight: 700;
       color: $dark-50;
+      padding-left: 1px;
       &_size {
         &_small {
           font-size: 0.857rem;

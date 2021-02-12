@@ -37,7 +37,7 @@
     }
   }
   &__dropdown-date {
-    margin-bottom: 21px;
+    margin-bottom: 22px;
   }
   &__block-guests {
     & > :first-child {
@@ -67,7 +67,7 @@
       margin-top: 14px;
       margin-bottom: 13px;
     }
-    margin-bottom: 31px;
+    margin-bottom: 32px;
   }
 
   &__rich-checkboxes {
@@ -97,6 +97,7 @@
 
   &__title {
     @extend %h1-font;
+    margin-top: 0px;
     margin-bottom: 21px;
   }
   &__card-list {

@@ -1,12 +1,12 @@
 .bonus-icon {
   width: 100%;
-  max-width: 290px;
+  max-width: 280px;
   display: flex;
   flex-direction: column;
   &__container {
     display: flex;
     flex-direction: row;
-    margin-bottom: 19px;
+    margin-bottom: 20px;
   }
   &__icon {
     max-width: 48px;
@@ -31,7 +31,6 @@
   }
   &__header {
     font-weight: bold;
-    padding-top: 1px;
   }
   &__text {
     display: inline;

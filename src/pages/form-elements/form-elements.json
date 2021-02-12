@@ -198,7 +198,8 @@
         },
         {
           "text": "Кроватка",
-          "name": "bed for babies"
+          "name": "bed for babies",
+          "checked": true
         },
         {
           "text": "Телевизор",
@@ -229,7 +230,8 @@
         },
         {
           "text": "Кроватка",
-          "name": "bed for babies"
+          "name": "bed for babies",
+          "checked": true
         },
         {
           "text": "Телевизор",

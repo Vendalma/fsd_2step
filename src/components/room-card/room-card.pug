@@ -1,6 +1,7 @@
 include /components/rate-button/rate-button
 
 mixin room-card({isLuxury=false, number, price, rating, reviews,imgs}={})
+  - const formatNumber = require("@/assets/js/formatNumber.js").default;
   .room-card
     .room-card__slider-wrapper
       .room-card__slider.js-room-card__slider
@@ -10,16 +11,16 @@ mixin room-card({isLuxury=false, number, price, rating, reviews,imgs}={})
       .room-card__block
         p.room-card__room-info
           span.room-card__room-number.room-card__room-number_size_small &#8470;
-          span.room-card__room-number &#32;#{number}
+          span.room-card__room-number &nbsp;#{number}
           if isLuxury
             span.room-card__room-lux &nbsp;&nbsp;люкс
         p.room-card__price
-          span.room-card__price-text #{price}&#8381;
-          span.room-card__price-text.room-card__price-text_size_small &#32;в сутки
+          span.room-card__price-text #{formatNumber(price)}
+          span.room-card__price-text.room-card__price-text_size_small &nbsp;в сутки
       .room-card__line   
       .room-card__block
         .room-card__rate-button
           +rate-button(rating)
         p.room-card__reviews
           span.room-card__reviews-text #{reviews}
-          span.room-card__reviews-text.room-card__reviews-text_size_narrow &#32;Отзывов
+          span.room-card__reviews-text.room-card__reviews-text_size_narrow &nbsp;Отзывов

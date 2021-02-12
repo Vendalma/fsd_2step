@@ -8,7 +8,7 @@ mixin calc-card(options = {})
     const formatNumber = require("@/assets/js/formatNumber.js").default;
 
     const  {
-      roomNumber = "888",
+      roomNumber = 888,
       isLuxury = true,
       roomPrice = 9990,
       dropdownDateSetting ={type:"range",
@@ -36,12 +36,12 @@ mixin calc-card(options = {})
       .calc-card__wrapper
         .calc-card__room-info
           p.calc-card__number-info
-            span.calc-card__number.calc-card__number_size_small &#8470;&#32;
+            span.calc-card__number.calc-card__number_size_small &#8470;&nbsp;
             span.calc-card__number #{roomNumber}
             if isLuxury
               span.calc-card__number-lux &nbsp;&nbsp;люкс
           p.calc-card__price-info
-            span.calc-card__price #{formatNumber(roomPrice)}&#32;
+            span.calc-card__price #{formatNumber(roomPrice)}&nbsp;
             span.calc-card__price.calc-card__price_size_small в сутки
 
         .calc-card__dropdown-date
@@ -54,7 +54,7 @@ mixin calc-card(options = {})
         ul.calc-card__calculating-items
           li.calc-card__item
             p.calc-card__item-calculating #{formatNumber(roomPrice)} x #{dayCount}&nbsp;#{dayName}
-            p.calc-card__item-total #{`${formatNumber(roomPrice*dayCount)}`}
+            p.calc-card__item-total #{formatNumber(roomPrice*dayCount)}
           li.calc-card__item
             p.calc-card__item-calculating.calc-card__item-calculating_type_with-icon Сбор за услуги: скидка&nbsp;#{formatNumber(discount)}
             p.calc-card__item-total #{formatNumber(serviceFee)}
@@ -65,7 +65,7 @@ mixin calc-card(options = {})
       p.calc-card__total
         span.calc-card__total-text Итого
         span.calc-card__total-line
-        span.calc-card__total-text #{`${formatNumber((roomPrice*dayCount)-discount+additionalServiceFee)}`}
+        span.calc-card__total-text #{formatNumber((roomPrice*dayCount)-discount+additionalServiceFee)}
       .calc-card__button
         +button({theme:"filled",
           size:"m",

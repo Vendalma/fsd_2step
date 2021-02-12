@@ -14,5 +14,6 @@ $(function () {
     postfix: '₽',
     hide_min_max: true,
     prettify_enabled: true,
+    values_separator: ' - ',
   });
 });

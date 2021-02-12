@@ -1,13 +1,13 @@
 .search-card {
   @include template-for-cards;
-  padding: 40px 28px 29px 29px;
+  padding: 39px 28px 29px 29px;
   &__title {
     @extend %h1-font;
     margin-top: 0px;
-    margin-bottom: 22px;
+    margin-bottom: 23px;
   }
   &__date {
-    margin-bottom: 21px;
+    margin-bottom: 22px;
   }
   &__container {
     margin-bottom: 31px;

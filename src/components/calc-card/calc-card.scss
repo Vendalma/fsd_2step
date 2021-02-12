@@ -1,9 +1,9 @@
 .calc-card {
   @include template-for-cards;
-  padding: 39px 21px 30px 30px;
+  padding: 39px 21px 29px 30px;
   &__wrapper {
     margin-right: 8px;
-    margin-bottom: 31px;
+    margin-bottom: 32px;
   }
   &__room-info {
     display: inline-flex;
@@ -57,7 +57,7 @@
   &__calculating-items {
     & > :nth-of-type(2) {
       margin-top: 11px;
-      margin-bottom: 12px;
+      margin-bottom: 12.7px;
     }
   }
   &__item {
@@ -84,7 +84,8 @@
             width: 20px;
             height: 20px;
             position: absolute;
-            right: 0;
+            right: 1px;
+            top: 1px;
             @extend %h3-font;
             text-transform: lowercase;
             color: $dark-25;
