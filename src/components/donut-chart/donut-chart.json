@@ -24,5 +24,35 @@
         "className": "disappointed"
       }
     ]
-  }
+  },
+  "backgroundColors": [
+    {
+      "name": "backgroundDisappointed",
+      "colors": [
+        "#919191",
+        "#3d4975"
+      ]
+    },
+    {
+      "name": "backgroundSatisfactory",
+      "colors": [
+        "#bc9cff",
+        "#8ba4f9"
+      ]
+    },
+    {
+      "name": "backgroundGood",
+      "colors": [
+        "#6fcf97",
+        "#66d2ea"
+      ]
+    },
+    {
+      "name": "backgroundExcellent",
+      "colors": [
+        "#ffe39c",
+        "#ffba9c"
+      ]
+    }
+  ]
 }
