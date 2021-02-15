@@ -1,46 +1,6 @@
-mixin colors (items)
-  - 
-    items = items || [
-      {
-        color: "dark-100",
-        name: "Dark Shade 100%",
-        code: "#1F2041"
-      },
-      {
-        color: "dark-75",
-        name: "Dark Shade 75%",
-        code: "#1F2041"
-      },
-      {
-        color: "dark-50",
-        name: "Dark Shade 50%",
-        code: "#1F2041"
-      },
-      {
-        color: "dark-25",
-        name: "Dark Shade 25%",
-        code: "#1F2041"
-      },
-      {
-        color: "dark-05",
-        name: "Dark Shade 5%",
-        code: "#1F2041"
-      },
-      {
-        color: "color-one",
-        name: "Purple",
-        code: "#BC9CFF"
-      },
-      {
-        color: "color-two",
-        name: "Green",
-        code: "#6FCF97"
-      }
-    ]
-
-  for color in items
-    .color-block
-      .color-block__color-area(class=`color-block__color-area_color_${color.color}`)
-      p.color-block__info
-        span.color-block__text #{color.name}
-        span.color-block__text.color-block__text_size_narrow #{color.code}
+mixin colors ({color,name,code})
+  .color-block
+    .color-block__color-area(class=`color-block__color-area_color_${color}`)
+    p.color-block__info
+      span.color-block__text #{name}
+      span.color-block__text.color-block__text_size_narrow #{code}
