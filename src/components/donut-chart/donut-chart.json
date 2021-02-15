@@ -1,7 +1,6 @@
 {
   "chartOptions": {
-    "total": 260,
-    "totalText": "голосов",
+    "text": "голос|голоса|голосов",
     "items": [
       {
         "count": 130,

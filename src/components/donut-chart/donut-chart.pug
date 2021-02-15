@@ -1,11 +1,11 @@
 mixin chart
-  - const {chartOptions:{total, totalText, items}} = require('@components/donut-chart/donut-chart.json');
+  - const {chartOptions:{items}} = require('@components/donut-chart/donut-chart.json');
   .chart
     .chart__wrapper
       canvas(width="121" height="120").chart__diagram.js-chart__diagram
-      p.chart__info 
-        span.chart__count #{total}
-        span.chart__text #{totalText}
+      p.chart__info.js-chart__info
+        span.chart__count.js-chart__count
+        span.chart__text.js-chart__text
     ul.chart__legend
       for item in items
         li.chart__item(class = `chart__item_type_${item.className}`) #{item.text}

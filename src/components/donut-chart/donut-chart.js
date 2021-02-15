@@ -4,16 +4,20 @@ import './donut-chart.scss';
 class DonutChart {
   constructor(container, options, backgroundColors) {
     this.container = container;
-    this.options = options.items.reverse();
+    this.items = options.items.reverse();
+    this.text = options.text;
     this.backgroundColor = backgroundColors;
     this.initDiagram();
+    this.createText();
   }
 
   getOptions(optionsType) {
     const result = [];
-    this.options.forEach((item) => {
+    this.totalCount = 0;
+    this.items.forEach((item) => {
       if (optionsType === 'count') {
         result.push(item.count);
+        this.totalCount += item.count;
       } else if (optionsType === 'text') {
         result.push(item.text);
       }
@@ -21,6 +25,44 @@ class DonutChart {
     return result;
   }
 
+  createText() {
+    const chartText = this.container.parentElement.querySelector(
+      '.js-chart__text'
+    );
+    const chartTextCount = this.container.parentElement.querySelector(
+      '.js-chart__count'
+    );
+    chartText.innerHTML = `${this.setRightName(
+      this.totalCount,
+      this.text.split('|')
+    )}`;
+    chartTextCount.innerHTML = `${this.totalCount}`;
+    this.setTextPosition();
+  }
+
+  setTextPosition() {
+    const textContainer = this.container.parentElement.querySelector(
+      '.js-chart__info'
+    );
+    textContainer.style.left = `${
+      (this.container.offsetWidth - textContainer.offsetWidth) / 2
+    }px`;
+  }
+
+  setRightName(num, arrItemName) {
+    num = Math.abs(num) % 100;
+    const num1 = num % 10;
+    if (num > 10 && num < 20) {
+      return arrItemName[2];
+    }
+    if (num1 > 1 && num1 < 5) {
+      return arrItemName[1];
+    }
+    if (num1 == 1) {
+      return arrItemName[0];
+    }
+    return arrItemName[2];
+  }
   createColors() {
     const chartContainer = this.container.getContext('2d');
     const resultColors = [];
