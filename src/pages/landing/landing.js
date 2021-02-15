@@ -6,8 +6,8 @@ import '@components/search-card/search-card';
 import '@components/simple-footer/simple-footer';
 import './landing.scss';
 
-let sliderWrapper = document.querySelector('.js-landing__content');
-let images = [
+const sliderWrapper = document.querySelector('.js-landing__content');
+const images = [
   'url("../../assets/images/bg-image-1.jpg")',
   'url("../../assets/images/bg-image-2.jpg")',
   'url("../../assets/images/bg-image-3.jpg")',

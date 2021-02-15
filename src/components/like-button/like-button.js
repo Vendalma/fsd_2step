@@ -27,8 +27,4 @@ class Like {
     }
   }
 }
-
-const element = document.querySelectorAll('.js-like-button');
-element.forEach((el) => {
-  let likeCounter = new Like(el);
-});
+export default Like;

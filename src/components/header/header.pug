@@ -3,7 +3,11 @@ include /components/logo/logo
 include /components/button/button
 
 mixin header({userName=false}={})
-  - const {linkList,buttonsSettings} = require("@components/header/header.json")
+  - 
+    const {linkList,
+      buttonsSettings:{signIn, registration}
+      } = require("@components/header/header.json");
+
   .header
     .header__container
       .header__logo
@@ -29,7 +33,7 @@ mixin header({userName=false}={})
           else
             .header__buttons-block
               .header__button.header__button_size_s
-                +button(buttonsSettings.one)
+                +button(signIn)
               .header__button.header__button_size_m
-                +button(buttonsSettings.two)
+                +button(registration)
 

@@ -3,20 +3,20 @@ import '@components/checkbox/checkbox';
 import '@components/description/description';
 import '@components/dropdown-date/dropdown-date';
 import '@components/dropdown/dropdown';
-import '@components/expandable-checkbox/expandable-checkbox';
+import '@components/expandable-checkbox/init-expandable-checkbox';
 import '@components/footer/footer';
 import '@components/header/header';
-import '@components/pagination/pagination';
-import '@components/range-slider/range-slider';
-import '@components/room-card/room-card';
+import '@components/pagination/init-pagination';
+import '@components/range-slider/init-range-slider';
+import '@components/room-card/init-room-card';
 import '@components/simple-footer/simple-footer';
 import './search-room.scss';
 
-let optionsBlock = document.querySelector('.js-search-room__menu');
-let blockOpen = document.querySelector('.js-search-room__menu-item_opened');
-let blockClose = document.querySelector('.js-search-room__menu-item_closed');
-let filter = document.querySelector('.js-search-room__filter');
-let rooms = document.querySelector('.js-search-room__rooms');
+const optionsBlock = document.querySelector('.js-search-room__menu');
+const blockOpen = document.querySelector('.js-search-room__menu-item_opened');
+const blockClose = document.querySelector('.js-search-room__menu-item_closed');
+const filter = document.querySelector('.js-search-room__filter');
+const rooms = document.querySelector('.js-search-room__rooms');
 
 optionsBlock.addEventListener('click', openFilter.bind(this));
 

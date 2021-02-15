@@ -9,9 +9,14 @@ include /components/bullet-list/bullet-list
 include /components/donut-chart/donut-chart
 
 block head
-  - var title = "Room details"
+  - const title = "Room details"
 block content
-  - const {bonusIcon,comments} =  require("./room-details.json")
+  - 
+    const {bonusIcon:{
+      comfort, convenience,cosiness},
+      comments:{man,woman},
+      bulletList} = require("./room-details.json");
+
   .room-details
     header.room-details__header
       +header
@@ -32,11 +37,11 @@ block content
             section.room-details__bonus-icon-container
               h2.room-details__title  Сведения о номере
               .room-details__bonus-icon
-                +bonus-icon(bonusIcon.one)
+                +bonus-icon(comfort)
               .room-details__bonus-icon
-                +bonus-icon(bonusIcon.two)
+                +bonus-icon(convenience)
               .room-details__bonus-icon
-                +bonus-icon(bonusIcon.three)
+                +bonus-icon(cosiness)
 
             section.room-details__donut-chart-container
               h2.room-details__title  Впечатления от номера
@@ -48,15 +53,15 @@ block content
               h2.room-details__title  Отзывы посетителей номера
               span.room-details__text.room-details__text_theme_small-font 2 отзыва
             .room-details__comment 
-              +comment(comments.man)
+              +comment(man)
             .room-details__comment 
-              +comment(comments.woman)
+              +comment(woman)
 
           .room-details__row
             section.room-details__bullet-list-container
               h2.room-details__title Правила
               .room-details__bullet-list
-                +bullet-list
+                +bullet-list(bulletList)
             section.room-details__text-container
               h2.room-details__title Отмена
               .room-details__text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.

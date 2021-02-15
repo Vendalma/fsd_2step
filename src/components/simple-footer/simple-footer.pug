@@ -2,9 +2,10 @@ include /components/logo/logo
 include /components/social-icons/social-icons
 
 mixin simple-footer
+  - const {socialIcons} = require('@components/simple-footer/simple-footer.json')
   .footer-simple
     .footer-simple__logo
       +logo({colored: true})
     p.footer-simple__text Copyright &#169; 2018 Toxin отель. Все&#160;права&#160;защищены.
     .footer-simple__icons
-      +social-icons
+      +social-icons(socialIcons)

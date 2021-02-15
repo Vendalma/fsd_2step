@@ -48,7 +48,7 @@ class Dropdown {
   }
 
   onMinClick(elem) {
-    let score = elem.nextElementSibling;
+    const score = elem.nextElementSibling;
     if (Number(score.innerHTML) > 0) {
       score.innerHTML = Number(score.innerHTML) - 1;
     }
@@ -79,7 +79,7 @@ class Dropdown {
   }
 
   onPlusClick(elem) {
-    let score = elem.previousElementSibling;
+    const score = elem.previousElementSibling;
     score.innerHTML = Number(score.innerHTML) + 1;
     this.setMinButton(score.previousElementSibling);
     this.setClearButton();
@@ -105,7 +105,7 @@ class Dropdown {
     ) {
       score = this.onMinClick(event.target);
     }
-    let id = event.target.parentElement.dataset.id;
+    const id = event.target.parentElement.dataset.id;
     this.data[id].score = score;
     this.renderStr();
   }
@@ -134,7 +134,7 @@ class Dropdown {
 
   setRightName(num, arrItemName) {
     num = Math.abs(num) % 100;
-    var num1 = num % 10;
+    const num1 = num % 10;
     if (num > 10 && num < 20) {
       return arrItemName[2];
     }
@@ -163,10 +163,10 @@ class Dropdown {
       this.renderStr();
     }
     this.countContainer.forEach((item) => {
-      let scoreContainer = item.querySelector('.js-dropdown__score');
+      const scoreContainer = item.querySelector('.js-dropdown__score');
       scoreContainer.innerHTML = '0';
 
-      let minButtons = item.querySelectorAll('.js-dropdown__button_type_min');
+      const minButtons = item.querySelectorAll('.js-dropdown__button_type_min');
       minButtons.forEach((elem) => {
         this.hideMinButton(elem);
       });
@@ -195,9 +195,9 @@ class Dropdown {
 
   checkActiveDropdown() {
     this.countContainer.forEach((item) => {
-      let scoreContainer = item.querySelector('.js-dropdown__score');
+      const scoreContainer = item.querySelector('.js-dropdown__score');
       if (Number(scoreContainer.innerHTML) > 0) {
-        let min = scoreContainer.previousElementSibling;
+        const min = scoreContainer.previousElementSibling;
         this.data[item.dataset.id] = {};
         this.data[item.dataset.id].name = item.dataset.name;
         this.data[item.dataset.id].score = Number(scoreContainer.innerHTML);
@@ -208,8 +208,4 @@ class Dropdown {
     this.renderStr();
   }
 }
-
-let dropdown = document.querySelectorAll('.js-dropdown');
-dropdown.forEach((elem) => {
-  return new Dropdown(elem);
-});
+export default Dropdown;

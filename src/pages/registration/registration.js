@@ -6,8 +6,8 @@ import '@components/registration-card/registration-card';
 import '@components/simple-footer/simple-footer';
 import './registration.scss';
 
-let registrationContent = document.querySelector('.js-registration__content');
-let images = [
+const registrationContent = document.querySelector('.js-registration__content');
+const images = [
   'url("../../assets/images/bg-image-1.jpg")',
   'url("../../assets/images/bg-image-4.jpg")',
 ];

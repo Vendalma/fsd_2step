@@ -20,14 +20,14 @@
     }
   ],
   "buttonsSettings": {
-    "one": {
+    "signIn": {
       "theme": "bordered",
       "type": "link",
       "size": "s",
       "text": "Войти",
       "url": "../sign-in/sign-in.html"
     },
-    "two": {
+    "registration": {
       "theme": "filled",
       "type": "link",
       "size": "s",

@@ -8,9 +8,10 @@ include /components/calc-card/calc-card
 include /components/logo/logo
 
 block head
-  - var title = "Cards"
+  - const title = "Cards"
 block content
-  - const {room1,room2} = require("./cards.json")
+  - const {room1,room2} = require("./cards.json");
+
   .cards
     header.cards__header
       .cards__logo

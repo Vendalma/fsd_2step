@@ -1,3 +1,2 @@
-import "../like-button/like-button";
-import "./comment.scss";
-
+import '@components/like-button/init-like-button';
+import './comment.scss';

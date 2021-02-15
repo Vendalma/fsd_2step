@@ -1,4 +1,4 @@
-import '../checkbox/checkbox';
+import '@components/checkbox/checkbox';
 import './expandable-checkbox.scss';
 
 class ExpandableCheckbox {
@@ -22,9 +22,4 @@ class ExpandableCheckbox {
     this.materialIcons.classList.toggle('expandable-checkbox__arrow_opened');
   }
 }
-
-let checkboxLists = document.querySelectorAll('.js-expandable-checkbox');
-
-checkboxLists.forEach((checkboxList) => {
-  let openList = new ExpandableCheckbox(checkboxList);
-});
+export default ExpandableCheckbox;

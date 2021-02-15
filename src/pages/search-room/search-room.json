@@ -187,7 +187,7 @@
       "text": "Можно с питомцами",
       "checked": true
     },
-    "guests": {
+    "guestsCheckbox": {
       "name": "guests",
       "text": "Можно пригласить гостей (до 10 человек)",
       "checked": true

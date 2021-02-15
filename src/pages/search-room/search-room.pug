@@ -12,74 +12,78 @@ include /components/footer/footer
 include /components/simple-footer/simple-footer
 
 block head
-  - var title = "Search room"
+  - const title = "Search room"
 block content
-  - const{roomCards,dropdownDate,dropdown,richCheckboxSettings,expandableCheckbox,checkboxSettings} =  require("./search-room.json")
-    .search-room
-      header.search-room__header
-        +header
-      main.search-room__content
+  - 
+    const{roomCards,
+      dropdownDate,
+      dropdown:{guests,room},richCheckboxSettings:{corridor,assistant},expandableCheckbox,
+      checkboxSettings:{smoking,pets,guestsCheckbox}} =  require("./search-room.json")
+  .search-room
+    header.search-room__header
+      +header
+    main.search-room__content
 
-        .search-room__menu.js-search-room__menu
-          .search-room__menu-item.search-room__menu-item_opened.js-search-room__menu-item_opened
-            i.search-room__icon tune
-          .search-room__menu-item.search-room__menu-item_closed.js-search-room__menu-item_closed.search-room__menu-item_hidden
-            i.search-room__icon close
+      .search-room__menu.js-search-room__menu
+        .search-room__menu-item.search-room__menu-item_opened.js-search-room__menu-item_opened
+          i.search-room__icon tune
+        .search-room__menu-item.search-room__menu-item_closed.js-search-room__menu-item_closed.search-room__menu-item_hidden
+          i.search-room__icon close
 
-        aside.search-room__filter.js-search-room__filter
+      aside.search-room__filter.js-search-room__filter
 
-          .search-room__dropdown-date
-            +dropdown-date(dropdownDate)
+        .search-room__dropdown-date
+          +dropdown-date(dropdownDate)
 
-          .search-room__block-guests
-            .search-room__description
-              +description({text:"гости"})
-            .search-room__dropdown
-              +dropdown(dropdown.guests)
+        .search-room__block-guests
+          .search-room__description
+            +description({text:"гости"})
+          .search-room__dropdown
+            +dropdown(guests)
 
-          .search-room__block-slider
-            .search-room__range-slider
-              +range-slider({text:"диапазон цены"})
-            p.search-room__text Стоимость за сутки пребывания в номере
+        .search-room__block-slider
+          .search-room__range-slider
+            +range-slider({text:"диапазон цены"})
+          p.search-room__text Стоимость за сутки пребывания в номере
 
-          .search-room__checkboxes
-            .search-room__description
-              +description({text:"правила дома"})
-            .search-room__checkbox
-              +checkbox(checkboxSettings.smoking)
-            .search-room__checkbox
-              +checkbox(checkboxSettings.pets)
-            .search-room__checkbox
-              +checkbox(checkboxSettings.guests)
+        .search-room__checkboxes
+          .search-room__description
+            +description({text:"правила дома"})
+          .search-room__checkbox
+            +checkbox(smoking)
+          .search-room__checkbox
+            +checkbox(pets)
+          .search-room__checkbox
+            +checkbox(guestsCheckbox)
 
-          .search-room__rich-checkboxes
-            .search-room__description
-              +description({text:"доступность"})
-            .search-room__rich-checkbox
-              +checkbox(richCheckboxSettings.corridor)
-            .search-room__rich-checkbox
-              +checkbox(richCheckboxSettings.assistant)
+        .search-room__rich-checkboxes
+          .search-room__description
+            +description({text:"доступность"})
+          .search-room__rich-checkbox
+            +checkbox(corridor)
+          .search-room__rich-checkbox
+            +checkbox(assistant)
 
-          .search-room__dropdown-room-block
-            .search-room__description
-              +description({text:"удобства номера"})
-            .search-room__dropdown-room
-              +dropdown(dropdown.room)
+        .search-room__dropdown-room-block
+          .search-room__description
+            +description({text:"удобства номера"})
+          .search-room__dropdown-room
+            +dropdown(room)
 
-          .search-room__expandable-checkbox
-            +expandable-checkbox(expandableCheckbox)
+        .search-room__expandable-checkbox
+          +expandable-checkbox(expandableCheckbox)
 
-        section.search-room__rooms.js-search-room__rooms
-          h1.search-room__title Номера, которые мы для вас подобрали
-          ul.search-room__card-list
-            for card in roomCards
-              li.search-room__card-item
-                +room-card(card)
-          .search-room__pagination
-            +pagination
-      footer.search-room__footer-block
-        .search-room__line
-        .search-room__footer.search-room__footer_type_default
-          +footer
-        .search-room__footer.search-room__footer_type_simple
-          +simple-footer
+      section.search-room__rooms.js-search-room__rooms
+        h1.search-room__title Номера, которые мы для вас подобрали
+        ul.search-room__card-list
+          for card in roomCards
+            li.search-room__card-item
+              +room-card(card)
+        .search-room__pagination
+          +pagination
+    footer.search-room__footer-block
+      .search-room__line
+      .search-room__footer.search-room__footer_type_default
+        +footer
+      .search-room__footer.search-room__footer_type_simple
+        +simple-footer

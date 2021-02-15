@@ -18,11 +18,21 @@ include /components/comment/comment
 include /components/logo/logo
 
 block head
-  - var title = "Form elements"
+  - const title = "Form elements"
 block content
-  - const {settingsTextField, settingsDropdown,checkboxSettings,radioSettings} = require("./form-elements.json")
-  - const {toggleSettings, likeButtonSettings, rangeSlider, buttonSettings,dropdownDateSettings} = require("./form-elements.json")
-  - const {expandableCheckbox,richCheckboxSettings,bonusIcon,comment} = require("./form-elements.json")
+  - 
+    const {settingsTextField:{text, hover, mask, subscribe},
+      settingsDropdown: {guestsOne, room, roomActive, guestsTwo, guestsThree},
+      checkboxSettings:{smoking, pets, guests},
+      radioSettings:{male, female}, 
+      buttonSettings:{filled, filledDisabled, bordered, borderedDisabled, defaultButton, defaultWithColor, filledTypeSubmit},
+      dropdownDateSettings:{range, filter},
+      expandableCheckbox:{closedCheckbox, openedCheckbox},
+      richCheckboxSettings:{corridor,assistant},
+      comment,
+      bonusIcon:{comfort, convenience},
+      bulletList} = require("./form-elements.json");
+
   .form-elements
     header.form-elements__header
       .form-elements__logo
@@ -39,7 +49,7 @@ block content
                 status: "default"
               })
             .form-elements__text-field
-              +text-field(settingsTextField.text)
+              +text-field(text)
 
           .form-elements__text-field-container
             .form-elements__description
@@ -49,30 +59,30 @@ block content
                 status:"hover / focus"
             })
             .form-elements__text-field
-              +text-field(settingsTextField.hover)
+              +text-field(hover)
 
           .form-elements__dropdown-container
             +description({text: "dropdown"})
             .form-elements__dropdown
-              +dropdown(settingsDropdown.guestsOne)
+              +dropdown(guestsOne)
 
           .form-elements__text-field-container
             .form-elements__description
               +description({text: "masked text field"})
             .form-elements__text-field
-              +text-field(settingsTextField.mask)
+              +text-field(mask)
 
           .form-elements__dropdown-date
-            +dropdown-date(dropdownDateSettings.range)
+            +dropdown-date(range)
 
           .form-elements__dropdown-date.form-elements__dropdown-date_size_small
-            +dropdown-date(dropdownDateSettings.filter)
+            +dropdown-date(filter)
 
           .form-elements__text-field-container.form-elements__text-field-container_size_small
             .form-elements__description
               +description({text: "subscription text field"})
             .form-elements__text-field
-              +text-field(settingsTextField.subscribe)
+              +text-field(subscribe)
 
         .form-elements__block-center
 
@@ -80,37 +90,37 @@ block content
             .form-elements__description
               +description({text: "checkbox buttons"})
             .form-elements__checkbox
-              +checkbox(checkboxSettings.smoking)
+              +checkbox(smoking)
             .form-elements__checkbox
-              +checkbox(checkboxSettings.pets)
+              +checkbox(pets)
             .form-elements__checkbox
-              +checkbox(checkboxSettings.guests)
+              +checkbox(guests)
 
           .form-elements__radio-buttons-container
             .form-elements__description
               +description({text: "radio buttons"})
             .form-elements__radio-buttons-row
               .form-elements__radio-button
-                +radio(radioSettings.male)
+                +radio(male)
               .form-elements__radio-button
-                +radio(radioSettings.female)
+                +radio(female)
 
           .form-elements__toggle-container
             .form-elements__description
               +description({text: "toggle"})
             .form-elements__toggle
-              +toggle(toggleSettings.first)
+              +toggle({text:"Получать спецпредложения",checked: true})
             .form-elements__toggle
-              +toggle(toggleSettings.second)
+              +toggle({text:"Получать спецпредложения"})
 
           .form-elements__like-button-container
             .form-elements__description
               +description({text: "like button"})
             .form-elements__like-button-row
               .form-elements__like-button
-                +like-button(likeButtonSettings.first)
+                +like-button({count:2})
               .form-elements__like-button
-                +like-button(likeButtonSettings.second)
+                +like-button({count:12, active:true})
 
           .form-elements__rate-button-container
             .form-elements__description
@@ -131,21 +141,21 @@ block content
               +description({text: "buttons"})
             .form-elements__buttons-wrapper
               .form-elements__button.form-elements__button_size_s
-                +button(buttonSettings.one)
+                +button(filled)
               .form-elements__button.form-elements__button_size_s
-                +button(buttonSettings.two)
+                +button(filledDisabled)
             .form-elements__buttons-wrapper
               .form-elements__button.form-elements__button_size_s
-                +button(buttonSettings.three)
+                +button(bordered)
               .form-elements__button.form-elements__button_size_s
-                +button(buttonSettings.four)
+                +button(borderedDisabled)
             .form-elements__buttons-wrapper.form-elements__buttons-wrapper_size_s
               .form-elements__button
-                +button(buttonSettings.five)
+                +button(defaultButton)
               .form-elements__button
-                +button(buttonSettings.six)
+                +button(defaultWithColor)
             .form-elements__button
-              +button(buttonSettings.seven)
+              +button(filledTypeSubmit)
 
           .form-elements__pagination-container
             .form-elements__description
@@ -164,7 +174,7 @@ block content
                 status: "default"
               })
             .form-elements__dropdown
-              +dropdown(settingsDropdown.room)
+              +dropdown(room)
 
           .form-elements__dropdown-container.form-elements__dropdown-container_size_s
             .form-elements__description
@@ -174,19 +184,19 @@ block content
                 status: "expanded"
               })
             .form-elements__dropdown
-              +dropdown(settingsDropdown.roomActive)
+              +dropdown(roomActive)
 
           .form-elements__expandable-checkbox-container
             .form-elements__expandable-checkbox
-              +expandable-checkbox(expandableCheckbox.close)
+              +expandable-checkbox(closedCheckbox)
             .form-elements__expandable-checkbox
-              +expandable-checkbox(expandableCheckbox.open)
+              +expandable-checkbox(openedCheckbox)
 
           .form-elements__bonus-icon-container
             .form-elements__bonus-icon
-              +bonus-icon(bonusIcon.one)
+              +bonus-icon(comfort)
             .form-elements__bonus-icon
-              +bonus-icon(bonusIcon.two)
+              +bonus-icon(convenience)
 
         .form-elements__center-wrapper
 
@@ -195,28 +205,28 @@ block content
               .form-elements__description
                 +description({text: "dropdown"})
               .form-elements__dropdown
-                +dropdown(settingsDropdown.guestsTwo)
+                +dropdown(guestsTwo)
 
             .form-elements__dropdown-container
               .form-elements__description
                 +description({text: "dropdown"})
               .form-elements__dropdown
-                +dropdown(settingsDropdown.guestsThree)
+                +dropdown(guestsThree)
 
           .form-elements__row
             .form-elements__rich-checkbox-container
               .form-elements__description
                 +description({text: "Rich Checkbox Buttons"})
               .form-elements__rich-checkbox
-                +checkbox(richCheckboxSettings.corridor)
+                +checkbox(corridor)
               .form-elements__rich-checkbox  
-                +checkbox(richCheckboxSettings.assistant)
+                +checkbox(assistant)
 
             .form-elements__bullet-list-container
               .form-elements__description
                 +description({text: "bullet list"})
               .form-elements__bullet-list
-                +bullet-list({descriptionText:"bullet list"})
+                +bullet-list(bulletList)
 
           .form-elements__comment
             +comment(comment)

@@ -6,8 +6,8 @@ import '@components/sign-in-card/sign-in-card';
 import '@components/simple-footer/simple-footer';
 import './sign-in.scss';
 
-let signInContent = document.querySelector('.js-sign-in__content');
-let images = [
+const signInContent = document.querySelector('.js-sign-in__content');
+const images = [
   'url("../../assets/images/bg-image-1.jpg")',
   'url("../../assets/images/bg-image-4.jpg")',
 ];

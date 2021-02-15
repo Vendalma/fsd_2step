@@ -37,5 +37,19 @@
     {
       "text": "Связь с нами"
     }
+  ],
+  "socialIcons": [
+    {
+      "url": "https://twitter.com/?lang=ru",
+      "iconName": "fa-twitter"
+    },
+    {
+      "url": "https://www.facebook.com",
+      "iconName": "fa-facebook-square"
+    },
+    {
+      "url": "https://www.instagram.com/?hl=ru",
+      "iconName": "fa-instagram"
+    }
   ]
 }

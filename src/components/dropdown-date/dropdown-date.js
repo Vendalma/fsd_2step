@@ -50,7 +50,7 @@ class DatePicker {
   }
 
   filter() {
-    let filterInput = this.container.querySelector(
+    const filterInput = this.container.querySelector(
       '.js-dropdown-date__input_type_filter'
     );
     $(filterInput).datepicker({
@@ -84,14 +84,14 @@ class DatePicker {
   }
 
   range() {
-    let start = this.container.querySelector(
+    const start = this.container.querySelector(
       '.js-dropdown-date__input_type_range-start'
     );
-    let end = this.container.querySelector(
+    const end = this.container.querySelector(
       '.js-dropdown-date__input_type_range-end'
     );
-    let wrapper = this.container.querySelector('.js-dropdown-date__wrapper');
-    let picker = $(start).datepicker({
+    const wrapper = this.container.querySelector('.js-dropdown-date__wrapper');
+    const picker = $(start).datepicker({
       range: true,
       multipleDates: true,
       multipleDatesSeparator: ' - ',
@@ -123,13 +123,13 @@ class DatePicker {
   }
 
   addButtons(elem) {
-    let applyButton = document.createElement('span');
+    const applyButton = document.createElement('span');
     applyButton.setAttribute('data-action', 'hide');
     applyButton.classList.add('datepicker--button');
     applyButton.innerHTML = 'Применить';
 
     applyButton.addEventListener('click', this.hideDatepicker.bind(this, elem));
-    let buttons = elem
+    const buttons = elem
       .data('datepicker')
       .$datepicker.find('.datepicker--buttons');
 
@@ -148,8 +148,4 @@ class DatePicker {
       .selectDate([new Date('2019-08-19'), new Date('2019-08-23')]);
   }
 }
-
-let container = document.querySelectorAll('.js-dropdown-date');
-container.forEach((elem) => {
-  let datePicker = new DatePicker(elem);
-});
+export default DatePicker;

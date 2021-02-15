@@ -120,58 +120,37 @@
       "value": "female"
     }
   },
-  "toggleSettings": {
-    "first": {
-      "text": "Получать спецпредложения",
-      "checked": true
-    },
-    "second": {
-      "text": "Получать спецпредложения"
-    }
-  },
-  "likeButtonSettings": {
-    "first": {
-      "count": "2"
-    },
-    "second": {
-      "count": "12",
-      "active": true
-    }
-  },
-  "rangeSlider": {
-    "text": "range slider"
-  },
   "buttonSettings": {
-    "one": {
+    "filled": {
       "theme": "filled",
       "size": "m",
       "text": "click me"
     },
-    "two": {
+    "filledDisabled": {
       "theme": "filled",
       "size": "m",
       "text": "click me",
       "isDisabled": true
     },
-    "three": {
+    "bordered": {
       "theme": "bordered",
       "size": "m",
       "text": "click me"
     },
-    "four": {
+    "borderedDisabled": {
       "theme": "bordered",
       "size": "m",
       "text": "click me",
       "isDisabled": true
     },
-    "five": {
+    "defaultButton": {
       "text": "click me"
     },
-    "six": {
+    "defaultWithColor": {
       "text": "click me",
       "color": "grey"
     },
-    "seven": {
+    "filledTypeSubmit": {
       "theme": "filled",
       "type": "submit",
       "size": "m",
@@ -179,7 +158,7 @@
     }
   },
   "expandableCheckbox": {
-    "close": {
+    "closedCheckbox": {
       "text": "expandable checkbox list",
       "items": [
         {
@@ -211,7 +190,7 @@
         }
       ]
     },
-    "open": {
+    "openedCheckbox": {
       "text": "expandable checkbox list",
       "items": [
         {
@@ -272,15 +251,20 @@
     "text": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
   },
   "bonusIcon": {
-    "one": {
+    "comfort": {
       "typeIcon": "insert_emoticon",
       "header": "Комфорт",
       "text": "Шумопоглощающие стены"
     },
-    "two": {
+    "convenience": {
       "typeIcon": "location_city",
       "header": "Удобство",
       "text": "Окно в каждой из спален"
     }
-  }
+  },
+  "bulletList": [
+    "Нельзя с питомцами",
+    "Без вечеринок и мероприятий",
+    "Время прибытия — после 13:00, а выезд до 12:00"
+  ]
 }
