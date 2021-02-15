@@ -7,6 +7,23 @@
     position: relative;
     margin-bottom: 10px;
   }
+  &__diagram-label {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    position: absolute;
+    padding: 4px;
+    margin: 0px;
+    z-index: 10;
+    pointer-events: none;
+    @extend %body-font;
+    font-size: 13px;
+    color: #fff;
+    &_hidden {
+      opacity: 0;
+    }
+  }
+
   &__info {
     display: inline-flex;
     flex-direction: column;

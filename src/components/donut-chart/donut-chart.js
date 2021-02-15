@@ -1,132 +1,134 @@
 import Chart from 'chart.js';
 import './donut-chart.scss';
-const { chartOptions } = require('./donut-chart.json');
 
-let reverseArr = chartOptions.items.reverse();
-function getOptions(optionsType) {
-  let result = [];
-  reverseArr.forEach((item) => {
-    if (optionsType === 'count') {
-      result.push(item.count);
-    } else if (optionsType === 'text') {
-      result.push(item.text);
-    }
-  });
-  return result;
-}
+class DonutChart {
+  constructor(container, options) {
+    this.container = container;
+    this.options = options.items.reverse();
+    this.initDiagram();
+  }
 
-const chart = document.querySelector('.js-chart__diagram');
-const chartColors = document
-  .querySelector('.js-chart__diagram')
-  .getContext('2d');
+  getOptions(optionsType) {
+    const result = [];
+    this.options.forEach((item) => {
+      if (optionsType === 'count') {
+        result.push(item.count);
+      } else if (optionsType === 'text') {
+        result.push(item.text);
+      }
+    });
+    return result;
+  }
 
-const backgroundDisappointed = chartColors.createLinearGradient(0, 0, 0, 600);
-backgroundDisappointed.addColorStop(0, '#919191');
-backgroundDisappointed.addColorStop(1, '#3d4975');
+  createColors() {
+    const chartColors = this.container.getContext('2d');
+    const colors = [];
+    const backgroundDisappointed = chartColors.createLinearGradient(
+      0,
+      0,
+      0,
+      600
+    );
+    backgroundDisappointed.addColorStop(0, '#919191');
+    backgroundDisappointed.addColorStop(1, '#3d4975');
+    colors.push(backgroundDisappointed);
 
-const backgroundSatisfactory = chartColors.createLinearGradient(0, 0, 0, 600);
-backgroundSatisfactory.addColorStop(0, '#bc9cff');
-backgroundSatisfactory.addColorStop(1, '#8ba4f9');
+    const backgroundSatisfactory = chartColors.createLinearGradient(
+      0,
+      0,
+      0,
+      600
+    );
+    backgroundSatisfactory.addColorStop(0, '#bc9cff');
+    backgroundSatisfactory.addColorStop(1, '#8ba4f9');
+    colors.push(backgroundSatisfactory);
 
-const backgroundGood = chartColors.createLinearGradient(0, 0, 0, 600);
-backgroundGood.addColorStop(0, '#6fcf97');
-backgroundGood.addColorStop(1, '#66d2ea');
+    const backgroundGood = chartColors.createLinearGradient(0, 0, 0, 600);
+    backgroundGood.addColorStop(0, '#6fcf97');
+    backgroundGood.addColorStop(1, '#66d2ea');
+    colors.push(backgroundGood);
 
-const backgroundExcellent = chartColors.createLinearGradient(0, 0, 0, 600);
-backgroundExcellent.addColorStop(0, '#ffe39c');
-backgroundExcellent.addColorStop(1, '#ffba9c');
+    const backgroundExcellent = chartColors.createLinearGradient(0, 0, 0, 600);
+    backgroundExcellent.addColorStop(0, '#ffe39c');
+    backgroundExcellent.addColorStop(1, '#ffba9c');
+    colors.push(backgroundExcellent);
 
-const myChart = new Chart(chart, {
-  type: 'doughnut',
-  data: {
-    labels: getOptions('text'),
-    datasets: [
-      {
-        label: '# of Votes',
-        data: getOptions('count'),
-        backgroundColor: [
-          backgroundDisappointed,
-          backgroundSatisfactory,
-          backgroundGood,
-          backgroundExcellent,
+    return colors;
+  }
+
+  initDiagram() {
+    new Chart(this.container, {
+      type: 'doughnut',
+      data: {
+        labels: this.getOptions('text'),
+        datasets: [
+          {
+            data: this.getOptions('count'),
+            backgroundColor: this.createColors(),
+            borderWidth: 1,
+          },
         ],
-        borderWidth: 1,
       },
-    ],
-  },
-  options: {
-    cutoutPercentage: 90,
-    responsive: false,
-    legend: {
-      display: false,
-    },
-    maintainAspectRatio: false,
-    tooltips: {
-      enabled: false,
+      options: {
+        cutoutPercentage: 90,
+        responsive: false,
+        legend: {
+          display: false,
+        },
+        maintainAspectRatio: false,
+        tooltips: {
+          enabled: false,
 
-      custom: function (tooltipModel) {
-        var tooltipEl = document.getElementById('chartjs-tooltip');
-        if (!tooltipEl) {
-          tooltipEl = document.createElement('div');
-          tooltipEl.id = 'chartjs-tooltip';
-          tooltipEl.innerHTML = '<table></table>';
-          document.body.appendChild(tooltipEl);
-        }
+          custom: function ({ opacity, yAlign, body, caretX, caretY }) {
+            let tooltipEl = document.getElementById('chartjs-tooltip');
+            if (!tooltipEl) {
+              tooltipEl = document.createElement('div');
+              tooltipEl.id = 'chartjs-tooltip';
+              tooltipEl.innerHTML = '<table></table>';
+              document.body.appendChild(tooltipEl);
+              tooltipEl.classList.add('chart__diagram-label');
+            }
 
-        if (tooltipModel.opacity === 0) {
-          tooltipEl.style.opacity = 0;
-          return;
-        }
+            if (opacity === 0) {
+              tooltipEl.classList.add('chart__diagram-label_hidden');
+            } else {
+              tooltipEl.classList.remove('chart__diagram-label_hidden');
+            }
 
-        tooltipEl.classList.remove('above', 'below', 'no-transform');
-        if (tooltipModel.yAlign) {
-          tooltipEl.classList.add(tooltipModel.yAlign);
-        } else {
-          tooltipEl.classList.add('no-transform');
-        }
+            tooltipEl.classList.remove('above', 'below', 'no-transform');
+            if (yAlign) {
+              tooltipEl.classList.add(yAlign);
+            } else {
+              tooltipEl.classList.add('no-transform');
+            }
 
-        function getBody(bodyItem) {
-          return bodyItem.lines;
-        }
+            function getBody(bodyItem) {
+              return bodyItem.lines;
+            }
 
-        if (tooltipModel.body) {
-          var titleLines = tooltipModel.title || [];
-          var bodyLines = tooltipModel.body.map(getBody);
+            if (body) {
+              const bodyLines = body.map(getBody);
+              let innerHtml = '<tbody>';
+              bodyLines.forEach(function (body) {
+                innerHtml += `<tr><td>${body}</td></tr>`;
+              });
+              innerHtml += '</tbody>';
 
-          var innerHtml = '<tbody>';
-
-          bodyLines.forEach(function (body, i) {
-            var colors = tooltipModel.labelColors[i];
-            var style = 'background:' + colors.backgroundColor;
-            style += '; border-color:' + colors.borderColor;
-            style += '; border-width: 2px';
-            var span = '<span style="' + style + '"></span>';
-            innerHtml += '<tr><td>' + span + body + '</td></tr>';
-          });
-          innerHtml += '</tbody>';
-
-          var tableRoot = tooltipEl.querySelector('table');
-          tableRoot.innerHTML = innerHtml;
-        }
-        var position = this._chart.canvas.getBoundingClientRect();
-
-        tooltipEl.style.opacity = 1;
-        tooltipEl.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
-        tooltipEl.style.borderRadius = '5px';
-        tooltipEl.style.position = 'absolute';
-        tooltipEl.style.left =
-          position.left + window.pageXOffset + tooltipModel.caretX + 'px';
-        tooltipEl.style.top =
-          position.top + window.pageYOffset + tooltipModel.caretY + 'px';
-        tooltipEl.style.fontFamily = tooltipModel._bodyFontFamily;
-        tooltipEl.style.fontSize = '13px';
-        tooltipEl.style.fontStyle = tooltipModel._bodyFontStyle;
-        tooltipEl.style.color = '#fff';
-        tooltipEl.style.padding = '4px';
-        tooltipEl.style.margin = '0px';
-        tooltipEl.style.zIndex = '10';
-        tooltipEl.style.pointerEvents = 'none';
+              const tableRoot = tooltipEl.querySelector('table');
+              tableRoot.innerHTML = innerHtml;
+            }
+            const position = this._chart.canvas.getBoundingClientRect();
+            tooltipEl.classList.add('chart__diagram-label');
+            tooltipEl.style.left = `${
+              position.left + window.pageXOffset + caretX
+            }px`;
+            tooltipEl.style.top = `${
+              position.top + window.pageYOffset + caretY
+            }px`;
+          },
+        },
       },
-    },
-  },
-});
+    });
+  }
+}
+export default DonutChart;
