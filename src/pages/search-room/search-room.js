@@ -18,8 +18,6 @@ const blockClose = document.querySelector('.js-search-room__menu-item_closed');
 const filter = document.querySelector('.js-search-room__filter');
 const rooms = document.querySelector('.js-search-room__rooms');
 
-optionsBlock.addEventListener('click', openFilter.bind(this));
-
 function openFilter() {
   blockOpen.classList.toggle('search-room__menu-item_hidden');
   blockClose.classList.toggle('search-room__menu-item_hidden');
@@ -28,7 +26,6 @@ function openFilter() {
   rooms.classList.toggle('search-room__rooms_hidden');
 }
 
-window.addEventListener('resize', checkWindowSize.bind(this));
 function checkWindowSize() {
   if (window.matchMedia('(max-width: 768px)').matches) {
     filter.classList.add('search-room__filter_hidden');
@@ -36,5 +33,6 @@ function checkWindowSize() {
     filter.classList.remove('search-room__filter_hidden');
   }
 }
-
+optionsBlock.addEventListener('click', openFilter.bind(this));
+window.addEventListener('resize', checkWindowSize.bind(this));
 checkWindowSize();

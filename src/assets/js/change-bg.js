@@ -6,7 +6,7 @@ class BgSlider {
   }
 
   changeBg() {
-    let bg = this.images[Math.floor(Math.random() * this.images.length)];
+    const bg = this.images[Math.floor(Math.random() * this.images.length)];
     this.container.style.backgroundImage = bg;
   }
 }

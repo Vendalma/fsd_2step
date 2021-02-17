@@ -1,5 +1,6 @@
 import './range-slider';
-$(function () {
+
+$(() => {
   $('.js-range-slider__input').ionRangeSlider({
     keyboard: false,
     type: 'double',

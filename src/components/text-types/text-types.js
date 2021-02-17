@@ -1,2 +1,1 @@
-import "./text-types.scss";
-
+import './text-types.scss';

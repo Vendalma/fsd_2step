@@ -7,12 +7,14 @@ class ExpandableCheckbox {
     this.init();
     this.openList();
   }
+
   init() {
     this.items = this.container.querySelector('.js-expandable-checkbox__items');
     this.materialIcons = this.container.querySelector(
-      '.js-expandable-checkbox__arrow'
+      '.js-expandable-checkbox__arrow',
     );
   }
+
   openList() {
     this.container.addEventListener('click', this.bindThis.bind(this));
   }

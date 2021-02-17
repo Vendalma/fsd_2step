@@ -1,0 +1,46 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jquery": true,
+    "node": true
+  },
+  "extends": [
+    "airbnb-base",
+    "plugin:fsd/all",
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  "plugins": [
+    "fsd"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          [
+            "@",
+            "./src"
+          ],
+          [
+            "@components",
+            "./src/components"
+          ],
+          [
+            "@images",
+            "./src/assets/images"
+          ]
+        ]
+      }
+    }
+  },
+  "rules": {
+    "no-unused-vars": 0,
+    "class-methods-use-this": 0
+  }
+}

@@ -1,5 +1,6 @@
 import './pagination';
-$(function () {
+
+$(() => {
   $('.js-pagination__block').pagination({
     itemsOnPage: 12,
     pages: 15,

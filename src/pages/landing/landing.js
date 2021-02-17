@@ -1,4 +1,4 @@
-import BgSlider from '@/assets/js/change-bg.js';
+import BgSlider from '@/assets/js/change-bg';
 import '@/main';
 import '@components/footer/footer';
 import '@components/header/header';
@@ -12,4 +12,4 @@ const images = [
   'url("../../assets/images/bg-image-2.jpg")',
   'url("../../assets/images/bg-image-3.jpg")',
 ];
-new BgSlider(sliderWrapper, images);
+const bgSlider = new BgSlider(sliderWrapper, images);

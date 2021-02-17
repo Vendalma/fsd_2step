@@ -6,6 +6,7 @@ class DatePicker {
     this.container = container;
     this.init();
   }
+
   init() {
     if (this.container.classList.contains('js-dropdown-date_type_inline')) {
       this.inline();
@@ -21,7 +22,7 @@ class DatePicker {
   }
 
   inline() {
-    $('.js-dropdown-date_type_inline').datepicker({
+    this.picker = $('.js-dropdown-date_type_inline').datepicker({
       range: true,
       multipleDates: true,
       multipleDatesSeparator: ' - ',
@@ -33,27 +34,27 @@ class DatePicker {
       clearButton: true,
       prevHtml: '<i class="material--icon">arrow_back</i>',
       nextHtml: '<i class="material--icon">arrow_forward</i>',
-      onRenderCell: function (date, cellType) {
-        let findCurrentDate =
-          date.getDate() == '8' &&
-          date.getMonth() == '7' &&
-          date.getFullYear() == '2019';
-        if (findCurrentDate && cellType == 'day') {
+      onRenderCell(date, cellType) {
+        const findCurrentDate = date.getDate() === '8'
+          && date.getMonth() === '7'
+          && date.getFullYear() === '2019';
+        if (findCurrentDate && cellType === 'day') {
           return {
             classes: 'datepicker--cell -current-',
           };
         }
+        return null;
       },
     });
-    this.addButtons($('.js-dropdown-date_type_inline'));
-    this.setDate($('.js-dropdown-date_type_inline'));
+    this.addButtons();
+    this.setDate();
   }
 
   filter() {
     const filterInput = this.container.querySelector(
-      '.js-dropdown-date__input_type_filter'
+      '.js-dropdown-date__input_type_filter',
     );
-    $(filterInput).datepicker({
+    this.picker = $(filterInput).datepicker({
       language: 'ru',
       range: true,
       multipleDates: true,
@@ -66,32 +67,33 @@ class DatePicker {
       clearButton: true,
       prevHtml: '<i class="material--icon">arrow_back</i>',
       nextHtml: '<i class="material--icon">arrow_forward</i>',
-      onSelect: function (fd, d) {
+      onSelect(fd) {
         $(filterInput).val(fd.toLowerCase());
       },
-      onShow: function (dp, animationCompleted) {
+      onShow(dp, animationCompleted) {
+        const pickerContainer = dp.$datepicker[0];
         if (!animationCompleted) {
           if (window.matchMedia('(max-width: 380px)').matches) {
-            dp.$datepicker[0].style.maxWidth = `${filterInput.offsetWidth}px`;
+            pickerContainer.style.maxWidth = `${filterInput.offsetWidth}px`;
           } else {
-            dp.$datepicker[0].style.maxWidth = `320px`;
+            pickerContainer.style.maxWidth = '320px';
           }
         }
       },
     });
-    this.addButtons($(filterInput));
-    this.setDate($(filterInput));
+    this.addButtons();
+    this.setDate();
   }
 
   range() {
     const start = this.container.querySelector(
-      '.js-dropdown-date__input_type_range-start'
+      '.js-dropdown-date__input_type_range-start',
     );
     const end = this.container.querySelector(
-      '.js-dropdown-date__input_type_range-end'
+      '.js-dropdown-date__input_type_range-end',
     );
     const wrapper = this.container.querySelector('.js-dropdown-date__wrapper');
-    const picker = $(start).datepicker({
+    this.picker = $(start).datepicker({
       range: true,
       multipleDates: true,
       multipleDatesSeparator: ' - ',
@@ -104,46 +106,49 @@ class DatePicker {
       prevHtml: '<i class="material--icon">arrow_back</i>',
       nextHtml: '<i class="material--icon">arrow_forward</i>',
 
-      onSelect: function (fd, d, picker) {
+      onSelect(fd) {
         $(start).val(fd.split('-')[0]);
         $(end).val(fd.split('-')[1]);
       },
-      onShow: function (dp, animationCompleted) {
+      onShow(dp, animationCompleted) {
+        const pickerContainer = dp.$datepicker[0];
         if (!animationCompleted) {
-          dp.$datepicker[0].style.maxWidth = `${wrapper.offsetWidth}px`;
+          pickerContainer.style.maxWidth = `${wrapper.offsetWidth}px`;
         }
       },
     });
 
-    $(end).on('click', this.showDatepicker.bind(this, $(start)));
-    this.addButtons(picker);
-    picker.hasClass('dropdown-date__input_with-set-date')
-      ? this.setDate(picker)
-      : null;
+    $(end).on('click', this.showDatepicker.bind(this));
+    this.addButtons();
+    if (this.picker.hasClass('dropdown-date__input_with-set-date')) {
+      this.setDate();
+    }
   }
 
-  addButtons(elem) {
+  addButtons() {
     const applyButton = document.createElement('span');
     applyButton.setAttribute('data-action', 'hide');
     applyButton.classList.add('datepicker--button');
     applyButton.innerHTML = 'Применить';
 
-    applyButton.addEventListener('click', this.hideDatepicker.bind(this, elem));
-    const buttons = elem
+    applyButton.addEventListener('click', this.hideDatepicker.bind(this));
+    const buttons = this.picker
       .data('datepicker')
       .$datepicker.find('.datepicker--buttons');
 
     buttons.append(applyButton);
   }
-  showDatepicker(elem) {
-    elem.data('datepicker').show();
+
+  showDatepicker() {
+    this.picker.data('datepicker').show();
   }
 
-  hideDatepicker(elem) {
-    elem.data('datepicker').hide();
+  hideDatepicker() {
+    this.picker.data('datepicker').hide();
   }
-  setDate(elem) {
-    elem
+
+  setDate() {
+    this.picker
       .data('datepicker')
       .selectDate([new Date('2019-08-19'), new Date('2019-08-23')]);
   }

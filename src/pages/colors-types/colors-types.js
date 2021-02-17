@@ -1,5 +1,5 @@
 import '@/main';
-import '@components/colors/colors.js';
+import '@components/colors/colors';
 import '@components/logo/logo';
-import '@components/text-types/text-types.js';
+import '@components/text-types/text-types';
 import './colors-types.scss';

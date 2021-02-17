@@ -7,7 +7,7 @@
     "build-prod": "webpack --mode production --config ./webpack/webpack.prod.config.js",
     "build-dev": "webpack --mode development  --config ./webpack/webpack.dev.config.js",
     "start": "webpack-dev-server --open  --watch --config ./webpack/webpack.dev.config.js",
-    "lint": "node_modules/.bin/eslint . --fix --ext .js",
+    "lint": "eslint . --fix --ext .js",
     "deploy": "gh-pages -b pages -d dist"
   },
   "repository": {
@@ -29,8 +29,10 @@
     "copy-webpack-plugin": "^6.4.0",
     "css-loader": "^3.6.0",
     "cssnano": "^4.1.10",
-    "eslint": "^7.14.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-fsd": "^1.0.1",
+    "eslint-plugin-import": "^2.22.1",
     "file-loader": "^6.0.0",
     "gh-pages": "^3.1.0",
     "html-webpack-plugin": "^4.3.0",

@@ -1,4 +1,5 @@
 import './like-button.scss';
+
 class Like {
   constructor(container) {
     this.container = container;

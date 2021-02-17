@@ -1,4 +1,4 @@
-import '../button/button';
+import '@components/button/button';
 import './dropdown.scss';
 
 class Dropdown {
@@ -9,8 +9,8 @@ class Dropdown {
     this.clickOnInput();
     this.clickClearButton();
     this.clickApplyButton();
-    this.checkActiveDropdown();
-    this.countClick();
+    this.checkItemScore();
+    this.countContainerListener();
   }
 
   init() {
@@ -20,10 +20,10 @@ class Dropdown {
     this.countContainer = this.container.querySelectorAll('.dropdown__count');
     if (this.checkTypeDropdown()) {
       this.clearButton = this.container.querySelector(
-        '.js-dropdown__button_type_clear'
+        '.js-dropdown__button_type_clear',
       );
       this.applyButton = this.container.querySelector(
-        '.js-dropdown__button_type_apply'
+        '.js-dropdown__button_type_apply',
       );
     }
   }
@@ -50,7 +50,7 @@ class Dropdown {
   onMinClick(elem) {
     const score = elem.nextElementSibling;
     if (Number(score.innerHTML) > 0) {
-      score.innerHTML = Number(score.innerHTML) - 1;
+      score.innerHTML = `${Number(score.innerHTML) - 1}`;
     }
     if (Number(score.innerHTML) <= 0) {
       this.hideMinButton(elem);
@@ -67,7 +67,7 @@ class Dropdown {
   }
 
   hideClearButton() {
-    if (this.checkCountScore() && this.checkTypeDropdown()) {
+    if (this.checkCountProp() && this.checkTypeDropdown()) {
       this.clearButton.classList.add('dropdown__button_hidden');
     }
   }
@@ -80,24 +80,21 @@ class Dropdown {
 
   onPlusClick(elem) {
     const score = elem.previousElementSibling;
-    score.innerHTML = Number(score.innerHTML) + 1;
+    score.innerHTML = `${Number(score.innerHTML) + 1}`;
     this.setMinButton(score.previousElementSibling);
     this.setClearButton();
     return Number(score.innerHTML);
   }
 
-  countClick() {
+  countContainerListener() {
     this.countContainer.forEach((item) => {
-      item.addEventListener('click', this.onCountClick.bind(this));
-      if (!this.data[item.dataset.id]) {
-        this.data[item.dataset.id] = {};
-        this.data[item.dataset.id].name = item.dataset.name;
-      }
+      item.addEventListener('click', this.onCountContainerClick.bind(this));
     });
   }
 
-  onCountClick(event) {
+  onCountContainerClick(event) {
     let score;
+    const { id } = event.target.parentElement.dataset;
     if (event.target.classList.contains('js-dropdown__button_type_plus')) {
       score = this.onPlusClick(event.target);
     } else if (
@@ -105,9 +102,15 @@ class Dropdown {
     ) {
       score = this.onMinClick(event.target);
     }
-    const id = event.target.parentElement.dataset.id;
-    this.data[id].score = score;
+    this.changeCounterProp(id, score);
     this.renderStr();
+  }
+
+  changeCounterProp(counterId, score) {
+    Object.defineProperty(this.data[counterId], 'score', {
+      value: score,
+      writable: true,
+    });
   }
 
   checkTypeDropdown() {
@@ -116,56 +119,60 @@ class Dropdown {
 
   renderStr() {
     let str = '';
-    for (let item in this.data) {
-      const { name, score } = this.data[item];
-      score > 0 &&
-        (str += `${score} ${this.setRightName(score, name.split('|'))}, `);
-    }
+    Object.values(this.data).forEach((values) => {
+      const { name, score } = values;
+      if (score > 0) str += `${score} ${this.setRightName(score, name.split('|'))}, `;
+    });
     if (str === '' && this.checkTypeDropdown()) {
       this.input.placeholder = 'Сколько гостей';
       this.hideClearButton();
     } else if (str === '' && !this.checkTypeDropdown()) {
       this.input.placeholder = 'Какие удобства';
-      this.hideClearButton();
     } else {
       this.input.placeholder = str.substring(0, str.length - 2);
     }
   }
 
   setRightName(num, arrItemName) {
-    num = Math.abs(num) % 100;
-    const num1 = num % 10;
-    if (num > 10 && num < 20) {
+    const calcCount = Math.abs(num) % 100;
+    const calcCountRemainder = calcCount % 10;
+    if (calcCount > 10 && calcCount < 20) {
       return arrItemName[2];
     }
-    if (num1 > 1 && num1 < 5) {
+    if (calcCountRemainder > 1 && calcCountRemainder < 5) {
       return arrItemName[1];
     }
-    if (num1 == 1) {
+    if (calcCountRemainder === 1) {
       return arrItemName[0];
     }
     return arrItemName[2];
   }
 
-  checkCountScore() {
-    for (let item in this.data) {
-      if (this.data[item].score > 0) {
-        return false;
-      }
-    }
-    return true;
+  checkCountProp() {
+    return (
+      Object.values(this.data).reduce(
+        (accumulator, currentValue) => accumulator + currentValue.score,
+        0,
+      ) === 0
+    );
   }
 
-  cleanScore() {
-    for (let item in this.data) {
-      this.data[item].score = 0;
-      this.hideClearButton();
-      this.renderStr();
-    }
+  cleanCounters() {
+    Object.values(this.data).forEach((values) => {
+      Object.defineProperty(values, 'score', {
+        value: 0,
+        writable: true,
+      });
+    });
+    this.setScoresRow();
+    this.hideClearButton();
+    this.renderStr();
+  }
+
+  setScoresRow() {
     this.countContainer.forEach((item) => {
       const scoreContainer = item.querySelector('.js-dropdown__score');
       scoreContainer.innerHTML = '0';
-
       const minButtons = item.querySelectorAll('.js-dropdown__button_type_min');
       minButtons.forEach((elem) => {
         this.hideMinButton(elem);
@@ -177,13 +184,13 @@ class Dropdown {
     if (this.checkTypeDropdown()) {
       this.clearButton.addEventListener(
         'click',
-        this.onClickClearButton.bind(this)
+        this.onClickClearButton.bind(this),
       );
     }
   }
 
   onClickClearButton() {
-    this.cleanScore();
+    this.cleanCounters();
     this.hideClearButton();
   }
 
@@ -193,14 +200,14 @@ class Dropdown {
     }
   }
 
-  checkActiveDropdown() {
+  checkItemScore() {
     this.countContainer.forEach((item) => {
       const scoreContainer = item.querySelector('.js-dropdown__score');
+      this.data[item.dataset.id] = {};
+      this.data[item.dataset.id].name = item.dataset.name;
+      this.data[item.dataset.id].score = Number(scoreContainer.innerHTML);
       if (Number(scoreContainer.innerHTML) > 0) {
         const min = scoreContainer.previousElementSibling;
-        this.data[item.dataset.id] = {};
-        this.data[item.dataset.id].name = item.dataset.name;
-        this.data[item.dataset.id].score = Number(scoreContainer.innerHTML);
         this.setMinButton(min);
         this.setClearButton();
       }

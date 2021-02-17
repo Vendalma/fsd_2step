@@ -9,11 +9,10 @@ buttonMenu.forEach((elem) => {
   const iconMenu = elem.querySelector('.js-header__menu-icon_opened');
   const iconClose = elem.querySelector('.js-header__menu-icon_closed');
 
-  elem.addEventListener('click', bindThis.bind(this));
-
   function bindThis() {
     navBar.classList.toggle('header__nav-bar_open');
     iconMenu.classList.toggle('header__menu-icon_hidden');
     iconClose.classList.toggle('header__menu-icon_hidden');
   }
+  elem.addEventListener('click', bindThis.bind(this));
 });
