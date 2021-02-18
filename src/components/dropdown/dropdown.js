@@ -107,10 +107,7 @@ class Dropdown {
   }
 
   changeCounterProp(counterId, score) {
-    Object.defineProperty(this.data[counterId], 'score', {
-      value: score,
-      writable: true,
-    });
+    this.data[counterId].score = score;
   }
 
   checkTypeDropdown() {
@@ -121,7 +118,9 @@ class Dropdown {
     let str = '';
     Object.values(this.data).forEach((values) => {
       const { name, score } = values;
-      if (score > 0) str += `${score} ${this.setRightName(score, name.split('|'))}, `;
+      if (score > 0) {
+        str += `${score} ${this.setRightName(score, name.split('|'))}, `;
+      }
     });
     if (str === '' && this.checkTypeDropdown()) {
       this.input.placeholder = 'Сколько гостей';
@@ -151,18 +150,15 @@ class Dropdown {
   checkCountProp() {
     return (
       Object.values(this.data).reduce(
-        (accumulator, currentValue) => accumulator + currentValue.score,
+        (acc, currentValue) => acc + currentValue.score,
         0,
       ) === 0
     );
   }
 
   cleanCounters() {
-    Object.values(this.data).forEach((values) => {
-      Object.defineProperty(values, 'score', {
-        value: 0,
-        writable: true,
-      });
+    Object.keys(this.data).forEach((key) => {
+      this.changeCounterProp(key, 0);
     });
     this.setScoresRow();
     this.hideClearButton();
