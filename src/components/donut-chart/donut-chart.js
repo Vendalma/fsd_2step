@@ -2,24 +2,34 @@ import Chart from 'chart.js';
 import './donut-chart.scss';
 
 class DonutChart {
-  constructor(container, options, backgroundColors) {
+  constructor(container, options) {
     this.container = container;
     this.items = options.items.reverse();
     this.text = options.text;
-    this.backgroundColor = backgroundColors;
+    this.totalCount = 0;
+    this.chartContainer = this.container.getContext('2d');
     this.initDiagram();
     this.createText();
   }
 
   getOptions(optionsType) {
     const result = [];
-    this.totalCount = 0;
     this.items.forEach((item) => {
       if (optionsType === 'count') {
-        result.push(item.count);
         this.totalCount += item.count;
+        result.push(item.count);
       } else if (optionsType === 'text') {
         result.push(item.text);
+      } else if (optionsType === 'color') {
+        const chartColor = this.chartContainer.createLinearGradient(
+          0,
+          0,
+          0,
+          600,
+        );
+        chartColor.addColorStop(0, item.color[0]);
+        chartColor.addColorStop(1, item.color[1]);
+        result.push(chartColor);
       }
     });
     return result;
@@ -49,29 +59,16 @@ class DonutChart {
   setRightName() {
     const calcTotal = Math.abs(this.totalCount) % 100;
     const calcRemainder = calcTotal % 10;
-    const itemNames = this.text.split('|');
     if (calcTotal > 10 && calcTotal < 20) {
-      return itemNames[2];
+      return this.text[2];
     }
     if (calcRemainder > 1 && calcRemainder < 5) {
-      return itemNames[1];
+      return this.text[1];
     }
     if (calcRemainder === 1) {
-      return itemNames[0];
+      return this.text[0];
     }
-    return itemNames[2];
-  }
-
-  createColors() {
-    const chartContainer = this.container.getContext('2d');
-    const resultColors = [];
-    this.backgroundColor.forEach((color) => {
-      const chartColor = chartContainer.createLinearGradient(0, 0, 0, 600);
-      chartColor.addColorStop(0, color[0]);
-      chartColor.addColorStop(1, color[1]);
-      resultColors.push(chartColor);
-    });
-    return resultColors;
+    return this.text[2];
   }
 
   initDiagram() {
@@ -82,7 +79,7 @@ class DonutChart {
         datasets: [
           {
             data: this.getOptions('count'),
-            backgroundColor: this.createColors(),
+            backgroundColor: this.getOptions('color'),
             borderWidth: 1,
           },
         ],

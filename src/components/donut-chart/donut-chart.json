@@ -1,45 +1,47 @@
 {
   "chartOptions": {
-    "text": "голос|голоса|голосов",
+    "text": [
+      "голос",
+      "голоса",
+      "голосов"
+    ],
     "items": [
       {
         "count": 130,
         "text": "Великолепно",
+        "color": [
+          "#ffe39c",
+          "#ffba9c"
+        ],
         "className": "excellent"
       },
       {
         "count": 65,
         "text": "Хорошо",
+        "color": [
+          "#6fcf97",
+          "#66d2ea"
+        ],
         "className": "good"
       },
       {
         "count": 65,
         "text": "Удовлетворительно",
+        "color": [
+          "#bc9cff",
+          "#8ba4f9"
+        ],
         "className": "satisfactory"
       },
       {
         "count": 0,
         "text": "Разочарован",
+        "color": [
+          "#919191",
+          "#3d4975"
+        ],
         "className": "disappointed"
       }
     ]
-  },
-  "backgroundColors": [
-    [
-      "#919191",
-      "#3d4975"
-    ],
-    [
-      "#bc9cff",
-      "#8ba4f9"
-    ],
-    [
-      "#6fcf97",
-      "#66d2ea"
-    ],
-    [
-      "#ffe39c",
-      "#ffba9c"
-    ]
-  ]
+  }
 }
