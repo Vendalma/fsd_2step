@@ -5,6 +5,6 @@ import '@components/calc-card/calc-card';
 import '@components/comment/comment';
 import '@components/donut-chart/init-donut-chart';
 import '@components/footer/footer';
-import '@components/header/header';
+import '@components/header/init-header';
 import '@components/simple-footer/simple-footer';
 import './room-details.scss';

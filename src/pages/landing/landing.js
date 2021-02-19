@@ -1,7 +1,7 @@
 import BgSlider from '@/assets/js/change-bg';
 import '@/main';
 import '@components/footer/footer';
-import '@components/header/header';
+import '@components/header/init-header';
 import '@components/search-card/search-card';
 import '@components/simple-footer/simple-footer';
 import './landing.scss';

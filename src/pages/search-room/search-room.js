@@ -5,7 +5,7 @@ import '@components/dropdown-date/dropdown-date';
 import '@components/dropdown/dropdown';
 import '@components/expandable-checkbox/init-expandable-checkbox';
 import '@components/footer/footer';
-import '@components/header/header';
+import '@components/header/init-header';
 import '@components/pagination/init-pagination';
 import '@components/range-slider/init-range-slider';
 import '@components/room-card/init-room-card';
