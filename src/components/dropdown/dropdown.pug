@@ -36,7 +36,7 @@ mixin dropdown(options={})
       each item in items
         li.dropdown__item
           span.dropdown__name #{item}
-          .dropdown__count(data-name =`${itemNameVariables[item]}` data-id =`${items.indexOf(item)}`)
+          .dropdown__count.js-dropdown__count(data-name =`${itemNameVariables[item]}` data-id =`${items.indexOf(item)}`)
             button(type="button" name="button-min" disabled="disabled").dropdown__button.dropdown__button_theme_circled.dropdown__button_type_min.js-dropdown__button_type_min -
             span.dropdown__score.js-dropdown__score=`${options.scores && options.scores[item] !== undefined? options.scores[item] : 0 }`
             button(type="button" name="button-plus").dropdown__button.dropdown__button_theme_circled.dropdown__button_type_plus.js-dropdown__button_type_plus +

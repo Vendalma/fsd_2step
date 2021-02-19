@@ -10,9 +10,7 @@ class ExpandableCheckbox {
 
   init() {
     this.items = this.container.querySelector('.js-expandable-checkbox__items');
-    this.materialIcons = this.container.querySelector(
-      '.js-expandable-checkbox__arrow',
-    );
+    this.arrow = this.container.querySelector('.js-expandable-checkbox__arrow');
   }
 
   openList() {
@@ -21,7 +19,7 @@ class ExpandableCheckbox {
 
   bindThis() {
     this.items.classList.toggle('expandable-checkbox__items_hidden');
-    this.materialIcons.classList.toggle('expandable-checkbox__arrow_opened');
+    this.arrow.classList.toggle('expandable-checkbox__arrow_opened');
   }
 }
 export default ExpandableCheckbox;

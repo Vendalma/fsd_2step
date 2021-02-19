@@ -17,7 +17,9 @@ class Dropdown {
     this.input = this.container.querySelector('.js-dropdown__input');
     this.selectList = this.container.querySelector('.js-dropdown__select-list');
     this.icon = this.container.querySelector('.js-dropdown__icon');
-    this.countContainer = this.container.querySelectorAll('.dropdown__count');
+    this.countContainer = this.container.querySelectorAll(
+      '.js-dropdown__count',
+    );
     if (this.checkTypeDropdown()) {
       this.clearButton = this.container.querySelector(
         '.js-dropdown__button_type_clear',
@@ -34,11 +36,7 @@ class Dropdown {
 
   openContainer() {
     this.selectList.classList.toggle('dropdown__select-list_closed');
-    if (!this.checkTypeDropdown()) {
-      this.selectList.classList.toggle('dropdown__select-list_opened');
-    } else {
-      this.selectList.classList.toggle('dropdown__select-list_opened');
-    }
+    this.selectList.classList.toggle('dropdown__select-list_opened');
 
     this.input.classList.toggle('dropdown__input_closed');
     this.input.classList.toggle('dropdown__input_opened');
@@ -156,23 +154,11 @@ class Dropdown {
     );
   }
 
-  cleanCounters() {
-    Object.keys(this.data).forEach((key) => {
-      this.changeCounterProp(key, 0);
-    });
-    this.setScoresRow();
-    this.hideClearButton();
-    this.renderStr();
-  }
-
   setScoresRow() {
     this.countContainer.forEach((item) => {
       const scoreContainer = item.querySelector('.js-dropdown__score');
       scoreContainer.innerHTML = '0';
-      const minButtons = item.querySelectorAll('.js-dropdown__button_type_min');
-      minButtons.forEach((elem) => {
-        this.hideMinButton(elem);
-      });
+      this.hideMinButton(scoreContainer.previousElementSibling);
     });
   }
 
@@ -186,8 +172,12 @@ class Dropdown {
   }
 
   onClickClearButton() {
-    this.cleanCounters();
+    Object.keys(this.data).forEach((key) => {
+      this.changeCounterProp(key, 0);
+    });
+    this.setScoresRow();
     this.hideClearButton();
+    this.renderStr();
   }
 
   clickApplyButton() {
@@ -200,11 +190,12 @@ class Dropdown {
     this.countContainer.forEach((item) => {
       const scoreContainer = item.querySelector('.js-dropdown__score');
       this.data[item.dataset.id] = {};
-      this.data[item.dataset.id].name = item.dataset.name;
-      this.data[item.dataset.id].score = Number(scoreContainer.innerHTML);
+      Object.assign(this.data[item.dataset.id], {
+        name: `${item.dataset.name}`,
+        score: `${Number(scoreContainer.innerHTML)}`,
+      });
       if (Number(scoreContainer.innerHTML) > 0) {
-        const min = scoreContainer.previousElementSibling;
-        this.setMinButton(min);
+        this.setMinButton(scoreContainer.previousElementSibling);
         this.setClearButton();
       }
     });

@@ -10,29 +10,7 @@ import '@components/pagination/init-pagination';
 import '@components/range-slider/init-range-slider';
 import '@components/room-card/init-room-card';
 import '@components/simple-footer/simple-footer';
+import SearchRoom from './class-search-room';
 import './search-room.scss';
 
-const optionsBlock = document.querySelector('.js-search-room__menu');
-const blockOpen = document.querySelector('.js-search-room__menu-item_opened');
-const blockClose = document.querySelector('.js-search-room__menu-item_closed');
-const filter = document.querySelector('.js-search-room__filter');
-const rooms = document.querySelector('.js-search-room__rooms');
-
-function openFilter() {
-  blockOpen.classList.toggle('search-room__menu-item_hidden');
-  blockClose.classList.toggle('search-room__menu-item_hidden');
-  filter.classList.toggle('search-room__filter_visible');
-  filter.classList.toggle('search-room__filter_hidden');
-  rooms.classList.toggle('search-room__rooms_hidden');
-}
-
-function checkWindowSize() {
-  if (window.matchMedia('(max-width: 768px)').matches) {
-    filter.classList.add('search-room__filter_hidden');
-  } else {
-    filter.classList.remove('search-room__filter_hidden');
-  }
-}
-optionsBlock.addEventListener('click', openFilter.bind(this));
-window.addEventListener('resize', checkWindowSize.bind(this));
-checkWindowSize();
+const searchRoomPage = new SearchRoom();
