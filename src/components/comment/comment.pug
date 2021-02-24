@@ -8,12 +8,14 @@ mixin comment(options = {})
       date,
       like = {},
       text,
-    } = options
+    } = options;
 
   .comment
     .comment__block-user
       .comment__user-photo
-        img.comment__photo(src=require(`@images/${userPhoto}`).default, alt="user photo")
+        img.comment__photo(
+          src=require(`@images/${userPhoto}`).default,
+          alt="user photo")
       p.comment__user-info
         span.comment__user-name #{userName}
         span.comment__date #{date}

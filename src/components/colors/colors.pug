@@ -1,4 +1,6 @@
-mixin colors ({color,name,code})
+mixin colors(options)
+  - const { color, name, code } = options;
+
   .color-block
     .color-block__color-area(class=`color-block__color-area_color_${color}`)
     p.color-block__info

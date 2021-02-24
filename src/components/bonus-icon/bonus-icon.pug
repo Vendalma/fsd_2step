@@ -1,4 +1,6 @@
-mixin bonus-icon({typeIcon, header, text,isBlockLine=true}={})
+mixin bonus-icon(options={})
+  - const { typeIcon, header, text, isBlockLine = true } = options;
+
   .bonus-icon
     .bonus-icon__container
       .bonus-icon__block

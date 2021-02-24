@@ -2,8 +2,10 @@ include /components/link/link
 include /components/logo/logo
 include /components/button/button
 
-mixin header({userName=false}={})
-  - 
+mixin header(options={})
+  -
+    const {isWithUserName = false, userName = 'Юлий Цезарь'} = options;
+
     const {linkList,
       buttonsSettings:{signIn, registration}
       } = require("@components/header/header.json");
@@ -14,7 +16,6 @@ mixin header({userName=false}={})
         +logo({colored:true})
 
       .header__content-block
-
         .header__burger-menu.js-header__burger-menu
           .header__menu-icon.header__menu-icon_opened.js-header__menu-icon_opened
             i.header__icon menu
@@ -23,17 +24,16 @@ mixin header({userName=false}={})
 
         nav.header__nav-bar.js-header__nav-bar
           ul.header__link-list
-            for link in linkList
+            each link in linkList
               li.header__link-item
                 +link(link)
-          if userName 
+          if isWithUserName
             .header__user-info
               .header__vert-block
-              p.header__user-name  Юлий Цезарь
+              p.header__user-name #{userName}
           else
             .header__buttons-block
               .header__button.header__button_size_s
                 +button(signIn)
               .header__button.header__button_size_m
                 +button(registration)
-

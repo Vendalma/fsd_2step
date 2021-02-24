@@ -1,5 +1,11 @@
-mixin radio({name,value,text ,checked = false} = {})
+mixin radio(options = {})
+  - const { name, value, text, checked = false } = options;
+
   .radio
     label.radio__label #{text}
-      input(type="radio" name=name value=value checked=checked).radio__input
+      input.radio__input(
+        type="radio",
+        name=name,
+        value=value,
+        checked=checked)
       span.radio__mark

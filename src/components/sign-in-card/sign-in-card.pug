@@ -4,21 +4,16 @@ include /components/text-field/text-field
 mixin sign-in-card
   .sign-in-card
     h1.sign-in-card__title Войти
-    form(action="/mock-address/change-me" method="post").sign-in-card__form
+    form.sign-in-card__form(
+      action="/mock-address/change-me",
+      method="post")
       .sign-in-card__text-field
         +text-field({type: "email", placeholder:"Email"})
       .sign-in-card__text-field
         +text-field({type:"password", placeholder:"Пароль"})
       .sign-in-card__button-submit
-        +button({theme:"filled",
-          size:"m",
-          text:"войти",
-          type :"submit"})
+        +button({theme:"filled", size:"m", text:"войти", type :"submit"})
     .sign-in-card__container
       p.sign-in-card__text Нет аккаунта на Toxin?
       .sign-in-card__button
-        +button({type: "link",
-          theme:"bordered",
-          size: "m",
-          text:"создать",
-          url :"../registration/registration.html"})
+        +button({type: "link", theme:"bordered", size: "m", text:"создать", url :"../registration/registration.html"})

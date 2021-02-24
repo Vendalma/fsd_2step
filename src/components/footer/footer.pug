@@ -4,11 +4,12 @@ include /components/text-field/text-field
 include /components/social-icons/social-icons
 
 mixin footer
-  - 
+  -
     const {navigationLinks, 
       aboutUsLinks,
       supportServiceLinks,
-      socialIcons} = require("@components/footer/footer.json")
+      socialIcons} = require("@components/footer/footer.json");
+
   .footer
     .footer__container
       .footer__block-logo
@@ -19,31 +20,30 @@ mixin footer
       nav.footer__block-navigation
         ul.footer__link-list 
           li.footer__link-title Навигация
-          for linkNav in navigationLinks
+          each linkNav in navigationLinks
             li.footer__link-item
               +link(linkNav)
         ul.footer__link-list 
           li.footer__link-title О нас
-          for link in aboutUsLinks
+          each link in aboutUsLinks
             li.footer__link-item
               +link(link)
         ul.footer__link-list 
           li.footer__link-title Служба поддержки
-          for linkSupport in supportServiceLinks
+          each linkSupport in supportServiceLinks
             li.footer__link-item
               +link(linkSupport)
 
       .footer__block-subscription
         p.footer__header Подписка
         p.footer__text Получайте специальные предложения и новости сервиса
-        form(action="/mock-address/change-me" method="post").footer__email-field
-          +text-field({type: "email",
-            placeholder: "Email",
-            theme: "subscribe"})
+        form.footer__email-field(
+          action="/mock-address/change-me",
+          method="post")
+          +text-field({type: "email", placeholder: "Email", theme: "subscribe"})
 
     .footer__container-copyright
       .footer__block-copyright
         p.footer__text Copyright &#169; 2018 Toxin отель. Все права защищены.
         .footer__social
           +social-icons(socialIcons)
-

@@ -1,4 +1,6 @@
-mixin description({text,isWithStatus=false,status}={})
+mixin description(options={})
+  - const { text, isWithStatus = false, status } = options;
+
   .description
     p.description__text #{text}
     if isWithStatus

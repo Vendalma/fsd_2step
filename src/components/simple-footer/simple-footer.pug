@@ -1,8 +1,9 @@
-include /components/logo/logo 
+include /components/logo/logo
 include /components/social-icons/social-icons
 
 mixin simple-footer
-  - const {socialIcons} = require('@components/simple-footer/simple-footer.json')
+  - const { socialIcons } = require('@components/simple-footer/simple-footer.json');
+
   .footer-simple
     .footer-simple__logo
       +logo({colored: true})

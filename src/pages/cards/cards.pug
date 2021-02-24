@@ -8,9 +8,9 @@ include /components/calc-card/calc-card
 include /components/logo/logo
 
 block head
-  - const title = "Cards"
+  - const title = 'Cards';
 block content
-  - const {room1,room2} = require("./cards.json");
+  - const { room1, room2 } = require('./cards.json');
 
   .cards
     header.cards__header
@@ -31,15 +31,6 @@ block content
         .cards__item
           +dropdown-date
         .cards__item
-          +room-card({isLuxury: true,
-          number:888,
-          price: 9990,
-          rating:5 ,
-          reviews:145, 
-          imgs: room1})
+          +room-card({isLuxury: true, number:888, price: 9990, rating:5 , reviews:145, images: room1})
         .cards__item
-          +room-card({number:840,
-          price: 9900,
-          rating: 4 ,
-          reviews:65,
-          imgs: room2})
+          +room-card({number:840, price: 9900, rating: 4 , reviews:65, images: room2})

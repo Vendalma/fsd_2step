@@ -18,9 +18,9 @@ include /components/comment/comment
 include /components/logo/logo
 
 block head
-  - const title = "Form elements"
+  - const title = 'Form elements';
 block content
-  - 
+  -
     const {settingsTextField:{text, hover, mask, subscribe},
       settingsDropdown: {guestsOne, room, roomActive, guestsTwo, guestsThree},
       checkboxSettings:{smoking, pets, guests},
@@ -40,24 +40,15 @@ block content
     main.form-elements__container
       .form-elements__row
         .form-elements__block-left
-
           .form-elements__text-field-container
             .form-elements__description
-              +description({
-                isWithStatus: true,
-                text: "text field",
-                status: "default"
-              })
+              +description({ isWithStatus: true, text: "text field", status: "default" })
             .form-elements__text-field
               +text-field(text)
 
           .form-elements__text-field-container
             .form-elements__description
-              +description({
-                isWithStatus: true,
-                text: "text field",
-                status:"hover / focus"
-            })
+              +description({ isWithStatus: true, text: "text field", status:"hover / focus" })
             .form-elements__text-field
               +text-field(hover)
 
@@ -85,7 +76,6 @@ block content
               +text-field(subscribe)
 
         .form-elements__block-center
-
           .form-elements__checkbox-container
             .form-elements__description
               +description({text: "checkbox buttons"})
@@ -132,9 +122,8 @@ block content
                 +rate-button(5)
 
         .form-elements__block-right
-
           .form-elements__range-slider
-            +range-slider({text:"range slider"})
+            +range-slider("range slider")
 
           .form-elements__buttons-container
             .form-elements__description
@@ -165,24 +154,15 @@ block content
 
       .form-elements__row
         .form-elements__left-wrapper
-
           .form-elements__dropdown-container.form-elements__dropdown-container_size_s
             .form-elements__description
-              +description({
-                isWithStatus: true,
-                text: "dropdown",
-                status: "default"
-              })
+              +description({ isWithStatus: true, text: "dropdown", status: "default" })
             .form-elements__dropdown
               +dropdown(room)
 
           .form-elements__dropdown-container.form-elements__dropdown-container_size_s
             .form-elements__description
-              +description({
-                isWithStatus: true,
-                text: "dropdown",
-                status: "expanded"
-              })
+              +description({ isWithStatus: true, text: "dropdown", status: "expanded" })
             .form-elements__dropdown
               +dropdown(roomActive)
 
@@ -199,7 +179,6 @@ block content
               +bonus-icon(convenience)
 
         .form-elements__center-wrapper
-
           .form-elements__row
             .form-elements__dropdown-container
               .form-elements__description
@@ -219,7 +198,7 @@ block content
                 +description({text: "Rich Checkbox Buttons"})
               .form-elements__rich-checkbox
                 +checkbox(corridor)
-              .form-elements__rich-checkbox  
+              .form-elements__rich-checkbox 
                 +checkbox(assistant)
 
             .form-elements__bullet-list-container

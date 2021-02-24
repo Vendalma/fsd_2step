@@ -7,18 +7,22 @@ mixin checkbox(options = {})
       name,
       text,
       header
-      } = options
+      } = options;
 
     const textWidthTypes = {
       medium: "checkbox__text_size_medium",
       large: "checkbox__text_size_large",
-    }
+    };
 
   .checkbox
-    label.checkbox__label(class=isTypeRich? "checkbox__label_type_rich" : "") 
-      input(type = "checkbox" class="checkbox__input" checked=checked name=name)
+    label.checkbox__label(class=isTypeRich ? 'checkbox__label_type_rich' : '') 
+      input.checkbox__input(
+        type="checkbox",
+        checked=checked,
+        name=name)
       span.checkbox__mark
       if isTypeRich
         span.checkbox__header #{header}
-      span.checkbox__text(class=textWidthTypes[textWidth]
-      class=isTypeRich? "checkbox__text_type_rich" : "") #{text}
+      span.checkbox__text(
+        class=textWidthTypes[textWidth],
+        class=isTypeRich ? 'checkbox__text_type_rich' : '') #{text}

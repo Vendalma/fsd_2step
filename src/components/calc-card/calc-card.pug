@@ -4,7 +4,7 @@ include /components/description/description
 include /components/button/button
 
 mixin calc-card(options = {})
-  - 
+  -
     const formatNumber = require("@/assets/js/formatNumber.js").default;
 
     const  {
@@ -29,10 +29,12 @@ mixin calc-card(options = {})
       dayName = "суток", 
       discount = 2179,
       serviceFee = 0, 
-      additionalServiceFee = 300} = options
+      additionalServiceFee = 300} = options;
 
   .calc-card
-    form(action="/mock-address/change-me" method="post").calc-card__form
+    form.calc-card__form(
+      action="/mock-address/change-me",
+      method="post")
       .calc-card__wrapper
         .calc-card__room-info
           p.calc-card__number-info
@@ -67,7 +69,4 @@ mixin calc-card(options = {})
         span.calc-card__total-line
         span.calc-card__total-text #{formatNumber((roomPrice*dayCount)-discount+additionalServiceFee)}
       .calc-card__button
-        +button({theme:"filled",
-          size:"m",
-          text:"Забронировать",
-          type: "submit"})
+        +button({theme:"filled", size:"m", text:"Забронировать", type: "submit"})

@@ -14,10 +14,11 @@ mixin text-types(items={})
         body: "This is the body text which is used for most of the design, like paragraphs, lists, etc.",
       }
     } = items;
+
   .text-types
     .text-types__headers-wrapper
-      each text,key in headers
-        div.text-types__header(class=`text-types__header_type_${key}`) #{text}
+      each text, key in headers
+        .text-types__header(class=`text-types__header_type_${key}`) #{text}
     .text-types__content
-      each text,key in texts
-        div.text-types__text(class=`text-types__text_type_${key}`) #{text}
+      each text, key in texts
+        .text-types__text(class=`text-types__text_type_${key}`) #{text}

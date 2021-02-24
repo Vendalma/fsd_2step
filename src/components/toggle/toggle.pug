@@ -1,5 +1,9 @@
-mixin toggle({text,checked=false}={})
+mixin toggle(options={})
+  - const { text, checked = false } = options;
+
   .toggle
     label.toggle__label #{text}
-      input(type="checkbox" checked=checked).toggle__input
+      input.toggle__input(
+        type="checkbox",
+        checked=checked)
       span.toggle__control

@@ -1,4 +1,7 @@
-mixin like-button({count=1, active=false})
-  button.like-button.js-like-button(class= active? "like-button_active" : "")
-    .like-button__like.js-like-button__like(class= active? "like-button__like_active" : "")
+mixin like-button(options)
+  - const { count = 1, active = false } = options;
+
+  button.like-button.js-like-button(class=active ? 'like-button_active' : '')
+    .like-button__like.js-like-button__like(
+      class=active ? 'like-button__like_active' : '')
     .like-button__count.js-like-button__count #{count}

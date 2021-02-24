@@ -1,8 +1,16 @@
-mixin logo({colored = false}={})
+mixin logo(options={})
+  - const { colored = false } = options;
+
   .logo
     if !colored
-      img.logo__gray-image(src=require("@images/logo-gray.svg").default alt="round logo")
+      img.logo__gray-image(
+        src=require('@images/logo-gray.svg').default,
+        alt="round logo")
     if colored
       a.logo__link(href="../landing/landing.html")
-        img.logo__colored-image(src=require("@images/logo-colored.svg").default alt="colored round logo")
-        img.logo__text(src=require("@images/logo-text.svg").default alt="toxin")
+        img.logo__colored-image(
+          src=require('@images/logo-colored.svg').default,
+          alt="colored round logo")
+        img.logo__text(
+          src=require('@images/logo-text.svg').default,
+          alt="toxin")

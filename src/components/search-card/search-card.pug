@@ -6,21 +6,15 @@ include /components/button/button
 mixin search-card
   .search-card
     h1.search-card__title Найдём номера под ваши пожелания
-    form(action="/mock-address/change-me" method="post").search-card__form
+    form.search-card__form(
+      action="/mock-address/change-me",
+      method="post")
       .search-card__date
-        +dropdown-date({type: "range",
-          description1:"прибытие",  
-          description2: "выезд"})
+        +dropdown-date({type: "range", description1:"прибытие", description2: "выезд"})
       .search-card__container
         .search-card__description
           +description({text:"гости"})
         .search-card__dropdown
-          +dropdown({
-          type:'guests',
-          items : ["взрослые","дети","младенцы"]
-          })
+          +dropdown({ type:'guests', items : ["взрослые","дети","младенцы"] })
       .search-card__button
-        +button({theme:"filled",
-          size: "m",
-          text:"подобрать номер",
-          type: "submit"})
+        +button({theme:"filled", size: "m", text:"подобрать номер", type: "submit"})

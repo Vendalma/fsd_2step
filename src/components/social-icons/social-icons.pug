@@ -1,7 +1,10 @@
 mixin social-icons(items)
   .social-icons
     ul.social-icons__items
-      for item in items
+      each item in items
         li.social-icons__item
-          a.social-icons__link(href= item.url target="_blank" rel="noopener noreferrer")
-            i.social-icons__icon.fa(class= item.iconName)
+          a.social-icons__link(
+            href=item.url,
+            target="_blank",
+            rel="noopener noreferrer")
+            i.social-icons__icon.fa(class=item.iconName)

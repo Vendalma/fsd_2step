@@ -4,9 +4,10 @@ include /components/text-types/text-types
 include /components/logo/logo
 
 block head
-  - const title = "Colors&Types"
+  - const title = 'Colors&Types';
 block content
-  - const {colors} = require('./colors-types.json')
+  - const { colors } = require('./colors-types.json');
+
   .colors-types
     header.colors-types__header
       .colors-types__logo
@@ -14,7 +15,7 @@ block content
     main.colors-types__content-block
       .colors-types__container
         .colors-types__color-block
-          for color in colors
+          each color in colors
             +colors(color)
         .colors-types__text-types
           +text-types

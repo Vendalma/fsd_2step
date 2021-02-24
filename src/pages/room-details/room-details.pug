@@ -9,9 +9,9 @@ include /components/bullet-list/bullet-list
 include /components/donut-chart/donut-chart
 
 block head
-  - const title = "Room details"
+  - const title = 'Room details';
 block content
-  - 
+  -
     const {bonusIcon:{
       comfort, convenience,cosiness},
       comments:{man,woman},
@@ -21,21 +21,26 @@ block content
     header.room-details__header
       +header
     main.room-details__content
-
       .room-details__gallery
         figure.room-details__gallery-item.room-details__gallery-item_size_large
-          img.room-details__image(src=require("@images/bg-image-7.jpg").default alt="room №888")
+          img.room-details__image(
+            src=require('@images/bg-image-7.jpg').default,
+            alt="room №888")
         .room-details__gallery-block
           figure.room-details__gallery-item
-            img.room-details__image(src=require("@images/bg-image-5.jpg").default alt="room №888")
+            img.room-details__image(
+              src=require('@images/bg-image-5.jpg').default,
+              alt="room №888")
           figure.room-details__gallery-item
-            img.room-details__image(src=require("@images/bg-image-6.jpg").default alt="room №888")
+            img.room-details__image(
+              src=require('@images/bg-image-6.jpg').default,
+              alt="room №888")
 
       article.room-details__wrapper
         .room-details__column
           .room-details__row
             section.room-details__bonus-icon-container
-              h2.room-details__title  Сведения о номере
+              h2.room-details__title Сведения о номере
               .room-details__bonus-icon
                 +bonus-icon(comfort)
               .room-details__bonus-icon
@@ -44,13 +49,13 @@ block content
                 +bonus-icon(cosiness)
 
             section.room-details__donut-chart-container
-              h2.room-details__title  Впечатления от номера
+              h2.room-details__title Впечатления от номера
               .room-details__chart
                 +chart
 
           section.room-details__comments-container
             .room-details__container-info
-              h2.room-details__title  Отзывы посетителей номера
+              h2.room-details__title Отзывы посетителей номера
               span.room-details__text.room-details__text_theme_small-font 2 отзыва
             .room-details__comment 
               +comment(man)

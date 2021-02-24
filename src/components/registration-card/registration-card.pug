@@ -2,31 +2,28 @@ include /components/radio/radio
 include /components/description/description
 include /components/toggle/toggle
 include /components/button/button
-include /components/text-field/text-field 
+include /components/text-field/text-field
 
 mixin registration-card
   .registration-card
     h1.registration-card__title Регистрация аккаунта
-    form(action="/mock-address/change-me" method="post").registration-card__form
+    form.registration-card__form(
+      action="/mock-address/change-me",
+      method="post")
       .registration-card__text-field
         +text-field({type:"text", placeholder:"Имя"})
       .registration-card__text-field
         +text-field({type:"text", placeholder:"Фамилия"})
       .registration-card__radio-wrapper
         .registration-card__radio
-          +radio({name:"gender",
-            value: "male", 
-            text:"Мужчина", 
-            checked: true})
-        .registration-card__radio  
+          +radio({name:"gender", value: "male", text:"Мужчина", checked: true})
+        .registration-card__radio 
           +radio({name:"gender",value: "female", text:"Женщина"})
       .registration-card__birthday
         .registration-card__description
           +description({text:"дата рождения"})
         .registration-card__text-field
-          +text-field({type:"text",
-            placeholder: "ДД.ММ.ГГГГ",
-            isWithMask:true})
+          +text-field({type:"text", placeholder: "ДД.ММ.ГГГГ", isWithMask:true})
       .registration-card__email
         .registration-card__description
           +description({text:"данные для входа в сервис"})
@@ -37,16 +34,9 @@ mixin registration-card
       .registration-card__toggle
         +toggle({text:"Получать спецпредложения"})
       .registration-card__button-submit
-        +button({theme:"filled", 
-          size:"m",
-          text:"перейти к оплате",
-          type: "submit"})
+        +button({theme:"filled", size:"m", text:"перейти к оплате", type: "submit"})
 
     .registration-card__container
       p.registration-card__text Уже есть аккаунт на Toxin
       .registration-card__button
-        +button({type: "link",
-        theme:"bordered",
-        size: "m",
-        text:"войти",
-        url: "../sign-in/sign-in.html"})
+        +button({type: "link", theme:"bordered", size: "m", text:"войти", url: "../sign-in/sign-in.html"})

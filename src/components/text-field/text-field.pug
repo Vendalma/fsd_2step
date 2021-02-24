@@ -1,23 +1,30 @@
-mixin text-field({type, theme, placeholder, isWithMask= false, isActive = false}) 
-  - 
+mixin text-field(options)
+  -
+    const {type, theme, placeholder, isWithMask= false, isActive = false} = options;
+
     const themes = {
       subscribe: "text-field__input_theme_subscribe",
-    }
+    };
+
     const types = {
       text: "text-field__input_type_text",
       email: "text-field__input_type_email",
       password: "text-field__input_type_password",
-    }
+    };
+
     const classes = [
       themes[theme],
       types[type],
-    ]
-    const labelTheme = theme==="subscribe"? "text-field__label_theme_subscribe" : ""
+    ];
+
+    const labelTheme = theme === "subscribe" ? "text-field__label_theme_subscribe" : "";
+
 
   .text-field
     label.text-field__label(class=labelTheme)
-      input.text-field__input(type=`${type}` 
-        placeholder=placeholder 
-        class=classes
-        class=isWithMask? "text-field__input_masked js-text-field__input_masked" : ""
-        class= isActive? "text-field__input_active" : "")
+      input.text-field__input(
+        type=`${type}`,
+        placeholder=placeholder,
+        class=classes,
+        class=isWithMask ? 'text-field__input_masked js-text-field__input_masked' : '',
+        class=isActive ? 'text-field__input_active' : '')
