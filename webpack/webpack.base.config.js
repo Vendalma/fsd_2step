@@ -40,7 +40,6 @@ module.exports = {
     alias: {
       '@': PATHS.src,
       '@components': path.resolve(PATHS.src, 'components'),
-      '@layout': path.resolve(PATHS.src, 'layout'),
       '@images': path.resolve(PATHS.src, 'assets/images'),
     },
   },
@@ -100,7 +99,7 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
@@ -121,7 +120,6 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          'style-loader',
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
@@ -171,7 +169,7 @@ module.exports = {
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
-      'window.jQuery': "jquery'",
+      'window.jQuery': 'jquery',
       'window.$': 'jquery',
     }),
     ...createHtmlWebpackPlugins(pagesDir),

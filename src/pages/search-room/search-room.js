@@ -1,8 +1,8 @@
 import '@/main';
 import '@components/checkbox/checkbox';
 import '@components/description/description';
-import '@components/dropdown-date/dropdown-date';
-import '@components/dropdown/dropdown';
+import '@components/dropdown-date/init-dropdown-date';
+import '@components/dropdown/init-dropdown';
 import '@components/expandable-checkbox/init-expandable-checkbox';
 import '@components/footer/footer';
 import '@components/header/init-header';

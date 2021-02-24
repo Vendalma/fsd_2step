@@ -8,12 +8,8 @@ class SearchRoom {
 
   init() {
     this.optionsBlock = document.querySelector('.js-search-room__menu');
-    this.blockOpen = document.querySelector(
-      '.js-search-room__menu-item_opened',
-    );
-    this.blockClose = document.querySelector(
-      '.js-search-room__menu-item_closed',
-    );
+    this.blockOpen = document.querySelector('.js-search-room__menu-item_opened');
+    this.blockClose = document.querySelector('.js-search-room__menu-item_closed');
     this.filter = document.querySelector('.js-search-room__filter');
     this.rooms = document.querySelector('.js-search-room__rooms');
   }
