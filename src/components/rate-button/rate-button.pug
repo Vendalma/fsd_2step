@@ -1,48 +1,11 @@
 mixin rate-button(rating)
-  - const numberStar = rating
-  case numberStar
-    when 0
-      .rate-button
-        span.rate-button__item star_border
-        span.rate-button__item star_border
-        span.rate-button__item star_border
-        span.rate-button__item star_border
-        span.rate-button__item star_border
-    when 1
-      .rate-button
-        span.rate-button__item star
-        span.rate-button__item star_border
-        span.rate-button__item star_border
-        span.rate-button__item star_border
-        span.rate-button__item star_border
-    when 2
-      .rate-button
-        span.rate-button__item star
-        span.rate-button__item star
-        span.rate-button__item star_border
-        span.rate-button__item star_border
-        span.rate-button__item star_border
-    when 3
-      .rate-button
-        span.rate-button__item star
-        span.rate-button__item star
-        span.rate-button__item star
-        span.rate-button__item star_border
-        span.rate-button__item star_border
-    when 4
-      .rate-button
-        span.rate-button__item star
-        span.rate-button__item star
-        span.rate-button__item star
-        span.rate-button__item star
-        span.rate-button__item star_border
-    when 5
-      .rate-button
-        span.rate-button__item star
-        span.rate-button__item star
-        span.rate-button__item star
-        span.rate-button__item star
-        span.rate-button__item star
+  - let ratingCount = 0;
 
-
-
+  .rate-button
+    while (ratingCount < 5)
+      if ratingCount < rating
+        span.rate-button__item star
+        - ratingCount++;
+      else
+        span.rate-button__item star_border
+        - ratingCount++;
