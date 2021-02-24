@@ -117,7 +117,7 @@ class DatePicker {
     const applyButton = document.createElement('span');
     applyButton.setAttribute('data-action', 'hide');
     applyButton.classList.add('datepicker--button');
-    applyButton.innerHTML = 'Применить';
+    applyButton.textContent = 'Применить';
 
     applyButton.addEventListener('click', this.hideDatepicker.bind(this));
     const buttons = this.picker

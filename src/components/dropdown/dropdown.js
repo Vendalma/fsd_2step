@@ -17,16 +17,10 @@ class Dropdown {
     this.input = this.container.querySelector('.js-dropdown__input');
     this.selectList = this.container.querySelector('.js-dropdown__select-list');
     this.icon = this.container.querySelector('.js-dropdown__icon');
-    this.countContainer = this.container.querySelectorAll(
-      '.js-dropdown__count',
-    );
+    this.countContainer = this.container.querySelectorAll('.js-dropdown__count');
     if (this.checkTypeDropdown()) {
-      this.clearButton = this.container.querySelector(
-        '.js-dropdown__button_type_clear',
-      );
-      this.applyButton = this.container.querySelector(
-        '.js-dropdown__button_type_apply',
-      );
+      this.clearButton = this.container.querySelector('.js-dropdown__button_type_clear');
+      this.applyButton = this.container.querySelector('.js-dropdown__button_type_apply');
     }
   }
 
@@ -47,13 +41,13 @@ class Dropdown {
 
   onMinClick(elem) {
     const score = elem.nextElementSibling;
-    if (Number(score.innerHTML) > 0) {
-      score.innerHTML = `${Number(score.innerHTML) - 1}`;
+    if (Number(score.textContent) > 0) {
+      score.textContent = `${Number(score.textContent) - 1}`;
     }
-    if (Number(score.innerHTML) <= 0) {
+    if (Number(score.textContent) <= 0) {
       this.hideMinButton(elem);
     }
-    return Number(score.innerHTML);
+    return Number(score.textContent);
   }
 
   hideMinButton(elem) {
@@ -78,10 +72,10 @@ class Dropdown {
 
   onPlusClick(elem) {
     const score = elem.previousElementSibling;
-    score.innerHTML = `${Number(score.innerHTML) + 1}`;
+    score.textContent = `${Number(score.textContent) + 1}`;
     this.setMinButton(score.previousElementSibling);
     this.setClearButton();
-    return Number(score.innerHTML);
+    return Number(score.textContent);
   }
 
   countContainerListener() {
@@ -95,17 +89,15 @@ class Dropdown {
     const { id } = event.target.parentElement.dataset;
     if (event.target.classList.contains('js-dropdown__button_type_plus')) {
       score = this.onPlusClick(event.target);
-    } else if (
-      event.target.classList.contains('js-dropdown__button_type_min')
-    ) {
+    } else if (event.target.classList.contains('js-dropdown__button_type_min')) {
       score = this.onMinClick(event.target);
     }
     this.changeCounterProp(id, score);
     this.renderStr();
   }
 
-  changeCounterProp(counterId, score) {
-    this.data[counterId].score = score;
+  changeCounterProp(counterId, newScore) {
+    this.data[counterId].score = newScore;
   }
 
   checkTypeDropdown() {
@@ -122,11 +114,14 @@ class Dropdown {
     });
     if (str === '' && this.checkTypeDropdown()) {
       this.input.placeholder = 'Сколько гостей';
+      this.input.value = null;
       this.hideClearButton();
     } else if (str === '' && !this.checkTypeDropdown()) {
       this.input.placeholder = 'Какие удобства';
+      this.input.value = null;
+      this.hideClearButton();
     } else {
-      this.input.placeholder = str.substring(0, str.length - 2);
+      this.input.value = str.substring(0, str.length - 2);
     }
   }
 
@@ -147,27 +142,21 @@ class Dropdown {
 
   checkCountProp() {
     return (
-      Object.values(this.data).reduce(
-        (acc, currentValue) => acc + currentValue.score,
-        0,
-      ) === 0
+      Object.values(this.data).reduce((acc, currentValue) => acc + currentValue.score, 0) === 0
     );
   }
 
   setScoresRow() {
     this.countContainer.forEach((item) => {
       const scoreContainer = item.querySelector('.js-dropdown__score');
-      scoreContainer.innerHTML = '0';
+      scoreContainer.textContent = '0';
       this.hideMinButton(scoreContainer.previousElementSibling);
     });
   }
 
   clickClearButton() {
     if (this.checkTypeDropdown()) {
-      this.clearButton.addEventListener(
-        'click',
-        this.onClickClearButton.bind(this),
-      );
+      this.clearButton.addEventListener('click', this.onClickClearButton.bind(this));
     }
   }
 
@@ -192,11 +181,13 @@ class Dropdown {
       this.data[item.dataset.id] = {};
       Object.assign(this.data[item.dataset.id], {
         name: `${item.dataset.name}`,
-        score: `${Number(scoreContainer.innerHTML)}`,
+        score: `${Number(scoreContainer.textContent)}`,
       });
-      if (Number(scoreContainer.innerHTML) > 0) {
+      if (Number(scoreContainer.textContent) > 0) {
         this.setMinButton(scoreContainer.previousElementSibling);
         this.setClearButton();
+      } else {
+        this.hideMinButton(scoreContainer.previousElementSibling);
       }
     });
     this.renderStr();

@@ -20,11 +20,11 @@ class Like {
     if (this.container.classList.contains('like-button_active')) {
       this.container.classList.remove('like-button_active');
       this.like.classList.remove('like-button__like_active');
-      this.count.innerHTML = Number(this.count.innerHTML) - 1;
+      this.count.textContent = `${Number(this.count.textContent) - 1}`;
     } else {
       this.container.classList.add('like-button_active');
       this.like.classList.add('like-button__like_active');
-      this.count.innerHTML = Number(this.count.innerHTML) + 1;
+      this.count.textContent = `${Number(this.count.textContent) + 1}`;
     }
   }
 }
