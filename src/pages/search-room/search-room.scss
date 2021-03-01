@@ -10,31 +10,10 @@
     flex-direction: row;
     justify-content: space-between;
   }
-  &__menu {
-    display: none;
-    user-select: none;
-    cursor: pointer;
-    box-shadow: 0 0 5px 1px $dark-25;
-    background-color: #ffffff;
-  }
-  &__icon {
-    @extend %mat-icons;
-    color: $dark-50;
-  }
   &__filter {
     width: 100%;
     max-width: 266px;
     margin-right: 20px;
-    &_visible {
-      display: flex;
-      flex-direction: column;
-      min-width: 748px * 100%/ 768px;
-      margin: 0 auto;
-      z-index: 99;
-    }
-    &_hidden {
-      display: none;
-    }
   }
   &__dropdown-date {
     margin-bottom: 22px;
@@ -90,9 +69,6 @@
     max-width: 835px;
     display: flex;
     flex-direction: column;
-    &_hidden {
-      display: none;
-    }
   }
 
   &__title {
@@ -155,27 +131,13 @@
 
 @include bp-768 {
   .search-room {
-    position: relative;
-    &__menu {
-      display: block;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      position: fixed;
-      right: 30px;
-      bottom: 30px;
-      z-index: 100;
+    &__content {
+      flex-direction: column;
     }
-    &__menu-item {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      &_hidden {
-        display: none;
-      }
+    &__filter {
+      max-width: 480px;
+      margin: 0 auto;
+      margin-bottom: 40px;
     }
     &__title {
       text-align: center;
