@@ -1,4 +1,4 @@
-import DonutChart from './donut-chart';
+import DonutChart from './DonutChart';
 
 const { chartOptions } = require('./donut-chart.json');
 

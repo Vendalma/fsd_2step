@@ -21,7 +21,12 @@ class DonutChart {
       } else if (optionsType === 'text') {
         result.push(item.text);
       } else if (optionsType === 'color') {
-        const chartColor = this.chartContainer.createLinearGradient(0, 0, 0, 600);
+        const chartColor = this.chartContainer.createLinearGradient(
+          0,
+          0,
+          0,
+          600,
+        );
         chartColor.addColorStop(0, item.color[0]);
         chartColor.addColorStop(1, item.color[1]);
         result.push(chartColor);
@@ -31,16 +36,24 @@ class DonutChart {
   }
 
   createText() {
-    const chartText = this.container.parentElement.querySelector('.js-chart__text');
-    const chartTextCount = this.container.parentElement.querySelector('.js-chart__count');
+    const chartText = this.container.parentElement.querySelector(
+      '.js-chart__text',
+    );
+    const chartTextCount = this.container.parentElement.querySelector(
+      '.js-chart__count',
+    );
     chartText.textContent = `${this.setRightName()}`;
     chartTextCount.textContent = `${this.totalCount}`;
     this.setTextPosition();
   }
 
   setTextPosition() {
-    const textContainer = this.container.parentElement.querySelector('.js-chart__info');
-    textContainer.style.left = `${(this.container.offsetWidth - textContainer.offsetWidth) / 2}px`;
+    const textContainer = this.container.parentElement.querySelector(
+      '.js-chart__info',
+    );
+    textContainer.style.left = `${
+      (this.container.offsetWidth - textContainer.offsetWidth) / 2
+    }px`;
   }
 
   setRightName() {

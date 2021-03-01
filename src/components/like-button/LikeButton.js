@@ -1,6 +1,6 @@
 import './like-button.scss';
 
-class Like {
+class LikeButton {
   constructor(container) {
     this.container = container;
     this.init();
@@ -28,4 +28,4 @@ class Like {
     }
   }
 }
-export default Like;
+export default LikeButton;
