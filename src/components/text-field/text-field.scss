@@ -1,32 +1,18 @@
 .text-field {
   width: 100%;
+  &_theme {
+    &_subscribe {
+      position: relative;
+    }
+  }
+
   &__label {
     width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    &_theme {
-      &_subscribe {
-        position: relative;
-        &::before {
-          content: 'arrow_forward';
-          width: 41px;
-          height: 44px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          @extend %mat-icons;
-          position: absolute;
-          right: 0px;
-          top: 0px;
-          @extend %primary-grad;
-          background-clip: border-box;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
-      }
-    }
   }
+
   &__input {
     width: 100%;
     border-radius: 4px;
@@ -37,31 +23,65 @@
     border: 1px solid $dark-25;
     line-height: 1.286rem;
     color: $dark-25;
+
     &_theme {
       &_subscribe {
         padding-right: 44px;
       }
     }
+
     &_active {
       border: 1px solid $dark-50;
       &::placeholder {
         color: $dark-75;
       }
     }
+
     &:hover {
       border: 1px solid $dark-50;
       &::placeholder {
         color: $dark-75;
       }
     }
+
     &:focus {
       border: 1px solid $dark-50;
       color: $dark-75;
       outline: none;
-
       &::placeholder {
         color: $dark-75;
       }
+    }
+  }
+
+  &__button {
+    cursor: pointer;
+    padding: 11px 9px 9px 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @extend %mat-icons;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    @extend %primary-grad;
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: none;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:focus {
+      background: linear-gradient(180deg, #919191 0%, #3d4975 100%);
+      background-clip: border-box;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
 }

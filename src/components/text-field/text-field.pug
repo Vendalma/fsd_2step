@@ -17,14 +17,17 @@ mixin text-field(options)
       types[type],
     ];
 
-    const labelTheme = theme === "subscribe" ? "text-field__label_theme_subscribe" : "";
+    const blockTheme = theme === "subscribe" ? "text-field_theme_subscribe" : "";
 
 
-  .text-field
-    label.text-field__label(class=labelTheme)
+  .text-field(class = blockTheme)
+    label.text-field__label
       input.text-field__input(
         type=`${type}`,
         placeholder=placeholder,
         class=classes,
         class=isWithMask ? 'text-field__input_masked js-text-field__input_masked' : '',
         class=isActive ? 'text-field__input_active' : '')
+    if theme === "subscribe"
+      button(type="submit" name="subscribe" value="submit").text-field__button arrow_forward
+
