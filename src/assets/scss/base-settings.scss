@@ -1,0 +1,17 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  color: $dark-75;
+}
+
+body {
+  max-width: 1920px;
+  min-width: 320px;
+  margin: 0px;
+}

@@ -53,13 +53,13 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.2",
     "air-datepicker": "^2.2.3",
     "chart.js": "^2.9.4",
     "inputmask": "^5.0.3",
     "ion-rangeslider": "^2.3.1",
     "jquery": "^3.5.1",
     "lightslider": "^1.1.6",
-    "normalize.css": "^8.0.1",
     "sass-resources-loader": "^2.0.3"
   }
 }
