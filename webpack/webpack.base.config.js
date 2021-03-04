@@ -79,7 +79,7 @@ module.exports = {
         },
       },
       {
-        test: /\.(woff|woff2)$/,
+        test: /\.(woff|woff2|eot|ttf)$/,
         loader: 'file-loader',
         options: {
           name: `[name].[ext]`,
@@ -154,7 +154,10 @@ module.exports = {
           {
             loader: 'sass-resources-loader',
             options: {
-              resources: `${PATHS.src}/assets/scss/sass-patterns/*.scss`,
+              resources: [
+                `${PATHS.src}/assets/scss/variables.scss`,
+                `${PATHS.src}/assets/scss/font-face-mixin.scss`,
+              ],
               sourceMap: true,
             },
           },

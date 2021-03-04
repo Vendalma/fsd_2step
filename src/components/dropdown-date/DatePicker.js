@@ -1,4 +1,5 @@
-import 'air-datepicker/dist/js/datepicker';
+import 'air-datepicker';
+import 'air-datepicker/dist/css/datepicker.min.css';
 import './dropdown-date.scss';
 
 class DatePicker {
@@ -25,9 +26,10 @@ class DatePicker {
     this.picker = $('.js-dropdown-date_type_inline').datepicker(
       Object.assign(this.settings(), {
         onRenderCell(date, cellType) {
-          const findCurrentDate = date.getDate() === 8
-            && date.getMonth() === 7
-            && date.getFullYear() === 2019;
+          const findCurrentDate =
+            date.getDate() === 8 &&
+            date.getMonth() === 7 &&
+            date.getFullYear() === 2019;
           if (findCurrentDate && cellType === 'day') {
             return {
               classes: 'datepicker--cell -current-',
@@ -35,7 +37,7 @@ class DatePicker {
           }
           return null;
         },
-      }),
+      })
     );
     this.addButtons();
     this.setDate();
@@ -43,7 +45,7 @@ class DatePicker {
 
   filter() {
     const filterInput = this.container.querySelector(
-      '.js-dropdown-date__input_type_filter',
+      '.js-dropdown-date__input_type_filter'
     );
     this.picker = $(filterInput).datepicker(
       Object.assign(this.settings(), {
@@ -61,7 +63,7 @@ class DatePicker {
             }
           }
         },
-      }),
+      })
     );
     this.addButtons();
     this.setDate();
@@ -69,10 +71,10 @@ class DatePicker {
 
   range() {
     const start = this.container.querySelector(
-      '.js-dropdown-date__input_type_range-start',
+      '.js-dropdown-date__input_type_range-start'
     );
     const end = this.container.querySelector(
-      '.js-dropdown-date__input_type_range-end',
+      '.js-dropdown-date__input_type_range-end'
     );
     const wrapper = this.container.querySelector('.js-dropdown-date__wrapper');
     this.picker = $(start).datepicker(
@@ -87,7 +89,7 @@ class DatePicker {
             pickerContainer.style.maxWidth = `${wrapper.offsetWidth}px`;
           }
         },
-      }),
+      })
     );
 
     $(end).on('click', this.showDatepicker.bind(this));
