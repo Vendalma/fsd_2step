@@ -6,46 +6,57 @@
   padding: 9px 19px;
   cursor: pointer;
   outline: none;
-  @extend %body-font;
+  font-family: $sans-serif-font;
+  font-style: normal;
+  font-weight: normal;
   color: $dark-25;
   font-size: 0.714rem;
   line-height: 0.857rem;
   position: relative;
+
   &:focus {
-    box-shadow: 1px 1px 10px 1px rgba(31, 32, 65, 0.2);
+    box-shadow: 1px 1px 10px 1px $dark-25;
   }
+
   &_active {
     border: solid 1px transparent;
     border-radius: 22px;
     background-origin: border-box;
     background-clip: padding-box, border-box;
-    background-image: linear-gradient(white, white),
-      linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    background-image: linear-gradient(white, white), $primary-gradient;
     color: $color-one;
+
     &:focus {
       box-shadow: 1px 1px 10px 1px rgba(188, 156, 255, 0.7);
     }
   }
+
   &__like {
     position: absolute;
     top: 4px;
     left: 5px;
+
     &::before {
       content: 'favorite_border';
-      @extend %mat-icons;
+      font-family: $material-icon-font;
+      font-weight: normal;
+      font-style: normal;
+      text-transform: none;
       font-size: 10px;
       line-height: 9px;
       color: $dark-25;
     }
+
     &_active {
       &::before {
         content: 'favorite';
-        @extend %primary-grad;
+        background: $primary-gradient;
         background-clip: text;
         -webkit-text-fill-color: transparent;
       }
     }
   }
+
   &__count {
     position: absolute;
     top: 3.5px;

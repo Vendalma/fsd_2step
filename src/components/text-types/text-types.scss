@@ -2,36 +2,43 @@
   max-width: 436px;
   display: flex;
   flex-direction: row;
+  font-family: $sans-serif-font;
+  font-style: normal;
+  font-weight: normal;
+
   &__headers-wrapper {
     margin-right: 29px;
     text-align: right;
   }
+
   &__header {
+    color: $dark-25;
+
     &_type {
       &_h1 {
-        @extend %h1-font;
+        font-size: 1.714rem;
+        line-height: 2.071rem;
         text-transform: uppercase;
-        font-weight: normal;
-        color: $dark-25;
         margin-bottom: 81px;
       }
 
       &_h2 {
-        @extend %h2-font;
+        font-size: 1.357rem;
+        line-height: 1.643rem;
         text-transform: uppercase;
-        font-weight: normal;
-        color: $dark-25;
         margin-bottom: 76px;
       }
+
       &_h3 {
-        @extend %h3-font;
-        font-weight: normal;
-        color: $dark-25;
+        font-size: 0.857rem;
+        line-height: 1.071rem;
+        text-transform: uppercase;
         margin-bottom: 48px;
       }
+
       &_body {
-        @extend %body-font;
-        color: $dark-25;
+        font-size: 1rem;
+        line-height: 1.714rem;
       }
     }
   }
@@ -39,19 +46,34 @@
   &__text {
     &_type {
       &_h1 {
-        @extend %h1-font;
+        font-weight: bold;
+        font-size: 1.714rem;
+        line-height: 2.071rem;
+        color: $dark-100;
         margin-bottom: 53px;
       }
+
       &_h2 {
-        @extend %h2-font;
+        font-weight: bold;
+        font-size: 1.357rem;
+        line-height: 1.643rem;
+        color: $dark-100;
         margin-bottom: 52px;
       }
+
       &_h3 {
-        @extend %h3-font;
+        font-weight: bold;
+        font-size: 0.857rem;
+        line-height: 1.071rem;
+        text-transform: uppercase;
+        color: $dark-100;
         margin-bottom: 47px;
       }
+
       &_body {
-        @extend %body-font;
+        font-size: 1rem;
+        line-height: 1.714rem;
+        color: $dark-75;
         max-width: 301px;
       }
     }

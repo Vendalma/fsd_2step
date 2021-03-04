@@ -1,16 +1,23 @@
 .button {
   width: 100%;
   outline: none;
-  @extend %h3-font;
+  font-family: $sans-serif-font;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 0.857rem;
+  line-height: 1.071rem;
+  text-transform: uppercase;
   cursor: pointer;
   border: none;
   padding: 0px;
   background-color: #ffffff;
   color: $color-one;
   border-radius: 22px;
+
   &:focus {
     text-shadow: 1px 1px 5px $dark-25;
   }
+
   &:hover {
     opacity: 0.5;
   }
@@ -18,15 +25,16 @@
     &_filled {
       border: solid 2px transparent;
       background-origin: border-box;
-      @extend %primary-grad;
+      background: $primary-gradient;
       color: #ffffff;
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
+
       &:focus {
         text-shadow: none;
-        box-shadow: 1px 1px 5px 3px rgba(188, 156, 255, 1);
+        box-shadow: 1px 1px 5px 3px $color-one;
       }
     }
     &_bordered {
@@ -37,12 +45,12 @@
       border: solid 2px transparent;
       background-origin: border-box;
       background-clip: padding-box, border-box;
-      background-image: linear-gradient(white, white),
-        linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      background-image: linear-gradient(#ffffff, #ffffff), $primary-gradient;
       color: $color-one;
+
       &:focus {
         text-shadow: none;
-        box-shadow: 1px 1px 5px 3px rgba(188, 156, 255, 1);
+        box-shadow: 1px 1px 5px 3px $color-one;
       }
     }
   }
@@ -57,12 +65,18 @@
     &_link {
       text-decoration: none;
     }
+
     &_submit {
       position: relative;
+
       &::before {
         content: 'arrow_forward';
-        @extend %mat-icons;
+        font-family: $material-icon-font;
+        font-weight: normal;
+        font-style: normal;
+        text-transform: none;
         color: #ffffff;
+        font-size: 1.714rem;
         line-height: 1.714rem;
         position: absolute;
         top: 8px;
@@ -76,6 +90,7 @@
       padding-top: 12.8px;
       padding-bottom: 12.8px;
     }
+    
     &_s {
       padding-top: 7.8px;
       padding-bottom: 7.8px;
@@ -84,6 +99,7 @@
 
   &:disabled {
     opacity: 0.5;
+
     &:focus {
       box-shadow: none;
     }

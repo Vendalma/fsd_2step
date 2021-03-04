@@ -5,29 +5,37 @@
   justify-content: space-between;
   min-width: 280px;
   margin-bottom: 20px;
+
   &__color-area {
     min-width: 70px;
     min-height: 70px;
     border-radius: 6px;
+
     &_color {
       &_dark-100 {
         background-color: $dark-100;
       }
+
       &_dark-75 {
         background-color: $dark-75;
       }
+
       &_dark-50 {
         background-color: $dark-50;
       }
+
       &_dark-25 {
         background-color: $dark-25;
       }
+
       &_dark-05 {
         background-color: $dark-05;
       }
+
       &_color-one {
         background-color: $color-one;
       }
+      
       &_color-two {
         background-color: $color-two;
       }
@@ -38,11 +46,17 @@
     min-width: 170px;
     display: flex;
     flex-direction: column;
+    margin: 0px;
   }
+
   &__text {
-    @extend %h1-font;
+    font-family: $sans-serif-font;
+    font-style: normal;
+    font-weight: bold;
     font-size: 1.357rem;
     line-height: 2rem;
+    color: $dark-100;
+
     &_size {
       &_narrow {
         font-weight: normal;

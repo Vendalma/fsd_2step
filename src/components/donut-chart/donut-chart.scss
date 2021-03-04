@@ -3,10 +3,18 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-end;
+  font-family: $sans-serif-font;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.714rem;
+  color: $dark-75;
+
   &__wrapper {
     position: relative;
     margin-bottom: 10px;
   }
+
   &__diagram-label {
     opacity: 1;
     background-color: rgba(0, 0, 0, 0.7);
@@ -16,9 +24,9 @@
     margin: 0px;
     z-index: 10;
     pointer-events: none;
-    @extend %body-font;
-    font-size: 13px;
-    color: #fff;
+    font-size: 0.929rem;
+    color: #ffffff;
+
     &_hidden {
       opacity: 0;
     }
@@ -30,53 +38,92 @@
     position: absolute;
     text-align: center;
     top: 29%;
+    margin: 0px;
   }
+
   &__count {
-    @extend %h1-font;
+    font-weight: bold;
+    font-size: 1.714rem;
+    line-height: 2.071rem;
     color: $color-one;
     margin-bottom: 2px;
   }
+
   &__text {
-    @extend %h3-font;
+    font-weight: bold;
+    font-size: 0.857rem;
+    line-height: 1.071rem;
+    text-transform: uppercase;
     color: $color-one;
   }
+
   &__legend {
+    margin: 0px;
     padding-left: 29px;
     padding-bottom: 10px;
   }
+
   &__item {
-    @extend %body-font;
     list-style-type: none;
+
     &_type {
       &_excellent {
-        @include chart-colors(
-          linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%)
-        );
+        &::before {
+          content: '';
+          width: 10px;
+          height: 10px;
+          display: inline-block;
+          border-radius: 50%;
+          margin-right: 5px;
+          background: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
+        }
       }
+
       &_good {
-        @include chart-colors(
-          linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%)
-        );
+        &::before {
+          content: '';
+          width: 10px;
+          height: 10px;
+          display: inline-block;
+          border-radius: 50%;
+          margin-right: 5px;
+          background: $secondary-gradient;
+        }
       }
+
       &_satisfactory {
-        @include chart-colors(
-          linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%)
-        );
+        &::before {
+          content: '';
+          width: 10px;
+          height: 10px;
+          display: inline-block;
+          border-radius: 50%;
+          margin-right: 5px;
+          background: $primary-gradient;
+        }
       }
+
       &_disappointed {
-        @include chart-colors(
-          linear-gradient(180deg, #919191 0%, #3d4975 100%)
-        );
+        &::before {
+          content: '';
+          width: 10px;
+          height: 10px;
+          display: inline-block;
+          border-radius: 50%;
+          margin-right: 5px;
+          background: linear-gradient(180deg, #919191 0%, #3d4975 100%);
+        }
       }
     }
   }
 }
 
-@include bp-380 {
+@media (max-width: $xxs) {
   .chart {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     &__legend {
       padding-bottom: 0px;
     }

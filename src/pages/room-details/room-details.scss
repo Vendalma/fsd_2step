@@ -1,11 +1,16 @@
 .room-details {
-  @include flex-and-height;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
   &__gallery {
     display: flex;
     flex-direction: row;
+
     &-item {
       width: 100%;
       margin: 0;
+
       &_size {
         &_large {
           width: 68%;
@@ -14,11 +19,13 @@
       }
     }
   }
+
   &__gallery-block {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
   }
+
   &__image {
     display: flex;
     width: 100%;
@@ -26,14 +33,17 @@
   }
 
   &__wrapper {
-    @include page-settings;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     padding-left: 20px;
     padding-right: 20px;
-    width: 100%;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     position: relative;
+    font-family: $sans-serif-font;
+    font-style: normal;
   }
 
   &__column {
@@ -44,13 +54,16 @@
     padding-top: 70px;
     padding-bottom: 63px;
     margin-right: 54px;
+
     & > :first-child {
       margin-bottom: 15px;
     }
+
     & > :nth-child(2) {
       margin-bottom: 34px;
     }
   }
+
   &__row {
     display: flex;
     flex-direction: row;
@@ -60,9 +73,11 @@
   &__bonus-icon-container {
     width: 100%;
     max-width: 360px;
+
     & > :first-child {
       margin-bottom: 22px;
     }
+
     & > :nth-child(3) {
       margin-top: 22px;
       margin-bottom: 20px;
@@ -74,11 +89,13 @@
       margin-bottom: 23px;
     }
   }
+
   &__comments-container {
     & > :nth-child(2) {
-      margin-bottom: 26px;
+      margin-bottom: 25px;
     }
   }
+
   &__container-info {
     display: flex;
     flex-direction: row;
@@ -87,15 +104,21 @@
   }
 
   &__title {
-    @extend %h2-font;
+    font-weight: bold;
+    font-size: 1.357rem;
+    line-height: 1.643rem;
+    color: $dark-100;
     margin-bottom: 20px;
     margin-top: 0px;
-    &_margin-b-23 {
-      margin-bottom: 23px;
-    }
   }
+
   &__text {
-    @extend %body-font;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 1.714rem;
+    color: $dark-75;
+    margin: 0px;
+
     &_theme {
       &_small-font {
         line-height: 16px;
@@ -105,13 +128,16 @@
       }
     }
   }
+
   &__bullet-list-container {
     width: 100%;
     max-width: 360px;
+
     & > :first-child {
       padding-left: 20px;
     }
   }
+
   &__text-container {
     width: 100%;
     max-width: 341px;
@@ -123,6 +149,7 @@
     margin-bottom: 70px;
     min-width: 380px;
   }
+
   &__card {
     position: sticky;
     top: 70px;
@@ -133,10 +160,12 @@
     border-top: 1px solid $dark-25;
     width: 100%;
   }
+
   &__footer {
     &-block {
       margin-top: auto;
     }
+
     &_type {
       &_simple {
         display: none;
@@ -145,12 +174,13 @@
   }
 }
 
-@include bp-1024 {
+@media (max-width: $lg) {
   .room-details {
     &__gallery {
       &-block {
         display: none;
       }
+
       &-item {
         &_size {
           &_large {
@@ -159,10 +189,12 @@
         }
       }
     }
+
     &__wrapper {
       flex-wrap: wrap;
       justify-content: center;
     }
+
     &__column {
       margin-left: 10px;
       margin-right: 10px;
@@ -170,29 +202,34 @@
   }
 }
 
-@include bp-768 {
+@media (max-width: $sm) {
   .room-details {
     &__row {
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
     }
+
     &__donut-chart-container {
       height: 100%;
       margin-bottom: 20px;
     }
+
     &__title {
       width: 100%;
       text-align: center;
     }
+
     &__icon-list-container {
       margin-bottom: 20px;
     }
+
     &__bonus-icon {
       display: flex;
       flex-direction: row;
       justify-content: center;
     }
+
     &__text {
       &_theme {
         &_small-font {
@@ -200,22 +237,26 @@
         }
       }
     }
+
     &__bullet-list-container {
       display: flex;
       flex-direction: column;
       align-items: center;
       margin-bottom: 20px;
     }
+
     &__text-container {
       display: flex;
       flex-direction: column;
       align-items: center;
       margin-bottom: 20px;
     }
+
     &__sidebar {
       margin-top: 0px;
       min-width: inherit;
     }
+
     &__footer {
       &_type {
         &_simple {
@@ -226,7 +267,7 @@
   }
 }
 
-@include bp-480 {
+@media (max-width: $xs) {
   .room-details {
     &__wrapper {
       padding-left: 10px;

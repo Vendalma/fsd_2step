@@ -1,6 +1,9 @@
 .link {
   text-decoration: none;
-  @extend %body-font;
+  font-family: $sans-serif-font;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
   color: $dark-50;
   line-height: 1.214rem;
   display: inline-flex;
@@ -13,7 +16,10 @@
   }
 
   &__icon {
-    @extend %mat-icons;
+    font-family: $material-icon-font;
+    font-weight: normal;
+    font-style: normal;
+    text-transform: none;
     color: $dark-50;
     font-size: 1.714rem;
     line-height: 1.429rem;

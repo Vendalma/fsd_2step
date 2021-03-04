@@ -7,10 +7,14 @@
     display: flex;
     justify-content: center;
     cursor: pointer;
-    @extend %body-font;
+    font-family: $sans-serif-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
     line-height: 1.286rem;
     color: $dark-50;
     padding-left: 30px;
+
     &_type {
       &_rich {
         flex-direction: column;
@@ -44,7 +48,7 @@
       width: 6px;
       height: 8px;
       border-width: 0 2px 2px 0;
-      border-image: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      border-image: $primary-gradient;
       border-color: transparent;
       border-image-slice: 1;
       border-style: solid;
@@ -53,6 +57,7 @@
       opacity: 0;
     }
   }
+
   &__header {
     color: $dark-75;
     line-height: 1.286rem;
@@ -60,10 +65,12 @@
     margin-bottom: 5px;
     margin-top: 2px;
   }
+
   &__text {
     line-height: 1.286rem;
     color: $dark-50;
     white-space: pre-wrap;
+
     &_type {
       &_rich {
         line-height: 1rem;
@@ -75,6 +82,7 @@
       &_medium {
         max-width: 200px;
       }
+
       &_large {
         max-width: 230px;
       }

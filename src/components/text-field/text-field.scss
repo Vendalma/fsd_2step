@@ -1,5 +1,6 @@
 .text-field {
   width: 100%;
+
   &_theme {
     &_subscribe {
       position: relative;
@@ -18,7 +19,10 @@
     border-radius: 4px;
     background-color: #ffffff;
     width: inherit;
-    @extend %body-font;
+    font-family: $sans-serif-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
     padding: 12.2px 15px;
     border: 1px solid $dark-25;
     line-height: 1.286rem;
@@ -32,6 +36,7 @@
 
     &_active {
       border: 1px solid $dark-50;
+
       &::placeholder {
         color: $dark-75;
       }
@@ -39,6 +44,7 @@
 
     &:hover {
       border: 1px solid $dark-50;
+
       &::placeholder {
         color: $dark-75;
       }
@@ -48,6 +54,7 @@
       border: 1px solid $dark-50;
       color: $dark-75;
       outline: none;
+
       &::placeholder {
         color: $dark-75;
       }
@@ -56,18 +63,21 @@
 
   &__button {
     cursor: pointer;
-    padding: 11px 9px 9px 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px 9px 10px 10px;
     outline: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    @extend %mat-icons;
+    font-family: $material-icon-font;
+    font-weight: normal;
+    font-style: normal;
+    text-transform: none;
+    font-size: 1.714rem;
+    line-height: 1.714rem;
     position: absolute;
     right: 0px;
     top: 0px;
-    @extend %primary-grad;
+    background: $primary-gradient;
     background-clip: border-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

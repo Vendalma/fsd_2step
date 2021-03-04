@@ -1,12 +1,24 @@
 .description {
   width: 100%;
-  @extend %h3-font;
+  font-family: $sans-serif-font;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 0.857rem;
+  line-height: 1.071rem;
+  text-transform: uppercase;
+  color: $dark-100;
   cursor: default;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  &__text {
+    margin: 0px;
+  }
+
   &__status {
     color: $dark-50;
     font-weight: 400;
+    margin: 0px;
   }
 }

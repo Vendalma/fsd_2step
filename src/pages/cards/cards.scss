@@ -1,17 +1,23 @@
 .cards {
   background: #f4f4f6;
+
   &__content-block {
-    @include page-settings;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 72px 20px 100px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+
     & > :nth-child(1) {
       margin-right: 40px;
     }
+
     & > :nth-child(2) {
       margin-right: 40px;
     }
+
     & > :nth-child(3) {
       & > :nth-child(2) {
         margin-bottom: 40px;
@@ -24,19 +30,22 @@
     flex-direction: column;
     max-width: 380px;
   }
+
   &__item {
     margin-bottom: 39px;
   }
 }
 
-@include bp-480 {
+@media (max-width: $xs) {
   .cards {
     &__content-block {
       padding-left: 10px;
       padding-right: 10px;
+
       & > :nth-child(1) {
         margin-right: 0px;
       }
+      
       & > :nth-child(2) {
         margin-right: 0px;
       }

@@ -1,14 +1,23 @@
 .bullet-list {
+  width: 100%;
   max-width: 290px;
   cursor: default;
+
   &__items {
     display: flex;
     flex-direction: column;
+    padding: 0px;
+    margin: 0px;
   }
 
   &__item {
     width: 90%;
-    @extend %body-font;
+    font-family: $sans-serif-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 1.714rem;
+    color: $dark-75;
     list-style-type: none;
     display: flex;
     flex-direction: row;

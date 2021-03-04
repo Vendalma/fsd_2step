@@ -2,68 +2,90 @@
   background-color: #ffffff;
   width: 100%;
   margin: 0 auto;
-  @include flex-and-height;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
   &__content {
-    @include page-settings;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 30px 20px 72px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    font-family: $sans-serif-font;
+    font-style: normal;
   }
+
   &__filter {
     width: 100%;
     max-width: 266px;
     margin-right: 20px;
   }
+
   &__dropdown-date {
     margin-bottom: 22px;
   }
+
   &__block-guests {
+    margin-bottom: 31px;
+
     & > :first-child {
       margin-bottom: 5px;
     }
-    margin-bottom: 31px;
   }
+
   &__block-slider {
+    margin-bottom: 31px;
+
     & > :first-child {
       margin-bottom: 11px;
     }
-    margin-bottom: 31px;
   }
+
   &__text {
-    @extend %h3-font;
+    font-size: 0.857rem;
     line-height: 1rem;
     color: $dark-50;
-    text-transform: none;
     font-weight: normal;
     text-align: center;
+    margin: 0px;
   }
+
   &__checkboxes {
+    margin-bottom: 32px;
+
     & > :first-child {
       margin-bottom: 15px;
     }
+
     & > :nth-child(3) {
       margin-top: 14px;
       margin-bottom: 13px;
     }
-    margin-bottom: 32px;
   }
 
   &__rich-checkboxes {
+    margin-bottom: 31px;
+
     & > :first-child {
       margin-bottom: 17px;
     }
+
     & > :nth-child(2) {
       margin-bottom: 10px;
     }
-    margin-bottom: 31px;
   }
+
   &__dropdown-room-block {
+    margin-bottom: 16px;
+
     & > :first-child {
       margin-bottom: 5px;
     }
-    margin-bottom: 16px;
   }
+
   &__rooms {
     width: 100%;
     max-width: 835px;
@@ -72,34 +94,45 @@
   }
 
   &__title {
-    @extend %h1-font;
+    font-weight: bold;
+    font-size: 1.714rem;
+    line-height: 2.071rem;
+    color: $dark-100;
     margin-top: 0px;
     margin-bottom: 21px;
   }
+
   &__card-list {
     width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding: 0px;
+    margin-top: 0px;
     margin-bottom: 19px;
   }
+
   &__card-item {
     list-style-type: none;
     margin-bottom: 21px;
   }
+
   &__pagination {
     align-self: center;
     margin-right: 13px;
   }
+
   &__line {
     border-top: 1px solid $dark-25;
     width: 100%;
   }
+
   &__footer {
     &-block {
       margin-top: auto;
     }
+
     &_type {
       &_simple {
         display: none;
@@ -108,19 +141,20 @@
   }
 }
 
-@include bp-1024 {
+@media (max-width: $lg) {
   .search-room {
     &__rooms {
       justify-content: center;
       align-items: center;
     }
+
     &__card-item {
       margin-right: 5px;
     }
   }
 }
 
-@include bp-960 {
+@media (max-width: $md) {
   .search-room {
     &__card-list {
       align-items: center;
@@ -129,19 +163,22 @@
   }
 }
 
-@include bp-768 {
+@media (max-width: $sm) {
   .search-room {
     &__content {
       flex-direction: column;
     }
+
     &__filter {
       max-width: 480px;
       margin: 0 auto;
       margin-bottom: 40px;
     }
+
     &__title {
       text-align: center;
     }
+
     &__footer {
       &_type {
         &_simple {

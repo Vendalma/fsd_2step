@@ -1,39 +1,34 @@
 .pagination {
+  width: 100%;
   max-width: 241px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   &__text {
-    @extend %body-font;
+    font-family: $sans-serif-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 1.714rem;
+    color: $dark-75;
     margin-top: 8px;
     margin-left: 4px;
+    margin-bottom: 0px;
     cursor: default;
   }
 }
 
-//old default styles
 ul.simple-pagination {
   list-style: none;
+  font-family: $sans-serif-font;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 0.857rem;
+  line-height: 1.071rem;
+  text-transform: uppercase;
 }
 
-.simple-pagination {
-  display: block;
-  overflow: hidden;
-  margin: 0;
-}
-
-.simple-pagination ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.simple-pagination li {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-}
 span.ellipse.clickable {
   cursor: pointer;
 }
@@ -42,27 +37,35 @@ span.ellipse.clickable {
   width: 3em;
 }
 
-//new styles
-
 .simple-pagination {
   max-width: 241px;
+  display: block;
+  overflow: hidden;
+  margin: 0;
 }
+
 .disabled-prev {
   display: none;
 }
+
 .activePagination > .current {
-  @extend %h3-font;
+  font-weight: bold;
   color: #ffffff;
   display: inline-block;
 }
 
 .simple-pagination ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: row;
   width: 100%;
 }
 
 .simple-pagination li {
+  list-style: none;
+  cursor: pointer;
   max-width: 40px;
   padding-left: 17.65px;
   padding-right: 17.65px;
@@ -71,35 +74,40 @@ span.ellipse.clickable {
   align-items: center;
   justify-content: center;
 }
-.activePagination {
-  @extend %primary-grad;
-  border-radius: 22px;
 
+.activePagination {
+  background: $primary-gradient;
+  border-radius: 22px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 }
+
 .page-link {
-  @extend %h3-font;
   color: $dark-50;
   font-weight: normal;
   text-decoration: none;
 }
+
 .ellipse {
-  @extend %h3-font;
   color: $dark-50;
   font-weight: normal;
 }
+
 .next {
   max-width: 40px;
   padding: 8px 9.5px;
-  @extend %secondary-grad;
+  background: $secondary-gradient;
   color: #ffffff;
-  @extend %mat-icons;
+  font-family: $material-icon-font;
+  font-weight: normal;
+  font-style: normal;
+  text-transform: none;
+  font-size: 1.714rem;
+  line-height: 1.714rem;
   border-radius: 22px;
-
   display: flex;
   flex-direction: row;
   align-items: center;

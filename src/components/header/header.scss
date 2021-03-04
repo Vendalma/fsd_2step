@@ -2,7 +2,8 @@
   width: 100%;
   display: flex;
   padding: 15px 0px;
-  @extend %shadow-bg-secondary;
+  background-color: #ffffff;
+  box-shadow: 0px 10px 20px $dark-05;
 
   &__container {
     max-width: 1200px;
@@ -14,41 +15,55 @@
     align-items: center;
     flex-grow: 1;
   }
+
   &__content-block {
     display: flex;
     flex-direction: row;
     flex-grow: 0;
   }
+
   &__logo {
     display: flex;
   }
+
   &__burger-menu {
     user-select: none;
     display: none;
     max-width: 40px;
   }
+
   &__menu-icon {
     &_hidden {
       display: none;
     }
   }
+
   &__icon {
-    @extend %mat-icons;
+    font-family: $material-icon-font;
+    font-weight: normal;
+    font-style: normal;
+    text-transform: none;
     color: $dark-50;
     font-size: 3.286rem;
+    line-height: 1.714rem;
     vertical-align: middle;
   }
+
   &__nav-bar {
     display: flex;
     flex-direction: row;
     align-items: center;
   }
+
   &__link {
     &-list {
       display: flex;
       flex-direction: row;
       flex-shrink: 0;
+      margin: 0px;
+      padding: 0px;
     }
+
     &-item {
       display: inline-flex;
       flex-direction: row;
@@ -56,36 +71,49 @@
       margin-right: 21px;
     }
   }
+
   &__user-info {
     display: flex;
     flex-direction: row;
     align-items: center;
   }
+
   &__vert-block {
     min-height: 30px;
     border-left: 1px solid $dark-10;
     margin-right: 20px;
   }
+
   &__user-name {
-    @extend %body-font;
+    font-family: $sans-serif-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 1.714rem;
     color: $dark-50;
     flex-shrink: 0;
     cursor: default;
+    margin: 0px;
   }
+
   &__buttons-block {
     display: flex;
     flex-direction: row;
     align-items: center;
+
     & > :nth-child(1) {
       margin-right: 18px;
     }
   }
+
   &__button {
     width: 100%;
+
     &_size {
       &_m {
         min-width: 197px;
       }
+      
       &_s {
         min-width: 87px;
       }
@@ -93,7 +121,7 @@
   }
 }
 
-@include bp-960 {
+@media (max-width: $md) {
   .header {
     position: relative;
 
@@ -103,6 +131,7 @@
       flex-direction: row;
       justify-content: space-between;
     }
+
     &__burger-menu {
       cursor: pointer;
       display: block;
@@ -110,6 +139,7 @@
 
     &__nav-bar {
       display: none;
+
       &_open {
         display: flex;
         flex-direction: column;
@@ -119,13 +149,13 @@
         top: 70px;
         right: 0;
         z-index: 100;
-
         background-color: #ffffff;
-        box-shadow: inset 0px 5px 15px rgba(31, 32, 65, 0.1);
+        box-shadow: inset 0px 5px 15px $dark-10;
         width: 100%;
         padding: 15px 20px;
       }
     }
+
     &__link {
       &-list {
         flex-direction: column;
@@ -143,22 +173,27 @@
       justify-content: center;
       align-items: center;
     }
+
     &__button {
       min-height: 44px;
     }
+
     &__user-info {
       min-width: 200px;
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
     }
+
     &__user-name {
       font-size: 18px;
       margin-left: 14px;
     }
+
     &__vert-block {
       display: none;
     }
+
     &__link-item {
       font-weight: bold;
       font-size: 1.188rem;
