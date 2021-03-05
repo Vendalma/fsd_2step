@@ -27,6 +27,7 @@
       width: 42px;
       height: 42px;
       display: flex;
+      flex-direction: row;
       align-items: center;
       justify-content: center;
       font-family: $material-icon-font;
@@ -341,6 +342,7 @@
 
 .datepicker--buttons {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   border: none;
